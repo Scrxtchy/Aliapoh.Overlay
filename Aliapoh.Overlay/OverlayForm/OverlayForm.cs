@@ -59,8 +59,11 @@ namespace Aliapoh.Overlay
             };
 
             var Menu = new CefMenuHandler();
-            Overlay = new ChromiumWebBrowser("http://kangax.github.io/compat-table/es6/", browser);
-            Overlay.MenuHandler = Menu;
+            // http://kangax.github.io/compat-table/es6/
+            Overlay = new ChromiumWebBrowser("http://kagerou.hibiya.moe/overlay", browser)
+            {
+                MenuHandler = Menu
+            };
             Overlay.BrowserInitialized += Overlay_BrowserInitialized;
             Overlay.NewScreenshot += Overlay_NewScreenshot;
         }
@@ -97,8 +100,9 @@ namespace Aliapoh.Overlay
             if (IsBrowserInitialized)
                 Overlay.Size = new Size(Width, Height);
         }
-
-        [System.Security.Permissions.PermissionSet(System.Security.Permissions.SecurityAction.Demand, Name = "FullTrust")]
+        
+        // 별로 건들 일 없어서 내려놓음
+        #region /_/_/_/|          WndProc         |/_/_/_/
         protected override void WndProc(ref Message m)
         {
             const int RESIZE_HANDLE_SIZE = 10;
@@ -121,7 +125,7 @@ namespace Aliapoh.Overlay
                         {
                             var clientPoint = PointToClient(new Point(m.LParam.ToInt32()));
                             Rectangle ResizeHand = new Rectangle(Width - 24, Height - 24, 24, 24);
-                            if(ResizeHand.Contains(clientPoint)) m.Result = new IntPtr(0x11);
+                            if (ResizeHand.Contains(clientPoint)) m.Result = new IntPtr(0x11);
                         }
                     }
                     return;
@@ -129,9 +133,7 @@ namespace Aliapoh.Overlay
 
             base.WndProc(ref m);
         }
-
-        // 별로 건들 일 없어서 내려놓음
-
+        #endregion
         #region /_/_/_/|      Keyboard Event      |/_/_/_/
         private List<int> SysKeys = new List<int>()
         {
@@ -177,15 +179,13 @@ namespace Aliapoh.Overlay
 
         private void OnKeyEvent(ref Message m)
         {
-            return;
             var key = (Keys)m.WParam.ToInt32();
             var keyEvent = new KeyEvent()
             {
                 WindowsKeyCode = m.WParam.ToInt32(),
                 NativeKeyCode = (int)m.LParam.ToInt64(),
-                IsSystemKey = m.Msg.Search(SysKeys)
             };
-
+            
             if (m.Msg == (int)WM.KEYDOWN || m.Msg == (int)WM.SYSKEYDOWN)
                 keyEvent.Type = KeyEventType.RawKeyDown;
             else if (m.Msg == (int)WM.KEYUP || m.Msg == (int)WM.SYSKEYUP)
@@ -212,8 +212,12 @@ namespace Aliapoh.Overlay
                 keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
             else if (key == Keys.Alt)
                 keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
-
-            if(IsBrowserInitialized)
+            else if (key == Keys.LWin)
+                keyEvent.Modifiers |= CefEventFlags.IsLeft;
+            else if (key == Keys.RWin)
+                keyEvent.Modifiers |= CefEventFlags.IsRight;
+            
+            if (IsBrowserInitialized)
                 MainOverlay.GetHost().SendKeyEvent(keyEvent);
         }
 
@@ -262,6 +266,9 @@ namespace Aliapoh.Overlay
         }
         #endregion
         #region /_/_/_/|       Mouse Events       |/_/_/_/
+        private bool IsDragging = false;
+        private Point Offset;
+
         protected override void OnMouseDown(MouseEventArgs e)
         {
             var btn = MouseButtonType.Left;
@@ -270,6 +277,12 @@ namespace Aliapoh.Overlay
             else if (e.Button == MouseButtons.Right) btn = MouseButtonType.Right;
 
             MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, false, 1, Modifier());
+
+            if (!IsBrowserLocked)
+            {
+                IsDragging = true;
+                Offset = e.Location;
+            }
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
@@ -280,11 +293,20 @@ namespace Aliapoh.Overlay
             else if (e.Button == MouseButtons.Right) btn = MouseButtonType.Right;
 
             MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, true, 1, Modifier());
+            IsDragging = false;
         }
 
         protected override void OnMouseMove(MouseEventArgs e)
         {
-            MainOverlay.GetHost().SendMouseMoveEvent(e.X, e.Y, false, Modifier());
+            if (IsDragging)
+            {
+                var s = PointToScreen(e.Location);
+                Location = new Point(s.X - Offset.X, s.Y - Offset.Y);
+            }
+            else
+            {
+                MainOverlay.GetHost().SendMouseMoveEvent(e.X, e.Y, false, Modifier());
+            }
         }
 
         protected override void OnMouseWheel(MouseEventArgs e)
