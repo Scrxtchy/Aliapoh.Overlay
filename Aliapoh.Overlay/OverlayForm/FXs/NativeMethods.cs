@@ -38,6 +38,9 @@ namespace Aliapoh.Overlay
         [DllImport("gdi32.dll", SetLastError = true)]
         public extern static bool DeleteObject(IntPtr hgdiObject);
 
+        [DllImport("user32.dll")]
+        public static extern short GetKeyState(int nVirtKey);
+
         public struct PointStruct
         {
             public int X;

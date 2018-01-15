@@ -60,9 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CefInit\CefManager.cs" />
+    <Compile Include="Extender\IntExtender.cs" />
     <Compile Include="OverlayForm\FXs\OverlayAPI.cs" />
     <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
     <Compile Include="OverlayForm\FXs\NativeMethods.cs" />
+    <Compile Include="OverlayForm\Handlers\CefMenuHandler.cs" />
     <Compile Include="OverlayForm\OverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +98,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\cef.redist.x64.3.3239.1716\build\cef.redist.x64.targets" Condition="Exists('..\packages\cef.redist.x64.3.3239.1716\build\cef.redist.x64.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
