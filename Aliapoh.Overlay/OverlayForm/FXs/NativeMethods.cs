@@ -41,6 +41,9 @@ namespace Aliapoh.Overlay
         [DllImport("user32.dll")]
         public static extern short GetKeyState(int nVirtKey);
 
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hwnd, int message, int wParam, IntPtr lParam);
+
         public struct PointStruct
         {
             public int X;

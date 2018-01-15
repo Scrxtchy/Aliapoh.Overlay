@@ -60,10 +60,11 @@ namespace Aliapoh.Overlay
 
             var Menu = new CefMenuHandler();
             // http://kangax.github.io/compat-table/es6/
-            Overlay = new ChromiumWebBrowser("http://kagerou.hibiya.moe/overlay", browser)
+            Overlay = new ChromiumWebBrowser("https://laiglinne-ff.github.io/cleaveore.FancyAmethyst/", browser)
             {
                 MenuHandler = Menu
             };
+            Overlay.DisplayHandler = new DisplayHandler();
             Overlay.BrowserInitialized += Overlay_BrowserInitialized;
             Overlay.NewScreenshot += Overlay_NewScreenshot;
         }

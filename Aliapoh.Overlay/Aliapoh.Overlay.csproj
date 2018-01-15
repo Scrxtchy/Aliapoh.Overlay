@@ -66,6 +66,7 @@
     <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
     <Compile Include="OverlayForm\FXs\NativeMethods.cs" />
     <Compile Include="OverlayForm\Handlers\CefMenuHandler.cs" />
+    <Compile Include="OverlayForm\Handlers\DisplayHandler.cs" />
     <Compile Include="OverlayForm\OverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
