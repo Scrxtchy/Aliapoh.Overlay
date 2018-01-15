@@ -84,51 +84,6 @@ namespace Aliapoh.Overlay
             Overlay.Load("http://amethyst.ffxiv.io/");
         }
 
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            base.OnMouseMove(e);
-        }
-
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-            base.OnMouseUp(e);
-
-            var btn = MouseButtonType.Left;
-
-            switch (e.Button)
-            {
-                case MouseButtons.Right:
-                    btn = MouseButtonType.Right;
-                    break;
-                case MouseButtons.Middle:
-                    btn = MouseButtonType.Middle;
-                    break;
-            }
-
-            Overlay.GetBrowser().GetHost().SendMouseClickEvent(e.X, e.Y, btn, true, 1, CefEventFlags.None);
-        }
-
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            base.OnMouseDown(e);
-
-            Debug.WriteLine("Fired OnMouseDown");
-
-            var btn = MouseButtonType.Left;
-
-            switch(e.Button)
-            {
-                case MouseButtons.Right:
-                    btn = MouseButtonType.Right;
-                    break;
-                case MouseButtons.Middle:
-                    btn = MouseButtonType.Middle;
-                    break;
-            }
-
-            Overlay.GetBrowser().GetHost().SendMouseClickEvent(e.X, e.Y, btn, false, 1, CefEventFlags.None);
-        }
-
         [System.Security.Permissions.PermissionSet(System.Security.Permissions.SecurityAction.Demand, Name = "FullTrust")]
         protected override void WndProc(ref Message m)
         {
