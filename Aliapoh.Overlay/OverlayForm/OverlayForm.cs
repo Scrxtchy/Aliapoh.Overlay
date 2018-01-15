@@ -18,16 +18,37 @@ namespace Aliapoh.Overlay
 {
     public partial class OverlayForm : Form
     {
+        private bool D_ALT { get; set; }
+        private bool D_CTRL { get; set; }
+        private bool D_SHIFT { get; set; }
+
+        public bool IsBrowserInitialized { get; private set; }
+
+        public string OverlayName { get; set; }
+        public string OverlayVersion { get; private set; }
+
         public ChromiumWebBrowser Overlay;
         public BrowserProcessHandler browserHandler;
+
+        public IBrowser MainOverlay;
         public Bitmap ScreenShot;
 
         public OverlayForm()
         {
+            IsBrowserInitialized = false;
             TopMost = true;
             Debug.WriteLine("Overlay Load");
             InitializeComponent();
             OverlayInit(browserHandler = new BrowserProcessHandler());
+
+            new Thread((ThreadStart)delegate
+            {
+                while(true)
+                {
+                    Thread.Sleep(5000);
+                    GC.Collect();
+                }
+            }).Start();
         }
 
         public void OverlayInit(IBrowserProcessHandler bh)
@@ -56,7 +77,7 @@ namespace Aliapoh.Overlay
                 BackgroundColor = 0
             };
             
-            Overlay = new ChromiumWebBrowser("http://amethyst.ffxiv.io/", browser);
+            Overlay = new ChromiumWebBrowser("http://kangax.github.io/compat-table/es6/", browser);
             Overlay.BrowserInitialized += Overlay_BrowserInitialized;
             Overlay.NewScreenshot += Overlay_NewScreenshot;
         }
@@ -69,19 +90,81 @@ namespace Aliapoh.Overlay
             GC.Collect(0);
         }
 
+        private void Overlay_BrowserInitialized(object sender, EventArgs e)
+        {
+            Overlay.Load("http://kangax.github.io/compat-table/es6/");
+
+            MainOverlay = Overlay.GetBrowser();
+            Overlay.Size = new Size(Width, Height);
+            IsBrowserInitialized = true;
+        }
+
+        private void OnKeyEvent(ref Message m)
+        {
+
+        }
+
+        private CefEventFlags Modifier()
+        {
+            var cef = CefEventFlags.None;
+            if (D_ALT) cef |= CefEventFlags.AltDown;
+            if (D_CTRL) cef |= CefEventFlags.ControlDown;
+            if (D_SHIFT) cef |= CefEventFlags.ShiftDown;
+
+            return cef;
+        }
+
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            var btn = MouseButtonType.Left;
+
+            if (e.Button == MouseButtons.Middle) btn = MouseButtonType.Middle;
+            else if (e.Button == MouseButtons.Right) btn = MouseButtonType.Right;
+
+            MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, false, 1, Modifier());
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            var btn = MouseButtonType.Left;
+
+            if (e.Button == MouseButtons.Middle) btn = MouseButtonType.Middle;
+            else if (e.Button == MouseButtons.Right) btn = MouseButtonType.Right;
+
+            MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, true, 1, Modifier());
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            MainOverlay.GetHost().SendMouseMoveEvent(e.X, e.Y, false, Modifier());
+        }
+
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            MainOverlay.GetHost().SendMouseWheelEvent(e.X, e.Y, 0, e.Delta, D_SHIFT ? CefEventFlags.ShiftDown : CefEventFlags.None);
+        }
+
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            D_ALT = e.Alt;
+            D_CTRL = e.Control;
+            D_SHIFT = e.Shift;
+            base.OnKeyDown(e);
+        }
+
+        protected override void OnKeyUp(KeyEventArgs e)
+        {
+            D_ALT = e.Alt;
+            D_CTRL = e.Control;
+            D_SHIFT = e.Shift;
+            base.OnKeyUp(e);
+        }
+
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            try
-            {
+            if (IsBrowserInitialized)
                 Overlay.Size = new Size(Width, Height);
-            }
-            catch { }
-        }
-
-        private void Overlay_BrowserInitialized(object sender, EventArgs e)
-        {
-            Overlay.Load("http://amethyst.ffxiv.io/");
         }
 
         [System.Security.Permissions.PermissionSet(System.Security.Permissions.SecurityAction.Demand, Name = "FullTrust")]
@@ -91,22 +174,15 @@ namespace Aliapoh.Overlay
 
             switch (m.Msg)
             {
-                case 0x201:
-                    {
-                        Point screenPoint = new Point(m.LParam.ToInt32());
-                        Point e = this.PointToClient(screenPoint);
-                        Debug.WriteLine("Fired OnMouseDown");
-                        Overlay.GetBrowser().GetHost().SendMouseClickEvent(e.X, e.Y, MouseButtonType.Left, false, 1, CefEventFlags.None);
-                        return;
-                    }
-                case 0x202:
-                    {
-                        Point screenPoint = new Point(m.LParam.ToInt32());
-                        Point e = this.PointToClient(screenPoint);
-                        Debug.WriteLine("Fired OnMouseUp");
-                        Overlay.GetBrowser().GetHost().SendMouseClickEvent(e.X, e.Y, MouseButtonType.Left, true, 1, CefEventFlags.None);
-                        return;
-                    }
+                case (int)WM.CHAR:
+                case (int)WM.IME_CHAR:
+                case (int)WM.KEYDOWN:
+                case (int)WM.KEYUP:
+                case (int)WM.SYSCHAR:
+                case (int)WM.SYSKEYDOWN:
+                case (int)WM.SYSKEYUP:
+                    OnKeyEvent(ref m);
+                    break;
                 case 0x0084/*NCHITTEST*/ :
                     {
                         base.WndProc(ref m);
@@ -115,36 +191,17 @@ namespace Aliapoh.Overlay
                         {
                             Point screenPoint = new Point(m.LParam.ToInt32());
                             Point clientPoint = this.PointToClient(screenPoint);
-                            if (clientPoint.Y <= RESIZE_HANDLE_SIZE)
+
+                            Rectangle ResizeHand = new Rectangle(Width - 24, Height - 24, 24, 24);
+
+                            if(ResizeHand.Contains(clientPoint))
                             {
-                                if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                    m.Result = (IntPtr)13/*HTTOPLEFT*/ ;
-                                else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                    m.Result = (IntPtr)12/*HTTOP*/ ;
-                                else
-                                    m.Result = (IntPtr)14/*HTTOPRIGHT*/ ;
-                            }
-                            else if (clientPoint.Y <= (Size.Height - RESIZE_HANDLE_SIZE))
-                            {
-                                if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                    m.Result = (IntPtr)10/*HTLEFT*/ ;
-                                else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                    m.Result = (IntPtr)2/*HTCAPTION*/ ;
-                                else
-                                    m.Result = (IntPtr)11/*HTRIGHT*/ ;
-                            }
-                            else
-                            {
-                                if (clientPoint.X <= RESIZE_HANDLE_SIZE)
-                                    m.Result = (IntPtr)16/*HTBOTTOMLEFT*/ ;
-                                else if (clientPoint.X < (Size.Width - RESIZE_HANDLE_SIZE))
-                                    m.Result = (IntPtr)15/*HTBOTTOM*/ ;
-                                else
-                                    m.Result = (IntPtr)17/*HTBOTTOMRIGHT*/ ;
+                                // Return ResizeHandle
+                                m.Result = new IntPtr(0x11);
                             }
                         }
-                        return;
                     }
+                    return;
             }
 
             base.WndProc(ref m);
@@ -155,6 +212,7 @@ namespace Aliapoh.Overlay
             get
             {
                 var style = base.CreateParams;
+                style.ClassStyle |= 200;
                 style.ExStyle |= 0x80000;
                 //style.ExStyle |= 0x200;
                 //style.ExStyle |= 0x20;
@@ -222,69 +280,6 @@ namespace Aliapoh.Overlay
 
                 NativeMethods.DeleteDC(compatibleMemoryDc);
             }
-        }
-    }
-
-    public enum WM : uint
-    {
-        KEYDOWN = 0x100,
-        KEYUP = 0x101,
-        CHAR = 0x102,
-        SYSKEYDOWN = 0x104,
-        SYSKEYUP = 0x105,
-        SYSCHAR = 0x106,
-        IME_CHAR = 0x286,
-    }
-
-    internal class NativeMethods
-    {
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        public extern static bool UpdateLayeredWindow(IntPtr handle, IntPtr hdcDst, ref PointStruct pptDst,
-            ref SizeStruct pSize, IntPtr hDc, ref PointStruct pptSrc, int crKey, ref BlendFunctionStruct pBlend, int dwFlags);
-
-        [DllImport("user32.dll", ExactSpelling = false, SetLastError = true)]
-        public extern static long SetWindowLong(IntPtr handle, int index, long dwNewLong);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        public extern static IntPtr GetDC(IntPtr handle);
-
-        [DllImport("user32.dll", SetLastError = false)]
-        public extern static int ReleaseDC(IntPtr hWnd, IntPtr hDc);
-
-        [DllImport("gdi32.dll", SetLastError = true)]
-        public extern static IntPtr CreateCompatibleDC(IntPtr hDc);
-
-        [DllImport("gdi32.dll", SetLastError = true)]
-        public extern static bool DeleteDC(IntPtr hDc);
-
-        [DllImport("gdi32.dll", SetLastError = false)]
-        public extern static IntPtr SelectObject(IntPtr hDc, IntPtr hgdiObject);
-
-        [DllImport("gdi32.dll", SetLastError = true)]
-        public extern static bool DeleteObject(IntPtr hgdiObject);
-
-        public struct PointStruct
-        {
-            public int X;
-            public int Y;
-        }
-
-        public struct SizeStruct
-        {
-            public int X;
-            public int Y;
-        }
-
-        public struct BlendFunctionStruct
-        {
-            public byte BlendOp;
-            public byte BlendFlags;
-            public byte SourceConstantAlpha;
-            public byte AlphaFormat;
         }
     }
 }

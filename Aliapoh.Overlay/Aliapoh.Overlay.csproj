@@ -60,16 +60,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrowserProcessHandler.cs" />
-    <Compile Include="OverlayForm.cs">
+    <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
+    <Compile Include="OverlayForm\NativeMethods.cs" />
+    <Compile Include="OverlayForm\OverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OverlayForm.Designer.cs">
+    <Compile Include="OverlayForm\OverlayForm.Designer.cs">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="OverlayForm.resx">
+    <EmbeddedResource Include="OverlayForm\OverlayForm.resx">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
