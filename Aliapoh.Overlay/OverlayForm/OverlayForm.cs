@@ -114,36 +114,6 @@ namespace Aliapoh.Overlay
             return cef;
         }
 
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            var btn = MouseButtonType.Left;
-
-            if (e.Button == MouseButtons.Middle) btn = MouseButtonType.Middle;
-            else if (e.Button == MouseButtons.Right) btn = MouseButtonType.Right;
-
-            MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, false, 1, Modifier());
-        }
-
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-            var btn = MouseButtonType.Left;
-
-            if (e.Button == MouseButtons.Middle) btn = MouseButtonType.Middle;
-            else if (e.Button == MouseButtons.Right) btn = MouseButtonType.Right;
-
-            MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, true, 1, Modifier());
-        }
-
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            MainOverlay.GetHost().SendMouseMoveEvent(e.X, e.Y, false, Modifier());
-        }
-
-        protected override void OnMouseWheel(MouseEventArgs e)
-        {
-            MainOverlay.GetHost().SendMouseWheelEvent(e.X, e.Y, 0, e.Delta, D_SHIFT ? CefEventFlags.ShiftDown : CefEventFlags.None);
-        }
-
         protected override void OnKeyDown(KeyEventArgs e)
         {
             D_ALT = e.Alt;
@@ -207,6 +177,39 @@ namespace Aliapoh.Overlay
             base.WndProc(ref m);
         }
 
+        // 별로 건들 일 없어서 내려놓음
+        #region /_/_/_/|       Mouse Events       |/_/_/_/
+        protected override void OnMouseDown(MouseEventArgs e)
+        {
+            var btn = MouseButtonType.Left;
+
+            if (e.Button == MouseButtons.Middle) btn = MouseButtonType.Middle;
+            else if (e.Button == MouseButtons.Right) btn = MouseButtonType.Right;
+
+            MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, false, 1, Modifier());
+        }
+
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            var btn = MouseButtonType.Left;
+
+            if (e.Button == MouseButtons.Middle) btn = MouseButtonType.Middle;
+            else if (e.Button == MouseButtons.Right) btn = MouseButtonType.Right;
+
+            MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, true, 1, Modifier());
+        }
+
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            MainOverlay.GetHost().SendMouseMoveEvent(e.X, e.Y, false, Modifier());
+        }
+
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            MainOverlay.GetHost().SendMouseWheelEvent(e.X, e.Y, 0, e.Delta, D_SHIFT ? CefEventFlags.ShiftDown : CefEventFlags.None);
+        }
+        #endregion
+        #region /_/_/_/|       CreateParams       |/_/_/_/
         protected override CreateParams CreateParams
         {
             get
@@ -219,7 +222,8 @@ namespace Aliapoh.Overlay
                 return style;
             }
         }
-
+        #endregion
+        #region /_/_/_/| Set Layered Window Image |/_/_/_/
         public void SetBitmap(Bitmap bitmap)
         {
             // retrieve current screen device context
@@ -281,5 +285,6 @@ namespace Aliapoh.Overlay
                 NativeMethods.DeleteDC(compatibleMemoryDc);
             }
         }
+        #endregion
     }
 }
