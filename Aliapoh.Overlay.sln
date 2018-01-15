@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliapoh.Overlay", "Aliapoh.Overlay\Aliapoh.Overlay.csproj", "{46D1F109-D80B-4081-B548-5B13D90150C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_x64|x64 = Debug_x64|x64
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x64|x64.ActiveCfg = Debug_x64|x64
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x64|x64.Build.0 = Debug_x64|x64
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug|x64.Build.0 = Debug|Any CPU
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Release|x64.ActiveCfg = Release|Any CPU
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
