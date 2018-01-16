@@ -69,6 +69,12 @@ namespace Aliapoh.Overlay
             Overlay.NewScreenshot += Overlay_NewScreenshot;
         }
 
+        public void ExecuteJavascript(string script)
+        {
+            if (IsBrowserInitialized)
+                Overlay.GetMainFrame().ExecuteJavaScriptAsync(script);
+        }
+
         public void ShowDevTools()
         {
             MainOverlay.ShowDevTools();
@@ -95,14 +101,16 @@ namespace Aliapoh.Overlay
             IsBrowserInitialized = true;
         }
 
+        // 별로 건들 일 없어서 내려놓음
+
+        #region /_/_/_/|          Resize          |/_/_/_/
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
             if (IsBrowserInitialized)
                 Overlay.Size = new Size(Width, Height);
         }
-        
-        // 별로 건들 일 없어서 내려놓음
+        #endregion
         #region /_/_/_/|          WndProc         |/_/_/_/
         protected override void WndProc(ref Message m)
         {

@@ -86,20 +86,27 @@
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OverlayForm\Enums\WM.cs" />
-    <Compile Include="OverlayManager\CustomTab\OverlayManageTabControl.cs" />
-    <Compile Include="OverlayManager\CustomTab\OverlayTabControl.cs" />
-    <Compile Include="OverlayManager\CustomTab\RECT.cs" />
+    <Compile Include="OverlayManager\Controls\CustomTab\OverlayManageTabControl.cs" />
+    <Compile Include="OverlayManager\Controls\CustomTab\OverlayTabControl.cs" />
+    <Compile Include="OverlayManager\Controls\CustomTab\RECT.cs" />
+    <Compile Include="OverlayManager\Controls\NewOverlayPopup.cs" />
     <Compile Include="OverlayManager\Forms\ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OverlayManager\Forms\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OverlayManager\OverlayController.cs">
+    <Compile Include="OverlayManager\Controls\OverlayController.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OverlayManager\OverlayController.Designer.cs">
+    <Compile Include="OverlayManager\Controls\OverlayController.Designer.cs">
       <DependentUpon>OverlayController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverlayManager\NewOverlayDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverlayManager\NewOverlayDialog.Designer.cs">
+      <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,8 +116,11 @@
     <EmbeddedResource Include="OverlayManager\Forms\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OverlayManager\OverlayController.resx">
+    <EmbeddedResource Include="OverlayManager\Controls\OverlayController.resx">
       <DependentUpon>OverlayController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayManager\NewOverlayDialog.resx">
+      <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

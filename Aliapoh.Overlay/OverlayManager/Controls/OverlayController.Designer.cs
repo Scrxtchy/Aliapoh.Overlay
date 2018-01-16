@@ -34,6 +34,7 @@
             this.overlayManageTabControl1 = new Aliapoh.Overlay.OverlayManageTabControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.overlayAddButton = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -68,7 +69,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.copyAllLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label13 = new System.Windows.Forms.Label();
             this.overlayTabControl1.SuspendLayout();
             this.overlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -154,6 +154,14 @@
             this.overlayAddButton.TabIndex = 0;
             this.overlayAddButton.UseVisualStyleBackColor = true;
             this.overlayAddButton.Click += new System.EventHandler(this.overlayAddButton_Click);
+            // 
+            // label13
+            // 
+            this.label13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label13.Location = new System.Drawing.Point(2, 2);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(10, 30);
+            this.label13.TabIndex = 1;
             // 
             // settingsTabPage
             // 
@@ -572,14 +580,6 @@
             this.clearLogsToolStripMenuItem.Name = "clearLogsToolStripMenuItem";
             this.clearLogsToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.clearLogsToolStripMenuItem.Text = "Clear Logs";
-            // 
-            // label13
-            // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label13.Location = new System.Drawing.Point(2, 2);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(10, 30);
-            this.label13.TabIndex = 1;
             // 
             // OverlayController
             // 
