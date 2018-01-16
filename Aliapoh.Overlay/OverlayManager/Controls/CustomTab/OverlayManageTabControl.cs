@@ -94,8 +94,8 @@ namespace Aliapoh.Overlay
                     {
                         if (SelectedIndex == i)
                         {
-                            e.Graphics.FillRectangle(Brushes.White, highlight);
-                            e.Graphics.DrawString(TabPages[i].Text, TabFont, Brushes.Black, mainText, SB);
+                            e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(0, 148, 255)), highlight);
+                            e.Graphics.DrawString(TabPages[i].Text, TabSelectedFont, Brushes.White, mainText, SB);
                         }
                         else
                         {

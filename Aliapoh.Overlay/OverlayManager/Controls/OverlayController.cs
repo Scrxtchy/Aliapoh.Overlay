@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
+using System.Threading;
 
 namespace Aliapoh.Overlay.OverlayManager
 {
@@ -34,6 +35,14 @@ namespace Aliapoh.Overlay.OverlayManager
             overlayTabControl1.Width = Width + 4;
             overlayTabControl1.Height = Height + 4;
             overlayTabControl1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            new Thread((ThreadStart)delegate
+            {
+                while (true)
+                {
+                    Thread.Sleep(15000);
+                    GC.Collect(1);
+                }
+            }).Start();
         }
 
         private void overlayAddButton_Click(object sender, EventArgs e)

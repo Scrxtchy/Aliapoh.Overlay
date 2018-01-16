@@ -62,11 +62,18 @@ namespace Aliapoh.Overlay
             // http://kangax.github.io/compat-table/es6/
             Overlay = new ChromiumWebBrowser("https://laiglinne-ff.github.io/cleaveore.FancyAmethyst/", browser)
             {
-                MenuHandler = Menu
+                MenuHandler = Menu,
             };
+
             Overlay.DisplayHandler = new DisplayHandler();
             Overlay.BrowserInitialized += Overlay_BrowserInitialized;
             Overlay.NewScreenshot += Overlay_NewScreenshot;
+            Overlay.ConsoleMessage += Overlay_ConsoleMessage;
+        }
+
+        private void Overlay_ConsoleMessage(object sender, ConsoleMessageEventArgs e)
+        {
+
         }
 
         public void ExecuteJavascript(string script)
@@ -74,7 +81,7 @@ namespace Aliapoh.Overlay
             if (IsBrowserInitialized)
                 Overlay.GetMainFrame().ExecuteJavaScriptAsync(script);
         }
-
+        
         public void ShowDevTools()
         {
             MainOverlay.ShowDevTools();
@@ -94,8 +101,6 @@ namespace Aliapoh.Overlay
 
         private void Overlay_BrowserInitialized(object sender, EventArgs e)
         {
-            Overlay.Load("http://kangax.github.io/compat-table/es6/");
-
             MainOverlay = Overlay.GetBrowser();
             Overlay.Size = new Size(Width, Height);
             IsBrowserInitialized = true;

@@ -34,7 +34,6 @@
             this.overlayManageTabControl1 = new Aliapoh.Overlay.OverlayManageTabControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.overlayAddButton = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.settingsTabPage = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -69,6 +68,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.copyAllLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.overlayTabControl1.SuspendLayout();
             this.overlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.logTabPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // overlayTabControl1
@@ -131,8 +133,9 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.overlayAddButton);
-            this.panel2.Controls.Add(this.label13);
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -143,25 +146,17 @@
             // overlayAddButton
             // 
             this.overlayAddButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("overlayAddButton.BackgroundImage")));
-            this.overlayAddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.overlayAddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.overlayAddButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.overlayAddButton.FlatAppearance.BorderSize = 0;
             this.overlayAddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.overlayAddButton.Location = new System.Drawing.Point(12, 2);
-            this.overlayAddButton.Margin = new System.Windows.Forms.Padding(2);
+            this.overlayAddButton.Location = new System.Drawing.Point(2, 2);
+            this.overlayAddButton.Margin = new System.Windows.Forms.Padding(0);
             this.overlayAddButton.Name = "overlayAddButton";
-            this.overlayAddButton.Size = new System.Drawing.Size(30, 30);
+            this.overlayAddButton.Size = new System.Drawing.Size(26, 26);
             this.overlayAddButton.TabIndex = 0;
             this.overlayAddButton.UseVisualStyleBackColor = true;
             this.overlayAddButton.Click += new System.EventHandler(this.overlayAddButton_Click);
-            // 
-            // label13
-            // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label13.Location = new System.Drawing.Point(2, 2);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(10, 30);
-            this.label13.TabIndex = 1;
             // 
             // settingsTabPage
             // 
@@ -581,6 +576,26 @@
             this.clearLogsToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.clearLogsToolStripMenuItem.Text = "Clear Logs";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(222, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(572, 30);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.overlayAddButton);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(2, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(2);
+            this.panel3.Size = new System.Drawing.Size(220, 30);
+            this.panel3.TabIndex = 2;
+            // 
             // OverlayController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -609,6 +624,7 @@
             this.logTabPage.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -654,6 +670,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button overlayAddButton;
         private OverlayManageTabControl overlayManageTabControl1;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }
