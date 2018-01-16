@@ -8,16 +8,31 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_x64|x64 = Debug_x64|x64
+		Debug_x64|x86 = Debug_x64|x86
+		Debug_x86|x64 = Debug_x86|x64
+		Debug_x86|x86 = Debug_x86|x86
 		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x64|x64.ActiveCfg = Debug_x64|x64
 		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x64|x64.Build.0 = Debug_x64|x64
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x64|x86.ActiveCfg = Debug_x64|x64
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x64|x86.Build.0 = Debug_x64|x64
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x86|x64.ActiveCfg = Debug_x86|x64
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x86|x64.Build.0 = Debug_x86|x64
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x86|x86.ActiveCfg = Debug_x86|x86
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug_x86|x86.Build.0 = Debug_x86|x86
 		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug|x64.Build.0 = Debug|Any CPU
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Debug|x86.Build.0 = Debug|Any CPU
 		{46D1F109-D80B-4081-B548-5B13D90150C2}.Release|x64.ActiveCfg = Release|Any CPU
 		{46D1F109-D80B-4081-B548-5B13D90150C2}.Release|x64.Build.0 = Release|Any CPU
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Release|x86.ActiveCfg = Release|Any CPU
+		{46D1F109-D80B-4081-B548-5B13D90150C2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

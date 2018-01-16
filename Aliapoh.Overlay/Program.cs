@@ -19,7 +19,7 @@ namespace Aliapoh.Overlay
 
             CefManager.Initialize();
 
-            Application.Run(new OverlayForm());
+            Application.Run(new OverlayManager.ManagerForm());
         }
     }
 }
