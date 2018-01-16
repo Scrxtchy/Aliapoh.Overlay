@@ -35,5 +35,16 @@ namespace Aliapoh.Overlay.OverlayManager
             overlayTabControl1.Height = Height + 4;
             overlayTabControl1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
         }
+
+        private void overlayAddButton_Click(object sender, EventArgs e)
+        {
+            var TP = new TabPage()
+            {
+                Text = "OverlayTest",
+                BackColor = Color.White
+            };
+
+            overlayManageTabControl1.TabPages.Add(TP);
+        }
     }
 }

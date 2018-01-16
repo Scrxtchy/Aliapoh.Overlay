@@ -21,7 +21,7 @@ namespace Aliapoh.Overlay
         {
             SB = new StringFormat(StringFormatFlags.NoWrap)
             {
-                Alignment = StringAlignment.Near,
+                Alignment = StringAlignment.Center,
                 LineAlignment = StringAlignment.Center
             };
 

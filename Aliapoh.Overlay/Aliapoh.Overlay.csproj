@@ -86,6 +86,7 @@
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OverlayForm\Enums\WM.cs" />
+    <Compile Include="OverlayManager\CustomTab\OverlayManageTabControl.cs" />
     <Compile Include="OverlayManager\CustomTab\OverlayTabControl.cs" />
     <Compile Include="OverlayManager\CustomTab\RECT.cs" />
     <Compile Include="OverlayManager\Forms\ManagerForm.cs">
