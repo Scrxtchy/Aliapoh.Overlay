@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CefSharp;
+using CefSharp.WinForms;
 
 namespace Aliapoh.Overlay.OverlayManager
 {
     public partial class OverlayController : UserControl
     {
+        private ChromiumWebBrowser issueBrowser;
+
         public OverlayController()
         {
+            issueBrowser = new ChromiumWebBrowser("https://github.com/laiglinne-ff/Aliapoh.Overlay/issues")
+            {
+                Dock = DockStyle.Fill,
+            };
+            issueBrowser.BrowserSettings.WebGl = CefState.Disabled;
+
             InitializeComponent();
+
+            issueBrowserPanel.Controls.Add(issueBrowser);
 
             overlayTabControl1.Dock = DockStyle.None;
             overlayTabControl1.Left = -2;

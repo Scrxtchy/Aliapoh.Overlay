@@ -33,10 +33,10 @@ namespace Aliapoh.Overlay
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ContainerControl, true);
             DoubleBuffered = true;
 
-            Alignment = TabAlignment.Left;
-            ItemSize = new Size(48, 240);
-            SizeMode = TabSizeMode.Fixed;
-            Padding = new Point(0, 0);
+            Alignment = TabAlignment.Top;
+            ItemSize = new Size(40, 32);
+            SizeMode = TabSizeMode.Normal;
+            Padding = new Point(32, 32);
         }
 
         private void InitializeComponent()
@@ -55,8 +55,8 @@ namespace Aliapoh.Overlay
                 var width = trect.Width;
                 var height = trect.Height;
 
-                var highlight = new Rectangle(left, top, Width, height);
-                var mainText = new Rectangle(left + 10, top, width - 10, 28);
+                var highlight = new Rectangle(left, top, width, height);
+                var mainText = new Rectangle(left + 10, top, width - 20, 32);
 
                 e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
 
@@ -65,7 +65,7 @@ namespace Aliapoh.Overlay
                     if (SelectedIndex == i)
                     {
                         e.Graphics.FillRectangle(Brushes.White, highlight);
-                        e.Graphics.DrawString(TabPages[i].Text, TabSelectedFont, Brushes.Black, mainText, SB);
+                        e.Graphics.DrawString(TabPages[i].Text, TabFont, Brushes.Black, mainText, SB);
                     }
                     else
                     {
@@ -86,7 +86,7 @@ namespace Aliapoh.Overlay
             if (m.Msg == 4904)
             {
                 var rc = (RECT)m.GetLParam(typeof(RECT));
-                rc.left -= 4;
+                rc.left -= 2;
                 rc.right += 2;
                 rc.top -= 2;
                 rc.bottom += 2;

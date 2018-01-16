@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
             this.overlayController1 = new Aliapoh.Overlay.OverlayManager.OverlayController();
             this.SuspendLayout();
             // 
@@ -36,15 +37,17 @@
             this.overlayController1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.overlayController1.Location = new System.Drawing.Point(0, 0);
             this.overlayController1.Name = "overlayController1";
-            this.overlayController1.Size = new System.Drawing.Size(923, 530);
+            this.overlayController1.Size = new System.Drawing.Size(884, 501);
             this.overlayController1.TabIndex = 0;
             // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 530);
+            this.ClientSize = new System.Drawing.Size(884, 501);
             this.Controls.Add(this.overlayController1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(900, 540);
             this.Name = "ManagerForm";
             this.Text = "ManagerForm";
             this.ResumeLayout(false);
