@@ -26,7 +26,6 @@ namespace Aliapoh.Overlay.OverlayManager
             issueBrowser.BrowserSettings.WebGl = CefState.Disabled;
 
             InitializeComponent();
-
             issueBrowserPanel.Controls.Add(issueBrowser);
 
             overlayTabControl1.Dock = DockStyle.None;
@@ -45,7 +44,7 @@ namespace Aliapoh.Overlay.OverlayManager
             }).Start();
         }
 
-        private void overlayAddButton_Click(object sender, EventArgs e)
+        private void OverlayCreate(string name)
         {
             var TP = new TabPage()
             {
@@ -53,7 +52,49 @@ namespace Aliapoh.Overlay.OverlayManager
                 BackColor = Color.White
             };
 
+            var Overlay = new OverlayConfig()
+            {
+                Dock = DockStyle.Fill
+            };
+
+            TP.Controls.Add(Overlay);
+
             overlayManageTabControl1.TabPages.Add(TP);
+            SelectOverlayNameDisplay();
+        }
+
+        private bool CheckTabValidate()
+        {
+            if (overlayManageTabControl1.TabPages.Count == 0) return false;
+            if (overlayManageTabControl1.SelectedIndex < 0) return false;
+            return true;
+        }
+
+        private void SelectOverlayNameDisplay()
+        {
+            if (!CheckTabValidate()) return;
+            overlayTitle.Text = overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex].Text;
+        }
+
+        private void CloseSelectedOverlay()
+        {
+            if (!CheckTabValidate()) return;
+            overlayManageTabControl1.TabPages.Remove(overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex]);
+        }
+
+        private void overlayAddButton_Click(object sender, EventArgs e)
+        {
+            OverlayCreate("OverlayTest");
+        }
+
+        private void overlayManageTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectOverlayNameDisplay();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CloseSelectedOverlay();
         }
     }
 }

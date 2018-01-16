@@ -31,6 +31,8 @@ namespace Aliapoh.Overlay
         private bool D_CTRL { get; set; }
         private bool D_SHIFT { get; set; }
 
+        private OverlayAPI OverlayAPI { get; set; }
+
         public OverlayForm()
         {
             IsBrowserInitialized = false;
@@ -38,6 +40,9 @@ namespace Aliapoh.Overlay
             Debug.WriteLine("Overlay Load");
             InitializeComponent();
             OverlayInit();
+
+            OverlayAPI = new OverlayAPI(this);
+            Overlay.RegisterAsyncJsObject("OverlayPluginAPI", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
 
             new Thread((ThreadStart)delegate
             {
@@ -119,8 +124,6 @@ namespace Aliapoh.Overlay
         #region /_/_/_/|          WndProc         |/_/_/_/
         protected override void WndProc(ref Message m)
         {
-            const int RESIZE_HANDLE_SIZE = 10;
-
             switch (m.Msg)
             {
                 case (int)WM.CHAR:

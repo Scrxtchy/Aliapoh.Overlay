@@ -90,6 +90,12 @@
     <Compile Include="OverlayManager\Controls\CustomTab\OverlayTabControl.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\RECT.cs" />
     <Compile Include="OverlayManager\Controls\NewOverlayPopup.cs" />
+    <Compile Include="OverlayManager\Controls\OverlayConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OverlayManager\Controls\OverlayConfig.Designer.cs">
+      <DependentUpon>OverlayConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="OverlayManager\Forms\ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="OverlayForm\OverlayForm.resx">
       <DependentUpon>OverlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayManager\Controls\OverlayConfig.resx">
+      <DependentUpon>OverlayConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OverlayManager\Forms\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>

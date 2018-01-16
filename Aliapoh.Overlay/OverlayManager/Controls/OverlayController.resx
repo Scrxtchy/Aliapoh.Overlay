@@ -118,6 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAAHtSURBVEhL5dU7
+        SFVxAMfxm5VlZtBDsBB6IBIN5eISQSRoJLgKTUFuQQTRIJIoODQEDTU0OAmCRAkWLeIgiksoqPjIBB0c
+        BEEkKiXFHt+vdkRO59x7zij+4MPVc/73//7/b2Zf5TDO4CQO+iCUPFgmVfxSDT5gCd/xDV/wEtdwAJZ7
+        gttIlAJUYwi/8SfGL3ThGb6iGTlzDI1YhpVs4BNeoQlW0oE5BI0Hn++QM3VYgV9Yw2NcwHE494fgOlzF
+        NCwXmIJTFhsXaQIW/oFaWGE4lnuOdexuwPWJKr+Te7DgTzxAXOGLcLo64TpNYh6LOIvIOPwR2EA/SpEk
+        7qDTuIzrOIHI2LJDtAF3xRGkiZsj6/xXYBVuvUc+SBGnsg+jaEER/oun9Cm6Ue+DFMmHW9nRf0YJYhOc
+        zDQpg6fbBmzoKCJzHvdxA/bChc86r//SAE+yDbz2QVzK4Rb1gHkO3HYDcE0i55WcwkcEp/kmYlMIK7dg
+        YAFVCI/E/4vRhk24Od4i64h9OYvdDXj87+IS7IAj8RZ9iF5Ysb3vwTnkzHtYsZecn1bgxTeDMYzDi86r
+        O3jvJedCJ1mvzAsM4xbewAqC0YT5rh1OVaLKzR1Ubv+5FQ+gjQ7CEXiYnJpWXEHqRP0cGnvoD5ES93av
+        J5P5C7VOgowHQbPEAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="button3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAACuSURBVEhL7ZRR
+        CsIwEAWDHqA/ev9j6BUs6JV0B30QQlbysQuCO/CgtK8dtglpRVH8DQfL9r78Ch26IfChi+VmOXHDgWd0
+        6IbImWK3PC2eXFI6dFf+zhJniycfpXRDmcnTpaKX3z9JlwoEDwtCwnW6FPi9mlST92ueQr+mTKrJxw0X
+        ymwj9WueIp9JRZqcw8CTilEecoAcLVeLJxWS0+WdEPjQyhR0wqRFUfwyrb0Aa505gzMqUYUAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="overlayAddButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

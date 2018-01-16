@@ -21,7 +21,7 @@ namespace Aliapoh.Overlay
                 FocusedNodeChangedEnabled = true,
                 RemoteDebuggingPort = 9994,
                 CachePath = "Cache",
-                LogSeverity = LogSeverity.Disable
+                LogSeverity = LogSeverity.Disable,
             };
 
             if (!Cef.Initialize(setting))

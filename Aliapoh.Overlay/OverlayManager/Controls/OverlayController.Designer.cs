@@ -70,6 +70,10 @@
             this.clearLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.overlayTitle = new System.Windows.Forms.Label();
             this.overlayTabControl1.SuspendLayout();
             this.overlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.logTabPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +135,7 @@
             this.overlayManageTabControl1.Size = new System.Drawing.Size(796, 412);
             this.overlayManageTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.overlayManageTabControl1.TabIndex = 1;
+            this.overlayManageTabControl1.SelectedIndexChanged += new System.EventHandler(this.overlayManageTabControl1_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -579,6 +585,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.overlayTitle);
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.button3);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(222, 2);
             this.panel4.Name = "panel4";
@@ -595,6 +605,54 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(2);
             this.panel3.Size = new System.Drawing.Size(220, 30);
             this.panel3.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(542, 0);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 30);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label13
+            // 
+            this.label13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label13.Location = new System.Drawing.Point(540, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(2, 30);
+            this.label13.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(510, 0);
+            this.button4.Margin = new System.Windows.Forms.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 30);
+            this.button4.TabIndex = 2;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // overlayTitle
+            // 
+            this.overlayTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.overlayTitle.Location = new System.Drawing.Point(0, 0);
+            this.overlayTitle.Name = "overlayTitle";
+            this.overlayTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.overlayTitle.Size = new System.Drawing.Size(507, 30);
+            this.overlayTitle.TabIndex = 3;
+            this.overlayTitle.Text = "Please Select Overlay";
+            this.overlayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OverlayController
             // 
@@ -624,6 +682,7 @@
             this.logTabPage.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -672,5 +731,9 @@
         private OverlayManageTabControl overlayManageTabControl1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label overlayTitle;
     }
 }
