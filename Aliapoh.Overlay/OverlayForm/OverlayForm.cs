@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 using CefSharp;
 using CefSharp.OffScreen;
@@ -216,46 +217,62 @@ namespace Aliapoh.Overlay
 
         private void OnKeyEvent(ref Message m)
         {
-            var key = (Keys)m.WParam.ToInt32();
-            var keyEvent = new KeyEvent()
+            try
             {
-                WindowsKeyCode = m.WParam.ToInt32(),
-                NativeKeyCode = (int)m.LParam.ToInt64(),
-            };
-            
-            if (m.Msg == (int)WM.KEYDOWN || m.Msg == (int)WM.SYSKEYDOWN)
-                keyEvent.Type = KeyEventType.RawKeyDown;
-            else if (m.Msg == (int)WM.KEYUP || m.Msg == (int)WM.SYSKEYUP)
-                keyEvent.Type = KeyEventType.KeyUp;
-            else
-                keyEvent.Type = KeyEventType.Char;
+                var key = (Keys)m.WParam.ToInt32();
+                if((key == Keys.KanaMode || key == Keys.KanjiMode) && CultureInfo.CurrentCulture.Name == "ko-KR")
+                {
+                    key = Keys.HangulMode;
+                }
 
-            if (IsKeyDown(Keys.Shift)) keyEvent.Modifiers |= CefEventFlags.ShiftDown;
-            if (IsKeyDown(Keys.Control)) keyEvent.Modifiers |= CefEventFlags.ControlDown;
-            if (IsKeyDown(Keys.Alt)) keyEvent.Modifiers |= CefEventFlags.AltDown;
+                var keyEvent = new KeyEvent()
+                {
+                    WindowsKeyCode = m.WParam.ToInt32(),
+                    NativeKeyCode = (int)m.LParam.ToInt64(),
+                };
 
-            if (IsKeyToggled(Keys.Capital)) keyEvent.Modifiers |= CefEventFlags.CapsLockOn;
-            if (IsKeyToggled(Keys.NumLock)) keyEvent.Modifiers |= CefEventFlags.NumLockOn;
+                keyEvent.IsSystemKey = m.Msg == (int)WM.SYSCHAR || m.Msg == (int)WM.SYSKEYDOWN || m.Msg == (int)WM.SYSKEYUP;
 
-            if (((m.LParam.ToInt64() >> 48) & 0x100) != 0 && key == Keys.Return)
-                keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
-            else if (((m.LParam.ToInt64() >> 48) & 0x100) == 0 && m.WParam.ToInt32().Search(ExtendKeyPads))
-                keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
-            else if (m.WParam.ToInt32().Search(NumPadKeys))
-                keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
-            else if (key == Keys.Shift)
-                keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
-            else if (key == Keys.Control)
-                keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
-            else if (key == Keys.Alt)
-                keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
-            else if (key == Keys.LWin)
-                keyEvent.Modifiers |= CefEventFlags.IsLeft;
-            else if (key == Keys.RWin)
-                keyEvent.Modifiers |= CefEventFlags.IsRight;
-            
-            if (IsBrowserInitialized)
-                MainOverlay.GetHost().SendKeyEvent(keyEvent);
+                if (m.Msg == (int)WM.KEYDOWN || m.Msg == (int)WM.SYSKEYDOWN)
+                    keyEvent.Type = KeyEventType.RawKeyDown;
+                else if (m.Msg == (int)WM.KEYUP || m.Msg == (int)WM.SYSKEYUP)
+                    keyEvent.Type = KeyEventType.KeyUp;
+                else
+                    keyEvent.Type = KeyEventType.Char;
+
+                if (IsKeyDown(Keys.Shift)) keyEvent.Modifiers |= CefEventFlags.ShiftDown;
+                if (IsKeyDown(Keys.Control)) keyEvent.Modifiers |= CefEventFlags.ControlDown;
+                if (IsKeyDown(Keys.Alt)) keyEvent.Modifiers |= CefEventFlags.AltDown;
+
+                if (IsKeyToggled(Keys.Capital)) keyEvent.Modifiers |= CefEventFlags.CapsLockOn;
+                if (IsKeyToggled(Keys.NumLock)) keyEvent.Modifiers |= CefEventFlags.NumLockOn;
+
+                if (((m.LParam.ToInt64() >> 48) & 0x100) != 0 && key == Keys.Return)
+                    keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
+                else if (((m.LParam.ToInt64() >> 48) & 0x100) == 0 && m.WParam.ToInt32().Search(ExtendKeyPads))
+                    keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
+                else if (m.WParam.ToInt32().Search(NumPadKeys))
+                    keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
+                else if (key == Keys.Shift)
+                    keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
+                else if (key == Keys.Control)
+                    keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
+                else if (key == Keys.Alt)
+                    keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
+                else if (key == Keys.LWin)
+                    keyEvent.Modifiers |= CefEventFlags.IsLeft;
+                else if (key == Keys.RWin)
+                    keyEvent.Modifiers |= CefEventFlags.IsRight;
+
+                Debug.WriteLine("KEY: " + key.ToString());
+
+                if (IsBrowserInitialized)
+                    MainOverlay.GetHost().SendKeyEvent(keyEvent);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
 
         private CefEventFlags Modifier()
