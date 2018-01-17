@@ -17,6 +17,11 @@ namespace Aliapoh.Overlay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
+            if (Environment.Is64BitProcess)
+                CEFDIR = CefLoadByNupkg.DIRDICT["CEFX64"];
+            else
+                CEFDIR = CefLoadByNupkg.DIRDICT["CEFX86"];
             CefLoadByNupkg.Initialize();
             Application.Run(new OverlayManager.ManagerForm());
         }

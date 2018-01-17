@@ -15,25 +15,34 @@ namespace Aliapoh.Overlay
         {            
             var userAgent = "Mozilla/5.0 (Windows NT " + (Environment.Is64BitOperatingSystem ? "x64" : "x86") + ") AppleWebKit/537.36 (KHTML, like Gecko) Aliapoh.Overlay/Chrome/63.0.3239.109 Safari/537.36";
 
+            CefLibraryHandle libloader = new CefLibraryHandle(Path.Combine(Program.CEFDIR, "libcef.dll"));
+
+            Cef.EnableHighDPISupport();
+            bool isValid = !libloader.IsInvalid;
+            Debug.WriteLine($"LIBLOADERSTATUS: {isValid}");
+
             var setting = new CefSettings()
             {
+                LocalesDirPath = Path.Combine(Program.CEFDIR, "locales"),
+                UserDataPath = Path.Combine(Program.CEFDIR, "userdata"),
+                CachePath = Path.Combine(Program.APPDIR, "Cache"),
+                BrowserSubprocessPath = Path.Combine(Program.CEFDIR, "CefSharp.BrowserSubprocess.exe"),
                 ExternalMessagePump = false,
                 MultiThreadedMessageLoop = true,
                 WindowlessRenderingEnabled = true,
                 FocusedNodeChangedEnabled = true,
+                IgnoreCertificateErrors = true,
                 RemoteDebuggingPort = 9994,
                 UserAgent = userAgent,
-                LocalesDirPath = Path.Combine(Program.CEFDIR, "locales"),
-                UserDataPath = Path.Combine(Program.CEFDIR, "userdata"),
-                BrowserSubprocessPath = Program.CEFDIR,
-                CachePath = Path.Combine(Program.APPDIR, "Cache"),
                 LogSeverity = LogSeverity.Disable,
             };
+            setting.DisableGpuAcceleration();
 
             if (!Cef.Initialize(setting))
             {
                 throw new Exception("Unable to Initialize Cef");
             }
+            libloader.Dispose();
         }
     }
 }

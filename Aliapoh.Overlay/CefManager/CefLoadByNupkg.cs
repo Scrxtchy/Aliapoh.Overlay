@@ -109,11 +109,19 @@ namespace Aliapoh.Overlay
                 {
                     if (file.Contains(".pdb")) continue;
                     var f = Path.Combine(dest, Path.GetFileName(file));
-                    Debug.WriteLine(file + " to " + f);
                     if (!File.Exists(f)) File.Copy(file, f);
                 }
             }
 
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
+            Thread.Sleep(500);
+            CefLoader.Initialize();
+            Thread.Sleep(500);
+        }
+
+        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        {
             // Binary Loader
             var binfiles = new List<string>()
             {
@@ -124,24 +132,14 @@ namespace Aliapoh.Overlay
                 // "Newtonsoft.Json"
             };
 
-            if (Environment.Is64BitProcess)
-                Program.CEFDIR = DIRDICT["CEFX64"];
-            else
-                Program.CEFDIR = DIRDICT["CEFX86"];
-
-            AppDomain.CurrentDomain.AssemblyResolve += delegate (object s, ResolveEventArgs args)
+            string asmFile = (args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(",")) : args.Name);
+            if (!binfiles.Contains(asmFile)) return null;
+            try
             {
-                string asmFile = (args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(",")) : args.Name);
-                if (!binfiles.Contains(asmFile)) return null;
-                try
-                {
-                    return Assembly.LoadFile(Path.Combine(Program.CEFDIR, asmFile + ".dll"));
-                }
-                catch { return null; }
-            };
-
-            Thread.Sleep(500);
-            CefLoader.Initialize();
+                Debug.WriteLine("Load " + asmFile);
+                return Assembly.LoadFile(Path.Combine(Program.CEFDIR, asmFile + ".dll"));
+            }
+            catch { return null; }
         }
 
         public static void MKDIR(string dir)
