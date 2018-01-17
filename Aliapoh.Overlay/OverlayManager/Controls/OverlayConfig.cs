@@ -26,9 +26,9 @@ namespace Aliapoh.Overlay
 
         private void Initializer(string name, string url)
         {
-            Overlay = new OverlayForm();
-            Overlay.Url = url;
+            Overlay = new OverlayForm(url);
             InitializeComponent();
+            siteURL.Text = url;
             Overlay.Show();
 
             Overlay.Location = new Point(10, 10);
@@ -41,7 +41,13 @@ namespace Aliapoh.Overlay
             Overlay.Name = name;
             Overlay.Text = name;
             Overlay.ShowInTaskbar = false;
+            Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
             overlayName.Text = name;
+        }
+
+        private void OverlayBrowserInitialized(object sender, EventArgs e)
+        {
+            // do somthing
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)

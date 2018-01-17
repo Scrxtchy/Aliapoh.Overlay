@@ -23,7 +23,6 @@ namespace Aliapoh.Overlay
         public bool IsBrowserLocked { get; set; }
         public bool IsBrowserInitialized { get; private set; }
         public string OverlayName { get; set; }
-        public string Url { get; set; }
 
         public ChromiumWebBrowser Browser;
         public IBrowser MainOverlay;
@@ -40,45 +39,60 @@ namespace Aliapoh.Overlay
 
         public OverlayForm()
         {
-            Url = "about:blank";
-            IsBrowserInitialized = false;
-            TopMost = true;
-            Debug.WriteLine("Overlay Load");
-            InitializeComponent();
-            OverlayInit();
-
-            OverlayAPI = new OverlayPluginApi(this);
-            Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
-
-            new Thread((ThreadStart)delegate
-            {
-                while(true)
-                {
-                    Thread.Sleep(5000);
-                    GC.Collect(1);
-                }
-            }).Start();
+            Initalizer("about:blank");
         }
 
-        public void OverlayInit()
+        public OverlayForm(string Url)
         {
-            var browser = new BrowserSettings()
-            {
-                WindowlessFrameRate = 30,
-                WebGl = CefState.Disabled,      // Why?: A: Spectre attack issue, google suggest turn on WebGL Feature.
-                BackgroundColor = 0,
-            };
+            Initalizer(Url);
+        }
 
-            CefMenu = new CefMenuHandler();
-            Browser = new ChromiumWebBrowser(Url, browser)
+        private void Initalizer(string URL)
+        {
+            try
             {
-                MenuHandler = CefMenu,
-            };
+                IsBrowserInitialized = false;
+                TopMost = true;
+                Debug.WriteLine("Overlay Load");
 
-            Browser.DisplayHandler = new DisplayHandler();
-            Browser.BrowserInitialized += Overlay_BrowserInitialized;
-            Browser.NewScreenshot += Overlay_NewScreenshot;
-            Browser.ConsoleMessage += Overlay_ConsoleMessage;
+                var browser = new BrowserSettings()
+                {
+                    WindowlessFrameRate = 30,
+                    WebGl = CefState.Disabled, // Why?: A: Spectre attack issue, google suggest turn on WebGL Feature.
+                    BackgroundColor = 0,
+                };
+
+                CefMenu = new CefMenuHandler();
+                Browser = new ChromiumWebBrowser(URL, browser)
+                {
+                    MenuHandler = CefMenu,
+                };
+
+                OverlayAPI = new OverlayPluginApi(this);
+                Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
+
+                Debug.WriteLine("Overlay Initializing");
+
+                Browser.DisplayHandler = new DisplayHandler();
+                Browser.BrowserInitialized += Overlay_BrowserInitialized;
+                Browser.NewScreenshot += Overlay_NewScreenshot;
+                Browser.ConsoleMessage += Overlay_ConsoleMessage;
+
+                new Thread((ThreadStart)delegate
+                {
+                    while (true)
+                    {
+                        Thread.Sleep(5000);
+                        GC.Collect(1);
+                    }
+                }).Start();
+
+                InitializeComponent();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
 
         public void SettingLoad()
@@ -121,6 +135,7 @@ namespace Aliapoh.Overlay
 
         private void Overlay_BrowserInitialized(object sender, EventArgs e)
         {
+            Debug.WriteLine("Overlay Initialized");
             MainOverlay = Browser.GetBrowser();
             Browser.Size = new Size(Width, Height);
             IsBrowserInitialized = true;
