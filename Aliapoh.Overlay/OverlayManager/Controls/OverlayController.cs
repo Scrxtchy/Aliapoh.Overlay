@@ -35,14 +35,6 @@ namespace Aliapoh.Overlay.OverlayManager
             overlayTabControl1.Width = Width + 4;
             overlayTabControl1.Height = Height + 4;
             overlayTabControl1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-            new Thread((ThreadStart)delegate
-            {
-                while (true)
-                {
-                    Thread.Sleep(15000);
-                    GC.Collect(1);
-                }
-            }).Start();
         }
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      OVERLAYCONTROL      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -73,6 +65,12 @@ namespace Aliapoh.Overlay.OverlayManager
         private void CloseSelectedOverlay()
         {
             if (!CheckTabValidate()) return;
+            foreach(var c in overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex].Controls)
+            {
+                if (c.GetType() == typeof(OverlayConfig))
+                    ((OverlayConfig)c).Overlay.Close();
+                ((Control)c).Dispose();
+            }
             overlayManageTabControl1.TabPages.Remove(overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex]);
         }
         #endregion

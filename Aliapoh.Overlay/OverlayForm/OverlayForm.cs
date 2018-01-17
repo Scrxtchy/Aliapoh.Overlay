@@ -18,6 +18,7 @@ namespace Aliapoh.Overlay
 {
     public partial class OverlayForm : Form
     {
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        Variables         |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public bool IsBrowserLocked { get; set; }
         public bool IsBrowserInitialized { get; private set; }
         public string OverlayName { get; set; }
@@ -26,7 +27,8 @@ namespace Aliapoh.Overlay
         public ChromiumWebBrowser Browser;
         public IBrowser MainOverlay;
         public Bitmap ScreenShot;
-        
+        #endregion
+
         private bool isbrowserlocked { get; set; }
         private bool D_ALT { get; set; }
         private bool D_CTRL { get; set; }
@@ -117,9 +119,15 @@ namespace Aliapoh.Overlay
             IsBrowserInitialized = true;
         }
 
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            Browser.Dispose();
+            base.OnFormClosed(e);
+        }
+
         // 별로 건들 일 없어서 내려놓음
 
-        #region /_/_/_/|          Resize          |/_/_/_/
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|          Resize          |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -127,7 +135,7 @@ namespace Aliapoh.Overlay
                 Browser.Size = new Size(Width, Height);
         }
         #endregion
-        #region /_/_/_/|          WndProc         |/_/_/_/
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|          WndProc         |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -157,7 +165,7 @@ namespace Aliapoh.Overlay
             base.WndProc(ref m);
         }
         #endregion
-        #region /_/_/_/|      Keyboard Event      |/_/_/_/
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      Keyboard Event      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private List<int> SysKeys = new List<int>()
         {
             (int)WM.SYSCHAR,
@@ -288,7 +296,7 @@ namespace Aliapoh.Overlay
             base.OnKeyUp(e);
         }
         #endregion
-        #region /_/_/_/|       Mouse Events       |/_/_/_/
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|       Mouse Events       |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private bool IsDragging = false;
         private Point Offset;
 
@@ -337,7 +345,7 @@ namespace Aliapoh.Overlay
             MainOverlay.GetHost().SendMouseWheelEvent(e.X, e.Y, 0, e.Delta, D_SHIFT ? CefEventFlags.ShiftDown : CefEventFlags.None);
         }
         #endregion
-        #region /_/_/_/|       CreateParams       |/_/_/_/
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|       CreateParams       |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         protected override CreateParams CreateParams
         {
             get
@@ -351,7 +359,7 @@ namespace Aliapoh.Overlay
             }
         }
         #endregion
-        #region /_/_/_/| Set Layered Window Image |/_/_/_/
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/| Set Layered Window Image |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public void SetBitmap(Bitmap bitmap)
         {
             // retrieve current screen device context
