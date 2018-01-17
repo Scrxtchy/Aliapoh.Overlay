@@ -20,8 +20,16 @@ namespace Aliapoh.Overlay
             InitializeComponent();
             Overlay.Show();
 
+            Overlay.Location = new Point(10, 10);
+            Overlay.Size = new Size(400, 400);
+
             Overlay.LocationChanged += Overlay_LocationChanged;
             Overlay.SizeChanged += Overlay_SizeChanged;
+
+            Overlay.SettingLoad();
+            Overlay.Name = name;
+            Overlay.Text = name;
+            Overlay.ShowInTaskbar = false;
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)
@@ -68,6 +76,26 @@ namespace Aliapoh.Overlay
         private void overlayFramerate_ValueChanged(object sender, EventArgs e)
         {
             Overlay.Browser.BrowserSettings.WindowlessFrameRate = (int)((NumericUpDown)sender).Value;
+        }
+
+        private void overlayX_ValueChanged(object sender, EventArgs e)
+        {
+            Overlay.Left = (int)((NumericUpDown)sender).Value;
+        }
+
+        private void overlayY_ValueChanged(object sender, EventArgs e)
+        {
+            Overlay.Top = (int)((NumericUpDown)sender).Value;
+        }
+
+        private void overlayWidth_ValueChanged(object sender, EventArgs e)
+        {
+            Overlay.Width = (int)((NumericUpDown)sender).Value;
+        }
+
+        private void overlayHeight_ValueChanged(object sender, EventArgs e)
+        {
+            Overlay.Height = (int)((NumericUpDown)sender).Value;
         }
     }
 }

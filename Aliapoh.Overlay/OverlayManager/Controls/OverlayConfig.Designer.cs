@@ -382,7 +382,6 @@
             this.label6.Location = new System.Drawing.Point(80, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label6.Size = new System.Drawing.Size(320, 24);
             this.label6.TabIndex = 6;
             this.label6.Text = "fps (※ This value required restart)";
@@ -410,7 +409,6 @@
             this.label9.Location = new System.Drawing.Point(80, 0);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.label9.Size = new System.Drawing.Size(320, 24);
             this.label9.TabIndex = 6;
             this.label9.Text = "ms";
@@ -660,6 +658,7 @@
             0,
             0,
             0});
+            this.overlayX.ValueChanged += new System.EventHandler(this.overlayX_ValueChanged);
             // 
             // label17
             // 
@@ -717,6 +716,7 @@
             0,
             0,
             0});
+            this.overlayY.ValueChanged += new System.EventHandler(this.overlayY_ValueChanged);
             // 
             // tableLayoutPanel6
             // 
@@ -783,6 +783,7 @@
             0,
             0,
             0});
+            this.overlayWidth.ValueChanged += new System.EventHandler(this.overlayWidth_ValueChanged);
             // 
             // label21
             // 
@@ -839,6 +840,7 @@
             0,
             0,
             0});
+            this.overlayHeight.ValueChanged += new System.EventHandler(this.overlayHeight_ValueChanged);
             // 
             // OverlayConfig
             // 

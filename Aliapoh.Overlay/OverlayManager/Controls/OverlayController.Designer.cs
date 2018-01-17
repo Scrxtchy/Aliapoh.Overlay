@@ -74,6 +74,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.overlayTitle = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.pluginTabPage = new System.Windows.Forms.TabPage();
             this.overlayTabControl1.SuspendLayout();
             this.overlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,6 +100,7 @@
             // 
             this.overlayTabControl1.Controls.Add(this.overlaysTabPage);
             this.overlayTabControl1.Controls.Add(this.settingsTabPage);
+            this.overlayTabControl1.Controls.Add(this.pluginTabPage);
             this.overlayTabControl1.Controls.Add(this.informationTabPage);
             this.overlayTabControl1.Controls.Add(this.logTabPage);
             this.overlayTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -585,10 +589,12 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.overlayTitle);
+            this.panel4.Controls.Add(this.button5);
+            this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.overlayTitle);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(222, 2);
             this.panel4.Name = "panel4";
@@ -646,14 +652,45 @@
             // 
             // overlayTitle
             // 
-            this.overlayTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.overlayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.overlayTitle.Location = new System.Drawing.Point(0, 0);
             this.overlayTitle.Name = "overlayTitle";
             this.overlayTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.overlayTitle.Size = new System.Drawing.Size(507, 30);
+            this.overlayTitle.Size = new System.Drawing.Size(572, 30);
             this.overlayTitle.TabIndex = 3;
             this.overlayTitle.Text = "Please Select Overlay";
             this.overlayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label14.Location = new System.Drawing.Point(508, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(2, 30);
+            this.label14.TabIndex = 4;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(478, 0);
+            this.button5.Margin = new System.Windows.Forms.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(30, 30);
+            this.button5.TabIndex = 5;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // pluginTabPage
+            // 
+            this.pluginTabPage.Location = new System.Drawing.Point(2, 34);
+            this.pluginTabPage.Name = "pluginTabPage";
+            this.pluginTabPage.Size = new System.Drawing.Size(796, 444);
+            this.pluginTabPage.TabIndex = 4;
+            this.pluginTabPage.Text = "Plugins";
+            this.pluginTabPage.UseVisualStyleBackColor = true;
             // 
             // OverlayController
             // 
@@ -736,5 +773,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label overlayTitle;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TabPage pluginTabPage;
     }
 }

@@ -80,6 +80,11 @@ namespace Aliapoh.Overlay
             Browser.ConsoleMessage += Overlay_ConsoleMessage;
         }
 
+        public void SettingLoad()
+        {
+
+        }
+
         private void Overlay_ConsoleMessage(object sender, ConsoleMessageEventArgs e)
         {
 
