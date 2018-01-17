@@ -30,7 +30,7 @@ namespace Aliapoh.Overlay
         public Bitmap ScreenShot;
         #endregion
 
-        private bool isbrowserlocked { get; set; }
+        private bool IsBrowserLockedInternal { get; set; }
         private bool D_ALT { get; set; }
         private bool D_CTRL { get; set; }
         private bool D_SHIFT { get; set; }

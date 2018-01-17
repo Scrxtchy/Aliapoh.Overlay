@@ -139,7 +139,7 @@
             this.overlayManageTabControl1.Size = new System.Drawing.Size(796, 412);
             this.overlayManageTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.overlayManageTabControl1.TabIndex = 1;
-            this.overlayManageTabControl1.SelectedIndexChanged += new System.EventHandler(this.overlayManageTabControl1_SelectedIndexChanged);
+            this.overlayManageTabControl1.SelectedIndexChanged += new System.EventHandler(this.OverlayManageTabControl1_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -166,7 +166,7 @@
             this.overlayAddButton.Size = new System.Drawing.Size(26, 26);
             this.overlayAddButton.TabIndex = 0;
             this.overlayAddButton.UseVisualStyleBackColor = true;
-            this.overlayAddButton.Click += new System.EventHandler(this.overlayAddButton_Click);
+            this.overlayAddButton.Click += new System.EventHandler(this.OverlayAddButton_Click);
             // 
             // settingsTabPage
             // 
@@ -625,7 +625,7 @@
             this.button3.Size = new System.Drawing.Size(30, 30);
             this.button3.TabIndex = 0;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.CloseSelectedOverlayButtonClicked);
             // 
             // label13
             // 
@@ -648,7 +648,7 @@
             this.button4.Size = new System.Drawing.Size(30, 30);
             this.button4.TabIndex = 2;
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.ReloadSelectedOverlayButtonClicked);
             // 
             // overlayTitle
             // 
@@ -682,7 +682,7 @@
             this.button5.Size = new System.Drawing.Size(30, 30);
             this.button5.TabIndex = 5;
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.ShowDevToolsSelectedOverlayButtonClicked);
             // 
             // pluginTabPage
             // 

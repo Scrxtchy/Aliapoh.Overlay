@@ -15,6 +15,7 @@ namespace Aliapoh.Overlay.OverlayManager
 {
     public partial class OverlayController : UserControl
     {
+        public static Dictionary<string, OverlayTabPage> OverlayConfigs = new Dictionary<string, OverlayTabPage>();
         private ChromiumWebBrowser issueBrowser;
 
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        INITALIZER        |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -40,9 +41,13 @@ namespace Aliapoh.Overlay.OverlayManager
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      OVERLAYCONTROL      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private void OverlayCreate(string name)
         {
-            var TP = new OverlayTabPage("OverlayTest");
-            overlayManageTabControl1.TabPages.Add(TP);
-            SelectOverlayNameDisplay();
+            var nod = new NewOverlayDialog();
+            if(nod.ShowDialog() == DialogResult.OK)
+            {
+                var TP = new OverlayTabPage("OverlayTest");
+                overlayManageTabControl1.TabPages.Add(TP);
+                SelectOverlayNameDisplay();
+            }
         }
 
         private bool CheckTabValidate()
@@ -71,29 +76,29 @@ namespace Aliapoh.Overlay.OverlayManager
         }
         #endregion
 
-        private void overlayAddButton_Click(object sender, EventArgs e)
+        private void OverlayAddButton_Click(object sender, EventArgs e)
         {
             OverlayCreate("OverlayTest");
         }
 
-        private void overlayManageTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void OverlayManageTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectOverlayNameDisplay();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void CloseSelectedOverlayButtonClicked(object sender, EventArgs e)
         {
             CloseSelectedOverlay();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void ReloadSelectedOverlayButtonClicked(object sender, EventArgs e)
         {
             if (!CheckTabValidate()) return;
             var otp = (OverlayTabPage)overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
             otp.Overlay.Browser.Load(otp.Config.siteURL.Text);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void ShowDevToolsSelectedOverlayButtonClicked(object sender, EventArgs e)
         {
             if (!CheckTabValidate()) return;
             var otp = (OverlayTabPage)overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];

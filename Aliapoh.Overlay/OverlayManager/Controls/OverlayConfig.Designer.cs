@@ -59,8 +59,8 @@
             this.overlayGlobalHotkeyType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.overlayNameChange = new System.Windows.Forms.Button();
+            this.overlayName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.overlayEnableBeforeLogLineRead = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -117,7 +117,7 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
             this.panel2.Size = new System.Drawing.Size(509, 29);
             this.panel2.TabIndex = 1;
-            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            this.panel2.Click += new System.EventHandler(this.TextboxPadderClicked);
             // 
             // siteURL
             // 
@@ -249,7 +249,7 @@
             this.overlayShow.Size = new System.Drawing.Size(394, 18);
             this.overlayShow.TabIndex = 2;
             this.overlayShow.UseVisualStyleBackColor = true;
-            this.overlayShow.CheckedChanged += new System.EventHandler(this.overlayShow_CheckedChanged);
+            this.overlayShow.CheckedChanged += new System.EventHandler(this.OverlayShow_CheckedChanged);
             // 
             // label3
             // 
@@ -274,7 +274,7 @@
             this.overlayClickthru.Size = new System.Drawing.Size(394, 18);
             this.overlayClickthru.TabIndex = 4;
             this.overlayClickthru.UseVisualStyleBackColor = true;
-            this.overlayClickthru.CheckedChanged += new System.EventHandler(this.overlayClickthru_CheckedChanged);
+            this.overlayClickthru.CheckedChanged += new System.EventHandler(this.OverlayClickthru_CheckedChanged);
             // 
             // label4
             // 
@@ -298,7 +298,7 @@
             this.overlayLock.Size = new System.Drawing.Size(394, 18);
             this.overlayLock.TabIndex = 9;
             this.overlayLock.UseVisualStyleBackColor = true;
-            this.overlayLock.CheckedChanged += new System.EventHandler(this.overlayLock_CheckedChanged);
+            this.overlayLock.CheckedChanged += new System.EventHandler(this.OverlayLock_CheckedChanged);
             // 
             // label5
             // 
@@ -357,7 +357,7 @@
             this.overlayFramerate.Location = new System.Drawing.Point(0, 0);
             this.overlayFramerate.Margin = new System.Windows.Forms.Padding(0);
             this.overlayFramerate.Maximum = new decimal(new int[] {
-            120,
+            144,
             0,
             0,
             0});
@@ -374,7 +374,7 @@
             0,
             0,
             0});
-            this.overlayFramerate.ValueChanged += new System.EventHandler(this.overlayFramerate_ValueChanged);
+            this.overlayFramerate.ValueChanged += new System.EventHandler(this.OverlayFramerate_ValueChanged);
             // 
             // label6
             // 
@@ -515,8 +515,8 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel4.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button2, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.overlayName, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.overlayNameChange, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(200, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -526,26 +526,27 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(400, 24);
             this.tableLayoutPanel4.TabIndex = 23;
             // 
-            // button2
+            // overlayNameChange
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(376, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 23);
-            this.button2.TabIndex = 0;
-            this.button2.UseVisualStyleBackColor = true;
+            this.overlayNameChange.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("overlayNameChange.BackgroundImage")));
+            this.overlayNameChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.overlayNameChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.overlayNameChange.Location = new System.Drawing.Point(376, 0);
+            this.overlayNameChange.Margin = new System.Windows.Forms.Padding(0);
+            this.overlayNameChange.Name = "overlayNameChange";
+            this.overlayNameChange.Size = new System.Drawing.Size(24, 23);
+            this.overlayNameChange.TabIndex = 0;
+            this.overlayNameChange.UseVisualStyleBackColor = true;
+            this.overlayNameChange.Click += new System.EventHandler(this.OverlayNameChange_Click);
             // 
-            // textBox1
+            // overlayName
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(375, 23);
-            this.textBox1.TabIndex = 20;
+            this.overlayName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overlayName.Location = new System.Drawing.Point(0, 0);
+            this.overlayName.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            this.overlayName.Name = "overlayName";
+            this.overlayName.Size = new System.Drawing.Size(375, 23);
+            this.overlayName.TabIndex = 20;
             // 
             // label13
             // 
@@ -658,7 +659,7 @@
             0,
             0,
             0});
-            this.overlayX.ValueChanged += new System.EventHandler(this.overlayX_ValueChanged);
+            this.overlayX.ValueChanged += new System.EventHandler(this.OverlayX_ValueChanged);
             // 
             // label17
             // 
@@ -716,7 +717,7 @@
             0,
             0,
             0});
-            this.overlayY.ValueChanged += new System.EventHandler(this.overlayY_ValueChanged);
+            this.overlayY.ValueChanged += new System.EventHandler(this.OverlayY_ValueChanged);
             // 
             // tableLayoutPanel6
             // 
@@ -783,7 +784,7 @@
             0,
             0,
             0});
-            this.overlayWidth.ValueChanged += new System.EventHandler(this.overlayWidth_ValueChanged);
+            this.overlayWidth.ValueChanged += new System.EventHandler(this.OverlayWidth_ValueChanged);
             // 
             // label21
             // 
@@ -840,7 +841,7 @@
             0,
             0,
             0});
-            this.overlayHeight.ValueChanged += new System.EventHandler(this.overlayHeight_ValueChanged);
+            this.overlayHeight.ValueChanged += new System.EventHandler(this.OverlayHeight_ValueChanged);
             // 
             // OverlayConfig
             // 
@@ -905,8 +906,8 @@
         private System.Windows.Forms.ComboBox overlayGlobalHotkeyType;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button overlayNameChange;
+        private System.Windows.Forms.TextBox overlayName;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox overlayEnableBeforeLogLineRead;
         public System.Windows.Forms.TextBox siteURL;

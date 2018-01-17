@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace Aliapoh.Overlay
 {
     [System.ComponentModel.DesignerCategory("CODE")]
-    class OverlayTabPage : TabPage
+    public class OverlayTabPage : TabPage
     {
         public OverlayConfig Config { get; set; }
         public OverlayForm Overlay

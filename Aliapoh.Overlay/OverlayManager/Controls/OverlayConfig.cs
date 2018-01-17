@@ -30,6 +30,7 @@ namespace Aliapoh.Overlay
             Overlay.Name = name;
             Overlay.Text = name;
             Overlay.ShowInTaskbar = false;
+            overlayName.Text = name;
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace Aliapoh.Overlay
             overlayY.Value = Overlay.Top;
         }
 
-        private void panel2_Click(object sender, EventArgs e)
+        private void TextboxPadderClicked(object sender, EventArgs e)
         {
             siteURL.Focus();
         }
@@ -55,7 +56,7 @@ namespace Aliapoh.Overlay
             base.Dispose();
         }
 
-        private void overlayShow_CheckedChanged(object sender, EventArgs e)
+        private void OverlayShow_CheckedChanged(object sender, EventArgs e)
         {
             if (((CheckBox)sender).Checked)
                 Overlay.Show();
@@ -63,39 +64,44 @@ namespace Aliapoh.Overlay
                 Overlay.Hide();
         }
 
-        private void overlayClickthru_CheckedChanged(object sender, EventArgs e)
+        private void OverlayClickthru_CheckedChanged(object sender, EventArgs e)
         {
             Overlay.ClickthruChange(((CheckBox)sender).Checked);
         }
 
-        private void overlayLock_CheckedChanged(object sender, EventArgs e)
+        private void OverlayLock_CheckedChanged(object sender, EventArgs e)
         {
             Overlay.IsBrowserLocked = ((CheckBox)sender).Checked;
         }
 
-        private void overlayFramerate_ValueChanged(object sender, EventArgs e)
+        private void OverlayFramerate_ValueChanged(object sender, EventArgs e)
         {
             Overlay.Browser.BrowserSettings.WindowlessFrameRate = (int)((NumericUpDown)sender).Value;
         }
 
-        private void overlayX_ValueChanged(object sender, EventArgs e)
+        private void OverlayX_ValueChanged(object sender, EventArgs e)
         {
             Overlay.Left = (int)((NumericUpDown)sender).Value;
         }
 
-        private void overlayY_ValueChanged(object sender, EventArgs e)
+        private void OverlayY_ValueChanged(object sender, EventArgs e)
         {
             Overlay.Top = (int)((NumericUpDown)sender).Value;
         }
 
-        private void overlayWidth_ValueChanged(object sender, EventArgs e)
+        private void OverlayWidth_ValueChanged(object sender, EventArgs e)
         {
             Overlay.Width = (int)((NumericUpDown)sender).Value;
         }
 
-        private void overlayHeight_ValueChanged(object sender, EventArgs e)
+        private void OverlayHeight_ValueChanged(object sender, EventArgs e)
         {
             Overlay.Height = (int)((NumericUpDown)sender).Value;
+        }
+
+        private void OverlayNameChange_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
