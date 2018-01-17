@@ -20,13 +20,15 @@ namespace Aliapoh.Overlay
             }
         }
 
-        public OverlayTabPage()
+        public OverlayTabPage(string name)
         {
-            Config = new OverlayConfig()
+            Config = new OverlayConfig(name)
             {
                 Dock = DockStyle.Fill
             };
 
+            Text = name;
+            Name = name;
             BackColor = Color.FromArgb(255, 255, 255);
             Controls.Add(Config);
         }

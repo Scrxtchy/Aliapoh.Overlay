@@ -61,6 +61,24 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.overlayEnableBeforeLogLineRead = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.overlayX = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.overlayY = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.overlayWidth = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.overlayHeight = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -69,6 +87,12 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.overlayUpdateRate)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.overlayX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overlayY)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.overlayWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overlayHeight)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,6 +128,7 @@
             this.siteURL.Name = "siteURL";
             this.siteURL.Size = new System.Drawing.Size(497, 18);
             this.siteURL.TabIndex = 0;
+            this.siteURL.Text = "about:blank";
             // 
             // label1
             // 
@@ -155,6 +180,12 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.overlayEnableBeforeLogLineRead, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label12, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 8);
@@ -176,7 +207,10 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 31);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowCount = 13;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
@@ -515,6 +549,297 @@
             this.textBox1.Size = new System.Drawing.Size(375, 23);
             this.textBox1.TabIndex = 20;
             // 
+            // label13
+            // 
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Location = new System.Drawing.Point(0, 216);
+            this.label13.Margin = new System.Windows.Forms.Padding(0);
+            this.label13.Name = "label13";
+            this.label13.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label13.Size = new System.Drawing.Size(200, 24);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "Enable beforeLogLineRead";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // overlayEnableBeforeLogLineRead
+            // 
+            this.overlayEnableBeforeLogLineRead.AutoSize = true;
+            this.overlayEnableBeforeLogLineRead.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overlayEnableBeforeLogLineRead.Location = new System.Drawing.Point(203, 219);
+            this.overlayEnableBeforeLogLineRead.Name = "overlayEnableBeforeLogLineRead";
+            this.overlayEnableBeforeLogLineRead.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
+            this.overlayEnableBeforeLogLineRead.Size = new System.Drawing.Size(394, 18);
+            this.overlayEnableBeforeLogLineRead.TabIndex = 25;
+            this.overlayEnableBeforeLogLineRead.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Location = new System.Drawing.Point(0, 240);
+            this.label14.Margin = new System.Windows.Forms.Padding(0);
+            this.label14.Name = "label14";
+            this.label14.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label14.Size = new System.Drawing.Size(200, 24);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Position";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label15
+            // 
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Location = new System.Drawing.Point(0, 264);
+            this.label15.Margin = new System.Windows.Forms.Padding(0);
+            this.label15.Name = "label15";
+            this.label15.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label15.Size = new System.Drawing.Size(200, 24);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Size";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 7;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.label17, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.overlayX, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label18, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label19, 5, 0);
+            this.tableLayoutPanel5.Controls.Add(this.overlayY, 4, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(200, 240);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(400, 24);
+            this.tableLayoutPanel5.TabIndex = 28;
+            // 
+            // label16
+            // 
+            this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Location = new System.Drawing.Point(0, 0);
+            this.label16.Margin = new System.Windows.Forms.Padding(0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(50, 24);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "X";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // overlayX
+            // 
+            this.overlayX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overlayX.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.overlayX.Location = new System.Drawing.Point(50, 0);
+            this.overlayX.Margin = new System.Windows.Forms.Padding(0);
+            this.overlayX.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.overlayX.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.overlayX.Name = "overlayX";
+            this.overlayX.Size = new System.Drawing.Size(100, 23);
+            this.overlayX.TabIndex = 16;
+            this.overlayX.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // label17
+            // 
+            this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Location = new System.Drawing.Point(150, 0);
+            this.label17.Margin = new System.Windows.Forms.Padding(0);
+            this.label17.Name = "label17";
+            this.label17.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.label17.Size = new System.Drawing.Size(30, 24);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "px";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label18
+            // 
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Location = new System.Drawing.Point(180, 0);
+            this.label18.Margin = new System.Windows.Forms.Padding(0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(50, 24);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "Y";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label19
+            // 
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Location = new System.Drawing.Point(330, 0);
+            this.label19.Margin = new System.Windows.Forms.Padding(0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(30, 24);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "px";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // overlayY
+            // 
+            this.overlayY.Location = new System.Drawing.Point(230, 0);
+            this.overlayY.Margin = new System.Windows.Forms.Padding(0);
+            this.overlayY.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.overlayY.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.overlayY.Name = "overlayY";
+            this.overlayY.Size = new System.Drawing.Size(100, 23);
+            this.overlayY.TabIndex = 20;
+            this.overlayY.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 7;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.overlayWidth, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label21, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label22, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label23, 5, 0);
+            this.tableLayoutPanel6.Controls.Add(this.overlayHeight, 4, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(200, 264);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(400, 24);
+            this.tableLayoutPanel6.TabIndex = 29;
+            // 
+            // label20
+            // 
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Location = new System.Drawing.Point(150, 0);
+            this.label20.Margin = new System.Windows.Forms.Padding(0);
+            this.label20.Name = "label20";
+            this.label20.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.label20.Size = new System.Drawing.Size(30, 24);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "px";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // overlayWidth
+            // 
+            this.overlayWidth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overlayWidth.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.overlayWidth.Location = new System.Drawing.Point(50, 0);
+            this.overlayWidth.Margin = new System.Windows.Forms.Padding(0);
+            this.overlayWidth.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.overlayWidth.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.overlayWidth.Name = "overlayWidth";
+            this.overlayWidth.Size = new System.Drawing.Size(100, 23);
+            this.overlayWidth.TabIndex = 16;
+            this.overlayWidth.Value = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            // 
+            // label21
+            // 
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Location = new System.Drawing.Point(0, 0);
+            this.label21.Margin = new System.Windows.Forms.Padding(0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(50, 24);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "Width";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label22
+            // 
+            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label22.Location = new System.Drawing.Point(180, 0);
+            this.label22.Margin = new System.Windows.Forms.Padding(0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(50, 24);
+            this.label22.TabIndex = 18;
+            this.label22.Text = "Height";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label23
+            // 
+            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label23.Location = new System.Drawing.Point(330, 0);
+            this.label23.Margin = new System.Windows.Forms.Padding(0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(30, 24);
+            this.label23.TabIndex = 19;
+            this.label23.Text = "px";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // overlayHeight
+            // 
+            this.overlayHeight.Location = new System.Drawing.Point(230, 0);
+            this.overlayHeight.Margin = new System.Windows.Forms.Padding(0);
+            this.overlayHeight.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.overlayHeight.Minimum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            -2147483648});
+            this.overlayHeight.Name = "overlayHeight";
+            this.overlayHeight.Size = new System.Drawing.Size(100, 23);
+            this.overlayHeight.TabIndex = 20;
+            this.overlayHeight.Value = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            // 
             // OverlayConfig
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -537,6 +862,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.overlayUpdateRate)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.overlayX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overlayY)).EndInit();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.overlayWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overlayHeight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,7 +877,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox siteURL;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label justPaddingLabel1;
         private System.Windows.Forms.Label justPaddingLabel2;
@@ -575,5 +905,24 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox overlayEnableBeforeLogLineRead;
+        public System.Windows.Forms.TextBox siteURL;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.NumericUpDown overlayX;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown overlayY;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.NumericUpDown overlayWidth;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.NumericUpDown overlayHeight;
     }
 }

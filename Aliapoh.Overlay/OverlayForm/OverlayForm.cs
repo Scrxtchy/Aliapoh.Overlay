@@ -38,6 +38,7 @@ namespace Aliapoh.Overlay
 
         public OverlayForm()
         {
+            Url = "about:blank";
             IsBrowserInitialized = false;
             TopMost = true;
             Debug.WriteLine("Overlay Load");
@@ -68,7 +69,7 @@ namespace Aliapoh.Overlay
 
             var Menu = new CefMenuHandler();
             // http://kangax.github.io/compat-table/es6/
-            Browser = new ChromiumWebBrowser("https://laiglinne-ff.github.io/cleaveore.FancyAmethyst/", browser)
+            Browser = new ChromiumWebBrowser(Url, browser)
             {
                 MenuHandler = Menu,
             };

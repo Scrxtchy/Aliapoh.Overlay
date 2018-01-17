@@ -40,11 +40,7 @@ namespace Aliapoh.Overlay.OverlayManager
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      OVERLAYCONTROL      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private void OverlayCreate(string name)
         {
-            var TP = new OverlayTabPage()
-            {
-                Text = "OverlayTest"
-            };
-
+            var TP = new OverlayTabPage("OverlayTest");
             overlayManageTabControl1.TabPages.Add(TP);
             SelectOverlayNameDisplay();
         }
@@ -94,7 +90,7 @@ namespace Aliapoh.Overlay.OverlayManager
         {
             if (!CheckTabValidate()) return;
             var otp = (OverlayTabPage)overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
-            otp.Overlay.Browser.Reload(); // Load(otp.Overlay.Overlay.Address);
+            otp.Overlay.Browser.Load(otp.Config.siteURL.Text);
         }
     }
 }

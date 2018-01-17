@@ -14,11 +14,26 @@ namespace Aliapoh.Overlay
     {
         public OverlayForm Overlay { get; set; }
 
-        public OverlayConfig()
+        public OverlayConfig(string name)
         {
             Overlay = new OverlayForm();
             InitializeComponent();
             Overlay.Show();
+
+            Overlay.LocationChanged += Overlay_LocationChanged;
+            Overlay.SizeChanged += Overlay_SizeChanged;
+        }
+
+        private void Overlay_SizeChanged(object sender, EventArgs e)
+        {
+            overlayWidth.Value = Overlay.Width;
+            overlayHeight.Value = Overlay.Height;
+        }
+
+        private void Overlay_LocationChanged(object sender, EventArgs e)
+        {
+            overlayX.Value = Overlay.Left;
+            overlayY.Value = Overlay.Top;
         }
 
         private void panel2_Click(object sender, EventArgs e)
