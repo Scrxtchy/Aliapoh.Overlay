@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,11 +17,11 @@ namespace Aliapoh.Overlay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            CefLoader.Initialize();
-            CefInstaller.Initialize();
-
+            CefLoadByNupkg.Initialize();
             Application.Run(new OverlayManager.ManagerForm());
         }
+
+        public static string APPDIR = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh");
+        public static string CEFDIR = "";
     }
 }

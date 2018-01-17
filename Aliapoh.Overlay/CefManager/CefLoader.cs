@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,10 @@ namespace Aliapoh.Overlay
                 FocusedNodeChangedEnabled = true,
                 RemoteDebuggingPort = 9994,
                 UserAgent = userAgent,
-                CachePath = "Cache",
+                LocalesDirPath = Path.Combine(Program.CEFDIR, "locales"),
+                UserDataPath = Path.Combine(Program.CEFDIR, "userdata"),
+                BrowserSubprocessPath = Program.CEFDIR,
+                CachePath = Path.Combine(Program.APPDIR, "Cache"),
                 LogSeverity = LogSeverity.Disable,
             };
 

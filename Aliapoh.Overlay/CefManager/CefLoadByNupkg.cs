@@ -7,10 +7,12 @@ using System.IO;
 using System.Net;
 using System.Diagnostics;
 using System.Threading;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace Aliapoh.Overlay
 {
-    public class CefInstaller
+    public class CefLoadByNupkg
     {
         public static Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
         {
@@ -111,6 +113,35 @@ namespace Aliapoh.Overlay
                     if (!File.Exists(f)) File.Copy(file, f);
                 }
             }
+
+            // Binary Loader
+            var binfiles = new List<string>()
+            {
+                "CefSharp",
+                "CefSharp.Core",
+                "CefSharp.OffScreen",
+                "CefSharp.WinForms",
+                // "Newtonsoft.Json"
+            };
+
+            if (Environment.Is64BitProcess)
+                Program.CEFDIR = DIRDICT["CEFX64"];
+            else
+                Program.CEFDIR = DIRDICT["CEFX86"];
+
+            AppDomain.CurrentDomain.AssemblyResolve += delegate (object s, ResolveEventArgs args)
+            {
+                string asmFile = (args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(",")) : args.Name);
+                if (!binfiles.Contains(asmFile)) return null;
+                try
+                {
+                    return Assembly.LoadFile(Path.Combine(Program.CEFDIR, asmFile + ".dll"));
+                }
+                catch { return null; }
+            };
+
+            Thread.Sleep(500);
+            CefLoader.Initialize();
         }
 
         public static void MKDIR(string dir)
