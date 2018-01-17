@@ -26,23 +26,26 @@ namespace Aliapoh.Overlay
 
         private void Initializer(string name, string url)
         {
-            Overlay = new OverlayForm(url);
-            InitializeComponent();
-            siteURL.Text = url;
-            Overlay.Show();
+            Overlay = new OverlayForm(url)
+            {
+                Location = new Point(10, 10),
+                Size = new Size(400, 400),
+                Name = name,
+                Text = name,
+                ShowInTaskbar = false
+            };
 
-            Overlay.Location = new Point(10, 10);
-            Overlay.Size = new Size(400, 400);
+            InitializeComponent();
 
             Overlay.LocationChanged += Overlay_LocationChanged;
             Overlay.SizeChanged += Overlay_SizeChanged;
+            Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
+
+            siteURL.Text = url;
+            overlayName.Text = name;
 
             Overlay.SettingLoad();
-            Overlay.Name = name;
-            Overlay.Text = name;
-            Overlay.ShowInTaskbar = false;
-            Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
-            overlayName.Text = name;
+            Overlay.Show();
         }
 
         private void OverlayBrowserInitialized(object sender, EventArgs e)
