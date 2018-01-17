@@ -70,6 +70,8 @@ namespace Aliapoh.Overlay
                     Thread.Sleep(100);
             }
 
+            // Newtonsoft.Json -Version 10.0.3 ?
+
             var dirs = new List<string>()
             {
                 "cef.redist.x64." + TargetCEFVER + "\\CEF",

@@ -48,7 +48,7 @@ namespace Aliapoh.Overlay.OverlayManager
             OverlayName.ForeColor = Color.Black;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void CancelClick(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
