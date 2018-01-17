@@ -8,16 +8,11 @@ using System.Threading.Tasks;
 
 namespace Aliapoh.Overlay
 {
-    public class CefManager
+    public class CefLoader
     {
         public static void Initialize()
-        {
-            Debug.WriteLine("Overlay Initialize");
-
-            var isWow64 = Environment.Is64BitOperatingSystem ? "x64" : "x86";
-            var userAgent = "Mozilla/5.0 (Windows NT ";
-            userAgent += isWow64;
-            userAgent += ") AppleWebKit/537.36 (KHTML, like Gecko) Aliapoh.Overlay/Chrome/63.0.3239.109 Safari/537.36";
+        {            
+            var userAgent = "Mozilla/5.0 (Windows NT " + (Environment.Is64BitOperatingSystem ? "x64" : "x86") + ") AppleWebKit/537.36 (KHTML, like Gecko) Aliapoh.Overlay/Chrome/63.0.3239.109 Safari/537.36";
 
             var setting = new CefSettings()
             {

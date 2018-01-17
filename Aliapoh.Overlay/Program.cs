@@ -17,7 +17,8 @@ namespace Aliapoh.Overlay
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            CefManager.Initialize();
+            CefLoader.Initialize();
+            CefInstaller.Initialize();
 
             Application.Run(new OverlayManager.ManagerForm());
         }

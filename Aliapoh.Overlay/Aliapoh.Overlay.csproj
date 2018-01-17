@@ -83,7 +83,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CefInit\CefManager.cs" />
+    <Compile Include="CefManager\CefInstaller.cs" />
+    <Compile Include="CefManager\CefLoader.cs" />
+    <Compile Include="CefManager\Downloader.cs" />
     <Compile Include="IPlugin\IPlugin.cs" />
     <Compile Include="OverlayForm\FXs\OverlayPluginApi.cs" />
     <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
