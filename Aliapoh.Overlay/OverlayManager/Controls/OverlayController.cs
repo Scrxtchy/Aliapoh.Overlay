@@ -92,5 +92,12 @@ namespace Aliapoh.Overlay.OverlayManager
             var otp = (OverlayTabPage)overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
             otp.Overlay.Browser.Load(otp.Config.siteURL.Text);
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (!CheckTabValidate()) return;
+            var otp = (OverlayTabPage)overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
+            otp.Overlay.ShowDevTools();
+        }
     }
 }

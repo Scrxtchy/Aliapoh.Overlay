@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CefInit\CefManager.cs" />
-    <Compile Include="Extender\IntExtender.cs" />
     <Compile Include="IPlugin\IPlugin.cs" />
     <Compile Include="OverlayForm\FXs\OverlayAPI.cs" />
     <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
@@ -157,6 +156,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Extender\" />
     <Folder Include="PluginLoader\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -682,6 +682,7 @@
             this.button5.Size = new System.Drawing.Size(30, 30);
             this.button5.TabIndex = 5;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pluginTabPage
             // 
@@ -770,11 +771,11 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label overlayTitle;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage pluginTabPage;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -34,6 +34,7 @@ namespace Aliapoh.Overlay
         private bool D_ALT { get; set; }
         private bool D_CTRL { get; set; }
         private bool D_SHIFT { get; set; }
+        private CefMenuHandler CefMenu { get; set; }
 
         private OverlayAPI OverlayAPI { get; set; }
 
@@ -47,7 +48,7 @@ namespace Aliapoh.Overlay
             OverlayInit();
 
             OverlayAPI = new OverlayAPI(this);
-            Browser.RegisterAsyncJsObject("OverlayPluginAPI", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
+            Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
 
             new Thread((ThreadStart)delegate
             {
@@ -64,15 +65,14 @@ namespace Aliapoh.Overlay
             var browser = new BrowserSettings()
             {
                 WindowlessFrameRate = 30,
-                WebGl = CefState.Disabled,
-                BackgroundColor = 0
+                WebGl = CefState.Disabled,      // Why?: A: Spectre attack issue, google suggest turn on WebGL Feature.
+                BackgroundColor = 0,
             };
 
-            var Menu = new CefMenuHandler();
-            // http://kangax.github.io/compat-table/es6/
+            CefMenu = new CefMenuHandler();
             Browser = new ChromiumWebBrowser(Url, browser)
             {
-                MenuHandler = Menu,
+                MenuHandler = CefMenu,
             };
 
             Browser.DisplayHandler = new DisplayHandler();
@@ -217,60 +217,50 @@ namespace Aliapoh.Overlay
 
         private void OnKeyEvent(ref Message m)
         {
+            var key = (Keys)m.WParam.ToInt32();
             try
             {
-                var key = (Keys)m.WParam.ToInt32();
-                if((key == Keys.KanaMode || key == Keys.KanjiMode) && CultureInfo.CurrentCulture.Name == "ko-KR")
-                {
+                if (CultureInfo.CurrentCulture.Name == "ko-KR" && key == Keys.KanaMode)
                     key = Keys.HangulMode;
-                }
-
                 var keyEvent = new KeyEvent()
                 {
-                    WindowsKeyCode = m.WParam.ToInt32(),
+                    WindowsKeyCode = (int)key,
                     NativeKeyCode = (int)m.LParam.ToInt64(),
+                    IsSystemKey = (m.Msg == (int)WM.SYSCHAR || m.Msg == (int)WM.SYSKEYDOWN || m.Msg == (int)WM.SYSKEYUP)
                 };
-
-                keyEvent.IsSystemKey = m.Msg == (int)WM.SYSCHAR || m.Msg == (int)WM.SYSKEYDOWN || m.Msg == (int)WM.SYSKEYUP;
-
                 if (m.Msg == (int)WM.KEYDOWN || m.Msg == (int)WM.SYSKEYDOWN)
                     keyEvent.Type = KeyEventType.RawKeyDown;
                 else if (m.Msg == (int)WM.KEYUP || m.Msg == (int)WM.SYSKEYUP)
                     keyEvent.Type = KeyEventType.KeyUp;
                 else
                     keyEvent.Type = KeyEventType.Char;
-
                 if (IsKeyDown(Keys.Shift)) keyEvent.Modifiers |= CefEventFlags.ShiftDown;
                 if (IsKeyDown(Keys.Control)) keyEvent.Modifiers |= CefEventFlags.ControlDown;
                 if (IsKeyDown(Keys.Alt)) keyEvent.Modifiers |= CefEventFlags.AltDown;
-
                 if (IsKeyToggled(Keys.Capital)) keyEvent.Modifiers |= CefEventFlags.CapsLockOn;
                 if (IsKeyToggled(Keys.NumLock)) keyEvent.Modifiers |= CefEventFlags.NumLockOn;
-
                 if (((m.LParam.ToInt64() >> 48) & 0x100) != 0 && key == Keys.Return)
                     keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
-                else if (((m.LParam.ToInt64() >> 48) & 0x100) == 0 && m.WParam.ToInt32().Search(ExtendKeyPads))
+                if (((m.LParam.ToInt64() >> 48) & 0x100) == 0 && ExtendKeyPads.Contains((Keys)m.WParam.ToInt32()))
                     keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
-                else if (m.WParam.ToInt32().Search(NumPadKeys))
+                if (NumPadKeys.Contains((Keys)m.WParam.ToInt32()))
                     keyEvent.Modifiers |= CefEventFlags.IsKeyPad;
-                else if (key == Keys.Shift)
+                if (key == Keys.Shift)
                     keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
-                else if (key == Keys.Control)
+                if (key == Keys.Control)
                     keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
-                else if (key == Keys.Alt)
+                if (key == Keys.Alt)
                     keyEvent.Modifiers |= IsLeftKey(key) ? CefEventFlags.IsLeft : CefEventFlags.IsRight;
-                else if (key == Keys.LWin)
+                if (key == Keys.LWin)
                     keyEvent.Modifiers |= CefEventFlags.IsLeft;
-                else if (key == Keys.RWin)
+                if (key == Keys.RWin)
                     keyEvent.Modifiers |= CefEventFlags.IsRight;
-
-                Debug.WriteLine("KEY: " + key.ToString());
-
                 if (IsBrowserInitialized)
                     MainOverlay.GetHost().SendKeyEvent(keyEvent);
             }
             catch(Exception ex)
             {
+                Debug.WriteLine("KEY: " + key.ToString());
                 Debug.WriteLine(ex);
             }
         }
@@ -308,7 +298,6 @@ namespace Aliapoh.Overlay
             D_ALT = e.Alt;
             D_CTRL = e.Control;
             D_SHIFT = e.Shift;
-            base.OnKeyDown(e);
         }
 
         protected override void OnKeyUp(KeyEventArgs e)
@@ -316,7 +305,6 @@ namespace Aliapoh.Overlay
             D_ALT = e.Alt;
             D_CTRL = e.Control;
             D_SHIFT = e.Shift;
-            base.OnKeyUp(e);
         }
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|       Mouse Events       |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -374,10 +362,10 @@ namespace Aliapoh.Overlay
             get
             {
                 var style = base.CreateParams;
-                style.ClassStyle |= 200;
-                style.ExStyle |= 0x80000;
-                //style.ExStyle |= 0x200;
-                //style.ExStyle |= 0x20;
+                style.ClassStyle |= 200; // NoCloseBtn
+                style.ExStyle |= 0x8; // TopMost
+                style.ExStyle |= 0x80000; // Layered
+                style.ExStyle |= 0x8000000; // NoActive
                 return style;
             }
         }
