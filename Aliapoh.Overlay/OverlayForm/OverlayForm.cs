@@ -18,15 +18,16 @@ namespace Aliapoh.Overlay
 {
     public partial class OverlayForm : Form
     {
-        public bool IsBrowserInitialized { get; private set; }
         public bool IsBrowserLocked { get; set; }
+        public bool IsBrowserInitialized { get; private set; }
         public string OverlayName { get; set; }
         public string Url { get; set; }
 
-        public ChromiumWebBrowser Overlay;
+        public ChromiumWebBrowser Browser;
         public IBrowser MainOverlay;
         public Bitmap ScreenShot;
         
+        private bool isbrowserlocked { get; set; }
         private bool D_ALT { get; set; }
         private bool D_CTRL { get; set; }
         private bool D_SHIFT { get; set; }
@@ -42,7 +43,7 @@ namespace Aliapoh.Overlay
             OverlayInit();
 
             OverlayAPI = new OverlayAPI(this);
-            Overlay.RegisterAsyncJsObject("OverlayPluginAPI", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
+            Browser.RegisterAsyncJsObject("OverlayPluginAPI", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
 
             new Thread((ThreadStart)delegate
             {
@@ -65,15 +66,15 @@ namespace Aliapoh.Overlay
 
             var Menu = new CefMenuHandler();
             // http://kangax.github.io/compat-table/es6/
-            Overlay = new ChromiumWebBrowser("https://laiglinne-ff.github.io/cleaveore.FancyAmethyst/", browser)
+            Browser = new ChromiumWebBrowser("https://laiglinne-ff.github.io/cleaveore.FancyAmethyst/", browser)
             {
                 MenuHandler = Menu,
             };
 
-            Overlay.DisplayHandler = new DisplayHandler();
-            Overlay.BrowserInitialized += Overlay_BrowserInitialized;
-            Overlay.NewScreenshot += Overlay_NewScreenshot;
-            Overlay.ConsoleMessage += Overlay_ConsoleMessage;
+            Browser.DisplayHandler = new DisplayHandler();
+            Browser.BrowserInitialized += Overlay_BrowserInitialized;
+            Browser.NewScreenshot += Overlay_NewScreenshot;
+            Browser.ConsoleMessage += Overlay_ConsoleMessage;
         }
 
         private void Overlay_ConsoleMessage(object sender, ConsoleMessageEventArgs e)
@@ -81,10 +82,15 @@ namespace Aliapoh.Overlay
 
         }
 
+        public void ClickthruChange(bool b)
+        {
+
+        }
+
         public void ExecuteJavascript(string script)
         {
             if (IsBrowserInitialized)
-                Overlay.GetMainFrame().ExecuteJavaScriptAsync(script);
+                Browser.GetMainFrame().ExecuteJavaScriptAsync(script);
         }
         
         public void ShowDevTools()
@@ -99,15 +105,15 @@ namespace Aliapoh.Overlay
 
         private void Overlay_NewScreenshot(object sender, EventArgs e)
         {
-            ScreenShot = Overlay.ScreenshotOrNull(PopupBlending.Main);
+            ScreenShot = Browser.ScreenshotOrNull(PopupBlending.Main);
             if (ScreenShot != null) SetBitmap(ScreenShot);
             GC.Collect(1);
         }
 
         private void Overlay_BrowserInitialized(object sender, EventArgs e)
         {
-            MainOverlay = Overlay.GetBrowser();
-            Overlay.Size = new Size(Width, Height);
+            MainOverlay = Browser.GetBrowser();
+            Browser.Size = new Size(Width, Height);
             IsBrowserInitialized = true;
         }
 
@@ -118,7 +124,7 @@ namespace Aliapoh.Overlay
         {
             base.OnResize(e);
             if (IsBrowserInitialized)
-                Overlay.Size = new Size(Width, Height);
+                Browser.Size = new Size(Width, Height);
         }
         #endregion
         #region /_/_/_/|          WndProc         |/_/_/_/

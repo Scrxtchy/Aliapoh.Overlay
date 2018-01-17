@@ -17,6 +17,7 @@ namespace Aliapoh.Overlay.OverlayManager
     {
         private ChromiumWebBrowser issueBrowser;
 
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        INITALIZER        |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public OverlayController()
         {
             issueBrowser = new ChromiumWebBrowser("https://github.com/laiglinne-ff/Aliapoh.Overlay/issues")
@@ -43,21 +44,14 @@ namespace Aliapoh.Overlay.OverlayManager
                 }
             }).Start();
         }
-
+        #endregion
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      OVERLAYCONTROL      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private void OverlayCreate(string name)
         {
-            var TP = new TabPage()
+            var TP = new OverlayTabPage()
             {
-                Text = "OverlayTest",
-                BackColor = Color.White
+                Text = "OverlayTest"
             };
-
-            var Overlay = new OverlayConfig()
-            {
-                Dock = DockStyle.Fill
-            };
-
-            TP.Controls.Add(Overlay);
 
             overlayManageTabControl1.TabPages.Add(TP);
             SelectOverlayNameDisplay();
@@ -81,6 +75,7 @@ namespace Aliapoh.Overlay.OverlayManager
             if (!CheckTabValidate()) return;
             overlayManageTabControl1.TabPages.Remove(overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex]);
         }
+        #endregion
 
         private void overlayAddButton_Click(object sender, EventArgs e)
         {
@@ -95,6 +90,13 @@ namespace Aliapoh.Overlay.OverlayManager
         private void button3_Click(object sender, EventArgs e)
         {
             CloseSelectedOverlay();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (!CheckTabValidate()) return;
+            var otp = (OverlayTabPage)overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
+            otp.Overlay.Browser.Reload(); // Load(otp.Overlay.Overlay.Address);
         }
     }
 }

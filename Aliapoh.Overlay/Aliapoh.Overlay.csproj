@@ -96,6 +96,7 @@
     <Compile Include="OverlayManager\Controls\OverlayConfig.Designer.cs">
       <DependentUpon>OverlayConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="OverlayManager\Controls\OverlayTabPage.cs" />
     <Compile Include="OverlayManager\Forms\ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
