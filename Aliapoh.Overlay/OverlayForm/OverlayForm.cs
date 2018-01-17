@@ -36,7 +36,7 @@ namespace Aliapoh.Overlay
         private bool D_SHIFT { get; set; }
         private CefMenuHandler CefMenu { get; set; }
 
-        private OverlayAPI OverlayAPI { get; set; }
+        private OverlayPluginApi OverlayAPI { get; set; }
 
         public OverlayForm()
         {
@@ -47,7 +47,7 @@ namespace Aliapoh.Overlay
             InitializeComponent();
             OverlayInit();
 
-            OverlayAPI = new OverlayAPI(this);
+            OverlayAPI = new OverlayPluginApi(this);
             Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
 
             new Thread((ThreadStart)delegate

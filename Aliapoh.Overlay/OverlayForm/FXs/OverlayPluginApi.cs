@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Aliapoh.Overlay
 {
-    public class OverlayAPI
+    public class OverlayPluginApi
     {
-        private string version = "0.3.4.0"; // for OverlayPlugin Commpatible
+        private string version = "1.0.0.0";
         private OverlayForm Overlay { get; set; }
 
-        public OverlayAPI(OverlayForm o)
+        public OverlayPluginApi(OverlayForm o)
         {
             Overlay = o;
         }

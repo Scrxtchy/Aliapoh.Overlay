@@ -44,9 +44,11 @@ namespace Aliapoh.Overlay.OverlayManager
             var nod = new NewOverlayDialog();
             if(nod.ShowDialog() == DialogResult.OK)
             {
-                var TP = new OverlayTabPage("OverlayTest");
+                var TP = new OverlayTabPage(nod.PrimaryName, nod.URL == "" ? "about:blank" : nod.URL);
                 overlayManageTabControl1.TabPages.Add(TP);
                 SelectOverlayNameDisplay();
+
+                OverlayConfigs.Add(nod.PrimaryName, TP);
             }
         }
 
@@ -66,13 +68,15 @@ namespace Aliapoh.Overlay.OverlayManager
         private void CloseSelectedOverlay()
         {
             if (!CheckTabValidate()) return;
-            foreach(var c in overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex].Controls)
+            var tp = overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
+            foreach (var c in overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex].Controls)
             {
                 if (c.GetType() == typeof(OverlayConfig))
                     ((OverlayConfig)c).Overlay.Close();
                 ((Control)c).Dispose();
             }
-            overlayManageTabControl1.TabPages.Remove(overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex]);
+            OverlayConfigs.Remove(tp.Name);
+            overlayManageTabControl1.TabPages.Remove(tp);
         }
         #endregion
 

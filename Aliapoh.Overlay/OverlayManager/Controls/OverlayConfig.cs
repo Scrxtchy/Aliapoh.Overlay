@@ -16,7 +16,18 @@ namespace Aliapoh.Overlay
 
         public OverlayConfig(string name)
         {
+            Initializer(name, "about:blank");
+        }
+
+        public OverlayConfig(string name, string url)
+        {
+            Initializer(name, url);
+        }
+
+        private void Initializer(string name, string url)
+        {
             Overlay = new OverlayForm();
+            Overlay.Url = url;
             InitializeComponent();
             Overlay.Show();
 

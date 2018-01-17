@@ -20,17 +20,28 @@ namespace Aliapoh.Overlay
             }
         }
 
-        public OverlayTabPage(string name)
+        public void Initializer(string name, string url)
         {
-            Config = new OverlayConfig(name)
+            Config = new OverlayConfig(name, url)
             {
                 Dock = DockStyle.Fill
             };
 
             Text = name;
             Name = name;
+
             BackColor = Color.FromArgb(255, 255, 255);
             Controls.Add(Config);
+        }
+
+        public OverlayTabPage(string name, string url)
+        {
+            Initializer(name, url);
+        }
+
+        public OverlayTabPage(string name)
+        {
+            Initializer(name, "about:blank");
         }
     }
 }
