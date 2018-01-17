@@ -77,7 +77,7 @@
   <ItemGroup>
     <Compile Include="CefInit\CefManager.cs" />
     <Compile Include="IPlugin\IPlugin.cs" />
-    <Compile Include="OverlayForm\FXs\OverlayAPI.cs" />
+    <Compile Include="OverlayForm\FXs\OverlayPluginApi.cs" />
     <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
     <Compile Include="OverlayForm\FXs\NativeMethods.cs" />
     <Compile Include="OverlayForm\Handlers\CefMenuHandler.cs" />
@@ -92,7 +92,6 @@
     <Compile Include="OverlayManager\Controls\CustomTab\OverlayManageTabControl.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\OverlayTabControl.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\RECT.cs" />
-    <Compile Include="OverlayManager\Controls\NewOverlayPopup.cs" />
     <Compile Include="OverlayManager\Controls\OverlayConfig.cs">
       <SubType>UserControl</SubType>
     </Compile>

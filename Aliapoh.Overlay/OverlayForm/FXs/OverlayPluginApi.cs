@@ -17,7 +17,7 @@ namespace Aliapoh.Overlay
             Overlay = o;
         }
 
-        public string overlayVersion
+        public string OverlayVersion
         {
             get
             {
@@ -25,7 +25,7 @@ namespace Aliapoh.Overlay
             }
         }
 
-        public string overlayName
+        public string OverlayName
         {
             get
             {
@@ -33,12 +33,12 @@ namespace Aliapoh.Overlay
             }
         }
 
-        public void endEncounter()
+        public void EndEncounter()
         {
 
         }
 
-        public void takeScreenshot()
+        public void TakeScreenshot()
         {
 
         }

@@ -10,12 +10,7 @@ namespace Aliapoh.Overlay
         protected const int MaxTimerDelay = 1000 / 30;  // 30fps
         void IBrowserProcessHandler.OnContextInitialized()
         {
-            var cookieManager = Cef.GetGlobalCookieManager();
-            using (var context = Cef.GetGlobalRequestContext())
-            {
-                string errorMessage;
-                context.SetPreference("webkit.webprefs.plugins_enabled", true, out errorMessage);
-            }
+
         }
 
         void IBrowserProcessHandler.OnScheduleMessagePumpWork(long delay)

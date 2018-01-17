@@ -18,13 +18,13 @@ namespace Aliapoh.Overlay
             ref SizeStruct pSize, IntPtr hDc, ref PointStruct pptSrc, int crKey, ref BlendFunctionStruct pBlend, int dwFlags);
 
         [DllImport("user32.dll", ExactSpelling = false, SetLastError = true)]
-        public extern static long SetWindowLong(IntPtr handle, int index, long dwNewLong);
+        public extern static IntPtr SetWindowLong(IntPtr handle, IntPtr index, IntPtr dwNewLong);
 
         [DllImport("user32.dll", SetLastError = true)]
         public extern static IntPtr GetDC(IntPtr handle);
 
         [DllImport("user32.dll", SetLastError = false)]
-        public extern static int ReleaseDC(IntPtr hWnd, IntPtr hDc);
+        public extern static IntPtr ReleaseDC(IntPtr hWnd, IntPtr hDc);
 
         [DllImport("gdi32.dll", SetLastError = true)]
         public extern static IntPtr CreateCompatibleDC(IntPtr hDc);
@@ -42,7 +42,7 @@ namespace Aliapoh.Overlay
         public static extern short GetKeyState(int nVirtKey);
 
         [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hwnd, int message, int wParam, IntPtr lParam);
+        public static extern IntPtr SendMessage(IntPtr hwnd, int message, IntPtr wParam, IntPtr lParam);
 
         public struct PointStruct
         {

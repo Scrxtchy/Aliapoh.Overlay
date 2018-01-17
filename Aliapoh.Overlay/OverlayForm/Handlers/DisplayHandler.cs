@@ -54,8 +54,8 @@ namespace Aliapoh.Overlay
                         g.DrawImage(origin, new Rectangle(0, 0, 32, 32));
                     }
 
-                    NativeMethods.SendMessage(ptr, 0x80, 1, big.GetHicon());
-                    NativeMethods.SendMessage(ptr, 0x80, 0, small.GetHicon());
+                    NativeMethods.SendMessage(ptr, 0x80, new IntPtr(1), big.GetHicon());
+                    NativeMethods.SendMessage(ptr, 0x80, new IntPtr(0), small.GetHicon());
                 }
             }
             catch(Exception ex)
