@@ -7,10 +7,12 @@ using System.IO;
 using System.Net;
 using System.Diagnostics;
 using System.Threading;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace Aliapoh.Overlay
 {
-    public class CefInstaller
+    public class CefLoadByNupkg
     {
         public static Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
         {
@@ -70,6 +72,8 @@ namespace Aliapoh.Overlay
                     Thread.Sleep(100);
             }
 
+            // Newtonsoft.Json -Version 10.0.3 ?
+
             var dirs = new List<string>()
             {
                 "cef.redist.x64." + TargetCEFVER + "\\CEF",
@@ -105,10 +109,37 @@ namespace Aliapoh.Overlay
                 {
                     if (file.Contains(".pdb")) continue;
                     var f = Path.Combine(dest, Path.GetFileName(file));
-                    Debug.WriteLine(file + " to " + f);
                     if (!File.Exists(f)) File.Copy(file, f);
                 }
             }
+
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
+            Thread.Sleep(500);
+            CefLoader.Initialize();
+            Thread.Sleep(500);
+        }
+
+        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        {
+            // Binary Loader
+            var binfiles = new List<string>()
+            {
+                "CefSharp",
+                "CefSharp.Core",
+                "CefSharp.OffScreen",
+                "CefSharp.WinForms",
+                // "Newtonsoft.Json"
+            };
+
+            string asmFile = (args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(",")) : args.Name);
+            if (!binfiles.Contains(asmFile)) return null;
+            try
+            {
+                Debug.WriteLine("Load " + asmFile);
+                return Assembly.LoadFile(Path.Combine(Program.CEFDIR, asmFile + ".dll"));
+            }
+            catch { return null; }
         }
 
         public static void MKDIR(string dir)

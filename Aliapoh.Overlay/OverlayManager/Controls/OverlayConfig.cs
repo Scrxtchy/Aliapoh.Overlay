@@ -123,5 +123,25 @@ namespace Aliapoh.Overlay
         {
 
         }
+
+        public void SettingSave()
+        {
+            var set = new Dictionary<string, object>()
+            {
+                { "Url", siteURL.Text },
+                { "Show", overlayShow.Checked },
+                { "Clickthru", overlayClickthru.Checked },
+                { "Locked", overlayLock.Checked },
+                { "UseGlobalHotkey", overlayGlobalHotkey.Checked },
+                { "BeforeLogLineRead", overlayEnableBeforeLogLineRead.Checked },
+                { "Framerate", overlayFramerate.Value },
+                { "Updaterate", overlayUpdateRate.Value },
+                { "Width", Overlay.Width },
+                { "Height", Overlay.Height },
+                { "Left", Overlay.Left },
+                { "Top", Overlay.Top },
+                //{ "GlobalHotkey",  }
+            };
+        }
     }
 }
