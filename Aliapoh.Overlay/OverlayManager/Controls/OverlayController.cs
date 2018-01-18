@@ -77,6 +77,11 @@ namespace Aliapoh.Overlay.OverlayManager
             }
             OverlayConfigs.Remove(tp.Name);
             overlayManageTabControl1.TabPages.Remove(tp);
+
+            if (overlayManageTabControl1.TabPages.Count == 0)
+            {
+                overlayTitle.Text = "Please Select Overlay";
+            }
         }
         #endregion
 

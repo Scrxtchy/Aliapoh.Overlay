@@ -20,6 +20,9 @@ namespace Aliapoh.Overlay
         [DllImport("user32.dll", ExactSpelling = false, SetLastError = true)]
         public extern static IntPtr SetWindowLong(IntPtr handle, IntPtr index, IntPtr dwNewLong);
 
+        [DllImport("user32.dll", ExactSpelling = false, SetLastError = true)]
+        public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
         [DllImport("user32.dll", SetLastError = true)]
         public extern static IntPtr GetDC(IntPtr handle);
 

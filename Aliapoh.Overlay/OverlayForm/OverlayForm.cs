@@ -105,9 +105,10 @@ namespace Aliapoh.Overlay
 
         }
 
-        public void ClickthruChange(bool b)
+        public void ClickthruChange(bool enabled)
         {
-
+            if (enabled) EnableMouseClickThru();
+            else DisableMouseClickThru();
         }
 
         public void ExecuteJavascript(string script)
@@ -124,6 +125,16 @@ namespace Aliapoh.Overlay
         public void CloseDevTools()
         {
             MainOverlay.CloseDevTools();
+        }
+
+        private void EnableMouseClickThru()
+        {
+            NativeMethods.SetWindowLong(Handle, new IntPtr(-20), new IntPtr(NativeMethods.GetWindowLong(Handle, -20) | 0x20));
+        }
+
+        private void DisableMouseClickThru()
+        {
+            NativeMethods.SetWindowLong(Handle, new IntPtr(-20), new IntPtr(NativeMethods.GetWindowLong(Handle, -20) & ~0x20));
         }
 
         private void Overlay_NewScreenshot(object sender, EventArgs e)
