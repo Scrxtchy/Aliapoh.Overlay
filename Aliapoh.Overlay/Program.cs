@@ -23,6 +23,7 @@ namespace Aliapoh.Overlay
             else
                 CEFDIR = CefLoadByNupkg.DIRDICT["CEFX86"];
             CefLoadByNupkg.Initialize();
+            LanguageLoader.Initialize();
             Application.Run(new OverlayManager.ManagerForm());
         }
 

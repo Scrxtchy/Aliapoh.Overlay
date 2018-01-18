@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Aliapoh.Overlay
 {
     public partial class OverlayConfig : UserControl
     {
+        public Keys GlobalHotkey { get; set; }
+        public Keys GlobalHotkeyModifiers { get; set; }
+        public GlobalHotkeyType GlobalHotkeyType { get; set; }
         public OverlayForm Overlay { get; set; }
 
         public OverlayConfig(string name)
@@ -122,6 +126,7 @@ namespace Aliapoh.Overlay
 
         public void SettingSave()
         {
+            // Overlay Setting base
             var set = new Dictionary<string, object>()
             {
                 { "Url", siteURL.Text },
@@ -130,14 +135,76 @@ namespace Aliapoh.Overlay
                 { "Locked", overlayLock.Checked },
                 { "UseGlobalHotkey", overlayGlobalHotkey.Checked },
                 { "BeforeLogLineRead", overlayEnableBeforeLogLineRead.Checked },
+
                 { "Framerate", overlayFramerate.Value },
                 { "Updaterate", overlayUpdateRate.Value },
+
                 { "Width", Overlay.Width },
                 { "Height", Overlay.Height },
+
                 { "Left", Overlay.Left },
                 { "Top", Overlay.Top },
-                //{ "GlobalHotkey",  }
+
+                { "GlobalHotkey", (int)GlobalHotkey },
+                { "GlobalHotkeyModifiers", (int)GlobalHotkeyModifiers },
+                { "GlobalHotkeyType", (int)GlobalHotkeyType }
             };
+        }
+
+        private void OverlayGlobalHotkeyInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+            var key = RemoveModifiers(e.KeyCode, e.Modifiers);
+            GlobalHotkey = key;
+            GlobalHotkeyModifiers = e.Modifiers;
+        }
+
+        private void OverlayGlobalHotkeyInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void OverlayGlobalHotkeyInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            overlayGlobalHotkeyInput.Text = GetHotkeyString(GlobalHotkeyModifiers, GlobalHotkey, "");
+        }
+
+        public static string GetHotkeyString(Keys modifier, Keys key, String defaultText = "")
+        {
+            var sbKeys = new StringBuilder();
+            if ((modifier & Keys.Shift) == Keys.Shift)
+            {
+                sbKeys.Append("Shift + ");
+            }
+            if ((modifier & Keys.Control) == Keys.Control)
+            {
+                sbKeys.Append("Ctrl + ");
+            }
+            if ((modifier & Keys.Alt) == Keys.Alt)
+            {
+                sbKeys.Append("Alt + ");
+            }
+            if ((modifier & Keys.LWin) == Keys.LWin || (modifier & Keys.RWin) == Keys.RWin)
+            {
+                sbKeys.Append("Win + ");
+            }
+            sbKeys.Append(Enum.ToObject(typeof(Keys), key).ToString());
+            return sbKeys.ToString();
+        }
+
+        public static Keys RemoveModifiers(Keys keyCode, Keys modifiers)
+        {
+            var key = keyCode;
+            var modifierList = new List<Keys>() { Keys.ControlKey, Keys.LControlKey, Keys.Alt, Keys.ShiftKey, Keys.Shift, Keys.LShiftKey, Keys.RShiftKey, Keys.Control, Keys.LWin, Keys.RWin };
+            foreach (var mod in modifierList)
+            {
+                if (key.HasFlag(mod))
+                {
+                    if (key == mod)
+                        key &= ~mod;
+                }
+            }
+            return key;
         }
     }
 }

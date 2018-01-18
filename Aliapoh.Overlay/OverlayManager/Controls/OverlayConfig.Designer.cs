@@ -40,8 +40,8 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.overlayWidth = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.WidthLabel = new System.Windows.Forms.Label();
+            this.HeightLabel = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.overlayHeight = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -51,31 +51,31 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.overlayY = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.SizeLabel = new System.Windows.Forms.Label();
+            this.PositionLabel = new System.Windows.Forms.Label();
             this.overlayEnableBeforeLogLineRead = new System.Windows.Forms.CheckBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.EnableBeforeLogLineReadLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.overlayName = new System.Windows.Forms.TextBox();
             this.overlayNameChange = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.OverlayNameLabel = new System.Windows.Forms.Label();
+            this.HotkeyTypeLabel = new System.Windows.Forms.Label();
+            this.GlobalHotkeyLabel = new System.Windows.Forms.Label();
             this.overlayGlobalHotkey = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.overlayUpdateRate = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.EnableGlobalHotkeyLabel = new System.Windows.Forms.Label();
+            this.DataUpdateRateLabel = new System.Windows.Forms.Label();
+            this.MaxframelateLabel = new System.Windows.Forms.Label();
             this.overlayLock = new System.Windows.Forms.CheckBox();
             this.overlayClickthru = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ClickthruLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.overlayShow = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LockOverlayLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.MaxframelateDescLabel = new System.Windows.Forms.Label();
             this.overlayFramerate = new System.Windows.Forms.NumericUpDown();
             this.overlayGlobalHotkeyInput = new System.Windows.Forms.TextBox();
             this.overlayGlobalHotkeyType = new System.Windows.Forms.ComboBox();
@@ -182,25 +182,25 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 11);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.SizeLabel, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.PositionLabel, 0, 10);
             this.tableLayoutPanel1.Controls.Add(this.overlayEnableBeforeLogLineRead, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.EnableBeforeLogLineReadLabel, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.OverlayNameLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.HotkeyTypeLabel, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyLabel, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.overlayGlobalHotkey, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.EnableGlobalHotkeyLabel, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.DataUpdateRateLabel, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.MaxframelateLabel, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.overlayLock, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.overlayClickthru, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ClickthruLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.overlayShow, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.LockOverlayLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.overlayGlobalHotkeyInput, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.overlayGlobalHotkeyType, 1, 8);
@@ -236,8 +236,8 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Controls.Add(this.label20, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.overlayWidth, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label21, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label22, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.WidthLabel, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.HeightLabel, 3, 0);
             this.tableLayoutPanel6.Controls.Add(this.label23, 5, 0);
             this.tableLayoutPanel6.Controls.Add(this.overlayHeight, 4, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -291,27 +291,27 @@
             0});
             this.overlayWidth.ValueChanged += new System.EventHandler(this.OverlayWidth_ValueChanged);
             // 
-            // label21
+            // WidthLabel
             // 
-            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label21.Location = new System.Drawing.Point(0, 0);
-            this.label21.Margin = new System.Windows.Forms.Padding(0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(50, 24);
-            this.label21.TabIndex = 15;
-            this.label21.Text = "Width";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.WidthLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WidthLabel.Location = new System.Drawing.Point(0, 0);
+            this.WidthLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.WidthLabel.Name = "WidthLabel";
+            this.WidthLabel.Size = new System.Drawing.Size(50, 24);
+            this.WidthLabel.TabIndex = 15;
+            this.WidthLabel.Text = "Width";
+            this.WidthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label22
+            // HeightLabel
             // 
-            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label22.Location = new System.Drawing.Point(180, 0);
-            this.label22.Margin = new System.Windows.Forms.Padding(0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(50, 24);
-            this.label22.TabIndex = 18;
-            this.label22.Text = "Height";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HeightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HeightLabel.Location = new System.Drawing.Point(180, 0);
+            this.HeightLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.HeightLabel.Name = "HeightLabel";
+            this.HeightLabel.Size = new System.Drawing.Size(50, 24);
+            this.HeightLabel.TabIndex = 18;
+            this.HeightLabel.Text = "Height";
+            this.HeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label23
             // 
@@ -472,29 +472,29 @@
             0});
             this.overlayY.ValueChanged += new System.EventHandler(this.OverlayY_ValueChanged);
             // 
-            // label15
+            // SizeLabel
             // 
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Location = new System.Drawing.Point(0, 264);
-            this.label15.Margin = new System.Windows.Forms.Padding(0);
-            this.label15.Name = "label15";
-            this.label15.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label15.Size = new System.Drawing.Size(200, 24);
-            this.label15.TabIndex = 27;
-            this.label15.Text = "Size";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SizeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SizeLabel.Location = new System.Drawing.Point(0, 264);
+            this.SizeLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.SizeLabel.Name = "SizeLabel";
+            this.SizeLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.SizeLabel.Size = new System.Drawing.Size(200, 24);
+            this.SizeLabel.TabIndex = 27;
+            this.SizeLabel.Text = "Size";
+            this.SizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label14
+            // PositionLabel
             // 
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(0, 240);
-            this.label14.Margin = new System.Windows.Forms.Padding(0);
-            this.label14.Name = "label14";
-            this.label14.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label14.Size = new System.Drawing.Size(200, 24);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "Position";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PositionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PositionLabel.Location = new System.Drawing.Point(0, 240);
+            this.PositionLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.PositionLabel.Name = "PositionLabel";
+            this.PositionLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.PositionLabel.Size = new System.Drawing.Size(200, 24);
+            this.PositionLabel.TabIndex = 26;
+            this.PositionLabel.Text = "Position";
+            this.PositionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // overlayEnableBeforeLogLineRead
             // 
@@ -507,17 +507,17 @@
             this.overlayEnableBeforeLogLineRead.TabIndex = 25;
             this.overlayEnableBeforeLogLineRead.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // EnableBeforeLogLineReadLabel
             // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(0, 216);
-            this.label13.Margin = new System.Windows.Forms.Padding(0);
-            this.label13.Name = "label13";
-            this.label13.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label13.Size = new System.Drawing.Size(200, 24);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "Enable beforeLogLineRead";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EnableBeforeLogLineReadLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnableBeforeLogLineReadLabel.Location = new System.Drawing.Point(0, 216);
+            this.EnableBeforeLogLineReadLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.EnableBeforeLogLineReadLabel.Name = "EnableBeforeLogLineReadLabel";
+            this.EnableBeforeLogLineReadLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.EnableBeforeLogLineReadLabel.Size = new System.Drawing.Size(200, 24);
+            this.EnableBeforeLogLineReadLabel.TabIndex = 24;
+            this.EnableBeforeLogLineReadLabel.Text = "Enable beforeLogLineRead";
+            this.EnableBeforeLogLineReadLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel4
             // 
@@ -557,42 +557,42 @@
             this.overlayNameChange.UseVisualStyleBackColor = true;
             this.overlayNameChange.Click += new System.EventHandler(this.OverlayNameChange_Click);
             // 
-            // label12
+            // OverlayNameLabel
             // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(0);
-            this.label12.Name = "label12";
-            this.label12.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label12.Size = new System.Drawing.Size(200, 24);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Overlay name";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.OverlayNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayNameLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.OverlayNameLabel.Location = new System.Drawing.Point(0, 0);
+            this.OverlayNameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayNameLabel.Name = "OverlayNameLabel";
+            this.OverlayNameLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.OverlayNameLabel.Size = new System.Drawing.Size(200, 24);
+            this.OverlayNameLabel.TabIndex = 22;
+            this.OverlayNameLabel.Text = "Overlay name";
+            this.OverlayNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label11
+            // HotkeyTypeLabel
             // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(0, 192);
-            this.label11.Margin = new System.Windows.Forms.Padding(0);
-            this.label11.Name = "label11";
-            this.label11.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label11.Size = new System.Drawing.Size(200, 24);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Hotkey Type";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.HotkeyTypeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotkeyTypeLabel.Location = new System.Drawing.Point(0, 192);
+            this.HotkeyTypeLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.HotkeyTypeLabel.Name = "HotkeyTypeLabel";
+            this.HotkeyTypeLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.HotkeyTypeLabel.Size = new System.Drawing.Size(200, 24);
+            this.HotkeyTypeLabel.TabIndex = 20;
+            this.HotkeyTypeLabel.Text = "Hotkey Type";
+            this.HotkeyTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label10
+            // GlobalHotkeyLabel
             // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Location = new System.Drawing.Point(0, 168);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label10.Size = new System.Drawing.Size(200, 24);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Global hotkey";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GlobalHotkeyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GlobalHotkeyLabel.Location = new System.Drawing.Point(0, 168);
+            this.GlobalHotkeyLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.GlobalHotkeyLabel.Name = "GlobalHotkeyLabel";
+            this.GlobalHotkeyLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.GlobalHotkeyLabel.Size = new System.Drawing.Size(200, 24);
+            this.GlobalHotkeyLabel.TabIndex = 18;
+            this.GlobalHotkeyLabel.Text = "Global hotkey";
+            this.GlobalHotkeyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // overlayGlobalHotkey
             // 
@@ -660,41 +660,41 @@
             0,
             0});
             // 
-            // label7
+            // EnableGlobalHotkeyLabel
             // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(0, 144);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label7.Size = new System.Drawing.Size(200, 24);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Enable global hotkey";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EnableGlobalHotkeyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnableGlobalHotkeyLabel.Location = new System.Drawing.Point(0, 144);
+            this.EnableGlobalHotkeyLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.EnableGlobalHotkeyLabel.Name = "EnableGlobalHotkeyLabel";
+            this.EnableGlobalHotkeyLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.EnableGlobalHotkeyLabel.Size = new System.Drawing.Size(200, 24);
+            this.EnableGlobalHotkeyLabel.TabIndex = 14;
+            this.EnableGlobalHotkeyLabel.Text = "Enable global hotkey";
+            this.EnableGlobalHotkeyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label8
+            // DataUpdateRateLabel
             // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(0, 120);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label8.Size = new System.Drawing.Size(200, 24);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Data update rate";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DataUpdateRateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataUpdateRateLabel.Location = new System.Drawing.Point(0, 120);
+            this.DataUpdateRateLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.DataUpdateRateLabel.Name = "DataUpdateRateLabel";
+            this.DataUpdateRateLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.DataUpdateRateLabel.Size = new System.Drawing.Size(200, 24);
+            this.DataUpdateRateLabel.TabIndex = 12;
+            this.DataUpdateRateLabel.Text = "Data update rate";
+            this.DataUpdateRateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label5
+            // MaxframelateLabel
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(0, 96);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label5.Size = new System.Drawing.Size(200, 24);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Max framerate";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MaxframelateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MaxframelateLabel.Location = new System.Drawing.Point(0, 96);
+            this.MaxframelateLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.MaxframelateLabel.Name = "MaxframelateLabel";
+            this.MaxframelateLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.MaxframelateLabel.Size = new System.Drawing.Size(200, 24);
+            this.MaxframelateLabel.TabIndex = 10;
+            this.MaxframelateLabel.Text = "Max framerate";
+            this.MaxframelateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // overlayLock
             // 
@@ -720,18 +720,18 @@
             this.overlayClickthru.UseVisualStyleBackColor = true;
             this.overlayClickthru.CheckedChanged += new System.EventHandler(this.OverlayClickthru_CheckedChanged);
             // 
-            // label3
+            // ClickthruLabel
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(0, 48);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label3.Size = new System.Drawing.Size(200, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Clickthru";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ClickthruLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ClickthruLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ClickthruLabel.Location = new System.Drawing.Point(0, 48);
+            this.ClickthruLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.ClickthruLabel.Name = "ClickthruLabel";
+            this.ClickthruLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.ClickthruLabel.Size = new System.Drawing.Size(200, 24);
+            this.ClickthruLabel.TabIndex = 3;
+            this.ClickthruLabel.Text = "Clickthru";
+            this.ClickthruLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
@@ -760,24 +760,24 @@
             this.overlayShow.UseVisualStyleBackColor = true;
             this.overlayShow.CheckedChanged += new System.EventHandler(this.OverlayShow_CheckedChanged);
             // 
-            // label4
+            // LockOverlayLabel
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(0, 72);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label4.Size = new System.Drawing.Size(200, 24);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Lock Overlay";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LockOverlayLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LockOverlayLabel.Location = new System.Drawing.Point(0, 72);
+            this.LockOverlayLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.LockOverlayLabel.Name = "LockOverlayLabel";
+            this.LockOverlayLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.LockOverlayLabel.Size = new System.Drawing.Size(200, 24);
+            this.LockOverlayLabel.TabIndex = 5;
+            this.LockOverlayLabel.Text = "Lock Overlay";
+            this.LockOverlayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label6, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.MaxframelateDescLabel, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.overlayFramerate, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(200, 96);
@@ -788,16 +788,16 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(400, 24);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
-            // label6
+            // MaxframelateDescLabel
             // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(80, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(320, 24);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "fps (※ This value required restart)";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MaxframelateDescLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MaxframelateDescLabel.Location = new System.Drawing.Point(80, 0);
+            this.MaxframelateDescLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.MaxframelateDescLabel.Name = "MaxframelateDescLabel";
+            this.MaxframelateDescLabel.Size = new System.Drawing.Size(320, 24);
+            this.MaxframelateDescLabel.TabIndex = 6;
+            this.MaxframelateDescLabel.Text = "fps (※ This value required restart)";
+            this.MaxframelateDescLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // overlayFramerate
             // 
@@ -826,11 +826,15 @@
             // overlayGlobalHotkeyInput
             // 
             this.overlayGlobalHotkeyInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overlayGlobalHotkeyInput.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.overlayGlobalHotkeyInput.Location = new System.Drawing.Point(200, 168);
             this.overlayGlobalHotkeyInput.Margin = new System.Windows.Forms.Padding(0);
             this.overlayGlobalHotkeyInput.Name = "overlayGlobalHotkeyInput";
             this.overlayGlobalHotkeyInput.Size = new System.Drawing.Size(400, 23);
             this.overlayGlobalHotkeyInput.TabIndex = 19;
+            this.overlayGlobalHotkeyInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OverlayGlobalHotkeyInput_KeyDown);
+            this.overlayGlobalHotkeyInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OverlayGlobalHotkeyInput_KeyPress);
+            this.overlayGlobalHotkeyInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OverlayGlobalHotkeyInput_KeyUp);
             // 
             // overlayGlobalHotkeyType
             // 
@@ -887,32 +891,32 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox overlayShow;
         private System.Windows.Forms.CheckBox overlayClickthru;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label ClickthruLabel;
+        private System.Windows.Forms.Label LockOverlayLabel;
+        private System.Windows.Forms.Label EnableGlobalHotkeyLabel;
+        private System.Windows.Forms.Label DataUpdateRateLabel;
+        private System.Windows.Forms.Label MaxframelateLabel;
         private System.Windows.Forms.CheckBox overlayLock;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label MaxframelateDescLabel;
         private System.Windows.Forms.NumericUpDown overlayFramerate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown overlayUpdateRate;
         private System.Windows.Forms.CheckBox overlayGlobalHotkey;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label GlobalHotkeyLabel;
         private System.Windows.Forms.TextBox overlayGlobalHotkeyInput;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label HotkeyTypeLabel;
         private System.Windows.Forms.ComboBox overlayGlobalHotkeyType;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label OverlayNameLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button overlayNameChange;
         private System.Windows.Forms.TextBox overlayName;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label EnableBeforeLogLineReadLabel;
         private System.Windows.Forms.CheckBox overlayEnableBeforeLogLineRead;
         public System.Windows.Forms.TextBox siteURL;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label SizeLabel;
+        private System.Windows.Forms.Label PositionLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.NumericUpDown overlayX;
@@ -923,8 +927,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.NumericUpDown overlayWidth;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label WidthLabel;
+        private System.Windows.Forms.Label HeightLabel;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.NumericUpDown overlayHeight;
     }

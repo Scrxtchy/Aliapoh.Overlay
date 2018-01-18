@@ -29,49 +29,49 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewOverlayDialog));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.OkButton = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.OverlayURL = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.FramerateLabel = new System.Windows.Forms.Label();
+            this.URLLabel = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.OverlayName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.FramePerSecondLabel = new System.Windows.Forms.Label();
             this.OverlayFramerate = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OverlayFramerate)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // OkButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(348, 91);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.CheckValidateOverlayName);
+            this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.OkButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OkButton.Location = new System.Drawing.Point(348, 91);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(0);
+            this.OkButton.Name = "OkButton";
+            this.OkButton.Size = new System.Drawing.Size(75, 23);
+            this.OkButton.TabIndex = 4;
+            this.OkButton.Text = "Ok";
+            this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.CheckValidateOverlayName);
             // 
-            // button2
+            // CancelButton
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(431, 91);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.CancelClick);
+            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelButton.Location = new System.Drawing.Point(431, 91);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(0);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButton.TabIndex = 5;
+            this.CancelButton.Text = "Cancel";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.CancelClick);
             // 
             // tableLayoutPanel1
             // 
@@ -82,9 +82,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.OverlayURL, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.FramerateLabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.URLLabel, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.NameLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.OverlayName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 9);
@@ -108,41 +108,41 @@
             this.OverlayURL.Size = new System.Drawing.Size(377, 23);
             this.OverlayURL.TabIndex = 6;
             // 
-            // label5
+            // FramerateLabel
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(0, 48);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.label5.Size = new System.Drawing.Size(120, 24);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Framerate";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FramerateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FramerateLabel.Location = new System.Drawing.Point(0, 48);
+            this.FramerateLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.FramerateLabel.Name = "FramerateLabel";
+            this.FramerateLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.FramerateLabel.Size = new System.Drawing.Size(120, 24);
+            this.FramerateLabel.TabIndex = 4;
+            this.FramerateLabel.Text = "Framerate";
+            this.FramerateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // URLLabel
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(0, 24);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.label3.Size = new System.Drawing.Size(120, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "URL";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.URLLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.URLLabel.Location = new System.Drawing.Point(0, 24);
+            this.URLLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.URLLabel.Name = "URLLabel";
+            this.URLLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.URLLabel.Size = new System.Drawing.Size(120, 24);
+            this.URLLabel.TabIndex = 2;
+            this.URLLabel.Text = "URL";
+            this.URLLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // NameLabel
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.label1.Size = new System.Drawing.Size(120, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.NameLabel.Location = new System.Drawing.Point(0, 0);
+            this.NameLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.NameLabel.Size = new System.Drawing.Size(120, 24);
+            this.NameLabel.TabIndex = 0;
+            this.NameLabel.Text = "Name";
+            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // OverlayName
             // 
@@ -159,7 +159,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.FramePerSecondLabel, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.OverlayFramerate, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(120, 48);
@@ -170,16 +170,16 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(377, 24);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // label2
+            // FramePerSecondLabel
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(100, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(277, 24);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "fps";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.FramePerSecondLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FramePerSecondLabel.Location = new System.Drawing.Point(100, 0);
+            this.FramePerSecondLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.FramePerSecondLabel.Name = "FramePerSecondLabel";
+            this.FramePerSecondLabel.Size = new System.Drawing.Size(277, 24);
+            this.FramePerSecondLabel.TabIndex = 5;
+            this.FramePerSecondLabel.Text = "fps";
+            this.FramePerSecondLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // OverlayFramerate
             // 
@@ -209,8 +209,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(515, 123);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.OkButton);
             this.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -228,16 +228,16 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button OkButton;
+        private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label FramerateLabel;
+        private System.Windows.Forms.Label URLLabel;
         private System.Windows.Forms.TextBox OverlayName;
         private System.Windows.Forms.TextBox OverlayURL;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label FramePerSecondLabel;
         private System.Windows.Forms.NumericUpDown OverlayFramerate;
     }
 }

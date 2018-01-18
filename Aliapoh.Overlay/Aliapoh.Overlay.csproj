@@ -92,7 +92,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\Thirdparty\Newtonsoft.JSON\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\Thirdparty\Newtonsoft\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -111,6 +111,7 @@
     <Compile Include="CefManager\CefLoadByNupkg.cs" />
     <Compile Include="CefManager\CefLoader.cs" />
     <Compile Include="CefManager\Downloader.cs" />
+    <Compile Include="OverlayManager\Enums\GlobalHotkeyType.cs" />
     <Compile Include="OverlayManager\GlobalHook\Events\KeyPressedEventArgs.cs" />
     <Compile Include="OverlayManager\GlobalHook\Origin\Keyboard.cs" />
     <Compile Include="OverlayManager\GlobalHook\Origin\KeyHook.cs" />
@@ -118,7 +119,8 @@
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\KeyboardHook.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\ModifierKeys.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\Window.cs" />
-    <Compile Include="OverlayManager\IPlugin\IPlugin.cs" />
+    <Compile Include="OverlayManager\Localization\LanguageClass.cs" />
+    <Compile Include="OverlayManager\Plugins\IPlugin.cs" />
     <Compile Include="OverlayForm\FXs\OverlayPluginApi.cs" />
     <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
     <Compile Include="OverlayForm\FXs\NativeMethods.cs" />
@@ -159,6 +161,8 @@
     <Compile Include="OverlayManager\Forms\NewOverlayDialog.Designer.cs">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="OverlayManager\Localization\LanguageLoader.cs" />
+    <Compile Include="OverlayManager\SettingManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="OverlayForm\OverlayForm.resx">
@@ -184,11 +188,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extender\" />
-    <Folder Include="OverlayManager\PluginLoader\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="aliapoh_icon.ico" />
@@ -204,6 +208,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OverlayManager\Localization\LanguageFile.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
