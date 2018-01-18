@@ -24,12 +24,6 @@ namespace Aliapoh.Overlay
             { "CEFX64SHD", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF", "x64", "swiftshader") },
         };
 
-        public static List<string> NUPKGS = new List<string>()
-        {
-            "cefsharp.winforms",
-            "cefsharp.offscreen",
-        };
-
         public static string TargetCEFVER = "3.3239.1716";
         public static string TargetCEFTAG = "63.0.0-pre01";
         public static void Initialize()
@@ -49,7 +43,14 @@ namespace Aliapoh.Overlay
                     wc.DownloadFile("https://dist.nuget.org/win-x86-commandline/latest/nuget.exe", DIRDICT["BINDIR"] + "\\nuget.exe");
             }
 
-            foreach(var bin in NUPKGS)
+            var nupkgs = new List<string>()
+            {
+                "install cefsharp.winforms -version " + TargetCEFTAG,
+                "install cefsharp.offscreen -version " + TargetCEFTAG,
+                "install newtonsoft.json -version 10.0.3",
+            };
+
+            foreach(var bin in nupkgs)
             {
                 var p = new Process()
                 {
@@ -57,7 +58,7 @@ namespace Aliapoh.Overlay
                     {
                         WorkingDirectory = DIRDICT["BINDIR"],
                         WindowStyle = ProcessWindowStyle.Hidden,
-                        Arguments = "install " + bin + " -version " + TargetCEFTAG,
+                        Arguments = bin,
                         CreateNoWindow = true,
                         FileName = DIRDICT["BINDIR"] + "\\nuget.exe"
                     }
