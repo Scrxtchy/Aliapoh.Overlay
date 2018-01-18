@@ -126,7 +126,12 @@ namespace Aliapoh.Overlay
                 "CefSharp.Core",
                 "CefSharp.OffScreen",
                 "CefSharp.WinForms",
-                // "Newtonsoft.Json"
+                "Newtonsoft.Json"
+            };
+
+            var dicts = new Dictionary<string, string>()
+            {
+                { "Newtonsoft.Json", Path.Combine(Program.APPDIR, "Bin", "Newtonsoft.json.10.0.3", "lib", "net45") }
             };
 
             string asmFile = (args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(",")) : args.Name);
@@ -134,7 +139,10 @@ namespace Aliapoh.Overlay
             try
             {
                 Debug.WriteLine("Load " + asmFile);
-                return Assembly.LoadFile(Path.Combine(Program.CEFDIR, asmFile + ".dll"));
+                if(asmFile.Contains("CefSharp"))
+                    return Assembly.LoadFile(Path.Combine(Program.CEFDIR, asmFile + ".dll"));
+                else
+                    return Assembly.LoadFile(Path.Combine(dicts[asmFile], asmFile + ".dll"));
             }
             catch { return null; }
         }
