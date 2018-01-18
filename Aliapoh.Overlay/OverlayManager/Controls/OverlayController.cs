@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
+using System.Diagnostics;
 
 namespace Aliapoh.Overlay.OverlayManager
 {
     public partial class OverlayController : UserControl
     {
+        public static string OverlayEmpty = "Click [ + ] to setup your first overlay";
         public static Dictionary<string, OverlayTabPage> OverlayConfigs = new Dictionary<string, OverlayTabPage>();
         private ChromiumWebBrowser issueBrowser;
 
@@ -21,7 +23,13 @@ namespace Aliapoh.Overlay.OverlayManager
             issueBrowser.BrowserSettings.WebGl = CefState.Disabled;
 
             InitializeComponent();
+
+            if(!DesignMode)
+                LanguageLoader.LanguagePatch(this);
+
             issueBrowserPanel.Controls.Add(issueBrowser);
+
+            Debug.WriteLine(OverlayEmpty);
 
             overlayTabControl1.Dock = DockStyle.None;
             overlayTabControl1.Left = -2;
@@ -55,7 +63,7 @@ namespace Aliapoh.Overlay.OverlayManager
         private void SelectOverlayNameDisplay()
         {
             if (!CheckTabValidate()) return;
-            overlayTitle.Text = overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex].Text;
+            OverlayTitle.Text = overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex].Text;
         }
 
         private void CloseSelectedOverlay()
@@ -73,7 +81,7 @@ namespace Aliapoh.Overlay.OverlayManager
 
             if (overlayManageTabControl1.TabPages.Count == 0)
             {
-                overlayTitle.Text = "Please Select Overlay";
+                OverlayTitle.Text = "Please Select Overlay";
             }
         }
         #endregion

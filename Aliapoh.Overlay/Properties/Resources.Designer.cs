@@ -63,9 +63,9 @@ namespace Aliapoh.Overlay.Properties {
         /// <summary>
         ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static byte[] LanguageFile {
+        internal static byte[] LanguageFile_ko_KR {
             get {
-                object obj = ResourceManager.GetObject("LanguageFile", resourceCulture);
+                object obj = ResourceManager.GetObject("LanguageFile_ko_KR", resourceCulture);
                 return ((byte[])(obj));
             }
         }

@@ -71,7 +71,7 @@
             this.overlayLock = new System.Windows.Forms.CheckBox();
             this.overlayClickthru = new System.Windows.Forms.CheckBox();
             this.ClickthruLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.ShowOverlayLabel = new System.Windows.Forms.Label();
             this.overlayShow = new System.Windows.Forms.CheckBox();
             this.LockOverlayLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -198,7 +198,7 @@
             this.tableLayoutPanel1.Controls.Add(this.overlayLock, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.overlayClickthru, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.ClickthruLabel, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ShowOverlayLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.overlayShow, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.LockOverlayLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 4);
@@ -252,6 +252,7 @@
             // label20
             // 
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label20.Location = new System.Drawing.Point(150, 0);
             this.label20.Margin = new System.Windows.Forms.Padding(0);
             this.label20.Name = "label20";
@@ -294,6 +295,7 @@
             // WidthLabel
             // 
             this.WidthLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WidthLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.WidthLabel.Location = new System.Drawing.Point(0, 0);
             this.WidthLabel.Margin = new System.Windows.Forms.Padding(0);
             this.WidthLabel.Name = "WidthLabel";
@@ -305,6 +307,7 @@
             // HeightLabel
             // 
             this.HeightLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HeightLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.HeightLabel.Location = new System.Drawing.Point(180, 0);
             this.HeightLabel.Margin = new System.Windows.Forms.Padding(0);
             this.HeightLabel.Name = "HeightLabel";
@@ -316,6 +319,7 @@
             // label23
             // 
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label23.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label23.Location = new System.Drawing.Point(330, 0);
             this.label23.Margin = new System.Windows.Forms.Padding(0);
             this.label23.Name = "label23";
@@ -376,6 +380,7 @@
             // label17
             // 
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label17.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label17.Location = new System.Drawing.Point(150, 0);
             this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
@@ -418,6 +423,7 @@
             // label16
             // 
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label16.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label16.Location = new System.Drawing.Point(0, 0);
             this.label16.Margin = new System.Windows.Forms.Padding(0);
             this.label16.Name = "label16";
@@ -429,6 +435,7 @@
             // label18
             // 
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label18.Location = new System.Drawing.Point(180, 0);
             this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
@@ -440,6 +447,7 @@
             // label19
             // 
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label19.Location = new System.Drawing.Point(330, 0);
             this.label19.Margin = new System.Windows.Forms.Padding(0);
             this.label19.Name = "label19";
@@ -475,6 +483,7 @@
             // SizeLabel
             // 
             this.SizeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SizeLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.SizeLabel.Location = new System.Drawing.Point(0, 264);
             this.SizeLabel.Margin = new System.Windows.Forms.Padding(0);
             this.SizeLabel.Name = "SizeLabel";
@@ -487,6 +496,7 @@
             // PositionLabel
             // 
             this.PositionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PositionLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.PositionLabel.Location = new System.Drawing.Point(0, 240);
             this.PositionLabel.Margin = new System.Windows.Forms.Padding(0);
             this.PositionLabel.Name = "PositionLabel";
@@ -510,6 +520,7 @@
             // EnableBeforeLogLineReadLabel
             // 
             this.EnableBeforeLogLineReadLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnableBeforeLogLineReadLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.EnableBeforeLogLineReadLabel.Location = new System.Drawing.Point(0, 216);
             this.EnableBeforeLogLineReadLabel.Margin = new System.Windows.Forms.Padding(0);
             this.EnableBeforeLogLineReadLabel.Name = "EnableBeforeLogLineReadLabel";
@@ -573,6 +584,7 @@
             // HotkeyTypeLabel
             // 
             this.HotkeyTypeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HotkeyTypeLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.HotkeyTypeLabel.Location = new System.Drawing.Point(0, 192);
             this.HotkeyTypeLabel.Margin = new System.Windows.Forms.Padding(0);
             this.HotkeyTypeLabel.Name = "HotkeyTypeLabel";
@@ -585,6 +597,7 @@
             // GlobalHotkeyLabel
             // 
             this.GlobalHotkeyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GlobalHotkeyLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.GlobalHotkeyLabel.Location = new System.Drawing.Point(0, 168);
             this.GlobalHotkeyLabel.Margin = new System.Windows.Forms.Padding(0);
             this.GlobalHotkeyLabel.Name = "GlobalHotkeyLabel";
@@ -624,6 +637,7 @@
             // label9
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.Location = new System.Drawing.Point(80, 0);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
@@ -663,6 +677,7 @@
             // EnableGlobalHotkeyLabel
             // 
             this.EnableGlobalHotkeyLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnableGlobalHotkeyLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.EnableGlobalHotkeyLabel.Location = new System.Drawing.Point(0, 144);
             this.EnableGlobalHotkeyLabel.Margin = new System.Windows.Forms.Padding(0);
             this.EnableGlobalHotkeyLabel.Name = "EnableGlobalHotkeyLabel";
@@ -675,6 +690,7 @@
             // DataUpdateRateLabel
             // 
             this.DataUpdateRateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataUpdateRateLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.DataUpdateRateLabel.Location = new System.Drawing.Point(0, 120);
             this.DataUpdateRateLabel.Margin = new System.Windows.Forms.Padding(0);
             this.DataUpdateRateLabel.Name = "DataUpdateRateLabel";
@@ -687,6 +703,7 @@
             // MaxframelateLabel
             // 
             this.MaxframelateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MaxframelateLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MaxframelateLabel.Location = new System.Drawing.Point(0, 96);
             this.MaxframelateLabel.Margin = new System.Windows.Forms.Padding(0);
             this.MaxframelateLabel.Name = "MaxframelateLabel";
@@ -733,18 +750,18 @@
             this.ClickthruLabel.Text = "Clickthru";
             this.ClickthruLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // ShowOverlayLabel
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(0, 24);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label2.Size = new System.Drawing.Size(200, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Show Overlay";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ShowOverlayLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ShowOverlayLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ShowOverlayLabel.Location = new System.Drawing.Point(0, 24);
+            this.ShowOverlayLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.ShowOverlayLabel.Name = "ShowOverlayLabel";
+            this.ShowOverlayLabel.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.ShowOverlayLabel.Size = new System.Drawing.Size(200, 24);
+            this.ShowOverlayLabel.TabIndex = 1;
+            this.ShowOverlayLabel.Text = "Show Overlay";
+            this.ShowOverlayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // overlayShow
             // 
@@ -763,6 +780,7 @@
             // LockOverlayLabel
             // 
             this.LockOverlayLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LockOverlayLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.LockOverlayLabel.Location = new System.Drawing.Point(0, 72);
             this.LockOverlayLabel.Margin = new System.Windows.Forms.Padding(0);
             this.LockOverlayLabel.Name = "LockOverlayLabel";
@@ -791,6 +809,7 @@
             // MaxframelateDescLabel
             // 
             this.MaxframelateDescLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MaxframelateDescLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.MaxframelateDescLabel.Location = new System.Drawing.Point(80, 0);
             this.MaxframelateDescLabel.Margin = new System.Windows.Forms.Padding(0);
             this.MaxframelateDescLabel.Name = "MaxframelateDescLabel";
@@ -888,7 +907,7 @@
         private System.Windows.Forms.Label justPaddingLabel1;
         private System.Windows.Forms.Label justPaddingLabel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ShowOverlayLabel;
         private System.Windows.Forms.CheckBox overlayShow;
         private System.Windows.Forms.CheckBox overlayClickthru;
         private System.Windows.Forms.Label ClickthruLabel;

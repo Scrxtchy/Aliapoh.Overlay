@@ -16,22 +16,27 @@ namespace Aliapoh.Overlay.OverlayManager
         public string URL { get; set; }
         public int FPS { get; set; }
 
+        public string NewOverlayAbsoluteName = "Overlay name is Absolute value. please input overlay name";
+        public string NewOverlayPrimaryName = "Overlay name is Primary value";
+
         public NewOverlayDialog()
         {
             InitializeComponent();
+            if (!DesignMode)
+                LanguageLoader.LanguagePatch(this);
         }
 
         private void CheckValidateOverlayName(object sender, EventArgs e)
         {
             if (OverlayName.Text.Trim() == "")
             {
-                MessageBox.Show("Overlay name is Absolute value. please input overlay name", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(NewOverlayAbsoluteName, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (OverlayController.OverlayConfigs.ContainsKey(OverlayName.Text))
             {
-                MessageBox.Show("Overlay name is Primary value", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(NewOverlayPrimaryName, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 OverlayName.ForeColor = Color.DarkRed;
                 return;
             }

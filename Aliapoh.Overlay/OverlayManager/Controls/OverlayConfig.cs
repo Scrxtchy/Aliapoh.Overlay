@@ -33,6 +33,8 @@ namespace Aliapoh.Overlay
             };
 
             InitializeComponent();
+            if (!DesignMode)
+                LanguageLoader.LanguagePatch(this);
 
             Overlay.LocationChanged += Overlay_LocationChanged;
             Overlay.SizeChanged += Overlay_SizeChanged;

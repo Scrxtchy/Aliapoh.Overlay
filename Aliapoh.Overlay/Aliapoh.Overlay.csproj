@@ -119,7 +119,6 @@
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\KeyboardHook.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\ModifierKeys.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\Window.cs" />
-    <Compile Include="OverlayManager\Localization\LanguageClass.cs" />
     <Compile Include="OverlayManager\Plugins\IPlugin.cs" />
     <Compile Include="OverlayForm\FXs\OverlayPluginApi.cs" />
     <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
@@ -210,7 +209,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="OverlayManager\Localization\LanguageFile.json" />
+    <None Include="OverlayManager\Localization\LanguageFile_ko-KR.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

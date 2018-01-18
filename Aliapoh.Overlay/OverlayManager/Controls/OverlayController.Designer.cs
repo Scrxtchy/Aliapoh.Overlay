@@ -39,7 +39,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.overlayTitle = new System.Windows.Forms.Label();
+            this.OverlayTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.overlayAddButton = new System.Windows.Forms.Button();
             this.SettingsTabPage = new System.Windows.Forms.TabPage();
@@ -61,7 +61,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.PluginTabPage = new System.Windows.Forms.TabPage();
+            this.PluginsTabPage = new System.Windows.Forms.TabPage();
             this.InformationTabPage = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.issueBrowserPanel = new System.Windows.Forms.Panel();
@@ -74,9 +74,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LogTabPage = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.CopyAllLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ClearLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.CopyAllLogsButton = new System.Windows.Forms.Button();
+            this.MarginLabel1 = new System.Windows.Forms.Label();
+            this.ClearLogsButton = new System.Windows.Forms.Button();
             this.overlayTabControl1.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,14 +94,14 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LogTabPage.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // overlayTabControl1
             // 
             this.overlayTabControl1.Controls.Add(this.OverlaysTabPage);
             this.overlayTabControl1.Controls.Add(this.SettingsTabPage);
-            this.overlayTabControl1.Controls.Add(this.PluginTabPage);
+            this.overlayTabControl1.Controls.Add(this.PluginsTabPage);
             this.overlayTabControl1.Controls.Add(this.InformationTabPage);
             this.overlayTabControl1.Controls.Add(this.LogTabPage);
             this.overlayTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -161,7 +162,7 @@
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.overlayTitle);
+            this.panel4.Controls.Add(this.OverlayTitle);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(222, 2);
             this.panel4.Name = "panel4";
@@ -229,16 +230,16 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.CloseSelectedOverlayButtonClicked);
             // 
-            // overlayTitle
+            // OverlayTitle
             // 
-            this.overlayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayTitle.Location = new System.Drawing.Point(0, 0);
-            this.overlayTitle.Name = "overlayTitle";
-            this.overlayTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.overlayTitle.Size = new System.Drawing.Size(572, 30);
-            this.overlayTitle.TabIndex = 3;
-            this.overlayTitle.Text = "Please Select Overlay";
-            this.overlayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OverlayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayTitle.Location = new System.Drawing.Point(0, 0);
+            this.OverlayTitle.Name = "OverlayTitle";
+            this.OverlayTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.OverlayTitle.Size = new System.Drawing.Size(572, 30);
+            this.OverlayTitle.TabIndex = 3;
+            this.OverlayTitle.Text = "Please Select Overlay";
+            this.OverlayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -523,14 +524,14 @@
             this.textBox2.Size = new System.Drawing.Size(573, 23);
             this.textBox2.TabIndex = 1;
             // 
-            // PluginTabPage
+            // PluginsTabPage
             // 
-            this.PluginTabPage.Location = new System.Drawing.Point(2, 34);
-            this.PluginTabPage.Name = "PluginTabPage";
-            this.PluginTabPage.Size = new System.Drawing.Size(796, 444);
-            this.PluginTabPage.TabIndex = 4;
-            this.PluginTabPage.Text = "Plugins";
-            this.PluginTabPage.UseVisualStyleBackColor = true;
+            this.PluginsTabPage.Location = new System.Drawing.Point(2, 34);
+            this.PluginsTabPage.Name = "PluginsTabPage";
+            this.PluginsTabPage.Size = new System.Drawing.Size(796, 444);
+            this.PluginsTabPage.TabIndex = 4;
+            this.PluginsTabPage.Text = "Plugins";
+            this.PluginsTabPage.UseVisualStyleBackColor = true;
             // 
             // InformationTabPage
             // 
@@ -647,7 +648,7 @@
             // LogTabPage
             // 
             this.LogTabPage.Controls.Add(this.richTextBox1);
-            this.LogTabPage.Controls.Add(this.menuStrip1);
+            this.LogTabPage.Controls.Add(this.panel5);
             this.LogTabPage.Location = new System.Drawing.Point(2, 34);
             this.LogTabPage.Margin = new System.Windows.Forms.Padding(0);
             this.LogTabPage.Name = "LogTabPage";
@@ -662,36 +663,56 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 32);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(796, 420);
+            this.richTextBox1.Size = new System.Drawing.Size(796, 412);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
-            // menuStrip1
+            // panel5
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CopyAllLogsToolStripMenuItem,
-            this.ClearLogsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(796, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panel5.Controls.Add(this.ClearLogsButton);
+            this.panel5.Controls.Add(this.MarginLabel1);
+            this.panel5.Controls.Add(this.CopyAllLogsButton);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(2);
+            this.panel5.Size = new System.Drawing.Size(796, 32);
+            this.panel5.TabIndex = 2;
             // 
-            // CopyAllLogsToolStripMenuItem
+            // CopyAllLogsButton
             // 
-            this.CopyAllLogsToolStripMenuItem.Name = "CopyAllLogsToolStripMenuItem";
-            this.CopyAllLogsToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.CopyAllLogsToolStripMenuItem.Text = "Copy All Logs";
+            this.CopyAllLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CopyAllLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.CopyAllLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CopyAllLogsButton.Location = new System.Drawing.Point(2, 2);
+            this.CopyAllLogsButton.Name = "CopyAllLogsButton";
+            this.CopyAllLogsButton.Size = new System.Drawing.Size(100, 28);
+            this.CopyAllLogsButton.TabIndex = 0;
+            this.CopyAllLogsButton.Text = "Copy All Logs";
+            this.CopyAllLogsButton.UseVisualStyleBackColor = true;
             // 
-            // ClearLogsToolStripMenuItem
+            // MarginLabel1
             // 
-            this.ClearLogsToolStripMenuItem.Name = "ClearLogsToolStripMenuItem";
-            this.ClearLogsToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.ClearLogsToolStripMenuItem.Text = "Clear Logs";
+            this.MarginLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MarginLabel1.Location = new System.Drawing.Point(102, 2);
+            this.MarginLabel1.Name = "MarginLabel1";
+            this.MarginLabel1.Size = new System.Drawing.Size(2, 28);
+            this.MarginLabel1.TabIndex = 1;
+            // 
+            // ClearLogsButton
+            // 
+            this.ClearLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ClearLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.ClearLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearLogsButton.Location = new System.Drawing.Point(104, 2);
+            this.ClearLogsButton.Name = "ClearLogsButton";
+            this.ClearLogsButton.Size = new System.Drawing.Size(100, 28);
+            this.ClearLogsButton.TabIndex = 2;
+            this.ClearLogsButton.Text = "Clear Logs";
+            this.ClearLogsButton.UseVisualStyleBackColor = true;
             // 
             // OverlayController
             // 
@@ -720,9 +741,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LogTabPage.ResumeLayout(false);
-            this.LogTabPage.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -733,9 +752,6 @@
         private System.Windows.Forms.TabPage OverlaysTabPage;
         private System.Windows.Forms.TabPage LogTabPage;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem CopyAllLogsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ClearLogsToolStripMenuItem;
         private System.Windows.Forms.TabPage SettingsTabPage;
         private System.Windows.Forms.TabPage InformationTabPage;
         private System.Windows.Forms.GroupBox ScreenShotSettingGroupbox;
@@ -772,10 +788,14 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label overlayTitle;
+        private System.Windows.Forms.Label OverlayTitle;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TabPage PluginTabPage;
+        private System.Windows.Forms.TabPage PluginsTabPage;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button CopyAllLogsButton;
+        private System.Windows.Forms.Label MarginLabel1;
+        private System.Windows.Forms.Button ClearLogsButton;
     }
 }

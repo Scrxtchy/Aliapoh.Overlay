@@ -50,10 +50,10 @@
             this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OkButton.Location = new System.Drawing.Point(348, 91);
+            this.OkButton.Location = new System.Drawing.Point(278, 90);
             this.OkButton.Margin = new System.Windows.Forms.Padding(0);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(75, 23);
+            this.OkButton.Size = new System.Drawing.Size(109, 24);
             this.OkButton.TabIndex = 4;
             this.OkButton.Text = "Ok";
             this.OkButton.UseVisualStyleBackColor = true;
@@ -64,10 +64,10 @@
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.Location = new System.Drawing.Point(431, 91);
+            this.CancelButton.Location = new System.Drawing.Point(397, 90);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(0);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButton.Size = new System.Drawing.Size(109, 24);
             this.CancelButton.TabIndex = 5;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;

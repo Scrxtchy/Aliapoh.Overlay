@@ -1,0 +1,53 @@
+{
+  "Strings": {
+    "NewOverlayAbsoluteName": "오버레이 이름은 비어있을 수 없습니다. 이름을 입력해 주세요.",
+    "NewOverlayPrimaryName": "오버레이 이름은 중복될 수 없습니다.",
+    "OverlayEmpty": "[ + ] 버튼을 클릭하여 새로운 오버레이를 생성하세요."
+  },
+  "NewOverlayDialog": {
+    "NameLabel": "오버레이 이름",
+    "URLLabel": "오버레이 주소",
+    "FramerateLabel": "프레임 설정",
+    "FramePerSecondLabel": "프레임",
+    "OkButton": "확인",
+    "CancelButton": "취소"
+  },
+  "OverlayConfig": {
+    "OverlayNameLabel": "오버레이 이름",
+    "ClickthruLabel": "클릭 통과",
+    "ShowOverlayLabel": "오버레이 보이기",
+    "LockOverlayLabel": "오버레이 잠금",
+    "MaxframelateLabel": "최대 프레임",
+    "MaxframelateDescLabel": "프레임 (※ 이 값은 다시 시작해야 적용됩니다.)",
+    "DataUpdateRateLabel": "데이터 갱신 주기",
+    "EnableGlobalHotkeyLabel": "전역 단축키 사용",
+    "GlobalHotkeyLabel": "전역 단축키",
+    "HotkeyTypeLabel": "단축키 타입",
+    "EnableBeforeLogLineReadLabel": "BeforeLogLineRead 사용",
+    "PositionLabel": "위치",
+    "SizeLabel": "크기",
+    "WidthLabel": "너비",
+    "HeightLabel": "높이"
+  },
+  "OverlayController": {
+    "OverlaysTabPage": "오버레이",
+    "SettingsTabPage": "설정",
+    "PluginsTabPage": "플러그인",
+    "InformationTabPage": "오버레이 정보",
+    "LogTabPage": "로그",
+    "OverlayTitle": "오버레이를 선택하세요",
+    "AliapohOverlayLabel": "알리아포 오버레이",
+    "OverlayDescLabel": "어디서나 웹 페이지를\n띄울 수 있습니다.",
+    "ConpatibleLabel": "ACTWebSocket\nOverlayPlugin\n호환 가능",
+    "DeveloperLabel": "- 개발 -\n라그린네",
+    "LeaveIssueLabel": "이슈 남기기",
+    "CopyAllLogsButton": "모든 로그 복사하기",
+    "ClearLogsButton": "로그 지우기",
+    "ScreenShotSettingGroupbox": "스크린샷 설정",
+    "SavePathLabel": "저장 경로",
+    "BackgroundImageLabel": "배경 이미지 설정",
+    "FillModeLabel": "채우기 설정",
+    "AutoClippingLabel": "자동 자르기",
+    "MarginLabel": "여백"
+  }
+}

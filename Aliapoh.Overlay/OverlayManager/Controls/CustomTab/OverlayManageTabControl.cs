@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Aliapoh.Overlay.OverlayManager;
 
 namespace Aliapoh.Overlay
 {
@@ -71,7 +72,7 @@ namespace Aliapoh.Overlay
                 };
                 var EmptyFont = new Font("Microsoft Neogothic", 18f, FontStyle.Bold);
 
-                e.Graphics.DrawString("Click [ + ] to setup your first overlay", EmptyFont, Brushes.Black, rrect, RSB);
+                e.Graphics.DrawString(OverlayController.OverlayEmpty, EmptyFont, Brushes.Black, rrect, RSB);
             }
             else
             {
