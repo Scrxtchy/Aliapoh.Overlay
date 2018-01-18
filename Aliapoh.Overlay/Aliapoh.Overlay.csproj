@@ -117,14 +117,14 @@
     <Compile Include="CefManager\CefLoadByNupkg.cs" />
     <Compile Include="CefManager\CefLoader.cs" />
     <Compile Include="CefManager\Downloader.cs" />
-    <Compile Include="GlobalHook\Events\KeyPressedEventArgs.cs" />
-    <Compile Include="GlobalHook\Origin\Keyboard.cs" />
-    <Compile Include="GlobalHook\Origin\KeyHook.cs" />
-    <Compile Include="GlobalHook\Origin\VK.cs" />
-    <Compile Include="GlobalHook\OverlayPlugin\KeyboardHook.cs" />
-    <Compile Include="GlobalHook\OverlayPlugin\ModifierKeys.cs" />
-    <Compile Include="GlobalHook\OverlayPlugin\Window.cs" />
-    <Compile Include="IPlugin\IPlugin.cs" />
+    <Compile Include="OverlayManager\GlobalHook\Events\KeyPressedEventArgs.cs" />
+    <Compile Include="OverlayManager\GlobalHook\Origin\Keyboard.cs" />
+    <Compile Include="OverlayManager\GlobalHook\Origin\KeyHook.cs" />
+    <Compile Include="OverlayManager\GlobalHook\Origin\VK.cs" />
+    <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\KeyboardHook.cs" />
+    <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\ModifierKeys.cs" />
+    <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\Window.cs" />
+    <Compile Include="OverlayManager\IPlugin\IPlugin.cs" />
     <Compile Include="OverlayForm\FXs\OverlayPluginApi.cs" />
     <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
     <Compile Include="OverlayForm\FXs\NativeMethods.cs" />
@@ -195,7 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extender\" />
-    <Folder Include="PluginLoader\" />
+    <Folder Include="OverlayManager\PluginLoader\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="aliapoh_icon.ico" />
