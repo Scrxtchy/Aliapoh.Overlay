@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Aliapoh.Overlay
@@ -28,8 +23,6 @@ namespace Aliapoh.Overlay
         {
             Overlay = new OverlayForm(url)
             {
-                Location = new Point(10, 10),
-                Size = new Size(400, 400),
                 Name = name,
                 Text = name,
                 ShowInTaskbar = false
@@ -46,11 +39,14 @@ namespace Aliapoh.Overlay
 
             Overlay.SettingLoad();
             Overlay.Show();
+            Overlay.Browser.Load(siteURL.Text);
+            Overlay.Location = new Point(10, 10);
+            Overlay.Size = new Size(400, 400);
         }
 
         private void OverlayBrowserInitialized(object sender, EventArgs e)
         {
-            // do somthing
+            Overlay.Browser.Load(siteURL.Text);
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)

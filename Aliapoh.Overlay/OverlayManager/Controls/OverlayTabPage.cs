@@ -1,9 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Aliapoh.Overlay
