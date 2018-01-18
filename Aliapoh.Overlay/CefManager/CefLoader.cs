@@ -36,12 +36,14 @@ namespace Aliapoh.Overlay
                 UserAgent = userAgent,
                 LogSeverity = LogSeverity.Disable,
             };
+
             setting.DisableGpuAcceleration();
 
             if (!Cef.Initialize(setting))
             {
                 throw new Exception("Unable to Initialize Cef");
             }
+
             libloader.Dispose();
         }
     }
