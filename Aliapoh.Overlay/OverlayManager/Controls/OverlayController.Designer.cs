@@ -47,7 +47,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ScreenshotSavePathSelectButton = new System.Windows.Forms.Button();
             this.MarginLabel = new System.Windows.Forms.Label();
             this.AutoClippingLabel = new System.Windows.Forms.Label();
             this.FillModeLabel = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ScreenshotBackgroundSelectButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.PluginsTabPage = new System.Windows.Forms.TabPage();
             this.InformationTabPage = new System.Windows.Forms.TabPage();
@@ -80,6 +80,9 @@
             this.ClearLogsButton = new System.Windows.Forms.Button();
             this.MarginLabel2 = new System.Windows.Forms.Label();
             this.ScreenShotButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.OpenBackgroundDialog = new System.Windows.Forms.OpenFileDialog();
+            this.ScreenshotSavePathSelectDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.overlayTabControl1.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -92,6 +95,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            this.PluginsTabPage.SuspendLayout();
             this.InformationTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -328,7 +332,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel4.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.ScreenshotSavePathSelectButton, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(150, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -347,21 +351,21 @@
             this.textBox1.Size = new System.Drawing.Size(573, 23);
             this.textBox1.TabIndex = 0;
             // 
-            // button1
+            // ScreenshotSavePathSelectButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Gainsboro;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(574, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(39, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "…";
-            this.button1.UseVisualStyleBackColor = false;
+            this.ScreenshotSavePathSelectButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.ScreenshotSavePathSelectButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScreenshotSavePathSelectButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.ScreenshotSavePathSelectButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ScreenshotSavePathSelectButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScreenshotSavePathSelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScreenshotSavePathSelectButton.Location = new System.Drawing.Point(574, 0);
+            this.ScreenshotSavePathSelectButton.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
+            this.ScreenshotSavePathSelectButton.Name = "ScreenshotSavePathSelectButton";
+            this.ScreenshotSavePathSelectButton.Size = new System.Drawing.Size(39, 23);
+            this.ScreenshotSavePathSelectButton.TabIndex = 1;
+            this.ScreenshotSavePathSelectButton.Text = "…";
+            this.ScreenshotSavePathSelectButton.UseVisualStyleBackColor = false;
             // 
             // MarginLabel
             // 
@@ -492,7 +496,7 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.Controls.Add(this.button2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ScreenshotBackgroundSelectButton, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox2, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(150, 24);
@@ -503,21 +507,21 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(613, 24);
             this.tableLayoutPanel3.TabIndex = 12;
             // 
-            // button2
+            // ScreenshotBackgroundSelectButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Gainsboro;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(574, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(39, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "…";
-            this.button2.UseVisualStyleBackColor = false;
+            this.ScreenshotBackgroundSelectButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.ScreenshotBackgroundSelectButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScreenshotBackgroundSelectButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.ScreenshotBackgroundSelectButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ScreenshotBackgroundSelectButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScreenshotBackgroundSelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScreenshotBackgroundSelectButton.Location = new System.Drawing.Point(574, 0);
+            this.ScreenshotBackgroundSelectButton.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
+            this.ScreenshotBackgroundSelectButton.Name = "ScreenshotBackgroundSelectButton";
+            this.ScreenshotBackgroundSelectButton.Size = new System.Drawing.Size(39, 23);
+            this.ScreenshotBackgroundSelectButton.TabIndex = 2;
+            this.ScreenshotBackgroundSelectButton.Text = "…";
+            this.ScreenshotBackgroundSelectButton.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
@@ -530,6 +534,7 @@
             // 
             // PluginsTabPage
             // 
+            this.PluginsTabPage.Controls.Add(this.label1);
             this.PluginsTabPage.Location = new System.Drawing.Point(2, 34);
             this.PluginsTabPage.Name = "PluginsTabPage";
             this.PluginsTabPage.Size = new System.Drawing.Size(796, 444);
@@ -740,6 +745,20 @@
             this.ScreenShotButton.TabIndex = 7;
             this.ScreenShotButton.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
+            this.label1.Location = new System.Drawing.Point(15, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Comming soon";
+            // 
+            // OpenBackgroundDialog
+            // 
+            this.OpenBackgroundDialog.FileName = "openFileDialog1";
+            // 
             // OverlayController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -763,6 +782,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.PluginsTabPage.ResumeLayout(false);
+            this.PluginsTabPage.PerformLayout();
             this.InformationTabPage.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -796,7 +817,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ScreenshotSavePathSelectButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label AliapohOverlayLabel;
         private System.Windows.Forms.Label label6;
@@ -806,7 +827,7 @@
         private System.Windows.Forms.Label LeaveIssueLabel;
         private System.Windows.Forms.Panel issueBrowserPanel;
         private System.Windows.Forms.Label ConpatibleLabel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ScreenshotBackgroundSelectButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button overlayAddButton;
         private OverlayManageTabControl overlayManageTabControl1;
@@ -825,5 +846,8 @@
         private System.Windows.Forms.Button ClearLogsButton;
         private System.Windows.Forms.Label MarginLabel2;
         private System.Windows.Forms.Button ScreenShotButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog OpenBackgroundDialog;
+        private System.Windows.Forms.FolderBrowserDialog ScreenshotSavePathSelectDialog;
     }
 }

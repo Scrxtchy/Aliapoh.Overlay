@@ -25,7 +25,6 @@ namespace Aliapoh.Overlay
             {
                 { "ko-KR", Properties.Resources.LanguageFile_ko_KR }
             };
-
             if (LanguageFiles.ContainsKey(CurrentCulture))
             {
                 var lang = Encoding.UTF8.GetString(LanguageFiles[CurrentCulture]);
@@ -38,6 +37,8 @@ namespace Aliapoh.Overlay
         public static void LanguagePatch(Control ctrl)
         {
             if (!LanguageFiles.ContainsKey(CurrentCulture)) return;
+
+            var bind = BindingFlags.Public | BindingFlags.Static | BindingFlags.NonPublic;
             var flag = "";
             
             if (typeof(OverlayConfig) == ctrl.GetType())
@@ -57,8 +58,6 @@ namespace Aliapoh.Overlay
                     }
                 }
             }
-
-            var bind = BindingFlags.Public | BindingFlags.Static | BindingFlags.NonPublic;
 
             foreach(FieldInfo field in ctrl.GetType().GetFields(bind))
             {

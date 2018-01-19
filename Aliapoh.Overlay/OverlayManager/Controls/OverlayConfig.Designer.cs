@@ -33,18 +33,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.siteURL = new System.Windows.Forms.TextBox();
             this.justPaddingLabel1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.HTMLFileSelectButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.justPaddingLabel2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.SubTableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.overlayWidth = new System.Windows.Forms.NumericUpDown();
             this.WidthLabel = new System.Windows.Forms.Label();
             this.HeightLabel = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.overlayHeight = new System.Windows.Forms.NumericUpDown();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.SubTableLayout3 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.overlayX = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
@@ -55,14 +55,14 @@
             this.PositionLabel = new System.Windows.Forms.Label();
             this.overlayEnableBeforeLogLineRead = new System.Windows.Forms.CheckBox();
             this.EnableBeforeLogLineReadLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.SubTableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.overlayName = new System.Windows.Forms.TextBox();
-            this.overlayNameChange = new System.Windows.Forms.Button();
+            this.OverlayNameChangeButton = new System.Windows.Forms.Button();
             this.OverlayNameLabel = new System.Windows.Forms.Label();
             this.HotkeyTypeLabel = new System.Windows.Forms.Label();
             this.GlobalHotkeyLabel = new System.Windows.Forms.Label();
             this.overlayGlobalHotkey = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.SubTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.overlayUpdateRate = new System.Windows.Forms.NumericUpDown();
             this.EnableGlobalHotkeyLabel = new System.Windows.Forms.Label();
@@ -74,24 +74,24 @@
             this.ShowOverlayLabel = new System.Windows.Forms.Label();
             this.overlayShow = new System.Windows.Forms.CheckBox();
             this.LockOverlayLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.SubTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MaxframelateDescLabel = new System.Windows.Forms.Label();
             this.overlayFramerate = new System.Windows.Forms.NumericUpDown();
             this.overlayGlobalHotkeyInput = new System.Windows.Forms.TextBox();
             this.overlayGlobalHotkeyType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
+            this.MainTableLayoutPanel.SuspendLayout();
+            this.SubTableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.overlayWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overlayHeight)).BeginInit();
-            this.tableLayoutPanel5.SuspendLayout();
+            this.SubTableLayout3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.overlayX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overlayY)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.SubTableLayoutPanel5.SuspendLayout();
+            this.SubTableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.overlayUpdateRate)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.SubTableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.overlayFramerate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +99,7 @@
             // 
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.justPaddingLabel1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.HTMLFileSelectButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -141,16 +141,16 @@
             this.justPaddingLabel1.TabIndex = 3;
             this.justPaddingLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // HTMLFileSelectButton
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(557, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "…";
-            this.button1.UseVisualStyleBackColor = true;
+            this.HTMLFileSelectButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.HTMLFileSelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HTMLFileSelectButton.Location = new System.Drawing.Point(557, 0);
+            this.HTMLFileSelectButton.Name = "HTMLFileSelectButton";
+            this.HTMLFileSelectButton.Size = new System.Drawing.Size(43, 29);
+            this.HTMLFileSelectButton.TabIndex = 2;
+            this.HTMLFileSelectButton.Text = "…";
+            this.HTMLFileSelectButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -175,79 +175,79 @@
             this.justPaddingLabel2.TabIndex = 1;
             this.justPaddingLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tableLayoutPanel1
+            // MainTableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.SizeLabel, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.PositionLabel, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.overlayEnableBeforeLogLineRead, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.EnableBeforeLogLineReadLabel, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.OverlayNameLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.HotkeyTypeLabel, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyLabel, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.overlayGlobalHotkey, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.EnableGlobalHotkeyLabel, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.DataUpdateRateLabel, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.MaxframelateLabel, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.overlayLock, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.overlayClickthru, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.ClickthruLabel, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.ShowOverlayLabel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.overlayShow, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.LockOverlayLabel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.overlayGlobalHotkeyInput, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.overlayGlobalHotkeyType, 1, 8);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 31);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 13;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 369);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.MainTableLayoutPanel.ColumnCount = 2;
+            this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.MainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.MainTableLayoutPanel.Controls.Add(this.SubTableLayoutPanel4, 1, 11);
+            this.MainTableLayoutPanel.Controls.Add(this.SubTableLayout3, 1, 10);
+            this.MainTableLayoutPanel.Controls.Add(this.SizeLabel, 0, 11);
+            this.MainTableLayoutPanel.Controls.Add(this.PositionLabel, 0, 10);
+            this.MainTableLayoutPanel.Controls.Add(this.overlayEnableBeforeLogLineRead, 1, 9);
+            this.MainTableLayoutPanel.Controls.Add(this.EnableBeforeLogLineReadLabel, 0, 9);
+            this.MainTableLayoutPanel.Controls.Add(this.SubTableLayoutPanel5, 1, 0);
+            this.MainTableLayoutPanel.Controls.Add(this.OverlayNameLabel, 0, 0);
+            this.MainTableLayoutPanel.Controls.Add(this.HotkeyTypeLabel, 0, 8);
+            this.MainTableLayoutPanel.Controls.Add(this.GlobalHotkeyLabel, 0, 7);
+            this.MainTableLayoutPanel.Controls.Add(this.overlayGlobalHotkey, 1, 6);
+            this.MainTableLayoutPanel.Controls.Add(this.SubTableLayoutPanel2, 1, 5);
+            this.MainTableLayoutPanel.Controls.Add(this.EnableGlobalHotkeyLabel, 0, 6);
+            this.MainTableLayoutPanel.Controls.Add(this.DataUpdateRateLabel, 0, 5);
+            this.MainTableLayoutPanel.Controls.Add(this.MaxframelateLabel, 0, 4);
+            this.MainTableLayoutPanel.Controls.Add(this.overlayLock, 1, 3);
+            this.MainTableLayoutPanel.Controls.Add(this.overlayClickthru, 1, 2);
+            this.MainTableLayoutPanel.Controls.Add(this.ClickthruLabel, 0, 2);
+            this.MainTableLayoutPanel.Controls.Add(this.ShowOverlayLabel, 0, 1);
+            this.MainTableLayoutPanel.Controls.Add(this.overlayShow, 1, 1);
+            this.MainTableLayoutPanel.Controls.Add(this.LockOverlayLabel, 0, 3);
+            this.MainTableLayoutPanel.Controls.Add(this.SubTableLayoutPanel1, 1, 4);
+            this.MainTableLayoutPanel.Controls.Add(this.overlayGlobalHotkeyInput, 1, 7);
+            this.MainTableLayoutPanel.Controls.Add(this.overlayGlobalHotkeyType, 1, 8);
+            this.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTableLayoutPanel.Location = new System.Drawing.Point(0, 31);
+            this.MainTableLayoutPanel.Name = "MainTableLayoutPanel";
+            this.MainTableLayoutPanel.RowCount = 13;
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.MainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.MainTableLayoutPanel.Size = new System.Drawing.Size(600, 369);
+            this.MainTableLayoutPanel.TabIndex = 2;
             // 
-            // tableLayoutPanel6
+            // SubTableLayoutPanel4
             // 
-            this.tableLayoutPanel6.ColumnCount = 7;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Controls.Add(this.label20, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.overlayWidth, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.WidthLabel, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.HeightLabel, 3, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label23, 5, 0);
-            this.tableLayoutPanel6.Controls.Add(this.overlayHeight, 4, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(200, 264);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(400, 24);
-            this.tableLayoutPanel6.TabIndex = 29;
+            this.SubTableLayoutPanel4.ColumnCount = 7;
+            this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SubTableLayoutPanel4.Controls.Add(this.label20, 0, 0);
+            this.SubTableLayoutPanel4.Controls.Add(this.overlayWidth, 0, 0);
+            this.SubTableLayoutPanel4.Controls.Add(this.WidthLabel, 0, 0);
+            this.SubTableLayoutPanel4.Controls.Add(this.HeightLabel, 3, 0);
+            this.SubTableLayoutPanel4.Controls.Add(this.label23, 5, 0);
+            this.SubTableLayoutPanel4.Controls.Add(this.overlayHeight, 4, 0);
+            this.SubTableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubTableLayoutPanel4.Location = new System.Drawing.Point(200, 264);
+            this.SubTableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.SubTableLayoutPanel4.Name = "SubTableLayoutPanel4";
+            this.SubTableLayoutPanel4.RowCount = 1;
+            this.SubTableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SubTableLayoutPanel4.Size = new System.Drawing.Size(400, 24);
+            this.SubTableLayoutPanel4.TabIndex = 29;
             // 
             // label20
             // 
@@ -352,30 +352,30 @@
             0});
             this.overlayHeight.ValueChanged += new System.EventHandler(this.OverlayHeight_ValueChanged);
             // 
-            // tableLayoutPanel5
+            // SubTableLayout3
             // 
-            this.tableLayoutPanel5.ColumnCount = 7;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.label17, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.overlayX, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label16, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label18, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label19, 5, 0);
-            this.tableLayoutPanel5.Controls.Add(this.overlayY, 4, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(200, 240);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(400, 24);
-            this.tableLayoutPanel5.TabIndex = 28;
+            this.SubTableLayout3.ColumnCount = 7;
+            this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SubTableLayout3.Controls.Add(this.label17, 0, 0);
+            this.SubTableLayout3.Controls.Add(this.overlayX, 0, 0);
+            this.SubTableLayout3.Controls.Add(this.label16, 0, 0);
+            this.SubTableLayout3.Controls.Add(this.label18, 3, 0);
+            this.SubTableLayout3.Controls.Add(this.label19, 5, 0);
+            this.SubTableLayout3.Controls.Add(this.overlayY, 4, 0);
+            this.SubTableLayout3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubTableLayout3.Location = new System.Drawing.Point(200, 240);
+            this.SubTableLayout3.Margin = new System.Windows.Forms.Padding(0);
+            this.SubTableLayout3.Name = "SubTableLayout3";
+            this.SubTableLayout3.RowCount = 1;
+            this.SubTableLayout3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SubTableLayout3.Size = new System.Drawing.Size(400, 24);
+            this.SubTableLayout3.TabIndex = 28;
             // 
             // label17
             // 
@@ -530,21 +530,21 @@
             this.EnableBeforeLogLineReadLabel.Text = "Enable beforeLogLineRead";
             this.EnableBeforeLogLineReadLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tableLayoutPanel4
+            // SubTableLayoutPanel5
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel4.Controls.Add(this.overlayName, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.overlayNameChange, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(200, 0);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(400, 24);
-            this.tableLayoutPanel4.TabIndex = 23;
+            this.SubTableLayoutPanel5.ColumnCount = 2;
+            this.SubTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SubTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.SubTableLayoutPanel5.Controls.Add(this.overlayName, 0, 0);
+            this.SubTableLayoutPanel5.Controls.Add(this.OverlayNameChangeButton, 1, 0);
+            this.SubTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubTableLayoutPanel5.Location = new System.Drawing.Point(200, 0);
+            this.SubTableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.SubTableLayoutPanel5.Name = "SubTableLayoutPanel5";
+            this.SubTableLayoutPanel5.RowCount = 1;
+            this.SubTableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SubTableLayoutPanel5.Size = new System.Drawing.Size(400, 24);
+            this.SubTableLayoutPanel5.TabIndex = 23;
             // 
             // overlayName
             // 
@@ -555,18 +555,18 @@
             this.overlayName.Size = new System.Drawing.Size(375, 23);
             this.overlayName.TabIndex = 20;
             // 
-            // overlayNameChange
+            // OverlayNameChangeButton
             // 
-            this.overlayNameChange.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("overlayNameChange.BackgroundImage")));
-            this.overlayNameChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.overlayNameChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.overlayNameChange.Location = new System.Drawing.Point(376, 0);
-            this.overlayNameChange.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayNameChange.Name = "overlayNameChange";
-            this.overlayNameChange.Size = new System.Drawing.Size(24, 23);
-            this.overlayNameChange.TabIndex = 0;
-            this.overlayNameChange.UseVisualStyleBackColor = true;
-            this.overlayNameChange.Click += new System.EventHandler(this.OverlayNameChange_Click);
+            this.OverlayNameChangeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OverlayNameChangeButton.BackgroundImage")));
+            this.OverlayNameChangeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.OverlayNameChangeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OverlayNameChangeButton.Location = new System.Drawing.Point(376, 0);
+            this.OverlayNameChangeButton.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayNameChangeButton.Name = "OverlayNameChangeButton";
+            this.OverlayNameChangeButton.Size = new System.Drawing.Size(24, 23);
+            this.OverlayNameChangeButton.TabIndex = 0;
+            this.OverlayNameChangeButton.UseVisualStyleBackColor = true;
+            this.OverlayNameChangeButton.Click += new System.EventHandler(this.OverlayNameChange_Click);
             // 
             // OverlayNameLabel
             // 
@@ -618,21 +618,21 @@
             this.overlayGlobalHotkey.TabIndex = 17;
             this.overlayGlobalHotkey.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel3
+            // SubTableLayoutPanel2
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.label9, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.overlayUpdateRate, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(200, 120);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(400, 24);
-            this.tableLayoutPanel3.TabIndex = 16;
+            this.SubTableLayoutPanel2.ColumnCount = 2;
+            this.SubTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.SubTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SubTableLayoutPanel2.Controls.Add(this.label9, 1, 0);
+            this.SubTableLayoutPanel2.Controls.Add(this.overlayUpdateRate, 0, 0);
+            this.SubTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubTableLayoutPanel2.Location = new System.Drawing.Point(200, 120);
+            this.SubTableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.SubTableLayoutPanel2.Name = "SubTableLayoutPanel2";
+            this.SubTableLayoutPanel2.RowCount = 1;
+            this.SubTableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SubTableLayoutPanel2.Size = new System.Drawing.Size(400, 24);
+            this.SubTableLayoutPanel2.TabIndex = 16;
             // 
             // label9
             // 
@@ -790,21 +790,21 @@
             this.LockOverlayLabel.Text = "Lock Overlay";
             this.LockOverlayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tableLayoutPanel2
+            // SubTableLayoutPanel1
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.MaxframelateDescLabel, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.overlayFramerate, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(200, 96);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(400, 24);
-            this.tableLayoutPanel2.TabIndex = 15;
+            this.SubTableLayoutPanel1.ColumnCount = 2;
+            this.SubTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.SubTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SubTableLayoutPanel1.Controls.Add(this.MaxframelateDescLabel, 1, 0);
+            this.SubTableLayoutPanel1.Controls.Add(this.overlayFramerate, 0, 0);
+            this.SubTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubTableLayoutPanel1.Location = new System.Drawing.Point(200, 96);
+            this.SubTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.SubTableLayoutPanel1.Name = "SubTableLayoutPanel1";
+            this.SubTableLayoutPanel1.RowCount = 1;
+            this.SubTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.SubTableLayoutPanel1.Size = new System.Drawing.Size(400, 24);
+            this.SubTableLayoutPanel1.TabIndex = 15;
             // 
             // MaxframelateDescLabel
             // 
@@ -870,7 +870,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.MainTableLayoutPanel);
             this.Controls.Add(this.justPaddingLabel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F);
@@ -880,19 +880,19 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
+            this.MainTableLayoutPanel.ResumeLayout(false);
+            this.MainTableLayoutPanel.PerformLayout();
+            this.SubTableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.overlayWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overlayHeight)).EndInit();
-            this.tableLayoutPanel5.ResumeLayout(false);
+            this.SubTableLayout3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.overlayX)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overlayY)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
+            this.SubTableLayoutPanel5.ResumeLayout(false);
+            this.SubTableLayoutPanel5.PerformLayout();
+            this.SubTableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.overlayUpdateRate)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.SubTableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.overlayFramerate)).EndInit();
             this.ResumeLayout(false);
 
@@ -903,10 +903,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button HTMLFileSelectButton;
         private System.Windows.Forms.Label justPaddingLabel1;
         private System.Windows.Forms.Label justPaddingLabel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel MainTableLayoutPanel;
         private System.Windows.Forms.Label ShowOverlayLabel;
         private System.Windows.Forms.CheckBox overlayShow;
         private System.Windows.Forms.CheckBox overlayClickthru;
@@ -916,10 +916,10 @@
         private System.Windows.Forms.Label DataUpdateRateLabel;
         private System.Windows.Forms.Label MaxframelateLabel;
         private System.Windows.Forms.CheckBox overlayLock;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel1;
         private System.Windows.Forms.Label MaxframelateDescLabel;
         private System.Windows.Forms.NumericUpDown overlayFramerate;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown overlayUpdateRate;
         private System.Windows.Forms.CheckBox overlayGlobalHotkey;
@@ -928,22 +928,22 @@
         private System.Windows.Forms.Label HotkeyTypeLabel;
         private System.Windows.Forms.ComboBox overlayGlobalHotkeyType;
         private System.Windows.Forms.Label OverlayNameLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button overlayNameChange;
+        private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel5;
+        private System.Windows.Forms.Button OverlayNameChangeButton;
         private System.Windows.Forms.TextBox overlayName;
         private System.Windows.Forms.Label EnableBeforeLogLineReadLabel;
         private System.Windows.Forms.CheckBox overlayEnableBeforeLogLineRead;
         public System.Windows.Forms.TextBox siteURL;
         private System.Windows.Forms.Label SizeLabel;
         private System.Windows.Forms.Label PositionLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel SubTableLayout3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.NumericUpDown overlayX;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.NumericUpDown overlayY;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.NumericUpDown overlayWidth;
         private System.Windows.Forms.Label WidthLabel;
