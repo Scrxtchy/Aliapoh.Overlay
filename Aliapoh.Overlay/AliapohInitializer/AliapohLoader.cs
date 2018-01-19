@@ -31,6 +31,7 @@ namespace Aliapoh.Overlay
         public static void Initialize()
         {
             LOG.Initialize();
+            LOG.Logger.Log(LogLevel.Warning, "Aliapoh Overlay on " + (Environment.Is64BitProcess ? "x64" : "x86") + " Process");
 
             var loadfrm = new LoaderForm();
             loadfrm.Show();

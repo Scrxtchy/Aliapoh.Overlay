@@ -48,8 +48,12 @@ namespace Aliapoh.Overlay.OverlayManager
                 for (; lastidx < LOG.Logger.Logs.Count; lastidx++)
                 {
                     var line = LOG.Logger.Logs[lastidx];
+                    richTextBox1.SelectionColor = Color.Yellow;
+                    richTextBox1.AppendText("[");
                     richTextBox1.SelectionColor = Color.Cyan;
-                    richTextBox1.AppendText(line.Time.ToString("[yyyy-MM-dd HH:mm:ss]"));
+                    richTextBox1.AppendText(line.Time.ToString("yyyy-MM-dd HH:mm:ss"));
+                    richTextBox1.SelectionColor = Color.Yellow;
+                    richTextBox1.AppendText("]");
                     richTextBox1.SelectionColor = richTextBox1.ForeColor;
 
                     switch (line.Level)
