@@ -78,6 +78,8 @@
             this.CopyAllLogsButton = new System.Windows.Forms.Button();
             this.MarginLabel1 = new System.Windows.Forms.Label();
             this.ClearLogsButton = new System.Windows.Forms.Button();
+            this.MarginLabel2 = new System.Windows.Forms.Label();
+            this.ScreenShotButton = new System.Windows.Forms.Button();
             this.overlayTabControl1.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -157,6 +159,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.ScreenShotButton);
+            this.panel4.Controls.Add(this.MarginLabel2);
             this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.label14);
             this.panel4.Controls.Add(this.button4);
@@ -272,7 +276,7 @@
             this.SettingsTabPage.Controls.Add(this.ScreenShotSettingGroupbox);
             this.SettingsTabPage.Location = new System.Drawing.Point(2, 34);
             this.SettingsTabPage.Name = "SettingsTabPage";
-            this.SettingsTabPage.Padding = new System.Windows.Forms.Padding(10);
+            this.SettingsTabPage.Padding = new System.Windows.Forms.Padding(10, 2, 10, 10);
             this.SettingsTabPage.Size = new System.Drawing.Size(796, 444);
             this.SettingsTabPage.TabIndex = 2;
             this.SettingsTabPage.Text = "Settings";
@@ -282,7 +286,7 @@
             // 
             this.ScreenShotSettingGroupbox.Controls.Add(this.tableLayoutPanel1);
             this.ScreenShotSettingGroupbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ScreenShotSettingGroupbox.Location = new System.Drawing.Point(10, 10);
+            this.ScreenShotSettingGroupbox.Location = new System.Drawing.Point(10, 2);
             this.ScreenShotSettingGroupbox.Margin = new System.Windows.Forms.Padding(10);
             this.ScreenShotSettingGroupbox.Name = "ScreenShotSettingGroupbox";
             this.ScreenShotSettingGroupbox.Padding = new System.Windows.Forms.Padding(3, 3, 10, 10);
@@ -714,6 +718,28 @@
             this.ClearLogsButton.Text = "Clear Logs";
             this.ClearLogsButton.UseVisualStyleBackColor = true;
             // 
+            // MarginLabel2
+            // 
+            this.MarginLabel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MarginLabel2.Location = new System.Drawing.Point(476, 0);
+            this.MarginLabel2.Name = "MarginLabel2";
+            this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
+            this.MarginLabel2.TabIndex = 6;
+            // 
+            // ScreenShotButton
+            // 
+            this.ScreenShotButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScreenShotButton.BackgroundImage")));
+            this.ScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ScreenShotButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ScreenShotButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScreenShotButton.Location = new System.Drawing.Point(446, 0);
+            this.ScreenShotButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ScreenShotButton.Name = "ScreenShotButton";
+            this.ScreenShotButton.Size = new System.Drawing.Size(30, 30);
+            this.ScreenShotButton.TabIndex = 7;
+            this.ScreenShotButton.UseVisualStyleBackColor = true;
+            // 
             // OverlayController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -797,5 +823,7 @@
         private System.Windows.Forms.Button CopyAllLogsButton;
         private System.Windows.Forms.Label MarginLabel1;
         private System.Windows.Forms.Button ClearLogsButton;
+        private System.Windows.Forms.Label MarginLabel2;
+        private System.Windows.Forms.Button ScreenShotButton;
     }
 }
