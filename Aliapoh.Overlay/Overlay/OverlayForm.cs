@@ -74,6 +74,7 @@ namespace Aliapoh.Overlay
         {
             try
             {
+                LOG.Logger.Log(LogLevel.Info, "Browser Initializing...");
                 IsBrowserInitialized = false;
                 TopMost = true;
                 var browser = new BrowserSettings()
@@ -111,21 +112,9 @@ namespace Aliapoh.Overlay
             }
         }
 
-        public event EventHandler<LogEventArgs> OnLog;
-
-        private void Log(LogLevel level, string message)
-        {
-            OnLog?.Invoke(this, new LogEventArgs(level, string.Format("{0}: {1}", Name, message)));
-        }
-
-        private void Log(LogLevel level, string format, params object[] args)
-        {
-            Log(level, string.Format(format, args));
-        }
-
         private void Overlay_ConsoleMessage(object sender, ConsoleMessageEventArgs e)
         {
-            Log(LogLevel.Info, e.Message);
+            LOG.Logger.Log(LogLevel.Browser, string.Format("{0}: {1}", Name, e.Message));
         }
 
         private void EnableMouseClickThru()
@@ -147,6 +136,7 @@ namespace Aliapoh.Overlay
 
         private void Overlay_BrowserInitialized(object sender, EventArgs e)
         {
+            LOG.Logger.Log(LogLevel.Info, Name + " Browser Initialized");
             MainOverlay = Browser.GetBrowser();
             Browser.Size = new Size(Width, Height);
             IsBrowserInitialized = true;

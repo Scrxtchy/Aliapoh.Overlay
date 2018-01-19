@@ -34,6 +34,8 @@
             this.overlayManageTabControl1 = new Aliapoh.Overlay.OverlayManageTabControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ScreenShotButton = new System.Windows.Forms.Button();
+            this.MarginLabel2 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -62,6 +64,7 @@
             this.ScreenshotBackgroundSelectButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.PluginsTabPage = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.InformationTabPage = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.issueBrowserPanel = new System.Windows.Forms.Panel();
@@ -73,16 +76,13 @@
             this.AliapohOverlayLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LogTabPage = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.CopyAllLogsButton = new System.Windows.Forms.Button();
-            this.MarginLabel1 = new System.Windows.Forms.Label();
             this.ClearLogsButton = new System.Windows.Forms.Button();
-            this.MarginLabel2 = new System.Windows.Forms.Label();
-            this.ScreenShotButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.MarginLabel1 = new System.Windows.Forms.Label();
+            this.CopyAllLogsButton = new System.Windows.Forms.Button();
             this.OpenBackgroundDialog = new System.Windows.Forms.OpenFileDialog();
             this.ScreenshotSavePathSelectDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.overlayTabControl1.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -176,6 +176,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(572, 30);
             this.panel4.TabIndex = 3;
+            // 
+            // ScreenShotButton
+            // 
+            this.ScreenShotButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScreenShotButton.BackgroundImage")));
+            this.ScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ScreenShotButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ScreenShotButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScreenShotButton.Location = new System.Drawing.Point(446, 0);
+            this.ScreenShotButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ScreenShotButton.Name = "ScreenShotButton";
+            this.ScreenShotButton.Size = new System.Drawing.Size(30, 30);
+            this.ScreenShotButton.TabIndex = 7;
+            this.ScreenShotButton.UseVisualStyleBackColor = true;
+            // 
+            // MarginLabel2
+            // 
+            this.MarginLabel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MarginLabel2.Location = new System.Drawing.Point(476, 0);
+            this.MarginLabel2.Name = "MarginLabel2";
+            this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
+            this.MarginLabel2.TabIndex = 6;
             // 
             // button5
             // 
@@ -542,6 +564,16 @@
             this.PluginsTabPage.Text = "Plugins";
             this.PluginsTabPage.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
+            this.label1.Location = new System.Drawing.Point(15, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Comming soon";
+            // 
             // InformationTabPage
             // 
             this.InformationTabPage.Controls.Add(this.panel1);
@@ -666,19 +698,6 @@
             this.LogTabPage.Text = "LogEntry";
             this.LogTabPage.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 32);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(796, 412);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.ClearLogsButton);
@@ -690,26 +709,6 @@
             this.panel5.Padding = new System.Windows.Forms.Padding(2);
             this.panel5.Size = new System.Drawing.Size(796, 32);
             this.panel5.TabIndex = 2;
-            // 
-            // CopyAllLogsButton
-            // 
-            this.CopyAllLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CopyAllLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.CopyAllLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CopyAllLogsButton.Location = new System.Drawing.Point(2, 2);
-            this.CopyAllLogsButton.Name = "CopyAllLogsButton";
-            this.CopyAllLogsButton.Size = new System.Drawing.Size(100, 28);
-            this.CopyAllLogsButton.TabIndex = 0;
-            this.CopyAllLogsButton.Text = "Copy All Logs";
-            this.CopyAllLogsButton.UseVisualStyleBackColor = true;
-            // 
-            // MarginLabel1
-            // 
-            this.MarginLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MarginLabel1.Location = new System.Drawing.Point(102, 2);
-            this.MarginLabel1.Name = "MarginLabel1";
-            this.MarginLabel1.Size = new System.Drawing.Size(2, 28);
-            this.MarginLabel1.TabIndex = 1;
             // 
             // ClearLogsButton
             // 
@@ -723,41 +722,43 @@
             this.ClearLogsButton.Text = "Clear Logs";
             this.ClearLogsButton.UseVisualStyleBackColor = true;
             // 
-            // MarginLabel2
+            // MarginLabel1
             // 
-            this.MarginLabel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MarginLabel2.Location = new System.Drawing.Point(476, 0);
-            this.MarginLabel2.Name = "MarginLabel2";
-            this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
-            this.MarginLabel2.TabIndex = 6;
+            this.MarginLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MarginLabel1.Location = new System.Drawing.Point(102, 2);
+            this.MarginLabel1.Name = "MarginLabel1";
+            this.MarginLabel1.Size = new System.Drawing.Size(2, 28);
+            this.MarginLabel1.TabIndex = 1;
             // 
-            // ScreenShotButton
+            // CopyAllLogsButton
             // 
-            this.ScreenShotButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScreenShotButton.BackgroundImage")));
-            this.ScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ScreenShotButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ScreenShotButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ScreenShotButton.Location = new System.Drawing.Point(446, 0);
-            this.ScreenShotButton.Margin = new System.Windows.Forms.Padding(0);
-            this.ScreenShotButton.Name = "ScreenShotButton";
-            this.ScreenShotButton.Size = new System.Drawing.Size(30, 30);
-            this.ScreenShotButton.TabIndex = 7;
-            this.ScreenShotButton.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
-            this.label1.Location = new System.Drawing.Point(15, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Comming soon";
+            this.CopyAllLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CopyAllLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.CopyAllLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CopyAllLogsButton.Location = new System.Drawing.Point(2, 2);
+            this.CopyAllLogsButton.Name = "CopyAllLogsButton";
+            this.CopyAllLogsButton.Size = new System.Drawing.Size(100, 28);
+            this.CopyAllLogsButton.TabIndex = 0;
+            this.CopyAllLogsButton.Text = "Copy All Logs";
+            this.CopyAllLogsButton.UseVisualStyleBackColor = true;
             // 
             // OpenBackgroundDialog
             // 
             this.OpenBackgroundDialog.FileName = "openFileDialog1";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 32);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(796, 412);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
             // 
             // OverlayController
             // 
@@ -767,6 +768,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 480);
             this.Name = "OverlayController";
             this.Size = new System.Drawing.Size(800, 480);
+            this.Load += new System.EventHandler(this.OverlayController_Load);
             this.overlayTabControl1.ResumeLayout(false);
             this.OverlaysTabPage.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -798,7 +800,6 @@
         private OverlayTabControl overlayTabControl1;
         private System.Windows.Forms.TabPage OverlaysTabPage;
         private System.Windows.Forms.TabPage LogTabPage;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TabPage SettingsTabPage;
         private System.Windows.Forms.TabPage InformationTabPage;
         private System.Windows.Forms.GroupBox ScreenShotSettingGroupbox;
@@ -849,5 +850,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog OpenBackgroundDialog;
         private System.Windows.Forms.FolderBrowserDialog ScreenshotSavePathSelectDialog;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

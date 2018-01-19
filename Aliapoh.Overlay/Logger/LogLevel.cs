@@ -6,6 +6,7 @@
         Debug,
         Info,
         Warning,
-        Error
+        Error,
+        Browser
     }
 }

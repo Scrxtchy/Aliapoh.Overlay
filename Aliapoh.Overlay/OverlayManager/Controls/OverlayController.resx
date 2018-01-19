@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ScreenShotButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAAB0SURBVDhPxdJR
+        CoAwDAPQHcID7z5+esDagJ1l5GO1xQ0elBCCHzYRKUXDDBpm0DCDhkZfVzi8zrqGhmYaGuae9x78a1aN
+        r/aDvhC2dfBSxwM364QGMWQPN+vsHTwVhgA364QGl/wyWPtjV6FhBg0zaPidtBumiUVIsNaKtwAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
   <data name="button5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -655,15 +664,6 @@
         AABQnSwEAABAdbIQAAAA1clCAAAAVCcLAQAAUJ0sBAAAQHWyEAAAANXJQgAAAFQnCwEAAFCdLAQAAEB1
         shAAAADVyUIAAABUJwsBAABQnSwEAABAdbIQAAAA1clCAAAAVJX9g/8fQorV5fw1iTcAAAAASUVORK5C
         YII=
-</value>
-  </data>
-  <data name="ScreenShotButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAAB0SURBVDhPxdJR
-        CoAwDAPQHcID7z5+esDagJ1l5GO1xQ0elBCCHzYRKUXDDBpm0DCDhkZfVzi8zrqGhmYaGuae9x78a1aN
-        r/aDvhC2dfBSxwM364QGMWQPN+vsHTwVhgA364QGl/wyWPtjV6FhBg0zaPidtBumiUVIsNaKtwAAAABJ
-        RU5ErkJggg==
 </value>
   </data>
   <metadata name="OpenBackgroundDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

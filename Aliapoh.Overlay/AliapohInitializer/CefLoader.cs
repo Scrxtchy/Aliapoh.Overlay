@@ -1,4 +1,5 @@
-﻿using CefSharp;
+﻿using Aliapoh.Overlay.Logger;
+using CefSharp;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -13,6 +14,11 @@ namespace Aliapoh.Overlay
             CefLibraryHandle libloader = new CefLibraryHandle(Path.Combine(Program.CEFDIR, "libcef.dll"));
             Cef.EnableHighDPISupport();
             bool isValid = !libloader.IsInvalid;
+            LOG.Logger.Log(LogLevel.Info, "CEF Libaray: " + (isValid ? "OK" : "Failed"));
+            if(!isValid)
+            {
+                LOG.Logger.Log(LogLevel.Error, "Initialize Failed. CEF Binary is not valid");
+            }
             var setting = new CefSettings()
             {
                 LocalesDirPath = Path.Combine(Program.CEFDIR, "locales"),

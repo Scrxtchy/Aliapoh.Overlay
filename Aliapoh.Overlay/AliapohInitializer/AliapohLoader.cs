@@ -30,13 +30,14 @@ namespace Aliapoh.Overlay
         public static string TargetCEFTAG = "63.0.0-pre01";
         public static void Initialize()
         {
-            LoggerInitializer.Initialize();
+            LOG.Initialize();
 
             var loadfrm = new LoaderForm();
             loadfrm.Show();
             loadfrm.Refresh();
 
-            foreach(var i in DIRDICT)
+            LOG.Logger.Log(LogLevel.Info, "Checking Directories");
+            foreach (var i in DIRDICT)
             {
                 loadfrm.Render("Directory Check...\n" + i);
                 MKDIR(i.Value);
@@ -61,8 +62,9 @@ namespace Aliapoh.Overlay
                 "install newtonsoft.json -version 10.0.3",
             };
 
-            foreach(var bin in nupkgs)
+            foreach (var bin in nupkgs)
             {
+                LOG.Logger.Log(LogLevel.Info, "Install Nuget Packages: " + bin);
                 loadfrm.Render(bin);
                 var p = new Process()
                 {
@@ -82,6 +84,7 @@ namespace Aliapoh.Overlay
             }
 
             loadfrm.Render("Arrange Nuget Package...\n");
+            LOG.Logger.Log(LogLevel.Info, "Arrange Nuget Packages");
 
             var dirs = new List<string>()
             {
@@ -126,9 +129,12 @@ namespace Aliapoh.Overlay
 
             loadfrm.Render("Initializing...");
             Thread.Sleep(500);
+            LOG.Logger.Log(LogLevel.Info, "Initialize CEF");
             CefLoader.Initialize();
+            LOG.Logger.Log(LogLevel.Info, "Initialize Localization");
             LanguageLoader.Initialize();
             Thread.Sleep(500);
+            LOG.Logger.Log(LogLevel.Info, "Successfully loaded Aliapoh");
             loadfrm.Close();
             loadfrm.Dispose();
         }

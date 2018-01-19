@@ -1,6 +1,6 @@
 ﻿namespace Aliapoh.Overlay.Logger
 {
-    public static class LoggerInitializer
+    public static class LOG
     {
         public static LoggerMain Logger { get; set; }
 
