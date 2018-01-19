@@ -8,6 +8,7 @@ using CefSharp;
 using CefSharp.OffScreen;
 using System.Threading;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Aliapoh.Overlay
 {
@@ -29,7 +30,10 @@ namespace Aliapoh.Overlay
         private bool D_SHIFT { get; set; }
         private CefMenuHandler CefMenu { get; set; }
 
-        private OverlayPluginApi OverlayAPI { get; set; }
+        private ACTPlugin.OverlayPluginApi OverlayAPI { get; set; }
+
+        [DllImport("user32.dll")]
+        static extern bool SetForegroundWindow(IntPtr hWnd);
 
         public OverlayForm()
         {
@@ -62,7 +66,7 @@ namespace Aliapoh.Overlay
                     MenuHandler = CefMenu,
                 };
 
-                OverlayAPI = new OverlayPluginApi(this);
+                OverlayAPI = new ACTPlugin.OverlayPluginApi(this);
                 Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
 
                 Debug.WriteLine("Overlay Initializing");
@@ -134,7 +138,7 @@ namespace Aliapoh.Overlay
         private void Overlay_NewScreenshot(object sender, EventArgs e)
         {
             ScreenShot = Browser.ScreenshotOrNull(PopupBlending.Main);
-            if (ScreenShot != null) SetBitmap(ScreenShot);
+            if (ScreenShot != null) SetBitmap(ScreenShot, this);
             GC.Collect(1);
         }
 
@@ -391,7 +395,7 @@ namespace Aliapoh.Overlay
         }
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/| Set Layered Window Image |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-        public void SetBitmap(Bitmap bitmap)
+        public static void SetBitmap(Bitmap bitmap, Form frm)
         {
             // retrieve current screen device context
             IntPtr screenDc = NativeMethods.GetDC(IntPtr.Zero);
@@ -418,8 +422,8 @@ namespace Aliapoh.Overlay
                 NativeMethods.PointStruct sourcePoint = new NativeMethods.PointStruct();
                 NativeMethods.PointStruct topPoint = new NativeMethods.PointStruct()
                 {
-                    X = Left,
-                    Y = Top
+                    X = frm.Left,
+                    Y = frm.Top
                 };
 
                 NativeMethods.BlendFunctionStruct blend = new NativeMethods.BlendFunctionStruct()
@@ -430,9 +434,9 @@ namespace Aliapoh.Overlay
                     SourceConstantAlpha = byte.MaxValue
                 };
 
-                Invoke((MethodInvoker)delegate
+                frm.Invoke((MethodInvoker)delegate
                 {
-                    NativeMethods.UpdateLayeredWindow(Handle, screenDc, ref topPoint, ref size, compatibleMemoryDc,
+                    NativeMethods.UpdateLayeredWindow(frm.Handle, screenDc, ref topPoint, ref size, compatibleMemoryDc,
                         ref sourcePoint, 0, ref blend, 2 /* ULW_ALPHA */);
                 });
             }
@@ -453,5 +457,10 @@ namespace Aliapoh.Overlay
             }
         }
         #endregion
+
+        private void OverlayForm_Load(object sender, EventArgs e)
+        {
+            SetForegroundWindow(Handle);
+        }
     }
 }

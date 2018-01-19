@@ -5,6 +5,7 @@ using System.Net;
 using System.Diagnostics;
 using System.Threading;
 using System.Reflection;
+using Aliapoh.Overlay.AliapohInitializer;
 
 namespace Aliapoh.Overlay
 {
@@ -28,8 +29,13 @@ namespace Aliapoh.Overlay
         public static string TargetCEFTAG = "63.0.0-pre01";
         public static void Initialize()
         {
+            var loadfrm = new LoaderForm();
+            loadfrm.Show();
+            loadfrm.Refresh();
+
             foreach(var i in DIRDICT)
             {
+                loadfrm.Render("Directory Check...\n" + i);
                 MKDIR(i.Value);
             }
 
@@ -42,6 +48,8 @@ namespace Aliapoh.Overlay
                 if (fi.Length < 1024)
                     wc.DownloadFile("https://dist.nuget.org/win-x86-commandline/latest/nuget.exe", DIRDICT["BINDIR"] + "\\nuget.exe");
             }
+
+            loadfrm.Render("Get Nuget Package...\n");
 
             var nupkgs = new List<string>()
             {
@@ -70,6 +78,8 @@ namespace Aliapoh.Overlay
             }
 
             // Newtonsoft.Json -Version 10.0.3 ?
+
+            loadfrm.Render("Arrange Nuget Package...\n");
 
             var dirs = new List<string>()
             {
@@ -112,10 +122,13 @@ namespace Aliapoh.Overlay
 
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
+            loadfrm.Render("Initializing...");
             Thread.Sleep(500);
             CefLoader.Initialize();
             LanguageLoader.Initialize();
             Thread.Sleep(500);
+            loadfrm.Close();
+            loadfrm.Dispose();
         }
 
         private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)

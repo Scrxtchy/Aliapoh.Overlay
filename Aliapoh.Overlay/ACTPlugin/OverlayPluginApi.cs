@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlay.ACTPlugin
 {
     public class OverlayPluginApi
     {
         private string version = "1.0.0.0";
-        private OverlayForm Overlay { get; set; }
+        private OverlayForm Form { get; set; }
 
         public OverlayPluginApi(OverlayForm o)
         {
-            Overlay = o;
+            Form = o;
         }
 
         public string OverlayVersion
@@ -29,7 +29,7 @@ namespace Aliapoh.Overlay
         {
             get
             {
-                return Overlay.Name;
+                return Form.Name;
             }
         }
 

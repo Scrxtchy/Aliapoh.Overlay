@@ -71,6 +71,10 @@
     <ApplicationIcon>aliapoh_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Advanced Combat Tracker">
+      <HintPath>..\Thirdparty\ACT\Advanced Combat Tracker.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="CefSharp, Version=63.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Thirdparty\CefSharp64\CefSharp.dll</HintPath>
@@ -108,13 +112,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACTPlugin\Enums\ChattingType.cs" />
+    <Compile Include="ACTPlugin\Enums\MessageType.cs" />
+    <Compile Include="ACTPlugin\Network\BeforeLogLineRead.cs" />
     <Compile Include="AliapohInitializer\AliapohLoader.cs" />
     <Compile Include="AliapohInitializer\CefLoader.cs" />
     <Compile Include="AliapohInitializer\Downloader.cs" />
+    <Compile Include="AliapohInitializer\LoaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AliapohInitializer\LoaderForm.Designer.cs">
+      <DependentUpon>LoaderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extender\FontMatrics.cs" />
     <Compile Include="Extender\FontMetricsImpl.cs" />
     <Compile Include="Extender\GraphicExtender.cs" />
     <Compile Include="Extender\RectangleEdgeFilter.cs" />
+    <Compile Include="Overlay\AutoHide.cs" />
     <Compile Include="OverlayManager\Enums\GlobalHotkeyType.cs" />
     <Compile Include="OverlayManager\GlobalHook\Events\KeyPressedEventArgs.cs" />
     <Compile Include="OverlayManager\GlobalHook\Origin\Keyboard.cs" />
@@ -124,18 +138,18 @@
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\ModifierKeys.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\Window.cs" />
     <Compile Include="OverlayManager\Plugins\IPlugin.cs" />
-    <Compile Include="OverlayForm\FXs\OverlayPluginApi.cs" />
-    <Compile Include="OverlayForm\Handlers\BrowserProcessHandler.cs" />
-    <Compile Include="OverlayForm\FXs\NativeMethods.cs" />
-    <Compile Include="OverlayForm\Handlers\CefMenuHandler.cs" />
-    <Compile Include="OverlayForm\Handlers\DisplayHandler.cs" />
-    <Compile Include="OverlayForm\OverlayForm.cs">
+    <Compile Include="ACTPlugin\OverlayPluginApi.cs" />
+    <Compile Include="Overlay\Handlers\BrowserProcessHandler.cs" />
+    <Compile Include="Overlay\FXs\NativeMethods.cs" />
+    <Compile Include="Overlay\Handlers\CefMenuHandler.cs" />
+    <Compile Include="Overlay\Handlers\DisplayHandler.cs" />
+    <Compile Include="Overlay\OverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OverlayForm\OverlayForm.Designer.cs">
+    <Compile Include="Overlay\OverlayForm.Designer.cs">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OverlayForm\Enums\WM.cs" />
+    <Compile Include="Overlay\Enums\WM.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\OverlayManageTabControl.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\OverlayTabControl.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\RECT.cs" />
@@ -168,7 +182,10 @@
     <Compile Include="OverlayManager\SettingManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="OverlayForm\OverlayForm.resx">
+    <EmbeddedResource Include="AliapohInitializer\LoaderForm.resx">
+      <DependentUpon>LoaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Overlay\OverlayForm.resx">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OverlayManager\Controls\OverlayConfig.resx">
@@ -197,6 +214,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="aliapoh_icon.ico" />
+    <None Include="Resources\frmimg.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
@@ -211,7 +229,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Localization\LanguageFile_ko-KR.json" />
+    <Compile Include="ACTPlugin\PluginMain.cs" />
+    <None Include="Localization\LanguageFiles\LanguageFile_ko-KR.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

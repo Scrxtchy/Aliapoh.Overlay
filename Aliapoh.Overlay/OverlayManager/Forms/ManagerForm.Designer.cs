@@ -48,10 +48,10 @@
             this.Controls.Add(this.overlayController1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 540);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "ManagerForm";
             this.Text = "ManagerForm";
             this.ResumeLayout(false);
-
         }
 
         #endregion
