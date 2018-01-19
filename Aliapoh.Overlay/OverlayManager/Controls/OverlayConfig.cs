@@ -191,25 +191,25 @@ namespace Aliapoh.Overlay
 
         public SettingObject SettingExport()
         {
-            var s = new SettingObject();
-            
-            s.Url = SiteURL.Text;
-            s.Name = Name;
-            s.Show = OverlayShow.Checked;
-            s.Clickthru = OverlayClickthru.Checked;
-            s.Locked = OverlayLock.Checked;
-            s.UseGlobalHotkey = OverlayGlobalHotkey.Checked;
-            s.BeforeLogLineRead = OverlayEnableBeforeLogLineRead.Checked;
-            s.Framerate = (int)OverlayFramerate.Value;
-            s.Updaterate = (int)OverlayUpdaterate.Value;
-            s.Width = (int)OverlayWidth.Value;
-            s.Height = (int)OverlayHeight.Value;
-            s.Left = (int)OverlayX.Value;
-            s.Top = (int)OverlayY.Value;
-            s.GlobalHotkey = (int)GlobalHotkey;
-            s.GlobalHotkeyModifiers = (int)GlobalHotkeyModifiers;
-            s.GlobalHotkeyType = (int)GlobalHotkeyType;
-
+            var s = new SettingObject()
+            {
+                Url = SiteURL.Text,
+                Name = Name,
+                Show = OverlayShow.Checked,
+                Clickthru = OverlayClickthru.Checked,
+                Locked = OverlayLock.Checked,
+                UseGlobalHotkey = OverlayGlobalHotkey.Checked,
+                BeforeLogLineRead = OverlayEnableBeforeLogLineRead.Checked,
+                Framerate = (int)OverlayFramerate.Value,
+                Updaterate = (int)OverlayUpdaterate.Value,
+                Width = (int)OverlayWidth.Value,
+                Height = (int)OverlayHeight.Value,
+                Left = (int)OverlayX.Value,
+                Top = (int)OverlayY.Value,
+                GlobalHotkey = (int)GlobalHotkey,
+                GlobalHotkeyModifiers = (int)GlobalHotkeyModifiers,
+                GlobalHotkeyType = (int)GlobalHotkeyType,
+            };
             return s;
         }
 

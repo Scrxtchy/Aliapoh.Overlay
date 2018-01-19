@@ -164,7 +164,24 @@ namespace Aliapoh.Overlay.OverlayManager
             }
         }
         #endregion
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|       SETTINGEXPORT      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+        public GlobalSettingObject SettingExport()
+        {
+            var o = new GlobalSettingObject()
+            {
+                VersionAutoCheck = VersionAutoCheckCheckBox.Checked,
+                AutoHide = AutoHideCheckBox.Checked,
+                AutoClipping = AutoClippingCheckBox.Checked,
+                ScreenshotSavePath = ScreenshotSavePathTextBox.Text,
+                BackgroundImagePath = ScreenshotBackgroundImagePathTextBox.Text,
+                DetectProcessName = DetectProcessNameTextBox.Text,
+                BackgroundFillMode = ScreenshotBackgroundFillModeComboBox.SelectedIndex,
+                ScreenshotMargin = (int)ScreenshotMargin.Value
+            };
 
+            return o;
+        }
+        #endregion
         private void OverlayAddButton_Click(object sender, EventArgs e)
         {
             OverlayCreate("OverlayTest");

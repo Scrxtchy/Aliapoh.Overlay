@@ -8,9 +8,7 @@ namespace Aliapoh.Overlay.OverlayManager
 {
     public class SettingManager
     {
-        public void SettingExport()
-        {
-
-        }
+        public List<SettingObject> OverlaySettings { get; set; }
+        public GlobalSettingObject GlobalSetting { get; set; }
     }
 }
