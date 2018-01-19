@@ -124,6 +124,8 @@
     <Compile Include="AliapohInitializer\LoaderForm.Designer.cs">
       <DependentUpon>LoaderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AliapohInitializer\VersionManager.cs" />
+    <Compile Include="AliapohInitializer\VersionStruct.cs" />
     <Compile Include="Extender\FontMatrics.cs" />
     <Compile Include="Extender\FontMetricsImpl.cs" />
     <Compile Include="Extender\GraphicExtender.cs" />
