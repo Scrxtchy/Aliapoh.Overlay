@@ -30,10 +30,7 @@ namespace Aliapoh.Overlay
 
         public static RECT FromXYWH(int x, int y, int width, int height)
         {
-            return new RECT(x,
-                            y,
-                            x + width,
-                            y + height);
+            return new RECT(x, y, x + width, y + height);
         }
     }
 }
