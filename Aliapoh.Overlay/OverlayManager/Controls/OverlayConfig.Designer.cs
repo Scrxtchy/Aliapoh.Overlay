@@ -56,20 +56,20 @@
             this.overlayEnableBeforeLogLineRead = new System.Windows.Forms.CheckBox();
             this.EnableBeforeLogLineReadLabel = new System.Windows.Forms.Label();
             this.SubTableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.overlayName = new System.Windows.Forms.TextBox();
+            this.OverlayName = new System.Windows.Forms.TextBox();
             this.OverlayNameChangeButton = new System.Windows.Forms.Button();
             this.OverlayNameLabel = new System.Windows.Forms.Label();
             this.HotkeyTypeLabel = new System.Windows.Forms.Label();
             this.GlobalHotkeyLabel = new System.Windows.Forms.Label();
-            this.overlayGlobalHotkey = new System.Windows.Forms.CheckBox();
+            this.OverlayGlobalHotkey = new System.Windows.Forms.CheckBox();
             this.SubTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.overlayUpdateRate = new System.Windows.Forms.NumericUpDown();
             this.EnableGlobalHotkeyLabel = new System.Windows.Forms.Label();
             this.DataUpdateRateLabel = new System.Windows.Forms.Label();
             this.MaxframelateLabel = new System.Windows.Forms.Label();
-            this.overlayLock = new System.Windows.Forms.CheckBox();
-            this.overlayClickthru = new System.Windows.Forms.CheckBox();
+            this.OverlayLock = new System.Windows.Forms.CheckBox();
+            this.OverlayClickthru = new System.Windows.Forms.CheckBox();
             this.ClickthruLabel = new System.Windows.Forms.Label();
             this.ShowOverlayLabel = new System.Windows.Forms.Label();
             this.overlayShow = new System.Windows.Forms.CheckBox();
@@ -190,13 +190,13 @@
             this.MainTableLayoutPanel.Controls.Add(this.OverlayNameLabel, 0, 0);
             this.MainTableLayoutPanel.Controls.Add(this.HotkeyTypeLabel, 0, 8);
             this.MainTableLayoutPanel.Controls.Add(this.GlobalHotkeyLabel, 0, 7);
-            this.MainTableLayoutPanel.Controls.Add(this.overlayGlobalHotkey, 1, 6);
+            this.MainTableLayoutPanel.Controls.Add(this.OverlayGlobalHotkey, 1, 6);
             this.MainTableLayoutPanel.Controls.Add(this.SubTableLayoutPanel2, 1, 5);
             this.MainTableLayoutPanel.Controls.Add(this.EnableGlobalHotkeyLabel, 0, 6);
             this.MainTableLayoutPanel.Controls.Add(this.DataUpdateRateLabel, 0, 5);
             this.MainTableLayoutPanel.Controls.Add(this.MaxframelateLabel, 0, 4);
-            this.MainTableLayoutPanel.Controls.Add(this.overlayLock, 1, 3);
-            this.MainTableLayoutPanel.Controls.Add(this.overlayClickthru, 1, 2);
+            this.MainTableLayoutPanel.Controls.Add(this.OverlayLock, 1, 3);
+            this.MainTableLayoutPanel.Controls.Add(this.OverlayClickthru, 1, 2);
             this.MainTableLayoutPanel.Controls.Add(this.ClickthruLabel, 0, 2);
             this.MainTableLayoutPanel.Controls.Add(this.ShowOverlayLabel, 0, 1);
             this.MainTableLayoutPanel.Controls.Add(this.overlayShow, 1, 1);
@@ -535,7 +535,7 @@
             this.SubTableLayoutPanel5.ColumnCount = 2;
             this.SubTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.SubTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.SubTableLayoutPanel5.Controls.Add(this.overlayName, 0, 0);
+            this.SubTableLayoutPanel5.Controls.Add(this.OverlayName, 0, 0);
             this.SubTableLayoutPanel5.Controls.Add(this.OverlayNameChangeButton, 1, 0);
             this.SubTableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubTableLayoutPanel5.Location = new System.Drawing.Point(200, 0);
@@ -548,12 +548,12 @@
             // 
             // overlayName
             // 
-            this.overlayName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayName.Location = new System.Drawing.Point(0, 0);
-            this.overlayName.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            this.overlayName.Name = "overlayName";
-            this.overlayName.Size = new System.Drawing.Size(375, 23);
-            this.overlayName.TabIndex = 20;
+            this.OverlayName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayName.Location = new System.Drawing.Point(0, 0);
+            this.OverlayName.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            this.OverlayName.Name = "overlayName";
+            this.OverlayName.Size = new System.Drawing.Size(375, 23);
+            this.OverlayName.TabIndex = 20;
             // 
             // OverlayNameChangeButton
             // 
@@ -609,14 +609,14 @@
             // 
             // overlayGlobalHotkey
             // 
-            this.overlayGlobalHotkey.AutoSize = true;
-            this.overlayGlobalHotkey.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayGlobalHotkey.Location = new System.Drawing.Point(203, 147);
-            this.overlayGlobalHotkey.Name = "overlayGlobalHotkey";
-            this.overlayGlobalHotkey.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
-            this.overlayGlobalHotkey.Size = new System.Drawing.Size(394, 18);
-            this.overlayGlobalHotkey.TabIndex = 17;
-            this.overlayGlobalHotkey.UseVisualStyleBackColor = true;
+            this.OverlayGlobalHotkey.AutoSize = true;
+            this.OverlayGlobalHotkey.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayGlobalHotkey.Location = new System.Drawing.Point(203, 147);
+            this.OverlayGlobalHotkey.Name = "overlayGlobalHotkey";
+            this.OverlayGlobalHotkey.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
+            this.OverlayGlobalHotkey.Size = new System.Drawing.Size(394, 18);
+            this.OverlayGlobalHotkey.TabIndex = 17;
+            this.OverlayGlobalHotkey.UseVisualStyleBackColor = true;
             // 
             // SubTableLayoutPanel2
             // 
@@ -715,27 +715,27 @@
             // 
             // overlayLock
             // 
-            this.overlayLock.AutoSize = true;
-            this.overlayLock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayLock.Location = new System.Drawing.Point(203, 75);
-            this.overlayLock.Name = "overlayLock";
-            this.overlayLock.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
-            this.overlayLock.Size = new System.Drawing.Size(394, 18);
-            this.overlayLock.TabIndex = 9;
-            this.overlayLock.UseVisualStyleBackColor = true;
-            this.overlayLock.CheckedChanged += new System.EventHandler(this.OverlayLock_CheckedChanged);
+            this.OverlayLock.AutoSize = true;
+            this.OverlayLock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayLock.Location = new System.Drawing.Point(203, 75);
+            this.OverlayLock.Name = "overlayLock";
+            this.OverlayLock.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
+            this.OverlayLock.Size = new System.Drawing.Size(394, 18);
+            this.OverlayLock.TabIndex = 9;
+            this.OverlayLock.UseVisualStyleBackColor = true;
+            this.OverlayLock.CheckedChanged += new System.EventHandler(this.OverlayLock_CheckedChanged);
             // 
             // overlayClickthru
             // 
-            this.overlayClickthru.AutoSize = true;
-            this.overlayClickthru.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayClickthru.Location = new System.Drawing.Point(203, 51);
-            this.overlayClickthru.Name = "overlayClickthru";
-            this.overlayClickthru.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
-            this.overlayClickthru.Size = new System.Drawing.Size(394, 18);
-            this.overlayClickthru.TabIndex = 4;
-            this.overlayClickthru.UseVisualStyleBackColor = true;
-            this.overlayClickthru.CheckedChanged += new System.EventHandler(this.OverlayClickthru_CheckedChanged);
+            this.OverlayClickthru.AutoSize = true;
+            this.OverlayClickthru.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayClickthru.Location = new System.Drawing.Point(203, 51);
+            this.OverlayClickthru.Name = "overlayClickthru";
+            this.OverlayClickthru.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
+            this.OverlayClickthru.Size = new System.Drawing.Size(394, 18);
+            this.OverlayClickthru.TabIndex = 4;
+            this.OverlayClickthru.UseVisualStyleBackColor = true;
+            this.OverlayClickthru.CheckedChanged += new System.EventHandler(this.OverlayClickthru_CheckedChanged);
             // 
             // ClickthruLabel
             // 
@@ -909,20 +909,20 @@
         private System.Windows.Forms.TableLayoutPanel MainTableLayoutPanel;
         private System.Windows.Forms.Label ShowOverlayLabel;
         private System.Windows.Forms.CheckBox overlayShow;
-        private System.Windows.Forms.CheckBox overlayClickthru;
+        private System.Windows.Forms.CheckBox OverlayClickthru;
         private System.Windows.Forms.Label ClickthruLabel;
         private System.Windows.Forms.Label LockOverlayLabel;
         private System.Windows.Forms.Label EnableGlobalHotkeyLabel;
         private System.Windows.Forms.Label DataUpdateRateLabel;
         private System.Windows.Forms.Label MaxframelateLabel;
-        private System.Windows.Forms.CheckBox overlayLock;
+        private System.Windows.Forms.CheckBox OverlayLock;
         private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel1;
         private System.Windows.Forms.Label MaxframelateDescLabel;
         private System.Windows.Forms.NumericUpDown overlayFramerate;
         private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown overlayUpdateRate;
-        private System.Windows.Forms.CheckBox overlayGlobalHotkey;
+        private System.Windows.Forms.CheckBox OverlayGlobalHotkey;
         private System.Windows.Forms.Label GlobalHotkeyLabel;
         private System.Windows.Forms.TextBox overlayGlobalHotkeyInput;
         private System.Windows.Forms.Label HotkeyTypeLabel;
@@ -930,7 +930,7 @@
         private System.Windows.Forms.Label OverlayNameLabel;
         private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel5;
         private System.Windows.Forms.Button OverlayNameChangeButton;
-        private System.Windows.Forms.TextBox overlayName;
+        private System.Windows.Forms.TextBox OverlayName;
         private System.Windows.Forms.Label EnableBeforeLogLineReadLabel;
         private System.Windows.Forms.CheckBox overlayEnableBeforeLogLineRead;
         public System.Windows.Forms.TextBox siteURL;

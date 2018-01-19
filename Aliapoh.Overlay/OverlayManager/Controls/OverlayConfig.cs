@@ -41,13 +41,45 @@ namespace Aliapoh.Overlay
             Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
 
             siteURL.Text = url;
-            overlayName.Text = name;
+            OverlayName.Text = name;
 
             Overlay.SettingLoad();
             Overlay.Show();
             Overlay.Browser.Load(siteURL.Text);
             Overlay.Location = new Point(10, 10);
             Overlay.Size = new Size(400, 400);
+        }
+
+        private void Initializer(SettingObject setting)
+        {
+            siteURL.Text = setting.Url;
+            OverlayName.Text = setting.Name;
+
+            Overlay = new OverlayForm(setting.Url)
+            {
+                Framerate = setting.Framerate,
+                Name = setting.Name,
+                Text = setting.Name,
+                ShowInTaskbar = false
+            };
+
+            InitializeComponent();
+
+            if (!DesignMode)
+                LanguageLoader.LanguagePatch(this);
+            
+            Overlay.LocationChanged += Overlay_LocationChanged;
+            Overlay.SizeChanged += Overlay_SizeChanged;
+            Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
+
+            Overlay.Show();
+            Overlay.Browser.Load(siteURL.Text);
+            Overlay.Location = new Point(setting.Left, setting.Top);
+            Overlay.Size = new Size(setting.Width, setting.Height);
+
+            OverlayClickthru.Checked = setting.Clickthru;
+            OverlayGlobalHotkey.Checked = setting.UseGlobalHotkey;
+            OverlayLock.Checked = setting.Locked;
         }
 
         private void OverlayBrowserInitialized(object sender, EventArgs e)
@@ -133,9 +165,9 @@ namespace Aliapoh.Overlay
             {
                 { "Url", siteURL.Text },
                 { "Show", overlayShow.Checked },
-                { "Clickthru", overlayClickthru.Checked },
-                { "Locked", overlayLock.Checked },
-                { "UseGlobalHotkey", overlayGlobalHotkey.Checked },
+                { "Clickthru", OverlayClickthru.Checked },
+                { "Locked", OverlayLock.Checked },
+                { "UseGlobalHotkey", OverlayGlobalHotkey.Checked },
                 { "BeforeLogLineRead", overlayEnableBeforeLogLineRead.Checked },
 
                 { "Framerate", overlayFramerate.Value },

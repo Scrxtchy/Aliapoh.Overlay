@@ -19,6 +19,7 @@ namespace Aliapoh.Overlay
         public bool IsBrowserLocked { get; set; }
         public bool IsBrowserInitialized { get; private set; }
         public string OverlayName { get; set; }
+        public int Framerate { get; set; }
 
         public ChromiumWebBrowser Browser;
         public IBrowser MainOverlay;
@@ -77,9 +78,13 @@ namespace Aliapoh.Overlay
                 LOG.Logger.Log(LogLevel.Info, "Browser Initializing...");
                 IsBrowserInitialized = false;
                 TopMost = true;
+                var fr = 30;
+                if (Framerate != 0)
+                    fr = Framerate;
+
                 var browser = new BrowserSettings()
                 {
-                    WindowlessFrameRate = 30,
+                    WindowlessFrameRate = fr,
                     WebGl = CefState.Disabled, // Why?: A: Spectre attack issue, google suggest turn on WebGL Feature.
                     BackgroundColor = 0,
                 };
