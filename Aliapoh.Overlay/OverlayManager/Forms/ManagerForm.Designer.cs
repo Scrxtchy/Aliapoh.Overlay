@@ -56,6 +56,6 @@
 
         #endregion
 
-        private OverlayController overlayController1;
+        public OverlayController overlayController1;
     }
 }

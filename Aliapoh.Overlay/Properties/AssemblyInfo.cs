@@ -1,14 +1,12 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // 어셈블리에 대한 일반 정보는 다음 특성 집합을 통해 
 // 제어됩니다. 어셈블리와 관련된 정보를 수정하려면
 // 이러한 특성 값을 변경하세요.
 [assembly: AssemblyTitle("Aliapoh.Overlay")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("LALAFELL NETWORK")]
+[assembly: AssemblyDescription("Web overlay in your life")]
+[assembly: AssemblyCompany("L A L A F E L L   N E T W O R K")]
 [assembly: AssemblyProduct("Aliapoh.Overlay")]
 [assembly: AssemblyCopyright("Copyright © Laighlinne 2018")]
 [assembly: AssemblyTrademark("LALAFELL NETWORK")]
@@ -32,5 +30,5 @@ using System.Runtime.InteropServices;
 // 모든 값을 지정하거나 아래와 같이 '*'를 사용하여 빌드 번호 및 수정 번호가 자동으로
 // 지정되도록 할 수 있습니다.
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.*")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
