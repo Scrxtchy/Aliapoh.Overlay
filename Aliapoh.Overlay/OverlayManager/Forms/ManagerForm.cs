@@ -12,13 +12,10 @@ namespace Aliapoh.Overlay.OverlayManager
 {
     public partial class ManagerForm : Form
     {
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        static extern bool SetForegroundWindow(IntPtr hWnd);
-
         public ManagerForm()
         {
             InitializeComponent();
-            SetForegroundWindow(Handle);
+            NativeMethods.SetForegroundWindow(Handle);
         }
     }
 }

@@ -12,9 +12,6 @@ namespace Aliapoh.Overlay.AliapohInitializer
 {
     public partial class LoaderForm : Form
     {
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        static extern bool SetForegroundWindow(IntPtr hWnd);
-
         private Bitmap Background = Properties.Resources.frmimg;
         private Rectangle RenderRect = new Rectangle(8, 108, 284, 86);
         private StringFormat SF = new StringFormat(StringFormatFlags.FitBlackBox)
@@ -51,7 +48,7 @@ namespace Aliapoh.Overlay.AliapohInitializer
             Left = primaryArea.Width - 300 - SamePoint.Right;
             Top = primaryArea.Height - 200 - SamePoint.Bottom;
 
-            SetForegroundWindow(Handle);
+            NativeMethods.SetForegroundWindow(Handle);
         }
 
         public void Render(string text)

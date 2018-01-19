@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Aliapoh.Overlay.Logger
+﻿namespace Aliapoh.Overlay.Logger
 {
     public static class LoggerInitializer
     {

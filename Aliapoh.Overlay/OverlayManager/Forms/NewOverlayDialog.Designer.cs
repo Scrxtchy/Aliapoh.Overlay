@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewOverlayDialog));
             this.OkButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.NewOverlayCancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.OverlayURL = new System.Windows.Forms.TextBox();
             this.FramerateLabel = new System.Windows.Forms.Label();
@@ -61,17 +61,17 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.Location = new System.Drawing.Point(397, 90);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(0);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(109, 24);
-            this.CancelButton.TabIndex = 5;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelClick);
+            this.NewOverlayCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.NewOverlayCancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.NewOverlayCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewOverlayCancelButton.Location = new System.Drawing.Point(397, 90);
+            this.NewOverlayCancelButton.Margin = new System.Windows.Forms.Padding(0);
+            this.NewOverlayCancelButton.Name = "CancelButton";
+            this.NewOverlayCancelButton.Size = new System.Drawing.Size(109, 24);
+            this.NewOverlayCancelButton.TabIndex = 5;
+            this.NewOverlayCancelButton.Text = "Cancel";
+            this.NewOverlayCancelButton.UseVisualStyleBackColor = true;
+            this.NewOverlayCancelButton.Click += new System.EventHandler(this.CancelClick);
             // 
             // tableLayoutPanel1
             // 
@@ -209,7 +209,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(515, 123);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.NewOverlayCancelButton);
             this.Controls.Add(this.OkButton);
             this.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -229,7 +229,7 @@
 
         #endregion
         private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button NewOverlayCancelButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label FramerateLabel;

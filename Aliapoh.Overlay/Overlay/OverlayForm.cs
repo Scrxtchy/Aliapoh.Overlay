@@ -33,9 +33,6 @@ namespace Aliapoh.Overlay
 
         private ACTPlugin.OverlayPluginApi OverlayAPI { get; set; }
 
-        [DllImport("user32.dll")]
-        static extern bool SetForegroundWindow(IntPtr hWnd);
-
         public OverlayForm()
         {
             Initalizer("about:blank");
@@ -464,7 +461,7 @@ namespace Aliapoh.Overlay
 
         private void OverlayForm_Load(object sender, EventArgs e)
         {
-            SetForegroundWindow(Handle);
+            NativeMethods.SetForegroundWindow(Handle);
         }
     }
 }

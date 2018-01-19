@@ -81,8 +81,6 @@ namespace Aliapoh.Overlay
                     Thread.Sleep(100);
             }
 
-            // Newtonsoft.Json -Version 10.0.3 ?
-
             loadfrm.Render("Arrange Nuget Package...\n");
 
             var dirs = new List<string>()

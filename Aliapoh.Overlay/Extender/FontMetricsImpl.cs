@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace Aliapoh.Overlay.Extender
 {
-    public class FontMetricsImpl : FontMetrics
+    internal class FontMetricsImpl : FontMetrics
     {
         [DllImport("gdi32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr SelectObject(IntPtr hdc, IntPtr hgdiobj);
