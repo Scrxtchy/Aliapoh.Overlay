@@ -23,6 +23,7 @@ namespace Aliapoh.Overlay
                 UserDataPath = Path.Combine(Program.CEFDIR, "userdata"),
                 CachePath = Path.Combine(Program.CEFDIR, "Cache"),
                 BrowserSubprocessPath = Path.Combine(Program.CEFDIR, "CefSharp.BrowserSubprocess.exe"),
+                Locale = LanguageLoader.CurrentCulture,
                 ExternalMessagePump = false,
                 MultiThreadedMessageLoop = true,
                 WindowlessRenderingEnabled = true,

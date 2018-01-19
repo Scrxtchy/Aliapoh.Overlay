@@ -22,8 +22,7 @@ namespace Aliapoh.Overlay.GlobalHook
             {
                 var key = (Keys)(((int)m.LParam >> 16) & 0xFFFF);
                 var modifier = (ModifierKeys)((int)m.LParam & 0xFFFF);
-                if (KeyPressed != null)
-                    KeyPressed(this, new KeyPressedEventArgs(modifier, key));
+                KeyPressed?.Invoke(this, new KeyPressedEventArgs(modifier, key));
             }
         }
 

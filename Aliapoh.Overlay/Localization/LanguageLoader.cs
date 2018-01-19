@@ -18,13 +18,16 @@ namespace Aliapoh.Overlay
         public static string CurrentCulture { get; set; }
         public static JObject JSON { get; set; }
         public static Dictionary<string, byte[]> LanguageFiles { get; private set; }
+
         public static void Initialize()
         {
             CurrentCulture = CultureInfo.CurrentCulture.Name;
             LanguageFiles = new Dictionary<string, byte[]>()
             {
                 { "ko-KR", Properties.Resources.LanguageFile_ko_KR }
+                // { "ko", Properties.Resources.LanguageFile_ko_KR }
             };
+
             if (LanguageFiles.ContainsKey(CurrentCulture))
             {
                 var lang = Encoding.UTF8.GetString(LanguageFiles[CurrentCulture]);
@@ -36,7 +39,7 @@ namespace Aliapoh.Overlay
 
         public static void LanguagePatch(Control ctrl)
         {
-            if (!LanguageFiles.ContainsKey(CurrentCulture)) return;
+            if (!LanguageFiles.ContainsKey(CurrentCulture)) return; // 언어파일 없으면 반환
 
             var bind = BindingFlags.Public | BindingFlags.Static | BindingFlags.NonPublic;
             var flag = "";
