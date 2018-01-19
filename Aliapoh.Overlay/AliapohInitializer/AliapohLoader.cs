@@ -60,6 +60,7 @@ namespace Aliapoh.Overlay
 
             foreach(var bin in nupkgs)
             {
+                loadfrm.Render(bin);
                 var p = new Process()
                 {
                     StartInfo = new ProcessStartInfo()
@@ -152,7 +153,6 @@ namespace Aliapoh.Overlay
             if (!binfiles.Contains(asmFile)) return null;
             try
             {
-                Debug.WriteLine("Load " + asmFile);
                 if(asmFile.Contains("CefSharp"))
                     return Assembly.LoadFile(Path.Combine(Program.CEFDIR, asmFile + ".dll"));
                 else

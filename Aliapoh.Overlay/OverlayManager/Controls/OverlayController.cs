@@ -28,9 +28,6 @@ namespace Aliapoh.Overlay.OverlayManager
                 LanguageLoader.LanguagePatch(this);
 
             issueBrowserPanel.Controls.Add(issueBrowser);
-
-            Debug.WriteLine(OverlayEmpty);
-
             overlayTabControl1.Dock = DockStyle.None;
             overlayTabControl1.Left = -2;
             overlayTabControl1.Top = -2;

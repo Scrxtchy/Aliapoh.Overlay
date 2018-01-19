@@ -51,8 +51,6 @@ namespace Aliapoh.Overlay
             {
                 IsBrowserInitialized = false;
                 TopMost = true;
-                Debug.WriteLine("Overlay Load");
-
                 var browser = new BrowserSettings()
                 {
                     WindowlessFrameRate = 30,
@@ -68,14 +66,10 @@ namespace Aliapoh.Overlay
 
                 OverlayAPI = new ACTPlugin.OverlayPluginApi(this);
                 Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
-
-                Debug.WriteLine("Overlay Initializing");
-
                 Browser.DisplayHandler = new DisplayHandler();
                 Browser.BrowserInitialized += Overlay_BrowserInitialized;
                 Browser.NewScreenshot += Overlay_NewScreenshot;
                 Browser.ConsoleMessage += Overlay_ConsoleMessage;
-
                 new Thread((ThreadStart)delegate
                 {
                     while (true)
@@ -84,7 +78,6 @@ namespace Aliapoh.Overlay
                         GC.Collect(1);
                     }
                 }).Start();
-
                 InitializeComponent();
             }
             catch(Exception ex)
@@ -144,7 +137,6 @@ namespace Aliapoh.Overlay
 
         private void Overlay_BrowserInitialized(object sender, EventArgs e)
         {
-            Debug.WriteLine("Overlay Initialized");
             MainOverlay = Browser.GetBrowser();
             Browser.Size = new Size(Width, Height);
             IsBrowserInitialized = true;
@@ -284,7 +276,6 @@ namespace Aliapoh.Overlay
             }
             catch(Exception ex)
             {
-                Debug.WriteLine("KEY: " + key.ToString());
                 Debug.WriteLine(ex);
             }
         }

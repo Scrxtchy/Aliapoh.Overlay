@@ -64,7 +64,6 @@ namespace Aliapoh.Overlay
 
             foreach(FieldInfo field in ctrl.GetType().GetFields(bind))
             {
-                Debug.WriteLine(field.Name + " find...");
                 foreach (JProperty i in JSON["Strings"])
                 {
                     Debug.WriteLine("Setting Value " + field.Name + "(" + field.FieldType + ") to " + i.Name);

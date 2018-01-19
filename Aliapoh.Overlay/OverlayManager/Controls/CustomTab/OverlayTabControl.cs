@@ -79,7 +79,6 @@ namespace Aliapoh.Overlay
 
         protected override void WndProc(ref Message m)
         {
-            // Debug.WriteLine(m.Msg);
             if (m.Msg == 4904)
             {
                 var rc = (RECT)m.GetLParam(typeof(RECT));
