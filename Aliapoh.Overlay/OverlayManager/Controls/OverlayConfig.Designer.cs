@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OverlayConfig));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.siteURL = new System.Windows.Forms.TextBox();
+            this.SiteURL = new System.Windows.Forms.TextBox();
             this.justPaddingLabel1 = new System.Windows.Forms.Label();
             this.HTMLFileSelectButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,21 +39,21 @@
             this.MainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.SubTableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
-            this.overlayWidth = new System.Windows.Forms.NumericUpDown();
+            this.OverlayWidth = new System.Windows.Forms.NumericUpDown();
             this.WidthLabel = new System.Windows.Forms.Label();
             this.HeightLabel = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.overlayHeight = new System.Windows.Forms.NumericUpDown();
+            this.OverlayHeight = new System.Windows.Forms.NumericUpDown();
             this.SubTableLayout3 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
-            this.overlayX = new System.Windows.Forms.NumericUpDown();
+            this.OverlayX = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.overlayY = new System.Windows.Forms.NumericUpDown();
+            this.OverlayY = new System.Windows.Forms.NumericUpDown();
             this.SizeLabel = new System.Windows.Forms.Label();
             this.PositionLabel = new System.Windows.Forms.Label();
-            this.overlayEnableBeforeLogLineRead = new System.Windows.Forms.CheckBox();
+            this.OverlayEnableBeforeLogLineRead = new System.Windows.Forms.CheckBox();
             this.EnableBeforeLogLineReadLabel = new System.Windows.Forms.Label();
             this.SubTableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.OverlayName = new System.Windows.Forms.TextBox();
@@ -64,7 +64,7 @@
             this.OverlayGlobalHotkey = new System.Windows.Forms.CheckBox();
             this.SubTableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.overlayUpdateRate = new System.Windows.Forms.NumericUpDown();
+            this.OverlayUpdaterate = new System.Windows.Forms.NumericUpDown();
             this.EnableGlobalHotkeyLabel = new System.Windows.Forms.Label();
             this.DataUpdateRateLabel = new System.Windows.Forms.Label();
             this.MaxframelateLabel = new System.Windows.Forms.Label();
@@ -72,27 +72,27 @@
             this.OverlayClickthru = new System.Windows.Forms.CheckBox();
             this.ClickthruLabel = new System.Windows.Forms.Label();
             this.ShowOverlayLabel = new System.Windows.Forms.Label();
-            this.overlayShow = new System.Windows.Forms.CheckBox();
+            this.OverlayShow = new System.Windows.Forms.CheckBox();
             this.LockOverlayLabel = new System.Windows.Forms.Label();
             this.SubTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MaxframelateDescLabel = new System.Windows.Forms.Label();
-            this.overlayFramerate = new System.Windows.Forms.NumericUpDown();
-            this.overlayGlobalHotkeyInput = new System.Windows.Forms.TextBox();
+            this.OverlayFramerate = new System.Windows.Forms.NumericUpDown();
+            this.OverlayGlobalHotkeyInput = new System.Windows.Forms.TextBox();
             this.overlayGlobalHotkeyType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.MainTableLayoutPanel.SuspendLayout();
             this.SubTableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.overlayWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.overlayHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayHeight)).BeginInit();
             this.SubTableLayout3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.overlayX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.overlayY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayY)).BeginInit();
             this.SubTableLayoutPanel5.SuspendLayout();
             this.SubTableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.overlayUpdateRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayUpdaterate)).BeginInit();
             this.SubTableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.overlayFramerate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayFramerate)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,7 +110,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.siteURL);
+            this.panel2.Controls.Add(this.SiteURL);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(46, 0);
             this.panel2.Name = "panel2";
@@ -121,14 +121,14 @@
             // 
             // siteURL
             // 
-            this.siteURL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.siteURL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.siteURL.Font = new System.Drawing.Font("Microsoft NeoGothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.siteURL.Location = new System.Drawing.Point(5, 5);
-            this.siteURL.Name = "siteURL";
-            this.siteURL.Size = new System.Drawing.Size(497, 18);
-            this.siteURL.TabIndex = 0;
-            this.siteURL.Text = "about:blank";
+            this.SiteURL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SiteURL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SiteURL.Font = new System.Drawing.Font("Microsoft NeoGothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.SiteURL.Location = new System.Drawing.Point(5, 5);
+            this.SiteURL.Name = "siteURL";
+            this.SiteURL.Size = new System.Drawing.Size(497, 18);
+            this.SiteURL.TabIndex = 0;
+            this.SiteURL.Text = "about:blank";
             // 
             // justPaddingLabel1
             // 
@@ -184,7 +184,7 @@
             this.MainTableLayoutPanel.Controls.Add(this.SubTableLayout3, 1, 10);
             this.MainTableLayoutPanel.Controls.Add(this.SizeLabel, 0, 11);
             this.MainTableLayoutPanel.Controls.Add(this.PositionLabel, 0, 10);
-            this.MainTableLayoutPanel.Controls.Add(this.overlayEnableBeforeLogLineRead, 1, 9);
+            this.MainTableLayoutPanel.Controls.Add(this.OverlayEnableBeforeLogLineRead, 1, 9);
             this.MainTableLayoutPanel.Controls.Add(this.EnableBeforeLogLineReadLabel, 0, 9);
             this.MainTableLayoutPanel.Controls.Add(this.SubTableLayoutPanel5, 1, 0);
             this.MainTableLayoutPanel.Controls.Add(this.OverlayNameLabel, 0, 0);
@@ -199,10 +199,10 @@
             this.MainTableLayoutPanel.Controls.Add(this.OverlayClickthru, 1, 2);
             this.MainTableLayoutPanel.Controls.Add(this.ClickthruLabel, 0, 2);
             this.MainTableLayoutPanel.Controls.Add(this.ShowOverlayLabel, 0, 1);
-            this.MainTableLayoutPanel.Controls.Add(this.overlayShow, 1, 1);
+            this.MainTableLayoutPanel.Controls.Add(this.OverlayShow, 1, 1);
             this.MainTableLayoutPanel.Controls.Add(this.LockOverlayLabel, 0, 3);
             this.MainTableLayoutPanel.Controls.Add(this.SubTableLayoutPanel1, 1, 4);
-            this.MainTableLayoutPanel.Controls.Add(this.overlayGlobalHotkeyInput, 1, 7);
+            this.MainTableLayoutPanel.Controls.Add(this.OverlayGlobalHotkeyInput, 1, 7);
             this.MainTableLayoutPanel.Controls.Add(this.overlayGlobalHotkeyType, 1, 8);
             this.MainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTableLayoutPanel.Location = new System.Drawing.Point(0, 31);
@@ -235,11 +235,11 @@
             this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.SubTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.SubTableLayoutPanel4.Controls.Add(this.label20, 0, 0);
-            this.SubTableLayoutPanel4.Controls.Add(this.overlayWidth, 0, 0);
+            this.SubTableLayoutPanel4.Controls.Add(this.OverlayWidth, 0, 0);
             this.SubTableLayoutPanel4.Controls.Add(this.WidthLabel, 0, 0);
             this.SubTableLayoutPanel4.Controls.Add(this.HeightLabel, 3, 0);
             this.SubTableLayoutPanel4.Controls.Add(this.label23, 5, 0);
-            this.SubTableLayoutPanel4.Controls.Add(this.overlayHeight, 4, 0);
+            this.SubTableLayoutPanel4.Controls.Add(this.OverlayHeight, 4, 0);
             this.SubTableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubTableLayoutPanel4.Location = new System.Drawing.Point(200, 264);
             this.SubTableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -264,33 +264,33 @@
             // 
             // overlayWidth
             // 
-            this.overlayWidth.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayWidth.Increment = new decimal(new int[] {
+            this.OverlayWidth.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayWidth.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.overlayWidth.Location = new System.Drawing.Point(50, 0);
-            this.overlayWidth.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayWidth.Maximum = new decimal(new int[] {
+            this.OverlayWidth.Location = new System.Drawing.Point(50, 0);
+            this.OverlayWidth.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayWidth.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.overlayWidth.Minimum = new decimal(new int[] {
+            this.OverlayWidth.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.overlayWidth.Name = "overlayWidth";
-            this.overlayWidth.Size = new System.Drawing.Size(100, 23);
-            this.overlayWidth.TabIndex = 16;
-            this.overlayWidth.Value = new decimal(new int[] {
+            this.OverlayWidth.Name = "overlayWidth";
+            this.OverlayWidth.Size = new System.Drawing.Size(100, 23);
+            this.OverlayWidth.TabIndex = 16;
+            this.OverlayWidth.Value = new decimal(new int[] {
             400,
             0,
             0,
             0});
-            this.overlayWidth.ValueChanged += new System.EventHandler(this.OverlayWidth_ValueChanged);
+            this.OverlayWidth.ValueChanged += new System.EventHandler(this.OverlayWidth_ValueChanged);
             // 
             // WidthLabel
             // 
@@ -330,27 +330,27 @@
             // 
             // overlayHeight
             // 
-            this.overlayHeight.Location = new System.Drawing.Point(230, 0);
-            this.overlayHeight.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayHeight.Maximum = new decimal(new int[] {
+            this.OverlayHeight.Location = new System.Drawing.Point(230, 0);
+            this.OverlayHeight.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayHeight.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.overlayHeight.Minimum = new decimal(new int[] {
+            this.OverlayHeight.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.overlayHeight.Name = "overlayHeight";
-            this.overlayHeight.Size = new System.Drawing.Size(100, 23);
-            this.overlayHeight.TabIndex = 20;
-            this.overlayHeight.Value = new decimal(new int[] {
+            this.OverlayHeight.Name = "overlayHeight";
+            this.OverlayHeight.Size = new System.Drawing.Size(100, 23);
+            this.OverlayHeight.TabIndex = 20;
+            this.OverlayHeight.Value = new decimal(new int[] {
             400,
             0,
             0,
             0});
-            this.overlayHeight.ValueChanged += new System.EventHandler(this.OverlayHeight_ValueChanged);
+            this.OverlayHeight.ValueChanged += new System.EventHandler(this.OverlayHeight_ValueChanged);
             // 
             // SubTableLayout3
             // 
@@ -363,11 +363,11 @@
             this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.SubTableLayout3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.SubTableLayout3.Controls.Add(this.label17, 0, 0);
-            this.SubTableLayout3.Controls.Add(this.overlayX, 0, 0);
+            this.SubTableLayout3.Controls.Add(this.OverlayX, 0, 0);
             this.SubTableLayout3.Controls.Add(this.label16, 0, 0);
             this.SubTableLayout3.Controls.Add(this.label18, 3, 0);
             this.SubTableLayout3.Controls.Add(this.label19, 5, 0);
-            this.SubTableLayout3.Controls.Add(this.overlayY, 4, 0);
+            this.SubTableLayout3.Controls.Add(this.OverlayY, 4, 0);
             this.SubTableLayout3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubTableLayout3.Location = new System.Drawing.Point(200, 240);
             this.SubTableLayout3.Margin = new System.Windows.Forms.Padding(0);
@@ -392,33 +392,33 @@
             // 
             // overlayX
             // 
-            this.overlayX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayX.Increment = new decimal(new int[] {
+            this.OverlayX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayX.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.overlayX.Location = new System.Drawing.Point(50, 0);
-            this.overlayX.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayX.Maximum = new decimal(new int[] {
+            this.OverlayX.Location = new System.Drawing.Point(50, 0);
+            this.OverlayX.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayX.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.overlayX.Minimum = new decimal(new int[] {
+            this.OverlayX.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.overlayX.Name = "overlayX";
-            this.overlayX.Size = new System.Drawing.Size(100, 23);
-            this.overlayX.TabIndex = 16;
-            this.overlayX.Value = new decimal(new int[] {
+            this.OverlayX.Name = "overlayX";
+            this.OverlayX.Size = new System.Drawing.Size(100, 23);
+            this.OverlayX.TabIndex = 16;
+            this.OverlayX.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.overlayX.ValueChanged += new System.EventHandler(this.OverlayX_ValueChanged);
+            this.OverlayX.ValueChanged += new System.EventHandler(this.OverlayX_ValueChanged);
             // 
             // label16
             // 
@@ -458,27 +458,27 @@
             // 
             // overlayY
             // 
-            this.overlayY.Location = new System.Drawing.Point(230, 0);
-            this.overlayY.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayY.Maximum = new decimal(new int[] {
+            this.OverlayY.Location = new System.Drawing.Point(230, 0);
+            this.OverlayY.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayY.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.overlayY.Minimum = new decimal(new int[] {
+            this.OverlayY.Minimum = new decimal(new int[] {
             10000,
             0,
             0,
             -2147483648});
-            this.overlayY.Name = "overlayY";
-            this.overlayY.Size = new System.Drawing.Size(100, 23);
-            this.overlayY.TabIndex = 20;
-            this.overlayY.Value = new decimal(new int[] {
+            this.OverlayY.Name = "overlayY";
+            this.OverlayY.Size = new System.Drawing.Size(100, 23);
+            this.OverlayY.TabIndex = 20;
+            this.OverlayY.Value = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.overlayY.ValueChanged += new System.EventHandler(this.OverlayY_ValueChanged);
+            this.OverlayY.ValueChanged += new System.EventHandler(this.OverlayY_ValueChanged);
             // 
             // SizeLabel
             // 
@@ -508,14 +508,14 @@
             // 
             // overlayEnableBeforeLogLineRead
             // 
-            this.overlayEnableBeforeLogLineRead.AutoSize = true;
-            this.overlayEnableBeforeLogLineRead.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayEnableBeforeLogLineRead.Location = new System.Drawing.Point(203, 219);
-            this.overlayEnableBeforeLogLineRead.Name = "overlayEnableBeforeLogLineRead";
-            this.overlayEnableBeforeLogLineRead.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
-            this.overlayEnableBeforeLogLineRead.Size = new System.Drawing.Size(394, 18);
-            this.overlayEnableBeforeLogLineRead.TabIndex = 25;
-            this.overlayEnableBeforeLogLineRead.UseVisualStyleBackColor = true;
+            this.OverlayEnableBeforeLogLineRead.AutoSize = true;
+            this.OverlayEnableBeforeLogLineRead.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayEnableBeforeLogLineRead.Location = new System.Drawing.Point(203, 219);
+            this.OverlayEnableBeforeLogLineRead.Name = "overlayEnableBeforeLogLineRead";
+            this.OverlayEnableBeforeLogLineRead.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
+            this.OverlayEnableBeforeLogLineRead.Size = new System.Drawing.Size(394, 18);
+            this.OverlayEnableBeforeLogLineRead.TabIndex = 25;
+            this.OverlayEnableBeforeLogLineRead.UseVisualStyleBackColor = true;
             // 
             // EnableBeforeLogLineReadLabel
             // 
@@ -624,7 +624,7 @@
             this.SubTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.SubTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.SubTableLayoutPanel2.Controls.Add(this.label9, 1, 0);
-            this.SubTableLayoutPanel2.Controls.Add(this.overlayUpdateRate, 0, 0);
+            this.SubTableLayoutPanel2.Controls.Add(this.OverlayUpdaterate, 0, 0);
             this.SubTableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubTableLayoutPanel2.Location = new System.Drawing.Point(200, 120);
             this.SubTableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -648,27 +648,27 @@
             // 
             // overlayUpdateRate
             // 
-            this.overlayUpdateRate.Increment = new decimal(new int[] {
+            this.OverlayUpdaterate.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.overlayUpdateRate.Location = new System.Drawing.Point(0, 0);
-            this.overlayUpdateRate.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayUpdateRate.Maximum = new decimal(new int[] {
+            this.OverlayUpdaterate.Location = new System.Drawing.Point(0, 0);
+            this.OverlayUpdaterate.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayUpdaterate.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.overlayUpdateRate.Minimum = new decimal(new int[] {
+            this.OverlayUpdaterate.Minimum = new decimal(new int[] {
             200,
             0,
             0,
             0});
-            this.overlayUpdateRate.Name = "overlayUpdateRate";
-            this.overlayUpdateRate.Size = new System.Drawing.Size(80, 23);
-            this.overlayUpdateRate.TabIndex = 0;
-            this.overlayUpdateRate.Value = new decimal(new int[] {
+            this.OverlayUpdaterate.Name = "overlayUpdateRate";
+            this.OverlayUpdaterate.Size = new System.Drawing.Size(80, 23);
+            this.OverlayUpdaterate.TabIndex = 0;
+            this.OverlayUpdaterate.Value = new decimal(new int[] {
             1000,
             0,
             0,
@@ -765,17 +765,17 @@
             // 
             // overlayShow
             // 
-            this.overlayShow.AutoSize = true;
-            this.overlayShow.Checked = true;
-            this.overlayShow.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.overlayShow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayShow.Location = new System.Drawing.Point(203, 27);
-            this.overlayShow.Name = "overlayShow";
-            this.overlayShow.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
-            this.overlayShow.Size = new System.Drawing.Size(394, 18);
-            this.overlayShow.TabIndex = 2;
-            this.overlayShow.UseVisualStyleBackColor = true;
-            this.overlayShow.CheckedChanged += new System.EventHandler(this.OverlayShow_CheckedChanged);
+            this.OverlayShow.AutoSize = true;
+            this.OverlayShow.Checked = true;
+            this.OverlayShow.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.OverlayShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayShow.Location = new System.Drawing.Point(203, 27);
+            this.OverlayShow.Name = "overlayShow";
+            this.OverlayShow.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
+            this.OverlayShow.Size = new System.Drawing.Size(394, 18);
+            this.OverlayShow.TabIndex = 2;
+            this.OverlayShow.UseVisualStyleBackColor = true;
+            this.OverlayShow.CheckedChanged += new System.EventHandler(this.OverlayShow_CheckedChanged);
             // 
             // LockOverlayLabel
             // 
@@ -796,7 +796,7 @@
             this.SubTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.SubTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.SubTableLayoutPanel1.Controls.Add(this.MaxframelateDescLabel, 1, 0);
-            this.SubTableLayoutPanel1.Controls.Add(this.overlayFramerate, 0, 0);
+            this.SubTableLayoutPanel1.Controls.Add(this.OverlayFramerate, 0, 0);
             this.SubTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubTableLayoutPanel1.Location = new System.Drawing.Point(200, 96);
             this.SubTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -820,40 +820,40 @@
             // 
             // overlayFramerate
             // 
-            this.overlayFramerate.Location = new System.Drawing.Point(0, 0);
-            this.overlayFramerate.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayFramerate.Maximum = new decimal(new int[] {
+            this.OverlayFramerate.Location = new System.Drawing.Point(0, 0);
+            this.OverlayFramerate.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayFramerate.Maximum = new decimal(new int[] {
             144,
             0,
             0,
             0});
-            this.overlayFramerate.Minimum = new decimal(new int[] {
+            this.OverlayFramerate.Minimum = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.overlayFramerate.Name = "overlayFramerate";
-            this.overlayFramerate.Size = new System.Drawing.Size(80, 23);
-            this.overlayFramerate.TabIndex = 0;
-            this.overlayFramerate.Value = new decimal(new int[] {
+            this.OverlayFramerate.Name = "overlayFramerate";
+            this.OverlayFramerate.Size = new System.Drawing.Size(80, 23);
+            this.OverlayFramerate.TabIndex = 0;
+            this.OverlayFramerate.Value = new decimal(new int[] {
             30,
             0,
             0,
             0});
-            this.overlayFramerate.ValueChanged += new System.EventHandler(this.OverlayFramerate_ValueChanged);
+            this.OverlayFramerate.ValueChanged += new System.EventHandler(this.OverlayFramerate_ValueChanged);
             // 
             // overlayGlobalHotkeyInput
             // 
-            this.overlayGlobalHotkeyInput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayGlobalHotkeyInput.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.overlayGlobalHotkeyInput.Location = new System.Drawing.Point(200, 168);
-            this.overlayGlobalHotkeyInput.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayGlobalHotkeyInput.Name = "overlayGlobalHotkeyInput";
-            this.overlayGlobalHotkeyInput.Size = new System.Drawing.Size(400, 23);
-            this.overlayGlobalHotkeyInput.TabIndex = 19;
-            this.overlayGlobalHotkeyInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OverlayGlobalHotkeyInput_KeyDown);
-            this.overlayGlobalHotkeyInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OverlayGlobalHotkeyInput_KeyPress);
-            this.overlayGlobalHotkeyInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OverlayGlobalHotkeyInput_KeyUp);
+            this.OverlayGlobalHotkeyInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayGlobalHotkeyInput.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.OverlayGlobalHotkeyInput.Location = new System.Drawing.Point(200, 168);
+            this.OverlayGlobalHotkeyInput.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayGlobalHotkeyInput.Name = "overlayGlobalHotkeyInput";
+            this.OverlayGlobalHotkeyInput.Size = new System.Drawing.Size(400, 23);
+            this.OverlayGlobalHotkeyInput.TabIndex = 19;
+            this.OverlayGlobalHotkeyInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OverlayGlobalHotkeyInput_KeyDown);
+            this.OverlayGlobalHotkeyInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OverlayGlobalHotkeyInput_KeyPress);
+            this.OverlayGlobalHotkeyInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.OverlayGlobalHotkeyInput_KeyUp);
             // 
             // overlayGlobalHotkeyType
             // 
@@ -883,17 +883,17 @@
             this.MainTableLayoutPanel.ResumeLayout(false);
             this.MainTableLayoutPanel.PerformLayout();
             this.SubTableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.overlayWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.overlayHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayHeight)).EndInit();
             this.SubTableLayout3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.overlayX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.overlayY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayY)).EndInit();
             this.SubTableLayoutPanel5.ResumeLayout(false);
             this.SubTableLayoutPanel5.PerformLayout();
             this.SubTableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.overlayUpdateRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayUpdaterate)).EndInit();
             this.SubTableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.overlayFramerate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverlayFramerate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -908,7 +908,7 @@
         private System.Windows.Forms.Label justPaddingLabel2;
         private System.Windows.Forms.TableLayoutPanel MainTableLayoutPanel;
         private System.Windows.Forms.Label ShowOverlayLabel;
-        private System.Windows.Forms.CheckBox overlayShow;
+        private System.Windows.Forms.CheckBox OverlayShow;
         private System.Windows.Forms.CheckBox OverlayClickthru;
         private System.Windows.Forms.Label ClickthruLabel;
         private System.Windows.Forms.Label LockOverlayLabel;
@@ -918,13 +918,13 @@
         private System.Windows.Forms.CheckBox OverlayLock;
         private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel1;
         private System.Windows.Forms.Label MaxframelateDescLabel;
-        private System.Windows.Forms.NumericUpDown overlayFramerate;
+        private System.Windows.Forms.NumericUpDown OverlayFramerate;
         private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown overlayUpdateRate;
+        private System.Windows.Forms.NumericUpDown OverlayUpdaterate;
         private System.Windows.Forms.CheckBox OverlayGlobalHotkey;
         private System.Windows.Forms.Label GlobalHotkeyLabel;
-        private System.Windows.Forms.TextBox overlayGlobalHotkeyInput;
+        private System.Windows.Forms.TextBox OverlayGlobalHotkeyInput;
         private System.Windows.Forms.Label HotkeyTypeLabel;
         private System.Windows.Forms.ComboBox overlayGlobalHotkeyType;
         private System.Windows.Forms.Label OverlayNameLabel;
@@ -932,23 +932,23 @@
         private System.Windows.Forms.Button OverlayNameChangeButton;
         private System.Windows.Forms.TextBox OverlayName;
         private System.Windows.Forms.Label EnableBeforeLogLineReadLabel;
-        private System.Windows.Forms.CheckBox overlayEnableBeforeLogLineRead;
-        public System.Windows.Forms.TextBox siteURL;
+        private System.Windows.Forms.CheckBox OverlayEnableBeforeLogLineRead;
+        public System.Windows.Forms.TextBox SiteURL;
         private System.Windows.Forms.Label SizeLabel;
         private System.Windows.Forms.Label PositionLabel;
         private System.Windows.Forms.TableLayoutPanel SubTableLayout3;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown overlayX;
+        private System.Windows.Forms.NumericUpDown OverlayX;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown overlayY;
+        private System.Windows.Forms.NumericUpDown OverlayY;
         private System.Windows.Forms.TableLayoutPanel SubTableLayoutPanel4;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.NumericUpDown overlayWidth;
+        private System.Windows.Forms.NumericUpDown OverlayWidth;
         private System.Windows.Forms.Label WidthLabel;
         private System.Windows.Forms.Label HeightLabel;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.NumericUpDown overlayHeight;
+        private System.Windows.Forms.NumericUpDown OverlayHeight;
     }
 }

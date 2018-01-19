@@ -135,6 +135,7 @@
     <Compile Include="Logger\LoggerInitializer.cs" />
     <Compile Include="Logger\LoggerMain.cs" />
     <Compile Include="Logger\LogLevel.cs" />
+    <Compile Include="OverlayManager\Settings\SettingObject.cs" />
     <Compile Include="Overlay\AutoHide.cs" />
     <Compile Include="OverlayManager\Enums\GlobalHotkeyType.cs" />
     <Compile Include="OverlayManager\GlobalHook\Events\KeyPressedEventArgs.cs" />
@@ -186,7 +187,7 @@
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Localization\LanguageLoader.cs" />
-    <Compile Include="OverlayManager\SettingManager.cs" />
+    <Compile Include="OverlayManager\Settings\SettingManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AliapohInitializer\LoaderForm.resx">

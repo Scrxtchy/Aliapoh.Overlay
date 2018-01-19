@@ -23,6 +23,17 @@ namespace Aliapoh.Overlay
             Initializer(name, url);
         }
 
+        public OverlayConfig(SettingObject s)
+        {
+            Initializer(s);
+        }
+
+        new public void Dispose()
+        {
+            Overlay.Close();
+            base.Dispose();
+        }
+
         private void Initializer(string name, string url)
         {
             Overlay = new OverlayForm(url)
@@ -40,19 +51,19 @@ namespace Aliapoh.Overlay
             Overlay.SizeChanged += Overlay_SizeChanged;
             Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
 
-            siteURL.Text = url;
+            SiteURL.Text = url;
             OverlayName.Text = name;
 
             Overlay.SettingLoad();
             Overlay.Show();
-            Overlay.Browser.Load(siteURL.Text);
+            Overlay.Browser.Load(SiteURL.Text);
             Overlay.Location = new Point(10, 10);
             Overlay.Size = new Size(400, 400);
         }
 
         private void Initializer(SettingObject setting)
         {
-            siteURL.Text = setting.Url;
+            SiteURL.Text = setting.Url;
             OverlayName.Text = setting.Name;
 
             Overlay = new OverlayForm(setting.Url)
@@ -73,41 +84,43 @@ namespace Aliapoh.Overlay
             Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
 
             Overlay.Show();
-            Overlay.Browser.Load(siteURL.Text);
+            Overlay.Browser.Load(SiteURL.Text);
             Overlay.Location = new Point(setting.Left, setting.Top);
             Overlay.Size = new Size(setting.Width, setting.Height);
 
             OverlayClickthru.Checked = setting.Clickthru;
             OverlayGlobalHotkey.Checked = setting.UseGlobalHotkey;
             OverlayLock.Checked = setting.Locked;
+            OverlayEnableBeforeLogLineRead.Checked = setting.BeforeLogLineRead;
+
+            GlobalHotkey = (Keys)setting.GlobalHotkey;
+            GlobalHotkeyModifiers = (Keys)setting.GlobalHotkeyModifiers;
+            OverlayGlobalHotkeyInput.Text = GetHotkeyString((Keys)setting.GlobalHotkeyModifiers, (Keys)setting.GlobalHotkey, "");
+
+            OverlayFramerate.Value = setting.Framerate;
+            OverlayUpdaterate.Value = setting.Updaterate;
         }
 
         private void OverlayBrowserInitialized(object sender, EventArgs e)
         {
-            Overlay.Browser.Load(siteURL.Text);
+            Overlay.Browser.Load(SiteURL.Text);
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)
         {
-            overlayWidth.Value = Overlay.Width;
-            overlayHeight.Value = Overlay.Height;
+            OverlayWidth.Value = Overlay.Width;
+            OverlayHeight.Value = Overlay.Height;
         }
 
         private void Overlay_LocationChanged(object sender, EventArgs e)
         {
-            overlayX.Value = Overlay.Left;
-            overlayY.Value = Overlay.Top;
+            OverlayX.Value = Overlay.Left;
+            OverlayY.Value = Overlay.Top;
         }
 
         private void TextboxPadderClicked(object sender, EventArgs e)
         {
-            siteURL.Focus();
-        }
-
-        new public void Dispose()
-        {
-            Overlay.Close();
-            base.Dispose();
+            SiteURL.Focus();
         }
 
         private void OverlayShow_CheckedChanged(object sender, EventArgs e)
@@ -157,34 +170,7 @@ namespace Aliapoh.Overlay
         {
 
         }
-
-        public void SettingSave()
-        {
-            // Overlay Setting base
-            var set = new Dictionary<string, object>()
-            {
-                { "Url", siteURL.Text },
-                { "Show", overlayShow.Checked },
-                { "Clickthru", OverlayClickthru.Checked },
-                { "Locked", OverlayLock.Checked },
-                { "UseGlobalHotkey", OverlayGlobalHotkey.Checked },
-                { "BeforeLogLineRead", overlayEnableBeforeLogLineRead.Checked },
-
-                { "Framerate", overlayFramerate.Value },
-                { "Updaterate", overlayUpdateRate.Value },
-
-                { "Width", Overlay.Width },
-                { "Height", Overlay.Height },
-
-                { "Left", Overlay.Left },
-                { "Top", Overlay.Top },
-
-                { "GlobalHotkey", (int)GlobalHotkey },
-                { "GlobalHotkeyModifiers", (int)GlobalHotkeyModifiers },
-                { "GlobalHotkeyType", (int)GlobalHotkeyType }
-            };
-        }
-
+        
         private void OverlayGlobalHotkeyInput_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
@@ -200,7 +186,31 @@ namespace Aliapoh.Overlay
 
         private void OverlayGlobalHotkeyInput_KeyUp(object sender, KeyEventArgs e)
         {
-            overlayGlobalHotkeyInput.Text = GetHotkeyString(GlobalHotkeyModifiers, GlobalHotkey, "");
+            OverlayGlobalHotkeyInput.Text = GetHotkeyString(GlobalHotkeyModifiers, GlobalHotkey, "");
+        }
+
+        public SettingObject ExtractSetting()
+        {
+            var s = new SettingObject();
+            
+            s.Url = SiteURL.Text;
+            s.Name = Name;
+            s.Show = OverlayShow.Checked;
+            s.Clickthru = OverlayClickthru.Checked;
+            s.Locked = OverlayLock.Checked;
+            s.UseGlobalHotkey = OverlayGlobalHotkey.Checked;
+            s.BeforeLogLineRead = OverlayEnableBeforeLogLineRead.Checked;
+            s.Framerate = (int)OverlayFramerate.Value;
+            s.Updaterate = (int)OverlayUpdaterate.Value;
+            s.Width = (int)OverlayWidth.Value;
+            s.Height = (int)OverlayHeight.Value;
+            s.Left = (int)OverlayX.Value;
+            s.Top = (int)OverlayY.Value;
+            s.GlobalHotkey = (int)GlobalHotkey;
+            s.GlobalHotkeyModifiers = (int)GlobalHotkeyModifiers;
+            s.GlobalHotkeyType = (int)GlobalHotkeyType;
+
+            return s;
         }
 
         public static string GetHotkeyString(Keys modifier, Keys key, String defaultText = "")

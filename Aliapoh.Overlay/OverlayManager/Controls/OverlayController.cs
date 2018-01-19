@@ -184,7 +184,7 @@ namespace Aliapoh.Overlay.OverlayManager
         {
             if (!CheckTabValidate()) return;
             var otp = (OverlayTabPage)overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
-            otp.Overlay.Browser.Load(otp.Config.siteURL.Text);
+            otp.Overlay.Browser.Load(otp.Config.SiteURL.Text);
         }
 
         private void ShowDevToolsSelectedOverlayButtonClicked(object sender, EventArgs e)

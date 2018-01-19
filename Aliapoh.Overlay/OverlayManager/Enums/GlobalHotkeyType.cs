@@ -1,8 +1,8 @@
 ﻿namespace Aliapoh.Overlay
 {
-    public enum GlobalHotkeyType
+    public enum GlobalHotkeyType : int
     {
-        ToggleVisible,
+        ToggleVisible = 0,
         ToggleClickthru,
         ToggleLock,
         Screenshot
