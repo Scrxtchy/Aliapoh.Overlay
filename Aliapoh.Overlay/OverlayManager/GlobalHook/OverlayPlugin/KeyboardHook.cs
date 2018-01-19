@@ -27,7 +27,6 @@ namespace Aliapoh.Overlay.GlobalHook
         public void RegisterHotKey(ModifierKeys mod, Keys key)
         {
             CurrentID++;
-
             if (!RegisterHotKey(Window.Handle, CurrentID, (uint)mod, (uint)key))
                 throw new InvalidOperationException("Couldn’t register the hot key.");
         }

@@ -189,7 +189,7 @@ namespace Aliapoh.Overlay
             OverlayGlobalHotkeyInput.Text = GetHotkeyString(GlobalHotkeyModifiers, GlobalHotkey, "");
         }
 
-        public SettingObject ExtractSetting()
+        public SettingObject SettingExport()
         {
             var s = new SettingObject();
             

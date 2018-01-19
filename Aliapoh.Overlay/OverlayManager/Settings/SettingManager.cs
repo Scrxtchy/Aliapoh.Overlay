@@ -8,7 +8,9 @@ namespace Aliapoh.Overlay.OverlayManager
 {
     public class SettingManager
     {
-        public static string Version = "1.0.0.0";
-        public static bool HideOverlayWhenNotActive = false;
+        public void SettingExport()
+        {
+
+        }
     }
 }
