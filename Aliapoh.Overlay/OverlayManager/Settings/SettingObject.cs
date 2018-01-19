@@ -9,22 +9,22 @@ namespace Aliapoh.Overlay
 {
     public class SettingObject
     {
-        public string Url { get; set; }
-        public string Name { get; set; }
-        public bool Show { get; set; }
-        public bool Clickthru { get; set; }
-        public bool Locked { get; set; }
-        public bool UseGlobalHotkey { get; set; }
-        public bool BeforeLogLineRead { get; set; }
-        public int Framerate { get; set; }
-        public int Updaterate { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public int Left { get; set; }
-        public int Top { get; set; }
-        public int GlobalHotkey { get; set; }
-        public int GlobalHotkeyModifiers { get; set; }
-        public int GlobalHotkeyType { get; set; }
+        public string Url;
+        public string Name;
+        public bool Show;
+        public bool Clickthru;
+        public bool Locked;
+        public bool UseGlobalHotkey;
+        public bool BeforeLogLineRead;
+        public int Framerate;
+        public int Updaterate;
+        public int Width;
+        public int Height;
+        public int Left;
+        public int Top;
+        public int GlobalHotkey;
+        public int GlobalHotkeyModifiers;
+        public int GlobalHotkeyType;
 
         public SettingObject()
         {

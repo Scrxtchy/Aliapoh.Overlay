@@ -167,7 +167,7 @@ namespace Aliapoh.Overlay.OverlayManager
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|       SETTINGEXPORT      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public GlobalSettingObject SettingExport()
         {
-            var o = new GlobalSettingObject()
+            return new GlobalSettingObject()
             {
                 VersionAutoCheck = VersionAutoCheckCheckBox.Checked,
                 AutoHide = AutoHideCheckBox.Checked,
@@ -178,8 +178,6 @@ namespace Aliapoh.Overlay.OverlayManager
                 BackgroundFillMode = ScreenshotBackgroundFillModeComboBox.SelectedIndex,
                 ScreenshotMargin = (int)ScreenshotMargin.Value
             };
-
-            return o;
         }
         #endregion
         private void OverlayAddButton_Click(object sender, EventArgs e)
@@ -214,6 +212,11 @@ namespace Aliapoh.Overlay.OverlayManager
         private void OverlayController_Load(object sender, EventArgs e)
         {
             LogReader();
+
+            var o = new SettingManager();
+            o.GlobalSetting = SettingExport();
+
+            o.GenerateSettingACTStyle();
         }
     }
 }
