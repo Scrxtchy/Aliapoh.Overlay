@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Reflection;
 using Aliapoh.Overlay.AliapohInitializer;
+using Aliapoh.Overlay.Logger;
 
 namespace Aliapoh.Overlay
 {
@@ -29,6 +30,8 @@ namespace Aliapoh.Overlay
         public static string TargetCEFTAG = "63.0.0-pre01";
         public static void Initialize()
         {
+            LoggerInitializer.Initialize();
+
             var loadfrm = new LoaderForm();
             loadfrm.Show();
             loadfrm.Refresh();

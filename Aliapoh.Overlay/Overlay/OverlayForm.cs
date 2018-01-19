@@ -9,6 +9,7 @@ using CefSharp.OffScreen;
 using System.Threading;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Aliapoh.Overlay.Logger;
 
 namespace Aliapoh.Overlay
 {
@@ -43,6 +44,33 @@ namespace Aliapoh.Overlay
         public OverlayForm(string Url)
         {
             Initalizer(Url);
+        }
+
+        public void SettingLoad()
+        {
+
+        }
+
+        public void ClickthruChange(bool enabled)
+        {
+            if (enabled) EnableMouseClickThru();
+            else DisableMouseClickThru();
+        }
+
+        public void ExecuteJavascript(string script)
+        {
+            if (IsBrowserInitialized)
+                Browser.GetMainFrame().ExecuteJavaScriptAsync(script);
+        }
+
+        public void ShowDevTools()
+        {
+            MainOverlay.ShowDevTools();
+        }
+
+        public void CloseDevTools()
+        {
+            MainOverlay.CloseDevTools();
         }
 
         private void Initalizer(string URL)
@@ -86,36 +114,21 @@ namespace Aliapoh.Overlay
             }
         }
 
-        public void SettingLoad()
-        {
+        public event EventHandler<LogEventArgs> OnLog;
 
+        private void Log(LogLevel level, string message)
+        {
+            OnLog?.Invoke(this, new LogEventArgs(level, string.Format("{0}: {1}", Name, message)));
+        }
+
+        private void Log(LogLevel level, string format, params object[] args)
+        {
+            Log(level, string.Format(format, args));
         }
 
         private void Overlay_ConsoleMessage(object sender, ConsoleMessageEventArgs e)
         {
-
-        }
-
-        public void ClickthruChange(bool enabled)
-        {
-            if (enabled) EnableMouseClickThru();
-            else DisableMouseClickThru();
-        }
-
-        public void ExecuteJavascript(string script)
-        {
-            if (IsBrowserInitialized)
-                Browser.GetMainFrame().ExecuteJavaScriptAsync(script);
-        }
-        
-        public void ShowDevTools()
-        {
-            MainOverlay.ShowDevTools();
-        }
-
-        public void CloseDevTools()
-        {
-            MainOverlay.CloseDevTools();
+            Log(LogLevel.Info, e.Message);
         }
 
         private void EnableMouseClickThru()

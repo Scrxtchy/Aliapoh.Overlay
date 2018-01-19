@@ -130,6 +130,7 @@
     <Compile Include="Extender\RectangleEdgeFilter.cs" />
     <Compile Include="Logger\LogEntry.cs" />
     <Compile Include="Logger\LogEventArgs.cs" />
+    <Compile Include="Logger\LoggerInitializer.cs" />
     <Compile Include="Logger\LoggerMain.cs" />
     <Compile Include="Logger\LogLevel.cs" />
     <Compile Include="Overlay\AutoHide.cs" />
