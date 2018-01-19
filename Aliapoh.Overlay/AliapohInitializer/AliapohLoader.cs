@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace Aliapoh.Overlay
 {
-    public class CefLoadByNupkg
+    public class AliapohLoader
     {
         public static Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
         {
@@ -114,6 +114,7 @@ namespace Aliapoh.Overlay
 
             Thread.Sleep(500);
             CefLoader.Initialize();
+            LanguageLoader.Initialize();
             Thread.Sleep(500);
         }
 

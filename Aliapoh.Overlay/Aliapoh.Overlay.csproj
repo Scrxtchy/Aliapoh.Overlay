@@ -108,9 +108,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CefManager\CefLoadByNupkg.cs" />
-    <Compile Include="CefManager\CefLoader.cs" />
-    <Compile Include="CefManager\Downloader.cs" />
+    <Compile Include="AliapohInitializer\AliapohLoader.cs" />
+    <Compile Include="AliapohInitializer\CefLoader.cs" />
+    <Compile Include="AliapohInitializer\Downloader.cs" />
+    <Compile Include="Extender\FontMatrics.cs" />
+    <Compile Include="Extender\FontMetricsImpl.cs" />
+    <Compile Include="Extender\GraphicExtender.cs" />
+    <Compile Include="Extender\RectangleEdgeFilter.cs" />
     <Compile Include="OverlayManager\Enums\GlobalHotkeyType.cs" />
     <Compile Include="OverlayManager\GlobalHook\Events\KeyPressedEventArgs.cs" />
     <Compile Include="OverlayManager\GlobalHook\Origin\Keyboard.cs" />
@@ -160,7 +164,7 @@
     <Compile Include="OverlayManager\Forms\NewOverlayDialog.Designer.cs">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="OverlayManager\Localization\LanguageLoader.cs" />
+    <Compile Include="Localization\LanguageLoader.cs" />
     <Compile Include="OverlayManager\SettingManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -190,9 +194,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extender\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="aliapoh_icon.ico" />
   </ItemGroup>
@@ -209,7 +211,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="OverlayManager\Localization\LanguageFile_ko-KR.json" />
+    <None Include="Localization\LanguageFile_ko-KR.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

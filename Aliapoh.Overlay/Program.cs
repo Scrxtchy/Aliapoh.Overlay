@@ -19,11 +19,10 @@ namespace Aliapoh.Overlay
             Application.SetCompatibleTextRenderingDefault(false);
             
             if (Environment.Is64BitProcess)
-                CEFDIR = CefLoadByNupkg.DIRDICT["CEFX64"];
+                CEFDIR = AliapohLoader.DIRDICT["CEFX64"];
             else
-                CEFDIR = CefLoadByNupkg.DIRDICT["CEFX86"];
-            CefLoadByNupkg.Initialize();
-            LanguageLoader.Initialize();
+                CEFDIR = AliapohLoader.DIRDICT["CEFX86"];
+            AliapohLoader.Initialize();
             Application.Run(new OverlayManager.ManagerForm());
         }
 
