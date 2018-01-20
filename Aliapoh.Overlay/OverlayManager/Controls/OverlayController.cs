@@ -213,8 +213,10 @@ namespace Aliapoh.Overlay.OverlayManager
         {
             LogReader();
 
-            var o = new SettingManager();
-            o.GlobalSetting = SettingExport();
+            var o = new SettingManager()
+            {
+                GlobalSetting = SettingExport()
+            };
 
             o.GenerateSettingJSON();
         }

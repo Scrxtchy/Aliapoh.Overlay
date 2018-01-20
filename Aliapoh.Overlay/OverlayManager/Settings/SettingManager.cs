@@ -14,8 +14,10 @@ namespace Aliapoh.Overlay.OverlayManager
 
         public void GenerateSettingJSON()
         {
-            var o = new JObject();
-            o["PluginConfig"] = new JObject();
+            var o = new JObject()
+            {
+                { "PluginConfig", new JObject() }
+            };
             if (GlobalSetting == null) return;
             foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())
             {
@@ -35,6 +37,44 @@ namespace Aliapoh.Overlay.OverlayManager
                 }
 
             Debug.WriteLine(o.ToString());
+        }
+
+        public void LoadSettingJSON()
+        {
+            if (File.Exists(Path.Combine(Program.APPDIR, "Setting.json")))
+            {
+                var o = JObject.Parse(File.ReadAllText(Path.Combine(Program.APPDIR, "Setting.json")));
+                foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())
+                {
+                    foreach(JProperty p in o["PluginConfig"])
+                    {
+                        if(fi.Name == p.Name)
+                        {
+                            if(fi.FieldType == typeof(string))
+                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, p.Value<string>());
+                            if (fi.FieldType == typeof(int))
+                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, int.Parse(p.Value<string>()));
+                            if (fi.FieldType == typeof(bool))
+                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, p.Value<string>() == "True" ? true : false);
+                        }
+                    }
+                }
+
+                if (o["PluginConfig"]["Overlays"] != null)
+                {
+                    foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())
+                    {
+                        foreach (JProperty p in o["PluginConfig"]["Overlays"])
+                        {
+                            var oc = new OverlayConfig(p.Name);
+                            if (o["PluginConfig"]["Overlays"][p.Name] != null)
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         public void GenerateSettingACTStyle()
