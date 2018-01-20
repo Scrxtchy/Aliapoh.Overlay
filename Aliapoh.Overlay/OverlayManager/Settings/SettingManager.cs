@@ -20,18 +20,14 @@ namespace Aliapoh.Overlay.OverlayManager
             var plugin = xd.CreateElement("PluginConfig");
             plugin.SetAttribute("xmlns:xsd", "http://www.w3.org/2001/XMLSchema");
             plugin.SetAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-
             if (GlobalSetting == null) return;
-
             foreach(FieldInfo fi in GlobalSetting.GetType().GetFields())
             {
                 var el = xd.CreateElement(fi.Name);
                 el.InnerText = fi.GetValue(GlobalSetting).ToString();
                 plugin.AppendChild(el);
             }
-
             var overlays = xd.CreateElement("Overlays");
-
             if(OverlaySettings != null)
                 foreach(SettingObject so in OverlaySettings)
                 {
@@ -45,9 +41,13 @@ namespace Aliapoh.Overlay.OverlayManager
                     }
                     overlays.AppendChild(overlay);
                 }
-
             xd.AppendChild(plugin);
             Debug.WriteLine(xd.OuterXml);
+        }
+
+        public void LoadSettingACTStyle()
+        {
+
         }
     }
 }
