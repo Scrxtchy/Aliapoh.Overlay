@@ -216,7 +216,7 @@ namespace Aliapoh.Overlay.OverlayManager
             var o = new SettingManager();
             o.GlobalSetting = SettingExport();
 
-            o.GenerateSettingACTStyle();
+            o.GenerateSettingJSON();
         }
     }
 }
