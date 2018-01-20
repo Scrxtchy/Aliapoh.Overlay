@@ -63,14 +63,14 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ScreenshotBackgroundSelectButton = new System.Windows.Forms.Button();
             this.ScreenshotBackgroundImagePathTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ProgramOptionGroupBox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.AutoHideCheckBox = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.AutoHideByProcLabel = new System.Windows.Forms.Label();
+            this.DetectProcessLabel = new System.Windows.Forms.Label();
+            this.VersionAutoCheckLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.LatestVersionLabel = new System.Windows.Forms.Label();
             this.VersionAutoCheckCheckBox = new System.Windows.Forms.CheckBox();
             this.DetectProcessNameTextBox = new System.Windows.Forms.TextBox();
             this.PluginsTabPage = new System.Windows.Forms.TabPage();
@@ -105,7 +105,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScreenshotMargin)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.ProgramOptionGroupBox.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.PluginsTabPage.SuspendLayout();
             this.InformationTabPage.SuspendLayout();
@@ -312,7 +312,7 @@
             // SettingsTabPage
             // 
             this.SettingsTabPage.Controls.Add(this.ScreenShotSettingGroupbox);
-            this.SettingsTabPage.Controls.Add(this.groupBox1);
+            this.SettingsTabPage.Controls.Add(this.ProgramOptionGroupBox);
             this.SettingsTabPage.Location = new System.Drawing.Point(2, 34);
             this.SettingsTabPage.Name = "SettingsTabPage";
             this.SettingsTabPage.Padding = new System.Windows.Forms.Padding(10, 2, 10, 10);
@@ -567,17 +567,17 @@
             this.ScreenshotBackgroundImagePathTextBox.Size = new System.Drawing.Size(543, 23);
             this.ScreenshotBackgroundImagePathTextBox.TabIndex = 1;
             // 
-            // groupBox1
+            // ProgramOptionGroupBox
             // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel5);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(10, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 3, 10, 10);
-            this.groupBox1.Size = new System.Drawing.Size(776, 126);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Program Options";
+            this.ProgramOptionGroupBox.Controls.Add(this.tableLayoutPanel5);
+            this.ProgramOptionGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ProgramOptionGroupBox.Location = new System.Drawing.Point(10, 2);
+            this.ProgramOptionGroupBox.Name = "ProgramOptionGroupBox";
+            this.ProgramOptionGroupBox.Padding = new System.Windows.Forms.Padding(3, 3, 10, 10);
+            this.ProgramOptionGroupBox.Size = new System.Drawing.Size(776, 126);
+            this.ProgramOptionGroupBox.TabIndex = 1;
+            this.ProgramOptionGroupBox.TabStop = false;
+            this.ProgramOptionGroupBox.Text = "Program Options";
             // 
             // tableLayoutPanel5
             // 
@@ -585,11 +585,11 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.AutoHideCheckBox, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.label8, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.AutoHideByProcLabel, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.DetectProcessLabel, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.VersionAutoCheckLabel, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.LatestVersionLabel, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.VersionAutoCheckCheckBox, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.DetectProcessNameTextBox, 1, 2);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -616,41 +616,41 @@
             this.AutoHideCheckBox.TabIndex = 8;
             this.AutoHideCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // AutoHideByProcLabel
             // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(0, 72);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.label8.Size = new System.Drawing.Size(180, 24);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Autohide (by Process)";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AutoHideByProcLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AutoHideByProcLabel.Location = new System.Drawing.Point(0, 72);
+            this.AutoHideByProcLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.AutoHideByProcLabel.Name = "AutoHideByProcLabel";
+            this.AutoHideByProcLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.AutoHideByProcLabel.Size = new System.Drawing.Size(180, 24);
+            this.AutoHideByProcLabel.TabIndex = 7;
+            this.AutoHideByProcLabel.Text = "Autohide (by Process)";
+            this.AutoHideByProcLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label7
+            // DetectProcessLabel
             // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Location = new System.Drawing.Point(0, 48);
-            this.label7.Margin = new System.Windows.Forms.Padding(0);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.label7.Size = new System.Drawing.Size(180, 24);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Detect Process";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DetectProcessLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DetectProcessLabel.Location = new System.Drawing.Point(0, 48);
+            this.DetectProcessLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.DetectProcessLabel.Name = "DetectProcessLabel";
+            this.DetectProcessLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.DetectProcessLabel.Size = new System.Drawing.Size(180, 24);
+            this.DetectProcessLabel.TabIndex = 5;
+            this.DetectProcessLabel.Text = "Detect Process";
+            this.DetectProcessLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label5
+            // VersionAutoCheckLabel
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(0, 24);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.label5.Size = new System.Drawing.Size(180, 24);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Version Auto Check";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.VersionAutoCheckLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.VersionAutoCheckLabel.Location = new System.Drawing.Point(0, 24);
+            this.VersionAutoCheckLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.VersionAutoCheckLabel.Name = "VersionAutoCheckLabel";
+            this.VersionAutoCheckLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.VersionAutoCheckLabel.Size = new System.Drawing.Size(180, 24);
+            this.VersionAutoCheckLabel.TabIndex = 3;
+            this.VersionAutoCheckLabel.Text = "Version Auto Check";
+            this.VersionAutoCheckLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -665,17 +665,17 @@
             this.label4.Text = "1.0.0.0";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label3
+            // LatestVersionLabel
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.label3.Size = new System.Drawing.Size(180, 24);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Latest Version";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LatestVersionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LatestVersionLabel.Location = new System.Drawing.Point(0, 0);
+            this.LatestVersionLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.LatestVersionLabel.Name = "LatestVersionLabel";
+            this.LatestVersionLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.LatestVersionLabel.Size = new System.Drawing.Size(180, 24);
+            this.LatestVersionLabel.TabIndex = 1;
+            this.LatestVersionLabel.Text = "Latest Version";
+            this.LatestVersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // VersionAutoCheckCheckBox
             // 
@@ -928,7 +928,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ScreenshotMargin)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.ProgramOptionGroupBox.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.PluginsTabPage.ResumeLayout(false);
@@ -998,15 +998,15 @@
         private System.Windows.Forms.OpenFileDialog OpenBackgroundDialog;
         private System.Windows.Forms.FolderBrowserDialog ScreenshotSavePathSelectDialog;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox ProgramOptionGroupBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LatestVersionLabel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label VersionAutoCheckLabel;
         private System.Windows.Forms.CheckBox VersionAutoCheckCheckBox;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label DetectProcessLabel;
         private System.Windows.Forms.TextBox DetectProcessNameTextBox;
         private System.Windows.Forms.CheckBox AutoHideCheckBox;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label AutoHideByProcLabel;
     }
 }

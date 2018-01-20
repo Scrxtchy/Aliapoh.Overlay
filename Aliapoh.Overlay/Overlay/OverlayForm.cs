@@ -110,6 +110,10 @@ namespace Aliapoh.Overlay
                     }
                 }).Start();
                 InitializeComponent();
+
+                LOG.Logger.Log(LogLevel.Info, Name + " Browser Initialized");
+                MainOverlay = Browser.GetBrowser();
+                Browser.Size = new Size(Width, Height);
             }
             catch(Exception ex)
             {
@@ -141,9 +145,6 @@ namespace Aliapoh.Overlay
 
         private void Overlay_BrowserInitialized(object sender, EventArgs e)
         {
-            LOG.Logger.Log(LogLevel.Info, Name + " Browser Initialized");
-            MainOverlay = Browser.GetBrowser();
-            Browser.Size = new Size(Width, Height);
             IsBrowserInitialized = true;
         }
 

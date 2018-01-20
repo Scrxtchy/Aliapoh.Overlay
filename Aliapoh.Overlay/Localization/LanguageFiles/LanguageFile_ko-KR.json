@@ -48,6 +48,11 @@
     "BackgroundImageLabel": "배경 이미지 설정",
     "FillModeLabel": "채우기 설정",
     "AutoClippingLabel": "자동 자르기",
-    "MarginLabel": "여백"
+    "MarginLabel": "여백",
+    "LatestVersionLabel":"최신 버전",
+    "VersionAutoCheckLabel":"버전 자동 체크",
+    "DetectProcessLabel":"감지할 프로세스",
+    "AutoHideByProcLabel":"자동 숨김(프로세스 기준)",
+    "ProgramOptionGroupBox":"프로그램 설정"
   }
 }
