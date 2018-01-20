@@ -15,12 +15,17 @@ namespace Aliapoh.Overlay
 
         public OverlayConfig(string name)
         {
-            Initializer(name, "about:blank");
+            var s = DefaultSetting.SettingObject;
+            s.Name = name;
+            Initializer(s);
         }
 
         public OverlayConfig(string name, string url)
         {
-            Initializer(name, url);
+            var s = DefaultSetting.SettingObject;
+            s.Name = name;
+            s.Url = url;
+            Initializer(s);
         }
 
         public OverlayConfig(SettingObject s)
@@ -33,35 +38,11 @@ namespace Aliapoh.Overlay
             Overlay.Close();
             base.Dispose();
         }
-
-        private void Initializer(string name, string url)
-        {
-            Overlay = new OverlayForm(url)
-            {
-                Name = name,
-                Text = name,
-                ShowInTaskbar = false
-            };
-
-            InitializeComponent();
-            if (!DesignMode)
-                LanguageLoader.LanguagePatch(this);
-
-            Overlay.LocationChanged += Overlay_LocationChanged;
-            Overlay.SizeChanged += Overlay_SizeChanged;
-            Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
-
-            SiteURL.Text = url;
-            OverlayName.Text = name;
-            
-            Overlay.Show();
-            Overlay.Browser.Load(SiteURL.Text);
-            Overlay.Location = new Point(10, 10);
-            Overlay.Size = new Size(400, 400);
-        }
-
+        
         private void Initializer(SettingObject setting)
         {
+            InitializeComponent();
+
             SiteURL.Text = setting.Url;
             OverlayName.Text = setting.Name;
 
@@ -72,8 +53,6 @@ namespace Aliapoh.Overlay
                 Text = setting.Name,
                 ShowInTaskbar = false
             };
-
-            InitializeComponent();
 
             if (!DesignMode)
                 LanguageLoader.LanguagePatch(this);

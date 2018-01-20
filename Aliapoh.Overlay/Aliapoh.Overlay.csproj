@@ -135,6 +135,7 @@
     <Compile Include="Logger\LoggerInitializer.cs" />
     <Compile Include="Logger\LoggerMain.cs" />
     <Compile Include="Logger\LogLevel.cs" />
+    <Compile Include="OverlayManager\Settings\DefaultSetting.cs" />
     <Compile Include="Overlay\Screenshot\ScreenshotBackgroundMode.cs" />
     <Compile Include="OverlayManager\Settings\GlobalSettingObject.cs" />
     <Compile Include="OverlayManager\Settings\SettingObject.cs" />
