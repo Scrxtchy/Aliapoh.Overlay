@@ -44,11 +44,6 @@ namespace Aliapoh.Overlay
             Initalizer(Url);
         }
 
-        public void SettingLoad()
-        {
-
-        }
-
         public void ClickthruChange(bool enabled)
         {
             if (enabled) EnableMouseClickThru();
@@ -85,7 +80,7 @@ namespace Aliapoh.Overlay
                 var browser = new BrowserSettings()
                 {
                     WindowlessFrameRate = fr,
-                    WebGl = CefState.Disabled, // Why?: A: Spectre attack issue, google suggest turn on WebGL Feature.
+                    WebGl = CefState.Disabled,
                     BackgroundColor = 0,
                 };
 
@@ -101,14 +96,6 @@ namespace Aliapoh.Overlay
                 Browser.BrowserInitialized += Overlay_BrowserInitialized;
                 Browser.NewScreenshot += Overlay_NewScreenshot;
                 Browser.ConsoleMessage += Overlay_ConsoleMessage;
-                new Thread((ThreadStart)delegate
-                {
-                    while (true)
-                    {
-                        Thread.Sleep(5000);
-                        GC.Collect(1);
-                    }
-                }).Start();
                 InitializeComponent();
 
                 LOG.Logger.Log(LogLevel.Info, Name + " Browser Initialized");

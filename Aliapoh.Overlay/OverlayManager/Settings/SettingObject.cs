@@ -28,7 +28,7 @@ namespace Aliapoh.Overlay
 
         public SettingObject()
         {
-
+            // Do Somthing
         }
 
         public OverlayConfig CreateOverlayConfig()

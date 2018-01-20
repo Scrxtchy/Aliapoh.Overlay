@@ -76,9 +76,6 @@
             this.PluginsTabPage = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.InformationTabPage = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.issueBrowserPanel = new System.Windows.Forms.Panel();
-            this.LeaveIssueLabel = new System.Windows.Forms.Label();
             this.ConpatibleLabel = new System.Windows.Forms.Label();
             this.DeveloperLabel = new System.Windows.Forms.Label();
             this.OverlayDescLabel = new System.Windows.Forms.Label();
@@ -93,6 +90,9 @@
             this.CopyAllLogsButton = new System.Windows.Forms.Button();
             this.OpenBackgroundDialog = new System.Windows.Forms.OpenFileDialog();
             this.ScreenshotSavePathSelectDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.LeaveIssueLabel = new System.Windows.Forms.Label();
+            this.issueBrowserPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.overlayTabControl1.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,10 +109,10 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.PluginsTabPage.SuspendLayout();
             this.InformationTabPage.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LogTabPage.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // overlayTabControl1
@@ -734,41 +734,6 @@
             this.InformationTabPage.Text = "Information";
             this.InformationTabPage.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.issueBrowserPanel);
-            this.panel1.Controls.Add(this.LeaveIssueLabel);
-            this.panel1.Location = new System.Drawing.Point(200, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 426);
-            this.panel1.TabIndex = 4;
-            // 
-            // issueBrowserPanel
-            // 
-            this.issueBrowserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.issueBrowserPanel.Location = new System.Drawing.Point(0, 32);
-            this.issueBrowserPanel.Name = "issueBrowserPanel";
-            this.issueBrowserPanel.Size = new System.Drawing.Size(586, 392);
-            this.issueBrowserPanel.TabIndex = 0;
-            // 
-            // LeaveIssueLabel
-            // 
-            this.LeaveIssueLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.LeaveIssueLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LeaveIssueLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
-            this.LeaveIssueLabel.ForeColor = System.Drawing.Color.White;
-            this.LeaveIssueLabel.Location = new System.Drawing.Point(0, 0);
-            this.LeaveIssueLabel.Name = "LeaveIssueLabel";
-            this.LeaveIssueLabel.Padding = new System.Windows.Forms.Padding(10, 4, 0, 0);
-            this.LeaveIssueLabel.Size = new System.Drawing.Size(586, 32);
-            this.LeaveIssueLabel.TabIndex = 1;
-            this.LeaveIssueLabel.Text = "Leave Issue";
-            // 
             // ConpatibleLabel
             // 
             this.ConpatibleLabel.Location = new System.Drawing.Point(10, 287);
@@ -904,6 +869,41 @@
             // 
             this.OpenBackgroundDialog.FileName = "openFileDialog1";
             // 
+            // LeaveIssueLabel
+            // 
+            this.LeaveIssueLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.LeaveIssueLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LeaveIssueLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
+            this.LeaveIssueLabel.ForeColor = System.Drawing.Color.White;
+            this.LeaveIssueLabel.Location = new System.Drawing.Point(0, 0);
+            this.LeaveIssueLabel.Name = "LeaveIssueLabel";
+            this.LeaveIssueLabel.Padding = new System.Windows.Forms.Padding(10, 4, 0, 0);
+            this.LeaveIssueLabel.Size = new System.Drawing.Size(586, 32);
+            this.LeaveIssueLabel.TabIndex = 1;
+            this.LeaveIssueLabel.Text = "Leave Issue";
+            // 
+            // issueBrowserPanel
+            // 
+            this.issueBrowserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.issueBrowserPanel.Location = new System.Drawing.Point(0, 32);
+            this.issueBrowserPanel.Name = "issueBrowserPanel";
+            this.issueBrowserPanel.Size = new System.Drawing.Size(586, 392);
+            this.issueBrowserPanel.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.issueBrowserPanel);
+            this.panel1.Controls.Add(this.LeaveIssueLabel);
+            this.panel1.Location = new System.Drawing.Point(200, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(588, 426);
+            this.panel1.TabIndex = 4;
+            // 
             // OverlayController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -934,10 +934,10 @@
             this.PluginsTabPage.ResumeLayout(false);
             this.PluginsTabPage.PerformLayout();
             this.InformationTabPage.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LogTabPage.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -971,9 +971,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label OverlayDescLabel;
         private System.Windows.Forms.Label DeveloperLabel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label LeaveIssueLabel;
-        private System.Windows.Forms.Panel issueBrowserPanel;
         private System.Windows.Forms.Label ConpatibleLabel;
         private System.Windows.Forms.Button ScreenshotBackgroundSelectButton;
         private System.Windows.Forms.Panel panel2;
@@ -1008,5 +1005,8 @@
         private System.Windows.Forms.TextBox DetectProcessNameTextBox;
         private System.Windows.Forms.CheckBox AutoHideCheckBox;
         private System.Windows.Forms.Label AutoHideByProcLabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel issueBrowserPanel;
+        private System.Windows.Forms.Label LeaveIssueLabel;
     }
 }

@@ -53,8 +53,7 @@ namespace Aliapoh.Overlay
 
             SiteURL.Text = url;
             OverlayName.Text = name;
-
-            Overlay.SettingLoad();
+            
             Overlay.Show();
             Overlay.Browser.Load(SiteURL.Text);
             Overlay.Location = new Point(10, 10);
@@ -168,7 +167,7 @@ namespace Aliapoh.Overlay
 
         private void OverlayNameChange_Click(object sender, EventArgs e)
         {
-
+            //TODO
         }
         
         private void OverlayGlobalHotkeyInput_KeyDown(object sender, KeyEventArgs e)

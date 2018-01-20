@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Aliapoh.Overlay.ACTPlugin
 {
     public class OverlayPluginApi
     {
-        private string version = "1.0.0.0";
+        private string version = Application.ProductVersion.ToString();
         private OverlayForm Form { get; set; }
 
         public OverlayPluginApi(OverlayForm o)
