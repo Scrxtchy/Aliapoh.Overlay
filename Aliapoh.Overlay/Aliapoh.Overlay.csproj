@@ -142,9 +142,6 @@
     <Compile Include="Overlay\AutoHide.cs" />
     <Compile Include="OverlayManager\Enums\GlobalHotkeyType.cs" />
     <Compile Include="OverlayManager\GlobalHook\Events\KeyPressedEventArgs.cs" />
-    <Compile Include="OverlayManager\GlobalHook\Origin\Keyboard.cs" />
-    <Compile Include="OverlayManager\GlobalHook\Origin\KeyHook.cs" />
-    <Compile Include="OverlayManager\GlobalHook\Origin\VK.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\KeyboardHook.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\ModifierKeys.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\Window.cs" />

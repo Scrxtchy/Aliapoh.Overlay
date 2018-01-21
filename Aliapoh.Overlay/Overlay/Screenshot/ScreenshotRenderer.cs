@@ -33,7 +33,7 @@ namespace Aliapoh.Overlay
                         }
                         catch (Exception ex)
                         {
-                            LOG.Logger.Log(LogLevel.Error, "OverlayPlugin Can't Take Screenshot: {0}", ex.ToString());
+                            LOG.Logger.Log(LogLevel.Error, "Aliapoh Overlay Can't Take Screenshot: {0}", ex.ToString());
                         }
                     }
 
@@ -113,9 +113,9 @@ namespace Aliapoh.Overlay
 
             using (var bg = Image.FromFile(path))
             {
-                g.SmoothingMode = SmoothingMode.AntiAlias;
                 using (var g = Graphics.FromImage(bmp))
                 {
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
                     switch (mode)
                     {
                         case ScreenshotBackgroundMode.Normal:
