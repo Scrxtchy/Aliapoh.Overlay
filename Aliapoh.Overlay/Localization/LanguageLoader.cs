@@ -66,7 +66,6 @@ namespace Aliapoh.Overlay
             {
                 foreach (JProperty i in JSON["Strings"])
                 {
-                    Debug.WriteLine("Setting Value " + field.Name + "(" + field.FieldType + ") to " + i.Name);
                     if (field.FieldType == typeof(string) && field.Name == i.Name)
                     {
                         ctrl.GetType().GetField(field.Name, bind).SetValue(ctrl, i.Value.ToString());

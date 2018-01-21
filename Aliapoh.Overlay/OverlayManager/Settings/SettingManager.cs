@@ -7,21 +7,27 @@ using System.Diagnostics;
 
 namespace Aliapoh.Overlay.OverlayManager
 {
-    public class SettingManager
+    public static class SettingManager
     {
-        public List<SettingObject> OverlaySettings { get; set; }
-        public GlobalSettingObject GlobalSetting { get; set; }
+        public static readonly string SettingFile = "Aliapoh.Overlay.Config.json";
+        public static List<SettingObject> OverlaySettings { get; set; }
+        public static GlobalSettingObject GlobalSetting { get; set; }
 
-        public void GenerateSettingJSON()
+        public static void GenerateSettingJSON()
+        {
+            GenerateSettingJSON(GlobalSetting);
+        }
+
+        public static void GenerateSettingJSON(GlobalSettingObject gso)
         {
             var o = new JObject()
             {
                 { "PluginConfig", new JObject() }
             };
-            if (GlobalSetting == null) return;
-            foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())
+            if (gso == null) return;
+            foreach (FieldInfo fi in gso.GetType().GetFields())
             {
-                var val = fi.GetValue(GlobalSetting);
+                var val = fi.GetValue(gso);
                 ((JObject)o["PluginConfig"]).Add(fi.Name, val.ToString());
             }
             o["PluginConfig"]["Overlays"] = new JObject();
@@ -35,15 +41,22 @@ namespace Aliapoh.Overlay.OverlayManager
                     }
                     o["PluginConfig"]["Overlays"][so.Name] = obj;
                 }
-
-            Debug.WriteLine(o.ToString());
+            File.WriteAllText(Path.Combine(Program.APPDIR, SettingFile), o.ToString());
         }
 
-        public void LoadSettingJSON()
+        public static void LoadSettingJSON()
         {
-            if (File.Exists(Path.Combine(Program.APPDIR, "Setting.json")))
+            if (!File.Exists(Path.Combine(Program.APPDIR, SettingFile)))
             {
-                var o = JObject.Parse(File.ReadAllText(Path.Combine(Program.APPDIR, "Setting.json")));
+                GenerateSettingJSON(DefaultSetting.GlobalSettingObject);
+                GlobalSetting = DefaultSetting.GlobalSettingObject;
+                LoadSettingJSON();
+            }
+            else
+            {
+                var o = JObject.Parse(File.ReadAllText(Path.Combine(Program.APPDIR, SettingFile)));
+                if (GlobalSetting == null)
+                    GlobalSetting = new GlobalSettingObject();
                 foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())
                 {
                     foreach(JProperty p in o["PluginConfig"])
@@ -51,15 +64,14 @@ namespace Aliapoh.Overlay.OverlayManager
                         if(fi.Name == p.Name)
                         {
                             if(fi.FieldType == typeof(string))
-                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, p.Value<string>());
+                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, p.Value.ToString());
                             if (fi.FieldType == typeof(int))
-                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, int.Parse(p.Value<string>()));
+                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, int.Parse(p.Value.ToString()));
                             if (fi.FieldType == typeof(bool))
-                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, p.Value<string>() == "True" ? true : false);
+                                GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, p.Value.ToString() == "True" ? true : false);
                         }
                     }
                 }
-
                 if (o["PluginConfig"]["Overlays"] != null)
                 {
                     foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())
@@ -75,48 +87,7 @@ namespace Aliapoh.Overlay.OverlayManager
                     }
                 }
             }
-        }
-
-        public void GenerateSettingACTStyle()
-        {
-            // not use. but I coded it
-            var xd = new XmlDocument();
-            var plugin = xd.CreateElement("PluginConfig");
-            plugin.SetAttribute("xmlns:xsd", "http://www.w3.org/2001/XMLSchema");
-            plugin.SetAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
-            if (GlobalSetting == null) return;
-            foreach(FieldInfo fi in GlobalSetting.GetType().GetFields())
-            {
-                var el = xd.CreateElement(fi.Name);
-                el.InnerText = fi.GetValue(GlobalSetting).ToString();
-                plugin.AppendChild(el);
-            }
-            var overlays = xd.CreateElement("Overlays");
-            if(OverlaySettings != null)
-                foreach(SettingObject so in OverlaySettings)
-                {
-                    var overlay = xd.CreateElement("Overlay");
-                    overlay.SetAttribute("Name", so.Name);
-                    foreach (FieldInfo fi in so.GetType().GetFields())
-                    {
-                        var el = xd.CreateElement(fi.Name);
-                        el.InnerText = fi.GetValue(so).ToString();
-                        overlay.AppendChild(el);
-                    }
-                    overlays.AppendChild(overlay);
-                }
-            xd.AppendChild(plugin);
-            xd.Save(Path.Combine(Program.APPDIR, "Setting.xml"));
-        }
-
-        public void LoadSettingACTStyle()
-        {
-            if(File.Exists(Path.Combine(Program.APPDIR, "Setting.xml")))
-            {
-                var xd = new XmlDocument();
-                xd.Load(Path.Combine(Program.APPDIR, "Setting.xml"));
-
-            }
+            // LoadSettingJSON
         }
     }
 }

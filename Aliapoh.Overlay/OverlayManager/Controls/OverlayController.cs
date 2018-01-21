@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
 using System.Diagnostics;
+using Aliapoh.Overlay;
 using Aliapoh.Overlay.Logger;
 using System.Drawing;
 
@@ -27,7 +28,7 @@ namespace Aliapoh.Overlay.OverlayManager
         public OverlayController()
         {
             /// setting load start
-
+            SettingManager.LoadSettingJSON();
             /// setting load end
             InitializeUI();
             LOG.Logger.Logs.ListChanged += Logs_ListChanged;
@@ -227,13 +228,8 @@ namespace Aliapoh.Overlay.OverlayManager
         private void OverlayController_Load(object sender, EventArgs e)
         {
             LogReader();
-
-            var o = new SettingManager()
-            {
-                GlobalSetting = SettingExport()
-            };
-
-            o.GenerateSettingJSON();
+            SettingManager.GlobalSetting = SettingExport();
+            SettingManager.GenerateSettingJSON();
         }
         #endregion
     }
