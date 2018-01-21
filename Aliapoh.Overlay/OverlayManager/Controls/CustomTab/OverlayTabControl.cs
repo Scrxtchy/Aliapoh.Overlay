@@ -7,7 +7,7 @@ namespace Aliapoh.Overlay
     [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayTabControl : TabControl
     {
-        private bool TabCollapsed { get; set; }
+        private bool TabCollapsed;
         private System.ComponentModel.IContainer components = null;
         private StringFormat SB;
         private Font TabFont;

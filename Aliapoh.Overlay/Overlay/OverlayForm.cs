@@ -16,23 +16,23 @@ namespace Aliapoh.Overlay
     public partial class OverlayForm : Form
     {
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        Variables         |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-        public bool IsBrowserLocked { get; set; }
-        public bool IsBrowserInitialized { get; private set; }
-        public string OverlayName { get; set; }
-        public int Framerate { get; set; }
+        public bool IsBrowserLocked;
+        public bool IsBrowserInitialized;
+        public string OverlayName;
+        public int Framerate;
 
         public ChromiumWebBrowser Browser;
         public IBrowser MainOverlay;
         public Bitmap Screenshot;
         #endregion
 
-        private bool IsBrowserLockedInternal { get; set; }
-        private bool D_ALT { get; set; }
-        private bool D_CTRL { get; set; }
-        private bool D_SHIFT { get; set; }
-        private CefMenuHandler CefMenu { get; set; }
+        private bool IsBrowserLockedInternal;
+        private bool D_ALT;
+        private bool D_CTRL;
+        private bool D_SHIFT;
+        private CefMenuHandler CefMenu;
 
-        private ACTPlugin.OverlayPluginApi OverlayAPI { get; set; }
+        private ACTPlugin.OverlayPluginApi OverlayAPI;
 
         public OverlayForm()
         {

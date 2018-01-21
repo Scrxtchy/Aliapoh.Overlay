@@ -2,10 +2,10 @@
 {
     public class VersionStruct
     {
-        public int Major { get; set; }
-        public int Minor { get; set; }
-        public int Build { get; set; }
-        public int Revision { get; set; }
+        public int Major { get; private set; }
+        public int Minor { get; private set; }
+        public int Build { get; private set; }
+        public int Revision { get; private set; }
 
         public override string ToString()
         {

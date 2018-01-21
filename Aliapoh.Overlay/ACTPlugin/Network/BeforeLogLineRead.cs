@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aliapoh.Overlay.ACTPlugin.Network
 {
-    class BeforeLogLineRead
+    public class BeforeLogLineRead
     {
     }
 }

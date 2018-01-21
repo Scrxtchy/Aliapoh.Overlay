@@ -8,10 +8,10 @@ namespace Aliapoh.Overlay
 {
     public partial class OverlayConfig : UserControl
     {
-        public Keys GlobalHotkey { get; set; }
-        public Keys GlobalHotkeyModifiers { get; set; }
-        public GlobalHotkeyType GlobalHotkeyType { get; set; }
-        public OverlayForm Overlay { get; set; }
+        public Keys GlobalHotkey;
+        public Keys GlobalHotkeyModifiers;
+        public GlobalHotkeyType GlobalHotkeyType;
+        public OverlayForm Overlay;
 
         public OverlayConfig(string name)
         {

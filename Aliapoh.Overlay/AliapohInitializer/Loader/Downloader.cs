@@ -10,14 +10,14 @@ namespace Aliapoh.Overlay.CefManager
     {
         public static string UserAgent = "AliapohDownloader";
 
-        public int FileCount { get; set; }
-        public long QueuedSize { get; set; }
-        public long TotalDownloadSize { get; set; }
-        public long PrevDownloadSize { get; set; }
-        public long CurrentDownloadSize { get; set; }
-        public long CurrentFileSize { get; set; }
-        public double DownloadSpeed { get; set; }
-        public string CurrentFile { get; set; }
+        public int FileCount { get; private set; }
+        public long QueuedSize { get; private set; }
+        public long TotalDownloadSize { get; private set; }
+        public long PrevDownloadSize { get; private set; }
+        public long CurrentDownloadSize { get; private set; }
+        public long CurrentFileSize { get; private set; }
+        public double DownloadSpeed { get; private set; }
+        public string CurrentFile { get; private set; }
 
         public bool DownloadStarted = false;
         public Dictionary<string, string> Queue = new Dictionary<string, string>();

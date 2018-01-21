@@ -4,9 +4,9 @@ namespace Aliapoh.Overlay.Logger
 {
     public class LogEntry
     {
-        public string Message { get; set; }
-        public LogLevel Level { get; set; }
-        public DateTime Time { get; set; }
+        public string Message;
+        public LogLevel Level;
+        public DateTime Time;
 
         public LogEntry(LogLevel level, DateTime time, string message)
         {

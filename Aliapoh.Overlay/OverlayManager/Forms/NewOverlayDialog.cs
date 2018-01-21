@@ -12,9 +12,9 @@ namespace Aliapoh.Overlay.OverlayManager
 {
     public partial class NewOverlayDialog : Form
     {
-        public string PrimaryName { get; set; }
-        public string URL { get; set; }
-        public int FPS { get; set; }
+        public string PrimaryName;
+        public string URL;
+        public int FPS;
 
         public string NewOverlayAbsoluteName = "Overlay name is Absolute value. please input overlay name";
         public string NewOverlayPrimaryName = "Overlay name is Primary value";

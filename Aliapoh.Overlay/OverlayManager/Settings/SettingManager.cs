@@ -10,8 +10,8 @@ namespace Aliapoh.Overlay.OverlayManager
     public static class SettingManager
     {
         public static readonly string SettingFile = "Aliapoh.Overlay.Config.json";
-        public static List<SettingObject> OverlaySettings { get; set; }
-        public static GlobalSettingObject GlobalSetting { get; set; }
+        public static List<SettingObject> OverlaySettings;
+        public static GlobalSettingObject GlobalSetting;
 
         public static void GenerateSettingJSON()
         {

@@ -6,7 +6,7 @@ namespace Aliapoh.Overlay
     [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayTabPage : TabPage
     {
-        public OverlayConfig Config { get; set; }
+        public OverlayConfig Config;
         public OverlayForm Overlay
         {
             get
