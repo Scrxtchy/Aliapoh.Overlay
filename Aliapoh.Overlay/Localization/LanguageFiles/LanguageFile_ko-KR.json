@@ -2,7 +2,13 @@
   "Strings": {
     "NewOverlayAbsoluteName": "오버레이 이름은 비어있을 수 없습니다. 이름을 입력해 주세요.",
     "NewOverlayPrimaryName": "오버레이 이름은 중복될 수 없습니다.",
-    "OverlayEmpty": "[ + ] 버튼을 클릭하여 새로운 오버레이를 생성하세요."
+    "OverlayEmpty": "[ + ] 버튼을 클릭하여 새로운 오버레이를 생성하세요.",
+    "BackgroundModeNone":"사용 안 함",
+    "BackgroundModeNormal":"일반",
+    "BackgroundModeCenter":"가운데 정렬",
+    "BackgroundModeFill":"채우기",
+    "BackgroundModeUniform":"맞추기",
+    "BackgroundModeUniformToFill":"맞추기 (가득 채움)"
   },
   "NewOverlayDialog": {
     "NameLabel": "오버레이 이름",

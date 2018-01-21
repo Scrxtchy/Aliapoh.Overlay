@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OverlayController));
-            this.overlayTabControl1 = new Aliapoh.Overlay.OverlayTabControl();
+            this.OverlayControlTabPage = new Aliapoh.Overlay.OverlayTabControl();
             this.OverlaysTabPage = new System.Windows.Forms.TabPage();
             this.overlayManageTabControl1 = new Aliapoh.Overlay.OverlayManageTabControl();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -93,7 +93,7 @@
             this.LeaveIssueLabel = new System.Windows.Forms.Label();
             this.issueBrowserPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.overlayTabControl1.SuspendLayout();
+            this.OverlayControlTabPage.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -117,21 +117,21 @@
             // 
             // overlayTabControl1
             // 
-            this.overlayTabControl1.Controls.Add(this.OverlaysTabPage);
-            this.overlayTabControl1.Controls.Add(this.SettingsTabPage);
-            this.overlayTabControl1.Controls.Add(this.PluginsTabPage);
-            this.overlayTabControl1.Controls.Add(this.InformationTabPage);
-            this.overlayTabControl1.Controls.Add(this.LogTabPage);
-            this.overlayTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayTabControl1.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F);
-            this.overlayTabControl1.ItemSize = new System.Drawing.Size(10, 32);
-            this.overlayTabControl1.Location = new System.Drawing.Point(0, 0);
-            this.overlayTabControl1.Multiline = true;
-            this.overlayTabControl1.Name = "overlayTabControl1";
-            this.overlayTabControl1.Padding = new System.Drawing.Point(18, 0);
-            this.overlayTabControl1.SelectedIndex = 0;
-            this.overlayTabControl1.Size = new System.Drawing.Size(800, 480);
-            this.overlayTabControl1.TabIndex = 0;
+            this.OverlayControlTabPage.Controls.Add(this.OverlaysTabPage);
+            this.OverlayControlTabPage.Controls.Add(this.SettingsTabPage);
+            this.OverlayControlTabPage.Controls.Add(this.PluginsTabPage);
+            this.OverlayControlTabPage.Controls.Add(this.InformationTabPage);
+            this.OverlayControlTabPage.Controls.Add(this.LogTabPage);
+            this.OverlayControlTabPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayControlTabPage.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F);
+            this.OverlayControlTabPage.ItemSize = new System.Drawing.Size(10, 32);
+            this.OverlayControlTabPage.Location = new System.Drawing.Point(0, 0);
+            this.OverlayControlTabPage.Multiline = true;
+            this.OverlayControlTabPage.Name = "overlayTabControl1";
+            this.OverlayControlTabPage.Padding = new System.Drawing.Point(18, 0);
+            this.OverlayControlTabPage.SelectedIndex = 0;
+            this.OverlayControlTabPage.Size = new System.Drawing.Size(800, 480);
+            this.OverlayControlTabPage.TabIndex = 0;
             // 
             // OverlaysTabPage
             // 
@@ -907,13 +907,13 @@
             // OverlayController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Controls.Add(this.overlayTabControl1);
+            this.Controls.Add(this.OverlayControlTabPage);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.MinimumSize = new System.Drawing.Size(800, 480);
             this.Name = "OverlayController";
             this.Size = new System.Drawing.Size(800, 480);
             this.Load += new System.EventHandler(this.OverlayController_Load);
-            this.overlayTabControl1.ResumeLayout(false);
+            this.OverlayControlTabPage.ResumeLayout(false);
             this.OverlaysTabPage.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -944,7 +944,7 @@
 
         #endregion
 
-        private OverlayTabControl overlayTabControl1;
+        private OverlayTabControl OverlayControlTabPage;
         private System.Windows.Forms.TabPage OverlaysTabPage;
         private System.Windows.Forms.TabPage LogTabPage;
         private System.Windows.Forms.TabPage SettingsTabPage;

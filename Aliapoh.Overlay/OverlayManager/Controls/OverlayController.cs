@@ -11,35 +11,50 @@ namespace Aliapoh.Overlay.OverlayManager
 {
     public partial class OverlayController : UserControl
     {
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|         VARIABLE         |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public static string OverlayEmpty = "Click [ + ] to setup your first overlay";
-        public static Dictionary<string, OverlayTabPage> OverlayConfigs = new Dictionary<string, OverlayTabPage>();
-        private ChromiumWebBrowser issueBrowser;
+        public static string BackgroundModeNone = "None";
+        public static string BackgroundModeNormal = "Normal";
+        public static string BackgroundModeCenter = "Center";
+        public static string BackgroundModeFill = "Fill";
+        public static string BackgroundModeUniform = "Uniform";
+        public static string BackgroundModeUniformToFill = "Uniform to fill";
 
+        public static Dictionary<string, OverlayTabPage> OverlayConfigs = new Dictionary<string, OverlayTabPage>();
+        private ChromiumWebBrowser IssueBrowser;
+        #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        INITALIZER        |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public OverlayController()
         {
-            issueBrowser = new ChromiumWebBrowser("https://github.com/laiglinne-ff/Aliapoh.Overlay/issues")
-            {
-                Dock = DockStyle.Fill,
-            };
-            issueBrowser.BrowserSettings.WebGl = CefState.Disabled;
+            /// setting load start
 
-            InitializeComponent();
-
-            if(!DesignMode)
-                LanguageLoader.LanguagePatch(this);
-
-            issueBrowserPanel.Controls.Add(issueBrowser);
-            overlayTabControl1.Dock = DockStyle.None;
-            overlayTabControl1.Left = -2;
-            overlayTabControl1.Top = -2;
-            overlayTabControl1.Width = Width + 4;
-            overlayTabControl1.Height = Height + 4;
-            overlayTabControl1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
-
+            /// setting load end
+            InitializeUI();
             LOG.Logger.Logs.ListChanged += Logs_ListChanged;
         }
 
+        private void InitializeUI()
+        {
+            InitializeComponent();
+            if (!DesignMode)
+                LanguageLoader.LanguagePatch(this);
+
+            IssueBrowser = new ChromiumWebBrowser("https://github.com/laiglinne-ff/Aliapoh.Overlay/issues")
+            {
+                Dock = DockStyle.Fill,
+            };
+
+            IssueBrowser.BrowserSettings.WebGl = CefState.Disabled;
+            issueBrowserPanel.Controls.Add(IssueBrowser);
+
+            // main tab page setting
+            OverlayControlTabPage.Dock = DockStyle.None;
+            OverlayControlTabPage.Location = new Point(-2, -2);
+            OverlayControlTabPage.Size = new Size(Width + 4, Height + 4);
+            OverlayControlTabPage.Anchor = (AnchorStyles)( 1 | 2 | 4 | 8 );
+        }
+        #endregion
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      OVERLAY LOGGER      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private int lastidx = 0;
         private void LogReader()
         {
@@ -116,7 +131,6 @@ namespace Aliapoh.Overlay.OverlayManager
         {
             LogReader();
         }
-
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      OVERLAYCONTROL      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private void OverlayCreate(string name)
@@ -164,7 +178,7 @@ namespace Aliapoh.Overlay.OverlayManager
             }
         }
         #endregion
-        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|       SETTINGEXPORT      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      SETTING EXPORT      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public GlobalSettingObject SettingExport()
         {
             return new GlobalSettingObject()
@@ -180,6 +194,7 @@ namespace Aliapoh.Overlay.OverlayManager
             };
         }
         #endregion
+        #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        UI ACTIONS        |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private void OverlayAddButton_Click(object sender, EventArgs e)
         {
             OverlayCreate("OverlayTest");
@@ -220,5 +235,6 @@ namespace Aliapoh.Overlay.OverlayManager
 
             o.GenerateSettingJSON();
         }
+        #endregion
     }
 }
