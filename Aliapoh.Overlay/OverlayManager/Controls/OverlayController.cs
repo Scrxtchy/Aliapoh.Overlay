@@ -40,6 +40,13 @@ namespace Aliapoh.Overlay.OverlayManager
             if (!DesignMode)
                 LanguageLoader.LanguagePatch(this);
 
+            ScreenshotBackgroundFillModeComboBox.Items.Add(BackgroundModeNone);
+            ScreenshotBackgroundFillModeComboBox.Items.Add(BackgroundModeNormal);
+            ScreenshotBackgroundFillModeComboBox.Items.Add(BackgroundModeCenter);
+            ScreenshotBackgroundFillModeComboBox.Items.Add(BackgroundModeFill);
+            ScreenshotBackgroundFillModeComboBox.Items.Add(BackgroundModeUniform);
+            ScreenshotBackgroundFillModeComboBox.Items.Add(BackgroundModeUniformToFill);
+
             IssueBrowser = new ChromiumWebBrowser("https://github.com/laiglinne-ff/Aliapoh.Overlay/issues")
             {
                 Dock = DockStyle.Fill,
@@ -144,7 +151,24 @@ namespace Aliapoh.Overlay.OverlayManager
                 SelectOverlayNameDisplay();
 
                 OverlayConfigs.Add(nod.PrimaryName, TP);
+                SaveSetting();
             }
+        }
+
+        private void SaveSetting()
+        {
+            if (SettingManager.OverlaySettings == null)
+                SettingManager.OverlaySettings = new List<SettingObject>();
+
+            SettingManager.OverlaySettings.Clear();
+
+            foreach(var i in OverlayConfigs)
+            {
+                SettingManager.OverlaySettings.Add(i.Value.Config.SettingExport());
+            }
+
+            SettingManager.GlobalSetting = SettingExport();
+            SettingManager.GenerateSettingJSON();
         }
 
         private bool CheckTabValidate()
@@ -232,5 +256,10 @@ namespace Aliapoh.Overlay.OverlayManager
             SettingManager.GenerateSettingJSON();
         }
         #endregion
+
+        private void SettingChangeSaver(object sender, EventArgs e)
+        {
+            SaveSetting();
+        }
     }
 }

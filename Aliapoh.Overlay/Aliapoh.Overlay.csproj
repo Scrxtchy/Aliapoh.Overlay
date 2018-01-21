@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="Localization\LanguageLoader.cs" />
     <Compile Include="OverlayManager\Settings\SettingManager.cs" />
+    <Compile Include="Overlay\Screenshot\ScreenshotRenderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AliapohInitializer\Forms\LoaderForm.resx">
@@ -222,7 +223,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Overlay\Events\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="aliapoh_icon.ico" />
     <None Include="Resources\frmimg.png" />

@@ -72,13 +72,14 @@ namespace Aliapoh.Overlay.OverlayManager
                         }
                     }
                 }
+
                 if (o["PluginConfig"]["Overlays"] != null)
                 {
                     foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())
                     {
+                        //var oc = new OverlayConfig(p.Name);
                         foreach (JProperty p in o["PluginConfig"]["Overlays"])
                         {
-                            var oc = new OverlayConfig(p.Name);
                             if (o["PluginConfig"]["Overlays"][p.Name] != null)
                             {
 

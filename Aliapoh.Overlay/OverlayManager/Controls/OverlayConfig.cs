@@ -62,7 +62,6 @@ namespace Aliapoh.Overlay
             Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
 
             Overlay.Show();
-            Overlay.Browser.Load(SiteURL.Text);
             Overlay.Location = new Point(setting.Left, setting.Top);
             Overlay.Size = new Size(setting.Width, setting.Height);
 
@@ -172,7 +171,7 @@ namespace Aliapoh.Overlay
             var s = new SettingObject()
             {
                 Url = SiteURL.Text,
-                Name = Name,
+                Name = OverlayName.Text,
                 Show = OverlayShow.Checked,
                 Clickthru = OverlayClickthru.Checked,
                 Locked = OverlayLock.Checked,

@@ -76,6 +76,9 @@
             this.PluginsTabPage = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.InformationTabPage = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.issueBrowserPanel = new System.Windows.Forms.Panel();
+            this.LeaveIssueLabel = new System.Windows.Forms.Label();
             this.ConpatibleLabel = new System.Windows.Forms.Label();
             this.DeveloperLabel = new System.Windows.Forms.Label();
             this.OverlayDescLabel = new System.Windows.Forms.Label();
@@ -90,9 +93,6 @@
             this.CopyAllLogsButton = new System.Windows.Forms.Button();
             this.OpenBackgroundDialog = new System.Windows.Forms.OpenFileDialog();
             this.ScreenshotSavePathSelectDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.LeaveIssueLabel = new System.Windows.Forms.Label();
-            this.issueBrowserPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.OverlayControlTabPage.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,13 +109,13 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.PluginsTabPage.SuspendLayout();
             this.InformationTabPage.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.LogTabPage.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // overlayTabControl1
+            // OverlayControlTabPage
             // 
             this.OverlayControlTabPage.Controls.Add(this.OverlaysTabPage);
             this.OverlayControlTabPage.Controls.Add(this.SettingsTabPage);
@@ -127,7 +127,7 @@
             this.OverlayControlTabPage.ItemSize = new System.Drawing.Size(10, 32);
             this.OverlayControlTabPage.Location = new System.Drawing.Point(0, 0);
             this.OverlayControlTabPage.Multiline = true;
-            this.OverlayControlTabPage.Name = "overlayTabControl1";
+            this.OverlayControlTabPage.Name = "OverlayControlTabPage";
             this.OverlayControlTabPage.Padding = new System.Drawing.Point(18, 0);
             this.OverlayControlTabPage.SelectedIndex = 0;
             this.OverlayControlTabPage.Size = new System.Drawing.Size(800, 480);
@@ -385,6 +385,7 @@
             this.ScreenshotSavePathTextBox.Name = "ScreenshotSavePathTextBox";
             this.ScreenshotSavePathTextBox.Size = new System.Drawing.Size(543, 23);
             this.ScreenshotSavePathTextBox.TabIndex = 0;
+            this.ScreenshotSavePathTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // ScreenshotSavePathSelectButton
             // 
@@ -503,6 +504,7 @@
             this.ScreenshotMargin.Name = "ScreenshotMargin";
             this.ScreenshotMargin.Size = new System.Drawing.Size(77, 23);
             this.ScreenshotMargin.TabIndex = 0;
+            this.ScreenshotMargin.ValueChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // AutoClippingCheckBox
             // 
@@ -514,6 +516,7 @@
             this.AutoClippingCheckBox.Size = new System.Drawing.Size(575, 16);
             this.AutoClippingCheckBox.TabIndex = 10;
             this.AutoClippingCheckBox.UseVisualStyleBackColor = true;
+            this.AutoClippingCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // ScreenshotBackgroundFillModeComboBox
             // 
@@ -525,6 +528,7 @@
             this.ScreenshotBackgroundFillModeComboBox.Name = "ScreenshotBackgroundFillModeComboBox";
             this.ScreenshotBackgroundFillModeComboBox.Size = new System.Drawing.Size(583, 24);
             this.ScreenshotBackgroundFillModeComboBox.TabIndex = 11;
+            this.ScreenshotBackgroundFillModeComboBox.SelectedIndexChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // tableLayoutPanel3
             // 
@@ -566,6 +570,7 @@
             this.ScreenshotBackgroundImagePathTextBox.Name = "ScreenshotBackgroundImagePathTextBox";
             this.ScreenshotBackgroundImagePathTextBox.Size = new System.Drawing.Size(543, 23);
             this.ScreenshotBackgroundImagePathTextBox.TabIndex = 1;
+            this.ScreenshotBackgroundImagePathTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // ProgramOptionGroupBox
             // 
@@ -615,6 +620,7 @@
             this.AutoHideCheckBox.Size = new System.Drawing.Size(575, 16);
             this.AutoHideCheckBox.TabIndex = 8;
             this.AutoHideCheckBox.UseVisualStyleBackColor = true;
+            this.AutoHideCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // AutoHideByProcLabel
             // 
@@ -687,6 +693,7 @@
             this.VersionAutoCheckCheckBox.Size = new System.Drawing.Size(575, 16);
             this.VersionAutoCheckCheckBox.TabIndex = 4;
             this.VersionAutoCheckCheckBox.UseVisualStyleBackColor = true;
+            this.VersionAutoCheckCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // DetectProcessNameTextBox
             // 
@@ -697,6 +704,7 @@
             this.DetectProcessNameTextBox.Size = new System.Drawing.Size(583, 23);
             this.DetectProcessNameTextBox.TabIndex = 6;
             this.DetectProcessNameTextBox.Text = "ffxiv.exe, ffxiv_dx11.exe";
+            this.DetectProcessNameTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // PluginsTabPage
             // 
@@ -733,6 +741,41 @@
             this.InformationTabPage.TabIndex = 3;
             this.InformationTabPage.Text = "Information";
             this.InformationTabPage.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.issueBrowserPanel);
+            this.panel1.Controls.Add(this.LeaveIssueLabel);
+            this.panel1.Location = new System.Drawing.Point(200, 10);
+            this.panel1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(588, 426);
+            this.panel1.TabIndex = 4;
+            // 
+            // issueBrowserPanel
+            // 
+            this.issueBrowserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.issueBrowserPanel.Location = new System.Drawing.Point(0, 32);
+            this.issueBrowserPanel.Name = "issueBrowserPanel";
+            this.issueBrowserPanel.Size = new System.Drawing.Size(586, 392);
+            this.issueBrowserPanel.TabIndex = 0;
+            // 
+            // LeaveIssueLabel
+            // 
+            this.LeaveIssueLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.LeaveIssueLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LeaveIssueLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
+            this.LeaveIssueLabel.ForeColor = System.Drawing.Color.White;
+            this.LeaveIssueLabel.Location = new System.Drawing.Point(0, 0);
+            this.LeaveIssueLabel.Name = "LeaveIssueLabel";
+            this.LeaveIssueLabel.Padding = new System.Windows.Forms.Padding(10, 4, 0, 0);
+            this.LeaveIssueLabel.Size = new System.Drawing.Size(586, 32);
+            this.LeaveIssueLabel.TabIndex = 1;
+            this.LeaveIssueLabel.Text = "Leave Issue";
             // 
             // ConpatibleLabel
             // 
@@ -869,41 +912,6 @@
             // 
             this.OpenBackgroundDialog.FileName = "openFileDialog1";
             // 
-            // LeaveIssueLabel
-            // 
-            this.LeaveIssueLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.LeaveIssueLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LeaveIssueLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
-            this.LeaveIssueLabel.ForeColor = System.Drawing.Color.White;
-            this.LeaveIssueLabel.Location = new System.Drawing.Point(0, 0);
-            this.LeaveIssueLabel.Name = "LeaveIssueLabel";
-            this.LeaveIssueLabel.Padding = new System.Windows.Forms.Padding(10, 4, 0, 0);
-            this.LeaveIssueLabel.Size = new System.Drawing.Size(586, 32);
-            this.LeaveIssueLabel.TabIndex = 1;
-            this.LeaveIssueLabel.Text = "Leave Issue";
-            // 
-            // issueBrowserPanel
-            // 
-            this.issueBrowserPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.issueBrowserPanel.Location = new System.Drawing.Point(0, 32);
-            this.issueBrowserPanel.Name = "issueBrowserPanel";
-            this.issueBrowserPanel.Size = new System.Drawing.Size(586, 392);
-            this.issueBrowserPanel.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.issueBrowserPanel);
-            this.panel1.Controls.Add(this.LeaveIssueLabel);
-            this.panel1.Location = new System.Drawing.Point(200, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 10);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(588, 426);
-            this.panel1.TabIndex = 4;
-            // 
             // OverlayController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -934,10 +942,10 @@
             this.PluginsTabPage.ResumeLayout(false);
             this.PluginsTabPage.PerformLayout();
             this.InformationTabPage.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.LogTabPage.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -23,7 +23,7 @@ namespace Aliapoh.Overlay
 
         public ChromiumWebBrowser Browser;
         public IBrowser MainOverlay;
-        public Bitmap ScreenShot;
+        public Bitmap Screenshot;
         #endregion
 
         private bool IsBrowserLockedInternal { get; set; }
@@ -125,8 +125,8 @@ namespace Aliapoh.Overlay
 
         private void Overlay_NewScreenshot(object sender, EventArgs e)
         {
-            ScreenShot = Browser.ScreenshotOrNull(PopupBlending.Main);
-            if (ScreenShot != null) SetBitmap(ScreenShot, this);
+            Screenshot = Browser.ScreenshotOrNull(PopupBlending.Main);
+            if (Screenshot != null) SetBitmap(Screenshot, this);
             GC.Collect(1);
         }
 
@@ -139,6 +139,20 @@ namespace Aliapoh.Overlay
         {
             Browser.Dispose();
             base.OnFormClosed(e);
+        }
+
+        public void TakeScreenshot()
+        {
+            new Thread((ThreadStart)delegate
+            {
+                ExecuteJavascript("if(beforeTakeScreenshot != undefined) beforeTakeScreenshot()");
+                Thread.Sleep(34);
+                var bmp = Browser.ScreenshotOrNull();
+                if (bmp != null)
+                {
+                    ScreenshotRenderer.SaveScreenshot(bmp);
+                }
+            }).Start();
         }
 
         // 별로 건들 일 없어서 내려놓음
