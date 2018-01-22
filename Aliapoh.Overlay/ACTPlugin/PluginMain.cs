@@ -21,9 +21,9 @@ namespace Aliapoh
         {
             MessageBox.Show("Start");
             if (Environment.Is64BitProcess)
-                Program.CEFDIR = Loader.DIRDICT["CEFX64"];
+                Loader.CEFDIR = Loader.DIRDICT["CEFX64"];
             else
-                Program.CEFDIR = Loader.DIRDICT["CEFX86"];
+                Loader.CEFDIR = Loader.DIRDICT["CEFX86"];
             Loader.Initialize();
         }
 

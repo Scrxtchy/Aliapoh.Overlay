@@ -41,12 +41,12 @@ namespace Aliapoh.Overlay.OverlayManager
                     }
                     o["PluginConfig"]["Overlays"][so.Name] = obj;
                 }
-            File.WriteAllText(Path.Combine(Program.APPDIR, SettingFile), o.ToString());
+            File.WriteAllText(Path.Combine(Loader.APPDIR, SettingFile), o.ToString());
         }
 
         public static void LoadSettingJSON()
         {
-            if (!File.Exists(Path.Combine(Program.APPDIR, SettingFile)))
+            if (!File.Exists(Path.Combine(Loader.APPDIR, SettingFile)))
             {
                 GenerateSettingJSON(DefaultSetting.GlobalSettingObject);
                 GlobalSetting = DefaultSetting.GlobalSettingObject;
@@ -54,7 +54,7 @@ namespace Aliapoh.Overlay.OverlayManager
             }
             else
             {
-                var o = JObject.Parse(File.ReadAllText(Path.Combine(Program.APPDIR, SettingFile)));
+                var o = JObject.Parse(File.ReadAllText(Path.Combine(Loader.APPDIR, SettingFile)));
                 if (GlobalSetting == null)
                     GlobalSetting = new GlobalSettingObject();
                 foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())

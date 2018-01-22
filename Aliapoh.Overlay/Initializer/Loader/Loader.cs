@@ -12,6 +12,9 @@ namespace Aliapoh.Overlay
 {
     public class Loader
     {
+        public static string APPDIR = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh");
+        public static string CEFDIR = "";
+
         public static Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
         {
             { "LOCAL", Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) },
@@ -165,7 +168,7 @@ namespace Aliapoh.Overlay
 
             var dicts = new Dictionary<string, string>()
             {
-                { "Newtonsoft.Json", Path.Combine(Program.APPDIR, "Bin", "Newtonsoft.json.10.0.3", "lib", "net45") }
+                { "Newtonsoft.Json", Path.Combine(APPDIR, "Bin", "Newtonsoft.json.10.0.3", "lib", "net45") }
             };
 
             string asmFile = (args.Name.Contains(",") ? args.Name.Substring(0, args.Name.IndexOf(",")) : args.Name);
@@ -173,7 +176,7 @@ namespace Aliapoh.Overlay
             try
             {
                 if(asmFile.Contains("CefSharp"))
-                    return Assembly.LoadFile(Path.Combine(Program.CEFDIR, asmFile + ".dll"));
+                    return Assembly.LoadFile(Path.Combine(CEFDIR, asmFile + ".dll"));
                 else
                     return Assembly.LoadFile(Path.Combine(dicts[asmFile], asmFile + ".dll"));
             }
