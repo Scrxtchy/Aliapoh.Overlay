@@ -68,7 +68,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>aliapoh_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Properties\aliapoh_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -196,7 +196,7 @@
     <Compile Include="Localization\LanguageLoader.cs" />
     <Compile Include="OverlayManager\Settings\SettingManager.cs" />
     <Compile Include="Overlay\Screenshot\ScreenshotRenderer.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Initializer\Forms\LoaderForm.resx">
       <DependentUpon>LoaderForm.cs</DependentUpon>
@@ -229,7 +229,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="aliapoh_icon.ico" />
+    <Content Include="Properties\aliapoh_icon.ico" />
     <None Include="Resources\frmimg.png" />
   </ItemGroup>
   <ItemGroup>
