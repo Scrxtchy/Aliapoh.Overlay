@@ -119,17 +119,19 @@
     <Compile Include="ACTPlugin\Enums\MessageType.cs" />
     <Compile Include="ACTPlugin\Network\BeforeLogLineRead.cs" />
     <Compile Include="ACTPlugin\Network\CefShutdown.cs" />
-    <Compile Include="AliapohInitializer\Loader\AliapohLoader.cs" />
-    <Compile Include="AliapohInitializer\Loader\CefLoader.cs" />
-    <Compile Include="AliapohInitializer\Loader\Downloader.cs" />
-    <Compile Include="AliapohInitializer\Forms\LoaderForm.cs">
+    <Compile Include="Initializer\Loader\AssemblyResolver.cs" />
+    <Compile Include="Initializer\Args\ExceptionOccuredEventArgs.cs" />
+    <Compile Include="Initializer\Loader\Loader.cs" />
+    <Compile Include="Initializer\Loader\CefLoader.cs" />
+    <Compile Include="Initializer\Loader\Downloader.cs" />
+    <Compile Include="Initializer\Forms\LoaderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AliapohInitializer\Forms\LoaderForm.Designer.cs">
+    <Compile Include="Initializer\Forms\LoaderForm.Designer.cs">
       <DependentUpon>LoaderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AliapohInitializer\Versions\VersionManager.cs" />
-    <Compile Include="AliapohInitializer\Versions\VersionStruct.cs" />
+    <Compile Include="Initializer\Versions\VersionManager.cs" />
+    <Compile Include="Initializer\Versions\VersionStruct.cs" />
     <Compile Include="Extender\FontMatrics.cs" />
     <Compile Include="Extender\FontMetricsImpl.cs" />
     <Compile Include="Extender\GraphicExtender.cs" />
@@ -145,7 +147,7 @@
     <Compile Include="OverlayManager\Settings\SettingObject.cs" />
     <Compile Include="Overlay\AutoHide.cs" />
     <Compile Include="OverlayManager\Enums\GlobalHotkeyType.cs" />
-    <Compile Include="OverlayManager\GlobalHook\Events\KeyPressedEventArgs.cs" />
+    <Compile Include="OverlayManager\GlobalHook\Args\KeyPressedEventArgs.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\KeyboardHook.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\ModifierKeys.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\Window.cs" />
@@ -195,7 +197,7 @@
     <Compile Include="Overlay\Screenshot\ScreenshotRenderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AliapohInitializer\Forms\LoaderForm.resx">
+    <EmbeddedResource Include="Initializer\Forms\LoaderForm.resx">
       <DependentUpon>LoaderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overlay\OverlayForm.resx">

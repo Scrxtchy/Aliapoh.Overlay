@@ -1,7 +1,6 @@
 ﻿using Aliapoh.Overlay.Logger;
 using CefSharp;
 using System;
-using System.Diagnostics;
 using System.IO;
 
 namespace Aliapoh.Overlay

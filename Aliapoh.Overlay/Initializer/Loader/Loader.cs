@@ -5,12 +5,12 @@ using System.Net;
 using System.Diagnostics;
 using System.Threading;
 using System.Reflection;
-using Aliapoh.Overlay.AliapohInitializer;
+using Aliapoh.Overlay.Initializer;
 using Aliapoh.Overlay.Logger;
 
 namespace Aliapoh.Overlay
 {
-    public class AliapohLoader
+    public class Loader
     {
         public static Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
         {
@@ -26,6 +26,7 @@ namespace Aliapoh.Overlay
             { "CEFX64SHD", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF", "x64", "swiftshader") },
         };
 
+        public static AssemblyResolver asmResolver;
         public static string TargetCEFVER = "3.3239.1716";
         public static string TargetCEFTAG = "63.0.0-pre01";
         public static void Initialize()
@@ -126,6 +127,16 @@ namespace Aliapoh.Overlay
             }
 
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
+            var Directories = new List<string>()
+            {
+                DIRDICT["CEFDIR"],
+                DIRDICT["BINDIR"]
+            };
+
+            asmResolver = new AssemblyResolver(Directories);
+            asmResolver.ExceptionOccured += (o, e) => LOG.Logger.Log(LogLevel.Error, "AssemblyResolver: Error: {0}", e.Exception);
+            asmResolver.AssemblyLoaded += (o, e) => LOG.Logger.Log(LogLevel.Debug, "AssemblyResolver: Loaded: {0}", e.LoadedAssembly.FullName);
 
             loadfrm.Render("Initializing...");
             VersionManager.Initialize();

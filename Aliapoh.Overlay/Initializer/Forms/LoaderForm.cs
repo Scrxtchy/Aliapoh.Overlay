@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay.AliapohInitializer
+namespace Aliapoh.Overlay.Initializer
 {
     public partial class LoaderForm : Form
     {

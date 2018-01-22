@@ -128,14 +128,16 @@ namespace Aliapoh
             loadfrm.Close();
             loadfrm.Dispose();
 
-            var Directories = new List<string>();
-            Directories.Add(DIRDICT["CEFDIR"]);
-            Directories.Add(DIRDICT["BINDIR"]);
+            var Directories = new List<string>()
+            {
+                DIRDICT["CEFDIR"],
+                DIRDICT["BINDIR"]
+            };
             asmResolver = new AssemblyResolver(Directories);
 
             if (Program.fromMain) // run to exe
             {
-                Overlay.AliapohLoader.Initialize();
+                Overlay.Loader.Initialize();
                 Application.Run(new Overlay.OverlayManager.ManagerForm());
             }
             else

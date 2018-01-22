@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.AliapohInitializer
+﻿namespace Aliapoh.Overlay.Initializer
 {
     partial class LoaderForm
     {

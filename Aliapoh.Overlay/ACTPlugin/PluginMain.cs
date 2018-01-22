@@ -3,26 +3,28 @@ using System;
 using System.Windows.Forms;
 using System.Linq;
 using System.IO;
+using Aliapoh.Overlay;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh
 {
-    public class AliapohOverlay : IActPluginV1
+    public class PluginMain : IActPluginV1
     {
         public static string PrimaryUser = "YOU";
         public static string pluginDirectory;
 
         public void DeInitPlugin()
         {
-            new CefShutdown();
+
         }
 
         public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)
         {
+            MessageBox.Show("Start");
             if (Environment.Is64BitProcess)
-                Program.CEFDIR = AliapohLoader.DIRDICT["CEFX64"];
+                Program.CEFDIR = Loader.DIRDICT["CEFX64"];
             else
-                Program.CEFDIR = AliapohLoader.DIRDICT["CEFX86"];
-            AliapohLoader.Initialize();
+                Program.CEFDIR = Loader.DIRDICT["CEFX86"];
+            Loader.Initialize();
         }
 
         public string GetPluginDirectory()

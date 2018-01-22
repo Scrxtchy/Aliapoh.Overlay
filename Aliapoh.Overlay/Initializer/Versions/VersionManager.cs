@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using Aliapoh.Overlay.Logger;
 
-namespace Aliapoh.Overlay.AliapohInitializer
+namespace Aliapoh.Overlay.Initializer
 {
     public static class VersionManager
     {

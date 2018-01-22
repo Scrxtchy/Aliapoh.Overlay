@@ -7,7 +7,6 @@ namespace Aliapoh.Overlay
     [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayTabControl : TabControl
     {
-        private bool TabCollapsed;
         private System.ComponentModel.IContainer components = null;
         private StringFormat SB;
         private Font TabFont;
@@ -24,8 +23,7 @@ namespace Aliapoh.Overlay
 
             TabFont = new Font("Microsoft Neogothic", 11f, FontStyle.Regular);
             TabSelectedFont = new Font("Microsoft Neogothic", 11f, FontStyle.Bold);
-
-            TabCollapsed = false;
+            
             InitializeComponent();
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ContainerControl, true);
             DoubleBuffered = true;
