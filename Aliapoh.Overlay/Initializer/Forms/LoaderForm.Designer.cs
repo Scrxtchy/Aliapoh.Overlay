@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+            RenderFont.Dispose();
             base.Dispose(disposing);
         }
 
@@ -41,7 +42,6 @@
             this.Text = "LoaderForm";
             this.Load += new System.EventHandler(this.LoaderForm_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion
