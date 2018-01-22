@@ -37,6 +37,13 @@ namespace Aliapoh.Overlay.OverlayManager
         private void InitializeUI()
         {
             InitializeComponent();
+
+            foreach(var i in OverlayConfigs)
+            {
+                overlayManageTabControl1.TabPages.Add(i.Value);
+                SelectOverlayNameDisplay();
+            }
+
             if (!DesignMode)
                 LanguageLoader.LanguagePatch(this);
 
@@ -253,7 +260,6 @@ namespace Aliapoh.Overlay.OverlayManager
         {
             LogReader();
             SettingManager.GlobalSetting = SettingExport();
-            SettingManager.GenerateSettingJSON();
         }
         #endregion
 

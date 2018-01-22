@@ -15,6 +15,18 @@ namespace Aliapoh.Overlay
             }
         }
 
+        public void Initializer(OverlayConfig oc)
+        {
+            Config = oc;
+            Dock = DockStyle.Fill;
+
+            Text = oc.Name;
+            Name = oc.Name;
+
+            BackColor = Color.FromArgb(255, 255, 255);
+            Controls.Add(Config);
+        }
+
         public void Initializer(string name, string url)
         {
             Config = new OverlayConfig(name, url)
@@ -27,6 +39,11 @@ namespace Aliapoh.Overlay
 
             BackColor = Color.FromArgb(255, 255, 255);
             Controls.Add(Config);
+        }
+
+        public OverlayTabPage(OverlayConfig oc)
+        {
+            Initializer(oc);
         }
 
         public OverlayTabPage(string name, string url)

@@ -75,15 +75,24 @@ namespace Aliapoh.Overlay.OverlayManager
 
                 if (o["PluginConfig"]["Overlays"] != null)
                 {
-                    foreach (FieldInfo fi in GlobalSetting.GetType().GetFields())
+                    foreach (JProperty p in o["PluginConfig"]["Overlays"])
                     {
-                        //var oc = new OverlayConfig(p.Name);
-                        foreach (JProperty p in o["PluginConfig"]["Overlays"])
+                        if (o["PluginConfig"]["Overlays"][p.Name] != null)
                         {
-                            if (o["PluginConfig"]["Overlays"][p.Name] != null)
+                            var ocf = new OverlayConfig(p.Name);
+                            foreach (FieldInfo fi in ocf.GetType().GetFields())
                             {
-
+                                if(fi.Name == p.Name)
+                                {
+                                    if (fi.FieldType == typeof(string))
+                                        ocf.GetType().GetField(fi.Name).SetValue(ocf, p.Value.ToString());
+                                    if (fi.FieldType == typeof(int))
+                                        ocf.GetType().GetField(fi.Name).SetValue(ocf, int.Parse(p.Value.ToString()));
+                                    if (fi.FieldType == typeof(bool))
+                                        ocf.GetType().GetField(fi.Name).SetValue(ocf, p.Value.ToString() == "True" ? true : false);
+                                }
                             }
+                            OverlayController.OverlayConfigs.Add(p.Name, new OverlayTabPage(ocf));
                         }
                     }
                 }

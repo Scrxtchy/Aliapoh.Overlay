@@ -220,9 +220,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Overlay\Events\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="aliapoh_icon.ico" />
     <None Include="Resources\frmimg.png" />
