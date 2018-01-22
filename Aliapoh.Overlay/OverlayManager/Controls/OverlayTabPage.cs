@@ -18,13 +18,13 @@ namespace Aliapoh.Overlay
         public void Initializer(OverlayConfig oc)
         {
             Config = oc;
-            Dock = DockStyle.Fill;
+            oc.Dock = DockStyle.Fill;
 
             Text = oc.Name;
             Name = oc.Name;
 
             BackColor = Color.FromArgb(255, 255, 255);
-            Controls.Add(Config);
+            Controls.Add(oc);
         }
 
         public void Initializer(string name, string url)

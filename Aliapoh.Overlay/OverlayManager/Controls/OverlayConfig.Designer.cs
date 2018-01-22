@@ -119,13 +119,13 @@
             this.panel2.TabIndex = 1;
             this.panel2.Click += new System.EventHandler(this.TextboxPadderClicked);
             // 
-            // siteURL
+            // SiteURL
             // 
             this.SiteURL.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SiteURL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SiteURL.Font = new System.Drawing.Font("Microsoft NeoGothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.SiteURL.Location = new System.Drawing.Point(5, 5);
-            this.SiteURL.Name = "siteURL";
+            this.SiteURL.Name = "SiteURL";
             this.SiteURL.Size = new System.Drawing.Size(497, 18);
             this.SiteURL.TabIndex = 0;
             this.SiteURL.Text = "about:blank";
@@ -262,7 +262,7 @@
             this.label20.Text = "px";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // overlayWidth
+            // OverlayWidth
             // 
             this.OverlayWidth.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayWidth.Increment = new decimal(new int[] {
@@ -282,7 +282,7 @@
             0,
             0,
             -2147483648});
-            this.OverlayWidth.Name = "overlayWidth";
+            this.OverlayWidth.Name = "OverlayWidth";
             this.OverlayWidth.Size = new System.Drawing.Size(100, 23);
             this.OverlayWidth.TabIndex = 16;
             this.OverlayWidth.Value = new decimal(new int[] {
@@ -328,7 +328,7 @@
             this.label23.Text = "px";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // overlayHeight
+            // OverlayHeight
             // 
             this.OverlayHeight.Location = new System.Drawing.Point(230, 0);
             this.OverlayHeight.Margin = new System.Windows.Forms.Padding(0);
@@ -342,7 +342,7 @@
             0,
             0,
             -2147483648});
-            this.OverlayHeight.Name = "overlayHeight";
+            this.OverlayHeight.Name = "OverlayHeight";
             this.OverlayHeight.Size = new System.Drawing.Size(100, 23);
             this.OverlayHeight.TabIndex = 20;
             this.OverlayHeight.Value = new decimal(new int[] {
@@ -390,7 +390,7 @@
             this.label17.Text = "px";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // overlayX
+            // OverlayX
             // 
             this.OverlayX.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayX.Increment = new decimal(new int[] {
@@ -410,7 +410,7 @@
             0,
             0,
             -2147483648});
-            this.OverlayX.Name = "overlayX";
+            this.OverlayX.Name = "OverlayX";
             this.OverlayX.Size = new System.Drawing.Size(100, 23);
             this.OverlayX.TabIndex = 16;
             this.OverlayX.Value = new decimal(new int[] {
@@ -456,7 +456,7 @@
             this.label19.Text = "px";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // overlayY
+            // OverlayY
             // 
             this.OverlayY.Location = new System.Drawing.Point(230, 0);
             this.OverlayY.Margin = new System.Windows.Forms.Padding(0);
@@ -470,7 +470,7 @@
             0,
             0,
             -2147483648});
-            this.OverlayY.Name = "overlayY";
+            this.OverlayY.Name = "OverlayY";
             this.OverlayY.Size = new System.Drawing.Size(100, 23);
             this.OverlayY.TabIndex = 20;
             this.OverlayY.Value = new decimal(new int[] {
@@ -506,12 +506,12 @@
             this.PositionLabel.Text = "Position";
             this.PositionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // overlayEnableBeforeLogLineRead
+            // OverlayEnableBeforeLogLineRead
             // 
             this.OverlayEnableBeforeLogLineRead.AutoSize = true;
             this.OverlayEnableBeforeLogLineRead.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayEnableBeforeLogLineRead.Location = new System.Drawing.Point(203, 219);
-            this.OverlayEnableBeforeLogLineRead.Name = "overlayEnableBeforeLogLineRead";
+            this.OverlayEnableBeforeLogLineRead.Name = "OverlayEnableBeforeLogLineRead";
             this.OverlayEnableBeforeLogLineRead.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
             this.OverlayEnableBeforeLogLineRead.Size = new System.Drawing.Size(394, 18);
             this.OverlayEnableBeforeLogLineRead.TabIndex = 25;
@@ -546,12 +546,12 @@
             this.SubTableLayoutPanel5.Size = new System.Drawing.Size(400, 24);
             this.SubTableLayoutPanel5.TabIndex = 23;
             // 
-            // overlayName
+            // OverlayName
             // 
             this.OverlayName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayName.Location = new System.Drawing.Point(0, 0);
             this.OverlayName.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            this.OverlayName.Name = "overlayName";
+            this.OverlayName.Name = "OverlayName";
             this.OverlayName.Size = new System.Drawing.Size(375, 23);
             this.OverlayName.TabIndex = 20;
             // 
@@ -607,12 +607,12 @@
             this.GlobalHotkeyLabel.Text = "Global hotkey";
             this.GlobalHotkeyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // overlayGlobalHotkey
+            // OverlayGlobalHotkey
             // 
             this.OverlayGlobalHotkey.AutoSize = true;
             this.OverlayGlobalHotkey.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayGlobalHotkey.Location = new System.Drawing.Point(203, 147);
-            this.OverlayGlobalHotkey.Name = "overlayGlobalHotkey";
+            this.OverlayGlobalHotkey.Name = "OverlayGlobalHotkey";
             this.OverlayGlobalHotkey.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
             this.OverlayGlobalHotkey.Size = new System.Drawing.Size(394, 18);
             this.OverlayGlobalHotkey.TabIndex = 17;
@@ -646,7 +646,7 @@
             this.label9.Text = "ms";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // overlayUpdateRate
+            // OverlayUpdaterate
             // 
             this.OverlayUpdaterate.Increment = new decimal(new int[] {
             100,
@@ -665,7 +665,7 @@
             0,
             0,
             0});
-            this.OverlayUpdaterate.Name = "overlayUpdateRate";
+            this.OverlayUpdaterate.Name = "OverlayUpdaterate";
             this.OverlayUpdaterate.Size = new System.Drawing.Size(80, 23);
             this.OverlayUpdaterate.TabIndex = 0;
             this.OverlayUpdaterate.Value = new decimal(new int[] {
@@ -713,24 +713,24 @@
             this.MaxframelateLabel.Text = "Max framerate";
             this.MaxframelateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // overlayLock
+            // OverlayLock
             // 
             this.OverlayLock.AutoSize = true;
             this.OverlayLock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayLock.Location = new System.Drawing.Point(203, 75);
-            this.OverlayLock.Name = "overlayLock";
+            this.OverlayLock.Name = "OverlayLock";
             this.OverlayLock.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
             this.OverlayLock.Size = new System.Drawing.Size(394, 18);
             this.OverlayLock.TabIndex = 9;
             this.OverlayLock.UseVisualStyleBackColor = true;
             this.OverlayLock.CheckedChanged += new System.EventHandler(this.OverlayLock_CheckedChanged);
             // 
-            // overlayClickthru
+            // OverlayClickthru
             // 
             this.OverlayClickthru.AutoSize = true;
             this.OverlayClickthru.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayClickthru.Location = new System.Drawing.Point(203, 51);
-            this.OverlayClickthru.Name = "overlayClickthru";
+            this.OverlayClickthru.Name = "OverlayClickthru";
             this.OverlayClickthru.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
             this.OverlayClickthru.Size = new System.Drawing.Size(394, 18);
             this.OverlayClickthru.TabIndex = 4;
@@ -763,14 +763,14 @@
             this.ShowOverlayLabel.Text = "Show Overlay";
             this.ShowOverlayLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // overlayShow
+            // OverlayShow
             // 
             this.OverlayShow.AutoSize = true;
             this.OverlayShow.Checked = true;
             this.OverlayShow.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OverlayShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayShow.Location = new System.Drawing.Point(203, 27);
-            this.OverlayShow.Name = "overlayShow";
+            this.OverlayShow.Name = "OverlayShow";
             this.OverlayShow.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
             this.OverlayShow.Size = new System.Drawing.Size(394, 18);
             this.OverlayShow.TabIndex = 2;
@@ -818,7 +818,7 @@
             this.MaxframelateDescLabel.Text = "fps (※ This value required restart)";
             this.MaxframelateDescLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // overlayFramerate
+            // OverlayFramerate
             // 
             this.OverlayFramerate.Location = new System.Drawing.Point(0, 0);
             this.OverlayFramerate.Margin = new System.Windows.Forms.Padding(0);
@@ -832,7 +832,7 @@
             0,
             0,
             0});
-            this.OverlayFramerate.Name = "overlayFramerate";
+            this.OverlayFramerate.Name = "OverlayFramerate";
             this.OverlayFramerate.Size = new System.Drawing.Size(80, 23);
             this.OverlayFramerate.TabIndex = 0;
             this.OverlayFramerate.Value = new decimal(new int[] {
@@ -842,13 +842,13 @@
             0});
             this.OverlayFramerate.ValueChanged += new System.EventHandler(this.OverlayFramerate_ValueChanged);
             // 
-            // overlayGlobalHotkeyInput
+            // OverlayGlobalHotkeyInput
             // 
             this.OverlayGlobalHotkeyInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.OverlayGlobalHotkeyInput.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.OverlayGlobalHotkeyInput.Location = new System.Drawing.Point(200, 168);
             this.OverlayGlobalHotkeyInput.Margin = new System.Windows.Forms.Padding(0);
-            this.OverlayGlobalHotkeyInput.Name = "overlayGlobalHotkeyInput";
+            this.OverlayGlobalHotkeyInput.Name = "OverlayGlobalHotkeyInput";
             this.OverlayGlobalHotkeyInput.Size = new System.Drawing.Size(400, 23);
             this.OverlayGlobalHotkeyInput.TabIndex = 19;
             this.OverlayGlobalHotkeyInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OverlayGlobalHotkeyInput_KeyDown);

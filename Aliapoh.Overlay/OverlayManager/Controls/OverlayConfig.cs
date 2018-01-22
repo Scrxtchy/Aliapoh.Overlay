@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aliapoh.Overlay.OverlayManager;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
@@ -76,6 +77,30 @@ namespace Aliapoh.Overlay
 
             OverlayFramerate.Value = setting.Framerate;
             OverlayUpdaterate.Value = setting.Updaterate;
+
+            OverlayWidth.ValueChanged += SaveSetting;
+            OverlayHeight.ValueChanged += SaveSetting;
+            OverlayNameChangeButton.Click += SaveSetting;
+            OverlayLock.CheckedChanged += SaveSetting;
+            OverlayClickthru.CheckedChanged += SaveSetting;
+            OverlayShow.CheckedChanged += SaveSetting;
+            OverlayFramerate.ValueChanged += SaveSetting;
+        }
+
+        private void SaveSetting(object sender, EventArgs e)
+        {
+            OverlayController.OverlayConfigs[Name].Config = this;
+            if (SettingManager.OverlaySettings == null)
+                SettingManager.OverlaySettings = new List<SettingObject>();
+
+            SettingManager.OverlaySettings.Clear();
+
+            foreach (var i in OverlayController.OverlayConfigs)
+            {
+                SettingManager.OverlaySettings.Add(i.Value.Config.SettingExport());
+            }
+            
+            SettingManager.GenerateSettingJSON();
         }
 
         private void OverlayBrowserInitialized(object sender, EventArgs e)
