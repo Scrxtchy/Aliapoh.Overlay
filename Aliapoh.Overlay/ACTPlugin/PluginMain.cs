@@ -1,20 +1,19 @@
-﻿using System;
+﻿using Advanced_Combat_Tracker;
+using System;
 using System.Windows.Forms;
-using Advanced_Combat_Tracker;
-using CefSharp;
 using System.Linq;
 using System.IO;
 
-namespace Aliapoh.Overlay.ACTPlugin
+namespace Aliapoh.Overlay
 {
-    public class Aliapoh : IActPluginV1
+    public class AliapohOverlay : IActPluginV1
     {
         public static string PrimaryUser = "YOU";
         public static string pluginDirectory;
 
         public void DeInitPlugin()
         {
-            Cef.Shutdown();
+            new CefShutdown();
         }
 
         public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)
@@ -23,7 +22,6 @@ namespace Aliapoh.Overlay.ACTPlugin
                 Program.CEFDIR = AliapohLoader.DIRDICT["CEFX64"];
             else
                 Program.CEFDIR = AliapohLoader.DIRDICT["CEFX86"];
-
             AliapohLoader.Initialize();
         }
 
