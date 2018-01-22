@@ -71,7 +71,8 @@
     <ApplicationIcon>aliapoh_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Aliapoh.Overlay.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Advanced Combat Tracker">
