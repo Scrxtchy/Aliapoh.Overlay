@@ -13,6 +13,13 @@ namespace Aliapoh.Overlay
         public Keys GlobalHotkeyModifiers;
         public GlobalHotkeyType GlobalHotkeyType;
         public OverlayForm Overlay;
+        public SettingObject SettingObject
+        {
+            get
+            {
+                return SettingExport();
+            }
+        }
 
         public OverlayConfig(string name)
         {
@@ -46,7 +53,7 @@ namespace Aliapoh.Overlay
 
             SiteURL.Text = setting.Url;
             OverlayName.Text = setting.Name;
-
+            
             Overlay = new OverlayForm(setting.Url)
             {
                 Framerate = setting.Framerate,
@@ -85,11 +92,12 @@ namespace Aliapoh.Overlay
             OverlayClickthru.CheckedChanged += SaveSetting;
             OverlayShow.CheckedChanged += SaveSetting;
             OverlayFramerate.ValueChanged += SaveSetting;
+            SiteURL.TextChanged += SaveSetting;
         }
 
         private void SaveSetting(object sender, EventArgs e)
         {
-            OverlayController.OverlayConfigs[Name].Config = this;
+            OverlayController.OverlayConfigs[SettingObject.Name].Config = this;
             if (SettingManager.OverlaySettings == null)
                 SettingManager.OverlaySettings = new List<SettingObject>();
 
@@ -179,6 +187,7 @@ namespace Aliapoh.Overlay
             var key = RemoveModifiers(e.KeyCode, e.Modifiers);
             GlobalHotkey = key;
             GlobalHotkeyModifiers = e.Modifiers;
+            SaveSetting(sender, e);
         }
 
         private void OverlayGlobalHotkeyInput_KeyPress(object sender, KeyPressEventArgs e)

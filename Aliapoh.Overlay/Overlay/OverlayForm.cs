@@ -25,8 +25,7 @@ namespace Aliapoh.Overlay
         public IBrowser MainOverlay;
         public Bitmap Screenshot;
         #endregion
-
-        private bool IsBrowserLockedInternal;
+        
         private bool D_ALT;
         private bool D_CTRL;
         private bool D_SHIFT;
@@ -132,6 +131,7 @@ namespace Aliapoh.Overlay
 
         private void Overlay_BrowserInitialized(object sender, EventArgs e)
         {
+            MainOverlay = Browser.GetBrowser();
             IsBrowserInitialized = true;
         }
 

@@ -20,8 +20,8 @@ namespace Aliapoh.Overlay
             Config = oc;
             oc.Dock = DockStyle.Fill;
 
-            Text = oc.Name;
-            Name = oc.Name;
+            Text = oc.SettingObject.Name;
+            Name = oc.SettingObject.Name;
 
             BackColor = Color.FromArgb(255, 255, 255);
             Controls.Add(oc);

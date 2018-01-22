@@ -65,9 +65,9 @@ namespace Aliapoh.Overlay.OverlayManager
                         {
                             if(fi.FieldType == typeof(string))
                                 GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, p.Value.ToString());
-                            if (fi.FieldType == typeof(int))
+                            else if (fi.FieldType == typeof(int))
                                 GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, int.Parse(p.Value.ToString()));
-                            if (fi.FieldType == typeof(bool))
+                            else if (fi.FieldType == typeof(bool))
                                 GlobalSetting.GetType().GetField(fi.Name).SetValue(GlobalSetting, p.Value.ToString() == "True" ? true : false);
                         }
                     }
@@ -79,20 +79,23 @@ namespace Aliapoh.Overlay.OverlayManager
                     {
                         if (o["PluginConfig"]["Overlays"][p.Name] != null)
                         {
-                            var ocf = new OverlayConfig(p.Name);
-                            foreach (FieldInfo fi in ocf.GetType().GetFields())
+                            var so = new SettingObject();
+                            foreach (FieldInfo fi in so.GetType().GetFields())
                             {
-                                if(fi.Name == p.Name)
+                                foreach(JProperty jo in o["PluginConfig"]["Overlays"][p.Name])
                                 {
-                                    if (fi.FieldType == typeof(string))
-                                        ocf.GetType().GetField(fi.Name).SetValue(ocf, p.Value.ToString());
-                                    if (fi.FieldType == typeof(int))
-                                        ocf.GetType().GetField(fi.Name).SetValue(ocf, int.Parse(p.Value.ToString()));
-                                    if (fi.FieldType == typeof(bool))
-                                        ocf.GetType().GetField(fi.Name).SetValue(ocf, p.Value.ToString() == "True" ? true : false);
+                                    if (fi.Name == jo.Name)
+                                    {
+                                        if (fi.FieldType == typeof(string))
+                                            so.GetType().GetField(fi.Name).SetValue(so, jo.Value.ToString());
+                                        else if (fi.FieldType == typeof(int))
+                                            so.GetType().GetField(fi.Name).SetValue(so, int.Parse(jo.Value.ToString()));
+                                        else if (fi.FieldType == typeof(bool))
+                                            so.GetType().GetField(fi.Name).SetValue(so, jo.Value.ToString() == "True" ? true : false);
+                                    }
                                 }
                             }
-                            OverlayController.OverlayConfigs.Add(p.Name, new OverlayTabPage(ocf));
+                            OverlayController.OverlayConfigs.Add(p.Name, new OverlayTabPage(so.CreateOverlayConfig()));
                         }
                     }
                 }
