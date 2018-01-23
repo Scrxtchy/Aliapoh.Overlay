@@ -15,9 +15,11 @@ namespace Aliapoh
 {
     public class PluginMain : IActPluginV1
     {
+        public EventHandler<PluginDeinitEventArgs> DeinitEvent;
+        public EventHandler<PluginInitEventArgs> InitEvent;
+
         public static string PrimaryUser = "YOU";
         public static string pluginDirectory;
-        public OverlayController OverlayController;
         public PluginLoader PluginLoader;
         public AssemblyResolver AssemblyResolver;
 
@@ -47,7 +49,7 @@ namespace Aliapoh
         {
             if (Loader.InitializeMinimum())
             {
-                PluginLoader = new PluginLoader(tp, lbl);
+                PluginLoader = new PluginLoader(tp, lbl, this);
             }
         }
 
