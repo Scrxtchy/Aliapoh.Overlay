@@ -57,15 +57,15 @@ namespace Aliapoh.Overlay
             asmResolver.AssemblyLoaded += (o, e) => LOG.Logger.Log(LogLevel.Debug, "AssemblyResolver: Loaded: {0}", e.LoadedAssembly.FullName);
             
             VersionManager.Initialize();
-            Thread.Sleep(500);
+            Thread.Sleep(50);
             LOG.Logger.Log(LogLevel.Info, "Initialize CEF");
 
             CefLoader.Initialize();
-            Thread.Sleep(500);
+            Thread.Sleep(50);
             LOG.Logger.Log(LogLevel.Info, "Initialize Localization");
 
             LanguageLoader.Initialize();
-            Thread.Sleep(500);
+            Thread.Sleep(50);
             LOG.Logger.Log(LogLevel.Info, "Successfully loaded Aliapoh");
         }
 
@@ -186,15 +186,15 @@ namespace Aliapoh.Overlay
 
             loadfrm.Render("Initializing...");
             VersionManager.Initialize();
-            Thread.Sleep(500);
+            Thread.Sleep(50);
             LOG.Logger.Log(LogLevel.Info, "Initialize CEF");
             CefLoader.Initialize();
 
-            Thread.Sleep(500);
+            Thread.Sleep(50);
             LOG.Logger.Log(LogLevel.Info, "Initialize Localization");
             LanguageLoader.Initialize();
 
-            Thread.Sleep(500);
+            Thread.Sleep(50);
             LOG.Logger.Log(LogLevel.Info, "Successfully loaded Aliapoh");
 
             loadfrm.Close();

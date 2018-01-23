@@ -47,7 +47,7 @@
     "ConpatibleLabel": "ACTWebSocket\nOverlayPlugin\n호환 가능",
     "DeveloperLabel": "- 개발 -\n라그린네",
     "LeaveIssueLabel": "이슈 남기기",
-    "CopyAllLogsButton": "모든 로그 복사하기",
+    "CopyAllLogsButton": "모든 로그 복사",
     "ClearLogsButton": "로그 지우기",
     "ScreenShotSettingGroupbox": "스크린샷 설정",
     "SavePathLabel": "저장 경로",

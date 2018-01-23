@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Aliapoh.Initializer
 {
@@ -11,7 +12,7 @@ namespace Aliapoh.Initializer
     {
         private AssemblyResolver ASMResolver;
 
-        public PluginLoader()
+        public PluginLoader(TabPage tp, Label lbl)
         {
 
         }

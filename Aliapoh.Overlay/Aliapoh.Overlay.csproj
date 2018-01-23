@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{46D1F109-D80B-4081-B548-5B13D90150C2}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Aliapoh</RootNamespace>
     <AssemblyName>Aliapoh.Overlay</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
@@ -132,6 +132,7 @@
     <Compile Include="Initializer\Forms\LoaderForm.Designer.cs">
       <DependentUpon>LoaderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Initializer\Loader\PluginLoader.cs" />
     <Compile Include="Initializer\Versions\VersionManager.cs" />
     <Compile Include="Initializer\Versions\VersionStruct.cs" />
     <Compile Include="Extender\FontMatrics.cs" />

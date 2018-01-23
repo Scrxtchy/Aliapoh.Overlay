@@ -9,6 +9,7 @@ using Aliapoh.Overlay;
 using System.IO;
 using System.Reflection;
 using Aliapoh.Overlay.OverlayManager;
+using Aliapoh.Initializer;
 
 namespace Aliapoh
 {
@@ -17,6 +18,7 @@ namespace Aliapoh
         public static string PrimaryUser = "YOU";
         public static string pluginDirectory;
         public OverlayController OverlayController;
+        public PluginLoader PluginLoader;
 
         public void DeInitPlugin()
         {
@@ -33,12 +35,10 @@ namespace Aliapoh
                 Program.CEFDIR = FxLoader.DIRDICT["CEFX86"];
 
             FxLoader.Initialize();
-            Loader.InitializeMinimum();
-
-            OverlayController = new OverlayController()
+            if(Loader.InitializeMinimum())
             {
-                Dock = DockStyle.Fill
-            };
+                PluginLoader = new PluginLoader(pluginScreenSpace, pluginStatusText);
+            }
         }
 
         private Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
