@@ -17,10 +17,10 @@ namespace Aliapoh
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (Environment.Is64BitProcess)
-                CEFDIR = Loader.DIRDICT["CEFX64"];
+                CEFDIR = FxLoader.DIRDICT["CEFX64"];
             else
-                CEFDIR = Loader.DIRDICT["CEFX86"];
-            Loader.Initialize();
+                CEFDIR = FxLoader.DIRDICT["CEFX86"];
+            FxLoader.Initialize();
         }
     }
 }

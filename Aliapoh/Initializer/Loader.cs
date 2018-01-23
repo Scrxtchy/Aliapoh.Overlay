@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Aliapoh
 {
-    public class Loader
+    public class FxLoader
     {
         public static Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
         {
@@ -121,23 +121,14 @@ namespace Aliapoh
                 }
             }
 
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-
             loadfrm.Render("Initializing...");
             Thread.Sleep(500);
             loadfrm.Close();
             loadfrm.Dispose();
 
-            var Directories = new List<string>()
-            {
-                DIRDICT["CEFDIR"],
-                DIRDICT["BINDIR"]
-            };
-            asmResolver = new AssemblyResolver(Directories);
-
             if (Program.fromMain) // run to exe
             {
-                Overlay.Loader.Initialize();
+                Overlay.Loader.InitializeMinimum();
                 Application.Run(new Overlay.OverlayManager.ManagerForm());
             }
             else

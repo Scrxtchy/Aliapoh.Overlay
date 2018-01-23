@@ -32,6 +32,43 @@ namespace Aliapoh.Overlay
         public static AssemblyResolver asmResolver;
         public static string TargetCEFVER = "3.3239.1716";
         public static string TargetCEFTAG = "63.0.0-pre01";
+
+        public static void InitializeMinimum()
+        {
+            LOG.Initialize();
+            LOG.Logger.Log(LogLevel.Warning, "Aliapoh Overlay on " + (Environment.Is64BitProcess ? "x64" : "x86") + " Process");
+
+            if (Environment.Is64BitProcess)
+                CEFDIR = DIRDICT["CEFX64"];
+            else
+                APPDIR = DIRDICT["CEFX86"];
+
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
+            var Directories = new List<string>()
+            {
+                APPDIR,
+                CEFDIR,
+                DIRDICT["BINDIR"]
+            };
+
+            asmResolver = new AssemblyResolver(Directories);
+            asmResolver.ExceptionOccured += (o, e) => LOG.Logger.Log(LogLevel.Error, "AssemblyResolver: Error: {0}", e.Exception);
+            asmResolver.AssemblyLoaded += (o, e) => LOG.Logger.Log(LogLevel.Debug, "AssemblyResolver: Loaded: {0}", e.LoadedAssembly.FullName);
+            
+            VersionManager.Initialize();
+            Thread.Sleep(500);
+            LOG.Logger.Log(LogLevel.Info, "Initialize CEF");
+
+            CefLoader.Initialize();
+            Thread.Sleep(500);
+            LOG.Logger.Log(LogLevel.Info, "Initialize Localization");
+
+            LanguageLoader.Initialize();
+            Thread.Sleep(500);
+            LOG.Logger.Log(LogLevel.Info, "Successfully loaded Aliapoh");
+        }
+
         public static void Initialize()
         {
             LOG.Initialize();
@@ -128,14 +165,20 @@ namespace Aliapoh.Overlay
                     if (!File.Exists(f)) File.Copy(file, f);
                 }
             }
-
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+            
+            if (Environment.Is64BitProcess)
+                CEFDIR = DIRDICT["CEFX64"];
+            else
+                APPDIR = DIRDICT["CEFX86"];
 
             var Directories = new List<string>()
             {
-                DIRDICT["CEFDIR"],
+                APPDIR,
+                CEFDIR,
                 DIRDICT["BINDIR"]
             };
+
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
             asmResolver = new AssemblyResolver(Directories);
             asmResolver.ExceptionOccured += (o, e) => LOG.Logger.Log(LogLevel.Error, "AssemblyResolver: Error: {0}", e.Exception);
@@ -146,10 +189,14 @@ namespace Aliapoh.Overlay
             Thread.Sleep(500);
             LOG.Logger.Log(LogLevel.Info, "Initialize CEF");
             CefLoader.Initialize();
+
+            Thread.Sleep(500);
             LOG.Logger.Log(LogLevel.Info, "Initialize Localization");
             LanguageLoader.Initialize();
+
             Thread.Sleep(500);
             LOG.Logger.Log(LogLevel.Info, "Successfully loaded Aliapoh");
+
             loadfrm.Close();
             loadfrm.Dispose();
         }
@@ -175,7 +222,7 @@ namespace Aliapoh.Overlay
             if (!binfiles.Contains(asmFile)) return null;
             try
             {
-                if(asmFile.Contains("CefSharp"))
+                if (asmFile.Contains("CefSharp"))
                     return Assembly.LoadFile(Path.Combine(CEFDIR, asmFile + ".dll"));
                 else
                     return Assembly.LoadFile(Path.Combine(dicts[asmFile], asmFile + ".dll"));

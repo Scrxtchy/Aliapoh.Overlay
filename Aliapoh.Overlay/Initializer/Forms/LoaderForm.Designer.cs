@@ -35,7 +35,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Aliapoh.Overlay.Properties.Resources.frmimg;
+            this.BackgroundImage = global::Aliapoh.Properties.Resources.frmimg;
             this.ClientSize = new System.Drawing.Size(300, 200);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoaderForm";
