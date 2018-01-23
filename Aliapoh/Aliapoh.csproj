@@ -74,6 +74,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Args\PluginDeinitEventArgs.cs" />
+    <Compile Include="Args\PluginInitEventArgs.cs" />
     <Compile Include="Initializer\AssemblyResolver.cs" />
     <Compile Include="Classes\NativeMethods.cs" />
     <Compile Include="Initializer\ExceptionOccuredEventArgs.cs" />

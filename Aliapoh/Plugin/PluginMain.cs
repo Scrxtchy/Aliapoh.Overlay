@@ -10,15 +10,12 @@ using System.IO;
 using System.Reflection;
 using Aliapoh.Overlay.OverlayManager;
 using Aliapoh.Initializer;
+using Aliapoh.Args;
 
 namespace Aliapoh
 {
     public class PluginMain : IActPluginV1
     {
-        public EventHandler<PluginDeinitEventArgs> DeinitEvent;
-        public EventHandler<PluginInitEventArgs> InitEvent;
-
-        public static string PrimaryUser = "YOU";
         public static string pluginDirectory;
         public PluginLoader PluginLoader;
         public AssemblyResolver AssemblyResolver;
@@ -26,6 +23,7 @@ namespace Aliapoh
         public void DeInitPlugin()
         {
             AppDomain.CurrentDomain.AssemblyResolve -= CurrentDomain_AssemblyResolve;
+            PluginLoader.Dispose();
         }
 
         public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)
@@ -49,7 +47,7 @@ namespace Aliapoh
         {
             if (Loader.InitializeMinimum())
             {
-                PluginLoader = new PluginLoader(tp, lbl, this);
+                PluginLoader = new PluginLoader(tp, lbl, pluginDirectory, this);
             }
         }
 
@@ -75,30 +73,6 @@ namespace Aliapoh
             var plugin = ActGlobals.oFormActMain.ActPlugins.Where(x => x.pluginObj == this).FirstOrDefault();
             if (plugin != null) return Path.GetDirectoryName(plugin.pluginFile.FullName);
             else throw new Exception();
-        }
-
-        private void BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
-        {
-            if (logInfo.logLine.IndexOf("02:Changed") > -1)
-            {
-                PrimaryUser = logInfo.logLine;
-                PrimaryUser = PrimaryUser.Replace("02:Changed primary player to ", "").Replace(".", "");
-                PrimaryUser = PrimaryUser.Substring(PrimaryUser.IndexOf("]") + 2);
-            }
-        }
-
-        public void AddExportVariable()
-        {
-            if (!EncounterData.ExportVariables.ContainsKey("PrimaryUser"))
-            {
-                EncounterData.ExportVariables.Add("PrimaryUser",
-                new EncounterData.TextExportFormatter("PrimaryUser", "Primary Current Username", "Using ACT Current Charname 'YOU' almost get Current Username from User Input, but this Force Attach Current Username.", (Data, Extra, Format) => { return GetPrimaryUserName(); }));
-            }
-        }
-
-        public string GetPrimaryUserName()
-        {
-            return PrimaryUser;
         }
     }
 }
