@@ -171,14 +171,14 @@ namespace Aliapoh.Overlay
             else
                 APPDIR = DIRDICT["CEFX86"];
 
+            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
+
             var Directories = new List<string>()
             {
                 APPDIR,
                 CEFDIR,
                 DIRDICT["BINDIR"]
             };
-
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
             asmResolver = new AssemblyResolver(Directories);
             asmResolver.ExceptionOccured += (o, e) => LOG.Logger.Log(LogLevel.Error, "AssemblyResolver: Error: {0}", e.Exception);

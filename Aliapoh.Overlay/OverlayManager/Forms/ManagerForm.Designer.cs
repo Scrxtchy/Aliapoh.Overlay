@@ -49,8 +49,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(900, 540);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Name = "ManagerForm";
-            this.Text = "ManagerForm";
+            this.Name = "OverlayManager";
+            this.Text = "O v e r l a y   M a n a g e r";
             this.ResumeLayout(false);
         }
 
