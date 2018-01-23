@@ -29,7 +29,8 @@ namespace Aliapoh
         public static AssemblyResolver asmResolver;
         public static string TargetCEFVER = "3.3239.1716";
         public static string TargetCEFTAG = "63.0.0-pre01";
-        public static void Initialize()
+
+        public static bool Initialize()
         {
             var loadfrm = new LoaderForm();
             loadfrm.Show();
@@ -135,6 +136,8 @@ namespace Aliapoh
             {
 
             }
+
+            return true;
         }
 
         private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)

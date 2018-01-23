@@ -19,6 +19,7 @@ namespace Aliapoh
         public static string pluginDirectory;
         public OverlayController OverlayController;
         public PluginLoader PluginLoader;
+        public AssemblyResolver AssemblyResolver;
 
         public void DeInitPlugin()
         {
@@ -27,6 +28,8 @@ namespace Aliapoh
 
         public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)
         {
+            pluginDirectory = GetPluginDirectory();
+            AssemblyResolver = new AssemblyResolver(new List<string>() { pluginDirectory });
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
             if (Environment.Is64BitProcess)
@@ -34,10 +37,17 @@ namespace Aliapoh
             else
                 Program.CEFDIR = FxLoader.DIRDICT["CEFX86"];
 
-            FxLoader.Initialize();
-            if(Loader.InitializeMinimum())
+            if(FxLoader.Initialize())
             {
-                PluginLoader = new PluginLoader(pluginScreenSpace, pluginStatusText);
+                Initialize(pluginScreenSpace, pluginStatusText);
+            }
+        }
+
+        public void Initialize(TabPage tp, Label lbl)
+        {
+            if (Loader.InitializeMinimum())
+            {
+                PluginLoader = new PluginLoader(tp, lbl);
             }
         }
 

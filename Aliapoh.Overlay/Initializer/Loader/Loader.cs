@@ -33,7 +33,7 @@ namespace Aliapoh.Overlay
         public static string TargetCEFVER = "3.3239.1716";
         public static string TargetCEFTAG = "63.0.0-pre01";
 
-        public static void InitializeMinimum()
+        public static bool InitializeMinimum()
         {
             LOG.Initialize();
             LOG.Logger.Log(LogLevel.Warning, "Aliapoh Overlay on " + (Environment.Is64BitProcess ? "x64" : "x86") + " Process");
@@ -67,6 +67,8 @@ namespace Aliapoh.Overlay
             LanguageLoader.Initialize();
             Thread.Sleep(50);
             LOG.Logger.Log(LogLevel.Info, "Successfully loaded Aliapoh");
+
+            return true;
         }
 
         public static void Initialize()
