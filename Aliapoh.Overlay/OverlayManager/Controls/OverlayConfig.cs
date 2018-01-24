@@ -9,6 +9,8 @@ namespace Aliapoh.Overlay
 {
     public partial class OverlayConfig : UserControl
     {
+        public string ShortcutModeNone = "None";
+
         public Keys GlobalHotkey;
         public Keys GlobalHotkeyModifiers;
         public GlobalHotkeyType GlobalHotkeyType;
