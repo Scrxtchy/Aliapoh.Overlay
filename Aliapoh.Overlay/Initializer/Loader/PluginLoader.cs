@@ -115,6 +115,15 @@ namespace Aliapoh.Initializer
             }
         }
 
+        private void AddEncounterData(string key, EncounterData.ExportStringDataCallback act)
+        {
+            if(!EncounterData.ExportVariables.ContainsKey(key))
+            {
+                var formatter = new EncounterData.TextExportFormatter(key, key, key, act);
+                EncounterData.ExportVariables.Add(key, formatter);
+            }
+        }
+
         private string Overheal(CombatantData data, string format)
         {
             return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
@@ -139,15 +148,6 @@ namespace Aliapoh.Initializer
                 .Sum(y => Convert.ToInt64(y.Damage))).ToString();
         }
 
-        private void AddEncounterData(string key, EncounterData.ExportStringDataCallback act)
-        {
-            if(!EncounterData.ExportVariables.ContainsKey(key))
-            {
-                var formatter = new EncounterData.TextExportFormatter(key, key, key, act);
-                EncounterData.ExportVariables.Add(key, formatter);
-            }
-        }
-
         private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
 
@@ -163,9 +163,105 @@ namespace Aliapoh.Initializer
 
         }
 
-        private void CreateJsonData()
+        internal string CreateJsonData()
         {
+            if (!ActReady()) return "{}";
 
+            var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
+            var encounter = new Dictionary<string, string>();
+            var combatant = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
+
+            var encounterTask = Task.Run(() =>
+            {
+                encounter = Encounters(allies);
+            });
+            var combatantTask = Task.Run(() =>
+            {
+                combatant = Combatants(allies);
+            });
+            Task.WaitAll(encounterTask, combatantTask);
+
+            var Data = new JObject();
+            Data["Combatant"] = new JObject();
+            Data["Encounter"] = JObject.FromObject(encounter);
+
+            return Data.ToString();
+        }
+
+        private Dictionary<string, string> Encounters(List<CombatantData> allies)
+        {
+            var dict = new Dictionary<string, string>();
+            foreach(var kv in EncounterData.ExportVariables)
+            {
+                if (kv.Key == "Last10DPS" || 
+                    kv.Key == "Last30DPS" || 
+                    kv.Key == "Last60DPS" || 
+                    kv.Key == "Last180DPS")
+                {
+                    if (!allies.All((ally) => ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All")))
+                    {
+                        dict.Add(kv.Key, "");
+                        continue;
+                    }
+                }
+                var value = kv.Value.GetExportString(ActGlobals.oFormActMain.ActiveZone.ActiveEncounter, allies, "");
+                dict.Add(kv.Key, value);
+            }
+            return dict;
+        }
+
+        private List<KeyValuePair<CombatantData,Dictionary<string,string>>> Combatants(List<CombatantData> allies)
+        {
+            var list = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
+            Parallel.ForEach(allies, (ally) =>
+            {
+                var valueDict = new Dictionary<string, string>();
+                foreach (var exportValuePair in CombatantData.ExportVariables)
+                {
+                    try
+                    {
+                        if (exportValuePair.Key == "NAME")
+                        {
+                            continue;
+                        }
+                        if (exportValuePair.Key == "Last10DPS" ||
+                            exportValuePair.Key == "Last30DPS" ||
+                            exportValuePair.Key == "Last60DPS")
+                        {
+                            if (!ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All"))
+                            {
+                                valueDict.Add(exportValuePair.Key, "");
+                                continue;
+                            }
+                        }
+
+                        var value = exportValuePair.Value.GetExportString(ally, "");
+                        valueDict.Add(exportValuePair.Key, value);
+                    }
+                    catch (Exception e)
+                    {
+                        LOG.Logger.Log(LogLevel.Debug, "GetCombatantList: {0}: {1}: {2}", ally.Name, exportValuePair.Key, e);
+                        continue;
+                    }
+                }
+
+                lock (list)
+                {
+                    list.Add(new KeyValuePair<CombatantData, Dictionary<string, string>>(ally, valueDict));
+                }
+            }
+            );
+            return list;
+        }
+
+        private bool ActReady()
+        {
+            if (ActGlobals.oFormActMain == null) return false;
+            if (ActGlobals.oFormActMain.ActiveZone == null) return false;
+            if (ActGlobals.oFormActMain.ActiveZone.ActiveEncounter == null) return false;
+            if (EncounterData.ExportVariables == null) return false;
+            if (CombatantData.ExportVariables == null) return false;
+            return true;
         }
 
         private void InitializeComponent()
