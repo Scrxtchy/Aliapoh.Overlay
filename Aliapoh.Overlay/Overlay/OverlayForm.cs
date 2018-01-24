@@ -459,6 +459,7 @@ namespace Aliapoh.Overlay
         private void OverlayForm_Load(object sender, EventArgs e)
         {
             NativeMethods.SetForegroundWindow(Handle);
+            OverlayTicTimer.Enabled = true;
         }
     }
 }

@@ -17,6 +17,9 @@ namespace Aliapoh.Initializer
 {
     public class PluginLoader : IDisposable
     {
+        private string updateStringCache;
+        private DateTime updateStringCacheLastUpdate;
+
         public static string PluginDirectory;
         public static string CurrentUserName = "YOU";
         public static int CurrentZoneCode;
@@ -28,8 +31,6 @@ namespace Aliapoh.Initializer
 
         public void Dispose()
         {
-            // Setting Save
-            SettingManager.GenerateSettingJSON();
             // dispose OverlayController
             OverlayController.Dispose();
             // unregister handlers
@@ -50,6 +51,7 @@ namespace Aliapoh.Initializer
             ActGlobals.oFormActMain.OnLogLineRead += OFormActMain_OnLogLineRead;
             ActGlobals.oFormActMain.OnCombatEnd += OFormActMain_OnCombatEnd;
             ActGlobals.oFormActMain.OnCombatStart += OFormActMain_OnCombatStart;
+            InitializeComponent();
         }
 
         private void AttachBeforeLogLineRead()
@@ -126,26 +128,50 @@ namespace Aliapoh.Initializer
 
         private string Overheal(CombatantData data, string format)
         {
-            return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
-                .Where(x => x.Key == "All")
-                .Sum(x => x.Value.Items.ToList().Where(y => y.Tags.ContainsKey("overheal"))
-                .Sum(y => Convert.ToInt64(y.Tags["overheal"]))).ToString();
+            try
+            {
+                return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
+                    .Where(x => x.Key == "All")
+                    .Sum(x => x.Value.Items.ToList().Where(y => y.Tags.ContainsKey("overheal"))
+                    .Sum(y => Convert.ToInt64(y.Tags["overheal"]))).ToString();
+            }
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.Message);
+                return "0";
+            }
         }
 
         private string DamageShield(CombatantData data, string format)
         {
-            return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
-                .Where(x => x.Key == "All")
-                .Sum(x => x.Value.Items.Where(y => { if (y.DamageType == "DamageShield") return true; else return false; })
-                .Sum(y => Convert.ToInt64(y.Damage))).ToString();
+            try
+            {
+                return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
+                    .Where(x => x.Key == "All")
+                    .Sum(x => x.Value.Items.Where(y => { if (y.DamageType == "DamageShield") return true; else return false; })
+                    .Sum(y => Convert.ToInt64(y.Damage))).ToString();
+            }
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.Message);
+                return "0";
+            }
         }
 
         private string AbsorbHeal(CombatantData data, string format)
         {
-            return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
-                .Where(x => x.Key == "All")
-                .Sum(x => x.Value.Items.Where(y => y.DamageType == "Absorb")
-                .Sum(y => Convert.ToInt64(y.Damage))).ToString();
+            try
+            {
+                return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
+                    .Where(x => x.Key == "All")
+                    .Sum(x => x.Value.Items.Where(y => y.DamageType == "Absorb")
+                    .Sum(y => Convert.ToInt64(y.Damage))).ToString();
+            }
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.Message);
+                return "0";
+            }
         }
 
         private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
@@ -159,6 +185,11 @@ namespace Aliapoh.Initializer
         }
 
         private void OFormActMain_OnCombatEnd(bool isImport, CombatToggleEventArgs encounterInfo)
+        {
+
+        }
+
+        public void TickEvent(object sender, EventArgs e)
         {
 
         }
@@ -185,7 +216,21 @@ namespace Aliapoh.Initializer
             Data["Combatant"] = new JObject();
             Data["Encounter"] = JObject.FromObject(encounter);
 
-            return Data.ToString();
+            foreach (var pair in combatant)
+            {
+                var value = new JObject();
+                foreach (var pair2 in pair.Value)
+                {
+                    value.Add(pair2.Key, pair2.Value.Replace(double.NaN.ToString(), "0"));
+                }
+                Data["Combatant"][pair.Key.Name] = value;
+            }
+
+            Data["isActive"] = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active ? "true" : "false";
+            var result = Data.ToString();
+            updateStringCache = result;
+            updateStringCacheLastUpdate = DateTime.Now;
+            return result;
         }
 
         private Dictionary<string, string> Encounters(List<CombatantData> allies)
@@ -193,19 +238,26 @@ namespace Aliapoh.Initializer
             var dict = new Dictionary<string, string>();
             foreach(var kv in EncounterData.ExportVariables)
             {
-                if (kv.Key == "Last10DPS" || 
-                    kv.Key == "Last30DPS" || 
-                    kv.Key == "Last60DPS" || 
-                    kv.Key == "Last180DPS")
+                try
                 {
-                    if (!allies.All((ally) => ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All")))
+                    if (kv.Key == "Last10DPS" ||
+                        kv.Key == "Last30DPS" ||
+                        kv.Key == "Last60DPS" ||
+                        kv.Key == "Last180DPS")
                     {
-                        dict.Add(kv.Key, "");
-                        continue;
+                        if (!allies.All((ally) => ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All")))
+                        {
+                            dict.Add(kv.Key, "");
+                            continue;
+                        }
                     }
+                    var value = kv.Value.GetExportString(ActGlobals.oFormActMain.ActiveZone.ActiveEncounter, allies, "");
+                    dict.Add(kv.Key, value);
                 }
-                var value = kv.Value.GetExportString(ActGlobals.oFormActMain.ActiveZone.ActiveEncounter, allies, "");
-                dict.Add(kv.Key, value);
+                catch
+                {
+
+                }
             }
             return dict;
         }
