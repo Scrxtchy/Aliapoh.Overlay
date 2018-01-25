@@ -19,20 +19,21 @@ namespace Aliapoh.Initializer
     {
         private string updateStringCache;
         private DateTime updateStringCacheLastUpdate;
+        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 250); // 500 msec
 
         public static string PluginDirectory;
         public static string CurrentUserName = "YOU";
         public static int CurrentZoneCode;
 
         public IActPluginV1 Plugin;
-        public OverlayController OverlayController;
+        public OverlayController OC;
         public TabPage PluginTabPage;
         public Label PluginStatusLabel;
 
         public void Dispose()
         {
             // dispose OverlayController
-            OverlayController.Dispose();
+            OC.Dispose();
             // unregister handlers
             ActGlobals.oFormActMain.BeforeLogLineRead -= OFormActMain_BeforeLogLineRead;
             ActGlobals.oFormActMain.OnLogLineRead -= OFormActMain_OnLogLineRead;
@@ -54,6 +55,11 @@ namespace Aliapoh.Initializer
             InitializeComponent();
         }
 
+        private void OC_OverlayTabAdd(object sender, OverlayTabAddEventArgs e)
+        {
+            e.Config.Overlay.OverlayTicTimer.Tick += TickEvent;
+        }
+
         private void AttachBeforeLogLineRead()
         {
             try
@@ -72,6 +78,20 @@ namespace Aliapoh.Initializer
             {
                 LOG.Logger.Log(LogLevel.Error, ex.Message);
             }
+        }
+
+        private void InitializeComponent()
+        {
+            OC = new OverlayController()
+            {
+                Dock = DockStyle.Fill,
+            };
+
+            OC.OverlayTabAdd += OC_OverlayTabAdd;
+            PluginTabPage.Controls.Add(OC);
+
+            foreach (var i in OverlayController.OverlayConfigs)
+                i.Value.Overlay.OverlayTicTimer.Tick += TickEvent;
         }
 
         private void OFormActMain_BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
@@ -191,11 +211,17 @@ namespace Aliapoh.Initializer
 
         public void TickEvent(object sender, EventArgs e)
         {
-
+            var timer = ((OTimer)sender);
+            timer.Overlay.ExecuteJavascript("document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));");
         }
 
         internal string CreateJsonData()
         {
+            if (DateTime.Now - updateStringCacheLastUpdate < updateStringCacheExpireInterval)
+            {
+                return updateStringCache;
+            }
+
             if (!ActReady()) return "{}";
 
             var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
@@ -314,15 +340,6 @@ namespace Aliapoh.Initializer
             if (EncounterData.ExportVariables == null) return false;
             if (CombatantData.ExportVariables == null) return false;
             return true;
-        }
-
-        private void InitializeComponent()
-        {
-            OverlayController = new OverlayController()
-            {
-                Dock = DockStyle.Fill
-            };
-            PluginTabPage.Controls.Add(OverlayController);
         }
     }
 }

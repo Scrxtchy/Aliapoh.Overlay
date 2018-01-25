@@ -86,6 +86,7 @@ namespace Aliapoh.Overlay
 
             OverlayFramerate.Value = setting.Framerate;
             OverlayUpdaterate.Value = setting.Updaterate;
+            Overlay.OverlayTicTimer.Interval = setting.Updaterate;
 
             OverlayWidth.ValueChanged += SaveSetting;
             OverlayHeight.ValueChanged += SaveSetting;

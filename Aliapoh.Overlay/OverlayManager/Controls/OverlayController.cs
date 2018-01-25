@@ -21,6 +21,7 @@ namespace Aliapoh.Overlay.OverlayManager
         public static string BackgroundModeUniform = "Uniform";
         public static string BackgroundModeUniformToFill = "Uniform to fill";
 
+        public event EventHandler<OverlayTabAddEventArgs> OverlayTabAdd;
         public static Dictionary<string, OverlayTabPage> OverlayConfigs = new Dictionary<string, OverlayTabPage>();
         private ChromiumWebBrowser IssueBrowser;
         #endregion
@@ -157,9 +158,15 @@ namespace Aliapoh.Overlay.OverlayManager
                 overlayManageTabControl1.TabPages.Add(TP);
                 SelectOverlayNameDisplay();
 
+                OnOverlayCreate(TP.Config);
                 OverlayConfigs.Add(nod.PrimaryName, TP);
                 SaveSetting();
             }
+        }
+
+        private void OnOverlayCreate(OverlayConfig c)
+        {
+            OverlayTabAdd?.Invoke(this, new OverlayTabAddEventArgs(c));
         }
 
         private void SaveSetting()

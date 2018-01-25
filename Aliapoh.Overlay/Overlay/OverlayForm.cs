@@ -100,6 +100,7 @@ namespace Aliapoh.Overlay
                 LOG.Logger.Log(LogLevel.Info, Name + " Browser Initialized");
                 MainOverlay = Browser.GetBrowser();
                 Browser.Size = new Size(Width, Height);
+                OverlayTicTimer.Enabled = true;
             }
             catch(Exception ex)
             {

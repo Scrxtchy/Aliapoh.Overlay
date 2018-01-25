@@ -2,8 +2,12 @@
 
 namespace Aliapoh.Overlay.OverlayManager
 {
-    class OverlayTabAddEventArgs : EventArgs
+    public class OverlayTabAddEventArgs : EventArgs
     {
-
+        public OverlayConfig Config { get; private set; }
+        public OverlayTabAddEventArgs(OverlayConfig c)
+        {
+            Config = c;
+        }
     }
 }
