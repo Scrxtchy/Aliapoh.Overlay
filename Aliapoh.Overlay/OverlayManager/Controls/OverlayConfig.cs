@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Aliapoh.Overlay
@@ -116,7 +117,14 @@ namespace Aliapoh.Overlay
 
         private void OverlayBrowserInitialized(object sender, EventArgs e)
         {
-            Overlay.Browser.Load(SiteURL.Text);
+            new Thread((ThreadStart)delegate
+            {
+                Thread.Sleep(100);
+                Invoke((MethodInvoker)delegate
+                {
+                    Overlay.Browser.Load(SiteURL.Text);
+                });
+            }).Start();
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)

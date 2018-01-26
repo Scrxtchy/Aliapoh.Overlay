@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
-using System.Diagnostics;
-using Aliapoh.Overlay;
 using Aliapoh.Overlay.Logger;
 using System.Drawing;
 

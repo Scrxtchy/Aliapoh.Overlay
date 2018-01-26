@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Globalization;
-
 using CefSharp;
 using CefSharp.OffScreen;
 using System.Threading;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using Aliapoh.Overlay.Logger;
 
 namespace Aliapoh.Overlay

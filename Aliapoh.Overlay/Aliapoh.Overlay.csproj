@@ -121,6 +121,7 @@
     <Compile Include="ACTPlugin\Enums\MessageType.cs" />
     <Compile Include="ACTPlugin\Network\BeforeLogLineRead.cs" />
     <Compile Include="ACTPlugin\Network\CefShutdown.cs" />
+    <Compile Include="ACTPlugin\VariableAdder.cs" />
     <Compile Include="Initializer\Loader\AssemblyResolver.cs" />
     <Compile Include="Initializer\Args\ExceptionOccuredEventArgs.cs" />
     <Compile Include="Initializer\Loader\Loader.cs" />
@@ -132,7 +133,7 @@
     <Compile Include="Initializer\Forms\LoaderForm.Designer.cs">
       <DependentUpon>LoaderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Initializer\Loader\PluginLoader.cs" />
+    <Compile Include="ACTPlugin\PluginLoader.cs" />
     <Compile Include="Initializer\Versions\VersionManager.cs" />
     <Compile Include="Initializer\Versions\VersionStruct.cs" />
     <Compile Include="Extender\FontMatrics.cs" />
@@ -251,7 +252,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACTPlugin\PluginMain.cs" />
     <None Include="Localization\LanguageFiles\LanguageFile_ko-KR.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

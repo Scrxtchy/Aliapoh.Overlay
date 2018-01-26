@@ -9,17 +9,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Aliapoh.Initializer
+namespace Aliapoh
 {
-    public class PluginLoader : IDisposable
+    public partial class PluginLoader : IDisposable
     {
         private string updateStringCache;
         private DateTime updateStringCacheLastUpdate;
-        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 250); // 500 msec
+        private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 250);
 
         public static string PluginDirectory;
         public static string CurrentUserName = "YOU";
@@ -117,87 +116,6 @@ namespace Aliapoh.Initializer
                         CurrentZoneCode = Convert.ToInt32(data[2], 16);
                         break;
                 }
-            }
-        }
-
-        private void AddVariables()
-        {
-            // ACTColumnAdder Compatible
-            AddEncounterData("CurrentRealUserName", (Data, Extra, Format) => { return CurrentUserName; });
-            AddEncounterData("CurrentZoneRaw", (Data, Extra, Format) => { return CurrentZoneCode.ToString(); });
-            // OverlayPlugin Compatible
-            AddEncounterData("PrimaryUser", (Data, Extra, Format) => { return CurrentUserName; });
-
-            AddCombatantData("overHeal", Overheal);
-            AddCombatantData("damageShield", DamageShield);
-            AddCombatantData("absorbHeal", AbsorbHeal);
-
-            ActGlobals.oFormActMain.ValidateLists();
-        }
-
-        private void AddCombatantData(string key, CombatantData.ExportStringDataCallback act)
-        {
-            if(!CombatantData.ExportVariables.ContainsKey(key))
-            {
-                var formatter = new CombatantData.TextExportFormatter(key, key, key, act);
-                CombatantData.ExportVariables.Add(key, formatter);
-            }
-        }
-
-        private void AddEncounterData(string key, EncounterData.ExportStringDataCallback act)
-        {
-            if(!EncounterData.ExportVariables.ContainsKey(key))
-            {
-                var formatter = new EncounterData.TextExportFormatter(key, key, key, act);
-                EncounterData.ExportVariables.Add(key, formatter);
-            }
-        }
-
-        private string Overheal(CombatantData data, string format)
-        {
-            try
-            {
-                return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
-                    .Where(x => x.Key == "All")
-                    .Sum(x => x.Value.Items.ToList().Where(y => y.Tags.ContainsKey("overheal"))
-                    .Sum(y => Convert.ToInt64(y.Tags["overheal"]))).ToString();
-            }
-            catch(Exception ex)
-            {
-                LOG.Logger.Log(LogLevel.Error, ex.Message);
-                return "0";
-            }
-        }
-
-        private string DamageShield(CombatantData data, string format)
-        {
-            try
-            {
-                return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
-                    .Where(x => x.Key == "All")
-                    .Sum(x => x.Value.Items.Where(y => { if (y.DamageType == "DamageShield") return true; else return false; })
-                    .Sum(y => Convert.ToInt64(y.Damage))).ToString();
-            }
-            catch(Exception ex)
-            {
-                LOG.Logger.Log(LogLevel.Error, ex.Message);
-                return "0";
-            }
-        }
-
-        private string AbsorbHeal(CombatantData data, string format)
-        {
-            try
-            {
-                return data.Items[CombatantData.DamageTypeDataOutgoingHealing].Items.ToList()
-                    .Where(x => x.Key == "All")
-                    .Sum(x => x.Value.Items.Where(y => y.DamageType == "Absorb")
-                    .Sum(y => Convert.ToInt64(y.Damage))).ToString();
-            }
-            catch(Exception ex)
-            {
-                LOG.Logger.Log(LogLevel.Error, ex.Message);
-                return "0";
             }
         }
 
