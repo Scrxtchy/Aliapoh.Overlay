@@ -70,12 +70,9 @@ namespace Aliapoh.Overlay
             
             Overlay.LocationChanged += Overlay_LocationChanged;
             Overlay.SizeChanged += Overlay_SizeChanged;
-            Overlay.Browser.BrowserInitialized += OverlayBrowserInitialized;
-
             Overlay.Show();
             Overlay.Location = new Point(setting.Left, setting.Top);
             Overlay.Size = new Size(setting.Width, setting.Height);
-
             OverlayClickthru.Checked = setting.Clickthru;
             OverlayGlobalHotkey.Checked = setting.UseGlobalHotkey;
             OverlayLock.Checked = setting.Locked;
@@ -97,6 +94,13 @@ namespace Aliapoh.Overlay
             OverlayShow.CheckedChanged += SaveSetting;
             OverlayFramerate.ValueChanged += SaveSetting;
             SiteURL.TextChanged += SaveSetting;
+            Overlay.Browser.BrowserInitialized += Browser_BrowserInitialized;
+        }
+
+        private void Browser_BrowserInitialized(object sender, EventArgs e)
+        {
+            if (Overlay.Browser.IsBrowserInitialized)
+                Overlay.Browser.Load(SiteURL.Text);
         }
 
         private void SaveSetting(object sender, EventArgs e)
@@ -113,18 +117,6 @@ namespace Aliapoh.Overlay
             }
             
             SettingManager.GenerateSettingJSON();
-        }
-
-        private void OverlayBrowserInitialized(object sender, EventArgs e)
-        {
-            new Thread((ThreadStart)delegate
-            {
-                Thread.Sleep(100);
-                Invoke((MethodInvoker)delegate
-                {
-                    Overlay.Browser.Load(SiteURL.Text);
-                });
-            }).Start();
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)
@@ -164,7 +156,7 @@ namespace Aliapoh.Overlay
 
         private void OverlayFramerate_ValueChanged(object sender, EventArgs e)
         {
-            Overlay.Browser.BrowserSettings.WindowlessFrameRate = (int)((NumericUpDown)sender).Value;
+            Overlay.MainOverlay.GetHost().WindowlessFrameRate = (int)((NumericUpDown)sender).Value;
         }
 
         private void OverlayX_ValueChanged(object sender, EventArgs e)

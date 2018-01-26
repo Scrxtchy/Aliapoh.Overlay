@@ -5,6 +5,7 @@ using CefSharp;
 using CefSharp.WinForms;
 using Aliapoh.Overlay.Logger;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace Aliapoh.Overlay.OverlayManager
 {
@@ -22,6 +23,7 @@ namespace Aliapoh.Overlay.OverlayManager
         public event EventHandler<OverlayTabAddEventArgs> OverlayTabAdd;
         public static Dictionary<string, OverlayTabPage> OverlayConfigs = new Dictionary<string, OverlayTabPage>();
         private ChromiumWebBrowser IssueBrowser;
+        private ChromiumWebBrowser DevBrowser;
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        INITALIZER        |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public OverlayController()
@@ -55,7 +57,7 @@ namespace Aliapoh.Overlay.OverlayManager
 
             IssueBrowser = new ChromiumWebBrowser("https://github.com/laiglinne-ff/Aliapoh.Overlay/issues")
             {
-                Dock = DockStyle.Fill,
+                Dock = DockStyle.Fill
             };
 
             IssueBrowser.BrowserSettings.WebGl = CefState.Disabled;
@@ -72,73 +74,77 @@ namespace Aliapoh.Overlay.OverlayManager
         private int lastidx = 0;
         private void LogReader()
         {
-            Invoke((MethodInvoker)delegate
+            try
             {
-                for (; lastidx < LOG.Logger.Logs.Count; lastidx++)
+                Invoke((MethodInvoker)delegate
                 {
-                    var line = LOG.Logger.Logs[lastidx];
-                    richTextBox1.SelectionColor = Color.Yellow;
-                    richTextBox1.AppendText("[");
-                    richTextBox1.SelectionColor = Color.Cyan;
-                    richTextBox1.AppendText(line.Time.ToString("yyyy-MM-dd HH:mm:ss"));
-                    richTextBox1.SelectionColor = Color.Yellow;
-                    richTextBox1.AppendText("]");
-                    richTextBox1.SelectionColor = richTextBox1.ForeColor;
-
-                    switch (line.Level)
+                    for (; lastidx < LOG.Logger.Logs.Count; lastidx++)
                     {
-                        case LogLevel.Debug:
-                        case LogLevel.Trace:
-                            richTextBox1.SelectionColor = Color.Gray;
-                            richTextBox1.AppendText(" [");
-                            richTextBox1.AppendText(line.Level.ToString().ToUpper());
-                            richTextBox1.AppendText("] ");
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            richTextBox1.AppendText(line.Message);
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            break;
-                        case LogLevel.Browser:
-                            richTextBox1.SelectionColor = Color.LightGreen;
-                            richTextBox1.AppendText(" ");
-                            richTextBox1.AppendText(line.Message);
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            break;
-                        case LogLevel.Info:
-                            richTextBox1.SelectionColor = Color.LightGray;
-                            richTextBox1.AppendText("  [");
-                            richTextBox1.AppendText(line.Level.ToString().ToUpper());
-                            richTextBox1.AppendText("] ");
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            richTextBox1.AppendText(line.Message);
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            break;
-                        case LogLevel.Warning:
-                            richTextBox1.SelectionColor = Color.Yellow;
-                            richTextBox1.AppendText("  [");
-                            richTextBox1.AppendText(line.Level.ToString().ToUpper().Substring(0, 4));
-                            richTextBox1.AppendText("] ");
-                            richTextBox1.SelectionColor = richTextBox1.ForeColor;
-                            richTextBox1.SelectionColor = Color.FromArgb(255, 233, 127);
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            richTextBox1.AppendText(line.Message);
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            break;
-                        case LogLevel.Error:
-                            richTextBox1.SelectionColor = Color.Red;
-                            richTextBox1.AppendText(" [");
-                            richTextBox1.AppendText(line.Level.ToString().ToUpper());
-                            richTextBox1.AppendText("] ");
-                            richTextBox1.SelectionColor = Color.MistyRose;
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            richTextBox1.AppendText(line.Message);
-                            richTextBox1.SelectionFont = richTextBox1.Font;
-                            break;
-                    }
+                        var line = LOG.Logger.Logs[lastidx];
+                        richTextBox1.SelectionColor = Color.Yellow;
+                        richTextBox1.AppendText("[");
+                        richTextBox1.SelectionColor = Color.Cyan;
+                        richTextBox1.AppendText(line.Time.ToString("yyyy-MM-dd HH:mm:ss"));
+                        richTextBox1.SelectionColor = Color.Yellow;
+                        richTextBox1.AppendText("]");
+                        richTextBox1.SelectionColor = richTextBox1.ForeColor;
 
-                    richTextBox1.SelectionColor = richTextBox1.ForeColor;
-                    richTextBox1.AppendText("\n");
-                }
-            });
+                        switch (line.Level)
+                        {
+                            case LogLevel.Debug:
+                            case LogLevel.Trace:
+                                richTextBox1.SelectionColor = Color.Gray;
+                                richTextBox1.AppendText(" [");
+                                richTextBox1.AppendText(line.Level.ToString().ToUpper());
+                                richTextBox1.AppendText("] ");
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                richTextBox1.AppendText(line.Message);
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                break;
+                            case LogLevel.Browser:
+                                richTextBox1.SelectionColor = Color.LightGreen;
+                                richTextBox1.AppendText(" ");
+                                richTextBox1.AppendText(line.Message);
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                break;
+                            case LogLevel.Info:
+                                richTextBox1.SelectionColor = Color.LightGray;
+                                richTextBox1.AppendText("  [");
+                                richTextBox1.AppendText(line.Level.ToString().ToUpper());
+                                richTextBox1.AppendText("] ");
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                richTextBox1.AppendText(line.Message);
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                break;
+                            case LogLevel.Warning:
+                                richTextBox1.SelectionColor = Color.Yellow;
+                                richTextBox1.AppendText("  [");
+                                richTextBox1.AppendText(line.Level.ToString().ToUpper().Substring(0, 4));
+                                richTextBox1.AppendText("] ");
+                                richTextBox1.SelectionColor = richTextBox1.ForeColor;
+                                richTextBox1.SelectionColor = Color.FromArgb(255, 233, 127);
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                richTextBox1.AppendText(line.Message);
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                break;
+                            case LogLevel.Error:
+                                richTextBox1.SelectionColor = Color.Red;
+                                richTextBox1.AppendText(" [");
+                                richTextBox1.AppendText(line.Level.ToString().ToUpper());
+                                richTextBox1.AppendText("] ");
+                                richTextBox1.SelectionColor = Color.MistyRose;
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                richTextBox1.AppendText(line.Message);
+                                richTextBox1.SelectionFont = richTextBox1.Font;
+                                break;
+                        }
+
+                        richTextBox1.SelectionColor = richTextBox1.ForeColor;
+                        richTextBox1.AppendText("\n");
+                    }
+                });
+            }
+            catch { }
         }
 
         private void Logs_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
@@ -147,7 +153,7 @@ namespace Aliapoh.Overlay.OverlayManager
         }
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      OVERLAYCONTROL      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-        private void OverlayCreate(string name)
+        private void OverlayCreate()
         {
             var nod = new NewOverlayDialog();
             if(nod.ShowDialog() == DialogResult.OK)
@@ -234,7 +240,7 @@ namespace Aliapoh.Overlay.OverlayManager
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        UI ACTIONS        |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         private void OverlayAddButton_Click(object sender, EventArgs e)
         {
-            OverlayCreate("OverlayTest");
+            OverlayCreate();
         }
 
         private void OverlayManageTabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -271,6 +277,14 @@ namespace Aliapoh.Overlay.OverlayManager
         private void SettingChangeSaver(object sender, EventArgs e)
         {
             SaveSetting();
+        }
+
+        private void OpenDevToolButton_Click(object sender, EventArgs e)
+        {
+            if (!CheckTabValidate()) return;
+            var otp = (OverlayTabPage)overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
+            // otp.Overlay.MainOverlay.ShowDevTools();
+            Process.Start("http://localhost:9994/");
         }
     }
 }

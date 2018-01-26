@@ -17,6 +17,7 @@ namespace Aliapoh.Overlay
         public bool IsBrowserLocked;
         public bool IsBrowserInitialized;
         public string OverlayName;
+        public string Url;
         public int Framerate;
 
         public ChromiumWebBrowser Browser;
@@ -53,6 +54,16 @@ namespace Aliapoh.Overlay
                 Browser.GetMainFrame().ExecuteJavaScriptAsync(script);
         }
 
+        public void Reload()
+        {
+            Reload(false);
+        }
+
+        public void Reload(bool ignoreCache)
+        {
+            Browser.Reload(ignoreCache);
+        }
+
         public void ShowDevTools()
         {
             MainOverlay.ShowDevTools();
@@ -67,6 +78,7 @@ namespace Aliapoh.Overlay
         {
             try
             {
+                Url = URL;
                 LOG.Logger.Log(LogLevel.Info, "Browser Initializing...");
                 IsBrowserInitialized = false;
                 TopMost = true;
@@ -77,33 +89,42 @@ namespace Aliapoh.Overlay
                 var browser = new BrowserSettings()
                 {
                     WindowlessFrameRate = fr,
-                    WebGl = CefState.Disabled,
-                    BackgroundColor = 0,
+                    OffScreenTransparentBackground = false,
+                    BackgroundColor = 0x00FFFFFF,
                 };
 
                 CefMenu = new CefMenuHandler();
                 Browser = new ChromiumWebBrowser(URL, browser)
                 {
                     MenuHandler = CefMenu,
+                    DisplayHandler = new DisplayHandler(),
                 };
 
                 OverlayAPI = new ACTPlugin.OverlayPluginApi(this);
                 Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
-                Browser.DisplayHandler = new DisplayHandler();
+
                 Browser.BrowserInitialized += Overlay_BrowserInitialized;
                 Browser.NewScreenshot += Overlay_NewScreenshot;
                 Browser.ConsoleMessage += Overlay_ConsoleMessage;
+                // Browser.CreateBrowser();
+
                 InitializeComponent();
 
                 LOG.Logger.Log(LogLevel.Info, Name + " Browser Initialized");
                 MainOverlay = Browser.GetBrowser();
                 Browser.Size = new Size(Width, Height);
                 OverlayTicTimer.Enabled = true;
+                OverlayTicTimer.Tick += OverlayTicTimer_Tick;
             }
             catch(Exception ex)
             {
                 Debug.WriteLine(ex);
             }
+        }
+
+        private void OverlayTicTimer_Tick(object sender, EventArgs e)
+        {
+
         }
 
         private void Overlay_ConsoleMessage(object sender, ConsoleMessageEventArgs e)
@@ -123,7 +144,8 @@ namespace Aliapoh.Overlay
 
         private void Overlay_NewScreenshot(object sender, EventArgs e)
         {
-            Screenshot = Browser.ScreenshotOrNull(PopupBlending.Main);
+            // Screenshot = Browser.ScreenshotOrNull(PopupBlending.Main);
+            Screenshot = (Bitmap)Browser.Bitmap.Clone();
             if (Screenshot != null) SetBitmap(Screenshot, this);
             GC.Collect(1);
         }
@@ -132,6 +154,7 @@ namespace Aliapoh.Overlay
         {
             MainOverlay = Browser.GetBrowser();
             IsBrowserInitialized = true;
+            Browser.Load(Url);
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)

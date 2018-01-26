@@ -36,8 +36,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.ScreenShotButton = new System.Windows.Forms.Button();
             this.MarginLabel2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -93,6 +91,8 @@
             this.CopyAllLogsButton = new System.Windows.Forms.Button();
             this.OpenBackgroundDialog = new System.Windows.Forms.OpenFileDialog();
             this.ScreenshotSavePathSelectDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.OpenDevToolButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.OverlayControlTabPage.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -177,8 +177,8 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.ScreenShotButton);
             this.panel4.Controls.Add(this.MarginLabel2);
-            this.panel4.Controls.Add(this.button5);
-            this.panel4.Controls.Add(this.label14);
+            this.panel4.Controls.Add(this.OpenDevToolButton);
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.button3);
@@ -210,29 +210,6 @@
             this.MarginLabel2.Name = "MarginLabel2";
             this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
             this.MarginLabel2.TabIndex = 6;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(478, 0);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(30, 30);
-            this.button5.TabIndex = 5;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.ShowDevToolsSelectedOverlayButtonClicked);
-            // 
-            // label14
-            // 
-            this.label14.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label14.Location = new System.Drawing.Point(508, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(2, 30);
-            this.label14.TabIndex = 4;
             // 
             // button4
             // 
@@ -912,6 +889,29 @@
             // 
             this.OpenBackgroundDialog.FileName = "openFileDialog1";
             // 
+            // OpenDevToolButton
+            // 
+            this.OpenDevToolButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpenDevToolButton.BackgroundImage")));
+            this.OpenDevToolButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.OpenDevToolButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.OpenDevToolButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.OpenDevToolButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenDevToolButton.Location = new System.Drawing.Point(478, 0);
+            this.OpenDevToolButton.Margin = new System.Windows.Forms.Padding(0);
+            this.OpenDevToolButton.Name = "OpenDevToolButton";
+            this.OpenDevToolButton.Size = new System.Drawing.Size(30, 30);
+            this.OpenDevToolButton.TabIndex = 9;
+            this.OpenDevToolButton.UseVisualStyleBackColor = true;
+            this.OpenDevToolButton.Click += new System.EventHandler(this.OpenDevToolButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Location = new System.Drawing.Point(508, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(2, 30);
+            this.label3.TabIndex = 8;
+            // 
             // OverlayController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -989,8 +989,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label OverlayTitle;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage PluginsTabPage;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel5;
@@ -1016,5 +1014,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel issueBrowserPanel;
         private System.Windows.Forms.Label LeaveIssueLabel;
+        private System.Windows.Forms.Button OpenDevToolButton;
+        private System.Windows.Forms.Label label3;
     }
 }
