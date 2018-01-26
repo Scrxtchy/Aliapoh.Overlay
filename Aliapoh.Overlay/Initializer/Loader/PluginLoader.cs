@@ -32,6 +32,8 @@ namespace Aliapoh.Initializer
 
         public void Dispose()
         {
+            // shutdown CEF
+            Cef.Shutdown();
             // dispose OverlayController
             OC.Dispose();
             // unregister handlers
@@ -39,8 +41,6 @@ namespace Aliapoh.Initializer
             ActGlobals.oFormActMain.OnLogLineRead -= OFormActMain_OnLogLineRead;
             ActGlobals.oFormActMain.OnCombatEnd -= OFormActMain_OnCombatEnd;
             ActGlobals.oFormActMain.OnCombatStart -= OFormActMain_OnCombatStart;
-            // shutdown CEF
-            Cef.Shutdown();
         }
 
         public PluginLoader(TabPage tp, Label lbl, string pluginDirectory, IActPluginV1 plugin)
@@ -57,7 +57,14 @@ namespace Aliapoh.Initializer
 
         private void OC_OverlayTabAdd(object sender, OverlayTabAddEventArgs e)
         {
-            e.Config.Overlay.OverlayTicTimer.Tick += TickEvent;
+            try
+            {
+                e.Config.Overlay.OverlayTicTimer.Tick += TickEvent;
+            }
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.Message);
+            }
         }
 
         private void AttachBeforeLogLineRead()
@@ -211,125 +218,147 @@ namespace Aliapoh.Initializer
 
         public void TickEvent(object sender, EventArgs e)
         {
-            var timer = ((OTimer)sender);
-            timer.Overlay.ExecuteJavascript("document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));");
+            try
+            {
+                var timer = ((OTimer)sender);
+                timer.Overlay.ExecuteJavascript("document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));");
+            }
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.Message);
+            }
         }
 
         internal string CreateJsonData()
         {
-            if (DateTime.Now - updateStringCacheLastUpdate < updateStringCacheExpireInterval)
+            try
             {
-                return updateStringCache;
-            }
-
-            if (!ActReady()) return "{}";
-
-            var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
-            var encounter = new Dictionary<string, string>();
-            var combatant = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
-
-            var encounterTask = Task.Run(() =>
-            {
-                encounter = Encounters(allies);
-            });
-            var combatantTask = Task.Run(() =>
-            {
-                combatant = Combatants(allies);
-            });
-            Task.WaitAll(encounterTask, combatantTask);
-
-            var Data = new JObject();
-            Data["Combatant"] = new JObject();
-            Data["Encounter"] = JObject.FromObject(encounter);
-
-            foreach (var pair in combatant)
-            {
-                var value = new JObject();
-                foreach (var pair2 in pair.Value)
+                if (DateTime.Now - updateStringCacheLastUpdate < updateStringCacheExpireInterval)
                 {
-                    value.Add(pair2.Key, pair2.Value.Replace(double.NaN.ToString(), "0"));
+                    return updateStringCache;
                 }
-                Data["Combatant"][pair.Key.Name] = value;
-            }
 
-            Data["isActive"] = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active ? "true" : "false";
-            var result = Data.ToString();
-            updateStringCache = result;
-            updateStringCacheLastUpdate = DateTime.Now;
-            return result;
+                if (!ActReady()) return "{}";
+
+                var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
+                var encounter = new Dictionary<string, string>();
+                var combatant = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
+
+                var encounterTask = Task.Run(() =>
+                {
+                    encounter = Encounters(allies);
+                });
+                var combatantTask = Task.Run(() =>
+                {
+                    combatant = Combatants(allies);
+                });
+                Task.WaitAll(encounterTask, combatantTask);
+
+                var Data = new JObject();
+                Data["Combatant"] = new JObject();
+                Data["Encounter"] = JObject.FromObject(encounter);
+
+                foreach (var pair in combatant)
+                {
+                    var value = new JObject();
+                    foreach (var pair2 in pair.Value)
+                    {
+                        value.Add(pair2.Key, pair2.Value.Replace(double.NaN.ToString(), "0"));
+                    }
+                    Data["Combatant"][pair.Key.Name] = value;
+                }
+
+                Data["isActive"] = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active ? "true" : "false";
+                var result = Data.ToString();
+                updateStringCache = result;
+                updateStringCacheLastUpdate = DateTime.Now;
+                return result;
+            }
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.Message);
+                return "{}";
+            }
         }
 
         private Dictionary<string, string> Encounters(List<CombatantData> allies)
         {
-            var dict = new Dictionary<string, string>();
-            foreach(var kv in EncounterData.ExportVariables)
+            try
             {
-                try
+                var dict = new Dictionary<string, string>();
+                foreach (var kv in EncounterData.ExportVariables)
                 {
-                    if (kv.Key == "Last10DPS" ||
-                        kv.Key == "Last30DPS" ||
-                        kv.Key == "Last60DPS" ||
-                        kv.Key == "Last180DPS")
+                    try
                     {
                         if (!allies.All((ally) => ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All")))
                         {
                             dict.Add(kv.Key, "");
                             continue;
                         }
-                    }
-                    var value = kv.Value.GetExportString(ActGlobals.oFormActMain.ActiveZone.ActiveEncounter, allies, "");
-                    dict.Add(kv.Key, value);
-                }
-                catch
-                {
 
+                        var value = kv.Value.GetExportString(ActGlobals.oFormActMain.ActiveZone.ActiveEncounter, allies, "");
+                        dict.Add(kv.Key, value);
+                    }
+                    catch
+                    {
+
+                    }
                 }
+                return dict;
             }
-            return dict;
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.Message);
+                return null;
+            }
         }
 
         private List<KeyValuePair<CombatantData,Dictionary<string,string>>> Combatants(List<CombatantData> allies)
         {
-            var list = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
-            Parallel.ForEach(allies, (ally) =>
+            try
             {
-                var valueDict = new Dictionary<string, string>();
-                foreach (var exportValuePair in CombatantData.ExportVariables)
+                var list = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
+                Parallel.ForEach(allies, (ally) =>
                 {
-                    try
+                    var valueDict = new Dictionary<string, string>();
+                    foreach (var exportValuePair in CombatantData.ExportVariables)
                     {
-                        if (exportValuePair.Key == "NAME")
+                        try
                         {
-                            continue;
-                        }
-                        if (exportValuePair.Key == "Last10DPS" ||
-                            exportValuePair.Key == "Last30DPS" ||
-                            exportValuePair.Key == "Last60DPS")
-                        {
+                            if (exportValuePair.Key == "NAME")
+                            {
+                                continue;
+                            }
+
                             if (!ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All"))
                             {
                                 valueDict.Add(exportValuePair.Key, "");
                                 continue;
                             }
+
+                            var value = exportValuePair.Value.GetExportString(ally, "");
+                            valueDict.Add(exportValuePair.Key, value);
                         }
-
-                        var value = exportValuePair.Value.GetExportString(ally, "");
-                        valueDict.Add(exportValuePair.Key, value);
+                        catch (Exception e)
+                        {
+                            LOG.Logger.Log(LogLevel.Debug, "GetCombatantList: {0}: {1}: {2}", ally.Name, exportValuePair.Key, e);
+                            continue;
+                        }
                     }
-                    catch (Exception e)
+
+                    lock (list)
                     {
-                        LOG.Logger.Log(LogLevel.Debug, "GetCombatantList: {0}: {1}: {2}", ally.Name, exportValuePair.Key, e);
-                        continue;
+                        list.Add(new KeyValuePair<CombatantData, Dictionary<string, string>>(ally, valueDict));
                     }
                 }
-
-                lock (list)
-                {
-                    list.Add(new KeyValuePair<CombatantData, Dictionary<string, string>>(ally, valueDict));
-                }
+                );
+                return list;
             }
-            );
-            return list;
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.Message);
+                return null;
+            }
         }
 
         private bool ActReady()
