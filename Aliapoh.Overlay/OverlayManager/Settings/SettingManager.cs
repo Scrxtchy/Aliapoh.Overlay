@@ -95,6 +95,7 @@ namespace Aliapoh.Overlay.OverlayManager
                                     }
                                 }
                             }
+                            so.Name = p.Name;
                             OverlayController.OverlayConfigs.Add(p.Name, new OverlayTabPage(so.CreateOverlayConfig()));
                         }
                     }

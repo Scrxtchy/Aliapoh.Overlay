@@ -1,6 +1,7 @@
 ﻿using Aliapoh.Overlay.OverlayManager;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Threading;
@@ -15,11 +16,13 @@ namespace Aliapoh.Overlay
         public string ShortcutModeClickthru = "Clickthru";
         public string ShortcutModeToggleLock = "Toggle Lock";
         public string ShortcutModeTakeScreenshot = "Take Screenshot";
+        public bool IsInitialized = false;
 
         public Keys GlobalHotkey;
         public Keys GlobalHotkeyModifiers;
         public GlobalHotkeyType GlobalHotkeyType;
         public OverlayForm Overlay;
+        public Stopwatch SW;
         public SettingObject SettingObject
         {
             get
@@ -56,8 +59,10 @@ namespace Aliapoh.Overlay
         
         private void Initializer(SettingObject setting)
         {
+            Name = setting.Name;
             InitializeComponent();
 
+            OverlayName.Text = setting.Name;
             overlayGlobalHotkeyType.Items.Add(ShortcutModeNone);
             overlayGlobalHotkeyType.Items.Add(ShortcutModeHide);
             overlayGlobalHotkeyType.Items.Add(ShortcutModeClickthru);
@@ -74,9 +79,9 @@ namespace Aliapoh.Overlay
             OverlayShow.CheckedChanged += SaveSetting;
             OverlayFramerate.ValueChanged += SaveSetting;
             SiteURL.TextChanged += SaveSetting;
+            overlayGlobalHotkeyType.SelectedIndexChanged += SaveSetting;
 
             SiteURL.Text = setting.Url;
-            OverlayName.Text = setting.Name;
             
             Overlay = new OverlayForm(setting.Url)
             {
@@ -107,6 +112,7 @@ namespace Aliapoh.Overlay
             OverlayUpdaterate.Value = setting.Updaterate;
             Overlay.OverlayTicTimer.Interval = setting.Updaterate;
             Overlay.Browser.BrowserInitialized += Browser_BrowserInitialized;
+            IsInitialized = true;
         }
 
         private void Browser_BrowserInitialized(object sender, EventArgs e)
@@ -117,6 +123,7 @@ namespace Aliapoh.Overlay
 
         private void SaveSetting(object sender, EventArgs e)
         {
+            if (!IsInitialized) return;
             OverlayController.OverlayConfigs[SettingObject.Name].Config = this;
             if (SettingManager.OverlaySettings == null)
                 SettingManager.OverlaySettings = new List<SettingObject>();
@@ -127,8 +134,9 @@ namespace Aliapoh.Overlay
             {
                 SettingManager.OverlaySettings.Add(i.Value.Config.SettingExport());
             }
-            
+
             SettingManager.GenerateSettingJSON();
+            SW.Restart();
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)
@@ -220,7 +228,7 @@ namespace Aliapoh.Overlay
             var s = new SettingObject()
             {
                 Url = SiteURL.Text,
-                Name = OverlayName.Text,
+                Name = Name,
                 Show = OverlayShow.Checked,
                 Clickthru = OverlayClickthru.Checked,
                 Locked = OverlayLock.Checked,
@@ -234,7 +242,7 @@ namespace Aliapoh.Overlay
                 Top = (int)OverlayY.Value,
                 GlobalHotkey = (int)GlobalHotkey,
                 GlobalHotkeyModifiers = (int)GlobalHotkeyModifiers,
-                GlobalHotkeyType = (int)GlobalHotkeyType,
+                GlobalHotkeyType = overlayGlobalHotkeyType.SelectedIndex,
             };
             return s;
         }
