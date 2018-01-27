@@ -11,6 +11,10 @@ namespace Aliapoh.Overlay
     public partial class OverlayConfig : UserControl
     {
         public string ShortcutModeNone = "None";
+        public string ShortcutModeHide = "Hide";
+        public string ShortcutModeClickthru = "Clickthru";
+        public string ShortcutModeToggleLock = "Toggle Lock";
+        public string ShortcutModeTakeScreenshot = "Take Screenshot";
 
         public Keys GlobalHotkey;
         public Keys GlobalHotkeyModifiers;
@@ -54,6 +58,23 @@ namespace Aliapoh.Overlay
         {
             InitializeComponent();
 
+            overlayGlobalHotkeyType.Items.Add(ShortcutModeNone);
+            overlayGlobalHotkeyType.Items.Add(ShortcutModeHide);
+            overlayGlobalHotkeyType.Items.Add(ShortcutModeClickthru);
+            overlayGlobalHotkeyType.Items.Add(ShortcutModeToggleLock);
+            overlayGlobalHotkeyType.Items.Add(ShortcutModeTakeScreenshot);
+
+            OverlayWidth.ValueChanged += SaveSetting;
+            OverlayHeight.ValueChanged += SaveSetting;
+            OverlayX.ValueChanged += SaveSetting;
+            OverlayY.ValueChanged += SaveSetting;
+            OverlayNameChangeButton.Click += SaveSetting;
+            OverlayLock.CheckedChanged += SaveSetting;
+            OverlayClickthru.CheckedChanged += SaveSetting;
+            OverlayShow.CheckedChanged += SaveSetting;
+            OverlayFramerate.ValueChanged += SaveSetting;
+            SiteURL.TextChanged += SaveSetting;
+
             SiteURL.Text = setting.Url;
             OverlayName.Text = setting.Name;
             
@@ -67,7 +88,7 @@ namespace Aliapoh.Overlay
 
             if (!DesignMode)
                 LanguageLoader.LanguagePatch(this);
-            
+
             Overlay.LocationChanged += Overlay_LocationChanged;
             Overlay.SizeChanged += Overlay_SizeChanged;
             Overlay.Show();
@@ -85,15 +106,6 @@ namespace Aliapoh.Overlay
             OverlayFramerate.Value = setting.Framerate;
             OverlayUpdaterate.Value = setting.Updaterate;
             Overlay.OverlayTicTimer.Interval = setting.Updaterate;
-
-            OverlayWidth.ValueChanged += SaveSetting;
-            OverlayHeight.ValueChanged += SaveSetting;
-            OverlayNameChangeButton.Click += SaveSetting;
-            OverlayLock.CheckedChanged += SaveSetting;
-            OverlayClickthru.CheckedChanged += SaveSetting;
-            OverlayShow.CheckedChanged += SaveSetting;
-            OverlayFramerate.ValueChanged += SaveSetting;
-            SiteURL.TextChanged += SaveSetting;
             Overlay.Browser.BrowserInitialized += Browser_BrowserInitialized;
         }
 
