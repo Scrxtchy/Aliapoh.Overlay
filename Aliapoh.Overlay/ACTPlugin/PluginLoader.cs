@@ -248,14 +248,26 @@ namespace Aliapoh
                                 continue;
                             }
 
-                            if (!ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All"))
+                            if (ally.Items != null)
+                            {
+                                if (ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items == null)
+                                {
+                                    valueDict.Add(exportValuePair.Key, "");
+                                    return;
+                                }
+
+                                if (!ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All"))
+                                {
+                                    valueDict.Add(exportValuePair.Key, "");
+                                    continue;
+                                }
+                                var value = exportValuePair.Value.GetExportString(ally, "");
+                                valueDict.Add(exportValuePair.Key, value);
+                            }
+                            else
                             {
                                 valueDict.Add(exportValuePair.Key, "");
-                                continue;
                             }
-
-                            var value = exportValuePair.Value.GetExportString(ally, "");
-                            valueDict.Add(exportValuePair.Key, value);
                         }
                         catch (Exception e)
                         {
