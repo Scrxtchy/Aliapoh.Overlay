@@ -203,7 +203,6 @@
     <Compile Include="Localization\LanguageLoader.cs" />
     <Compile Include="OverlayManager\Settings\SettingManager.cs" />
     <Compile Include="Overlay\Screenshot\ScreenshotRenderer.cs" />
-    <Compile Include="Properties\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Initializer\Forms\LoaderForm.resx">
       <DependentUpon>LoaderForm.cs</DependentUpon>
