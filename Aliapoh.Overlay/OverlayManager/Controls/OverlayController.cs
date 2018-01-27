@@ -23,7 +23,6 @@ namespace Aliapoh.Overlay.OverlayManager
         public event EventHandler<OverlayTabAddEventArgs> OverlayTabAdd;
         public static Dictionary<string, OverlayTabPage> OverlayConfigs = new Dictionary<string, OverlayTabPage>();
         private ChromiumWebBrowser IssueBrowser;
-        private ChromiumWebBrowser DevBrowser;
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        INITALIZER        |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public OverlayController()
