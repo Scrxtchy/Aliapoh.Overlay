@@ -136,7 +136,6 @@ namespace Aliapoh.Overlay
             }
 
             SettingManager.GenerateSettingJSON();
-            SW.Restart();
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)
@@ -228,7 +227,7 @@ namespace Aliapoh.Overlay
             var s = new SettingObject()
             {
                 Url = SiteURL.Text,
-                Name = Name,
+                Name = OverlayName.Text,
                 Show = OverlayShow.Checked,
                 Clickthru = OverlayClickthru.Checked,
                 Locked = OverlayLock.Checked,
