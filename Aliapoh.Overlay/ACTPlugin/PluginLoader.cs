@@ -217,9 +217,11 @@ namespace Aliapoh
                         var value = kv.Value.GetExportString(ActGlobals.oFormActMain.ActiveZone.ActiveEncounter, allies, "");
                         dict.Add(kv.Key, value);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-
+                        LOG.Logger.Log(LogLevel.Error, ex.Message);
+                        dict.Add(kv.Key, "");
+                        continue;
                     }
                 }
                 return dict;
@@ -253,7 +255,7 @@ namespace Aliapoh
                                 if (ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items == null)
                                 {
                                     valueDict.Add(exportValuePair.Key, "");
-                                    return;
+                                    continue;
                                 }
 
                                 if (!ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All"))
@@ -280,8 +282,7 @@ namespace Aliapoh
                     {
                         list.Add(new KeyValuePair<CombatantData, Dictionary<string, string>>(ally, valueDict));
                     }
-                }
-                );
+                });
                 return list;
             }
             catch(Exception ex)
