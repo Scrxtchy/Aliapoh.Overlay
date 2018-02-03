@@ -238,7 +238,9 @@ namespace Aliapoh
             try
             {
                 var list = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
-                Parallel.ForEach(allies, (ally) =>
+                CombatantData[] allies_cp = new CombatantData[allies.Count];
+                allies.CopyTo(allies_cp);
+                foreach(var ally in allies_cp)
                 {
                     var valueDict = new Dictionary<string, string>();
                     foreach (var exportValuePair in CombatantData.ExportVariables)
@@ -282,7 +284,9 @@ namespace Aliapoh
                     {
                         list.Add(new KeyValuePair<CombatantData, Dictionary<string, string>>(ally, valueDict));
                     }
-                });
+                }
+
+                allies_cp = null;
                 return list;
             }
             catch(Exception ex)
