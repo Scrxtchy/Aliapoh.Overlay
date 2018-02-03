@@ -7,6 +7,7 @@ using CefSharp;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -138,8 +139,11 @@ namespace Aliapoh
         {
             try
             {
+                if (!ActReady()) return;
                 var timer = ((OTimer)sender);
-                timer.Overlay.ExecuteJavascript("document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));");
+                var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));";
+                timer.Overlay.ExecuteJavascript(text);
+                Debug.WriteLine(text);
             }
             catch(Exception ex)
             {
@@ -151,13 +155,7 @@ namespace Aliapoh
         {
             try
             {
-                if (DateTime.Now - updateStringCacheLastUpdate < updateStringCacheExpireInterval)
-                {
-                    return updateStringCache;
-                }
-
                 if (!ActReady()) return "{}";
-
                 var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
                 var encounter = new Dictionary<string, string>();
                 var combatant = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
@@ -194,7 +192,7 @@ namespace Aliapoh
             }
             catch(Exception ex)
             {
-                LOG.Logger.Log(LogLevel.Error, ex.Message);
+                LOG.Logger.Log(LogLevel.Error, ex.GetBaseException().ToString());
                 return "{}";
             }
         }
@@ -301,8 +299,6 @@ namespace Aliapoh
             if (ActGlobals.oFormActMain == null) return false;
             if (ActGlobals.oFormActMain.ActiveZone == null) return false;
             if (ActGlobals.oFormActMain.ActiveZone.ActiveEncounter == null) return false;
-            if (EncounterData.ExportVariables == null) return false;
-            if (CombatantData.ExportVariables == null) return false;
             return true;
         }
     }

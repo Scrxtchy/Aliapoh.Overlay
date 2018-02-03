@@ -78,6 +78,7 @@
     <Compile Include="Args\PluginInitEventArgs.cs" />
     <Compile Include="Initializer\AssemblyResolver.cs" />
     <Compile Include="Classes\NativeMethods.cs" />
+    <Compile Include="Initializer\CEFFiles.cs" />
     <Compile Include="Initializer\ExceptionOccuredEventArgs.cs" />
     <Compile Include="Forms\LoaderForm.cs">
       <SubType>Form</SubType>
