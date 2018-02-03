@@ -143,7 +143,6 @@ namespace Aliapoh
                 var timer = ((OTimer)sender);
                 var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));";
                 timer.Overlay.ExecuteJavascript(text);
-                Debug.WriteLine(text);
             }
             catch(Exception ex)
             {
