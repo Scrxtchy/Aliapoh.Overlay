@@ -2,7 +2,7 @@
 
 namespace Aliapoh
 {
-    public class ExceptionOccuredEventArgs
+    public class ExceptionOccuredEventArgs : EventArgs
     {
         public Exception Exception { get; set; }
         public ExceptionOccuredEventArgs(Exception exception)

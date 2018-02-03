@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
 namespace Aliapoh.Classes
@@ -16,6 +17,9 @@ namespace Aliapoh.Classes
         public extern static bool UpdateLayeredWindow(IntPtr handle, IntPtr hdcDst, ref PointStruct pptDst,
             ref SizeStruct pSize, IntPtr hDc, ref PointStruct pptSrc, int crKey, ref BlendFunctionStruct pBlend, int dwFlags);
 
+        [SuppressMessage("Microsoft.Portability", "CA1901:PInvokeDeclarationsShouldBePortable", MessageId = "return")]
+        [SuppressMessage("Microsoft.Portability", "CA1901:PInvokeDeclarationsShouldBePortable", MessageId = "1")]
+        [SuppressMessage("Microsoft.Portability", "CA1901:PInvokeDeclarationsShouldBePortable", MessageId = "2")]
         [DllImport("user32.dll", ExactSpelling = false, SetLastError = true)]
         public extern static IntPtr SetWindowLong(IntPtr handle, IntPtr index, IntPtr dwNewLong);
 
@@ -25,6 +29,7 @@ namespace Aliapoh.Classes
         [DllImport("user32.dll", SetLastError = true)]
         public extern static IntPtr GetDC(IntPtr handle);
 
+        [SuppressMessage("Microsoft.Portability", "CA1901:PInvokeDeclarationsShouldBePortable", MessageId = "return")]
         [DllImport("user32.dll", SetLastError = false)]
         public extern static IntPtr ReleaseDC(IntPtr hWnd, IntPtr hDc);
 

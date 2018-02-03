@@ -1,24 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using Advanced_Combat_Tracker;
+﻿using Advanced_Combat_Tracker;
 using Aliapoh.Overlay;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace Aliapoh
 {
-    public class PluginMain : IActPluginV1
+    public class PluginMain : IActPluginV1, IDisposable
     {
         public static string pluginDirectory;
         public PluginLoader PluginLoader;
         public AssemblyResolver AssemblyResolver;
 
-        public void DeInitPlugin()
+        public PluginMain()
+        {
+
+        }
+        
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool b)
         {
             AppDomain.CurrentDomain.AssemblyResolve -= CurrentDomain_AssemblyResolve;
+            AssemblyResolver.Dispose();
             PluginLoader.Dispose();
+        }
+
+        public void DeInitPlugin()
+        {
+            Dispose();
         }
 
         public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)

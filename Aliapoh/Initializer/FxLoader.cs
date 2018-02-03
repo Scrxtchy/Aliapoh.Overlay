@@ -124,8 +124,8 @@ namespace Aliapoh
 
             loadfrm.Render("Initializing...");
             Thread.Sleep(500);
-            loadfrm.Close();
-            loadfrm.Dispose();
+            if(!loadfrm.IsDisposed)
+                loadfrm.Dispose();
 
             if (Program.fromMain) // run to exe
             {
