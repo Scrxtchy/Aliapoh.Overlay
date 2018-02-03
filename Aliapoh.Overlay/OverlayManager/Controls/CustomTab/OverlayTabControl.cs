@@ -21,8 +21,8 @@ namespace Aliapoh.Overlay
                 LineAlignment = StringAlignment.Center
             };
 
-            TabFont = new Font("Microsoft Neogothic", 11f, FontStyle.Regular);
-            TabSelectedFont = new Font("Microsoft Neogothic", 11f, FontStyle.Bold);
+            TabFont = new Font(Loader.DefaultFont, 11f, FontStyle.Regular);
+            TabSelectedFont = new Font(Loader.DefaultFont, 11f, FontStyle.Bold);
             
             InitializeComponent();
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ContainerControl, true);

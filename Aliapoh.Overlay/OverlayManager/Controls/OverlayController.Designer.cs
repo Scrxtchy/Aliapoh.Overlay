@@ -123,7 +123,7 @@
             this.OverlayControlTabPage.Controls.Add(this.InformationTabPage);
             this.OverlayControlTabPage.Controls.Add(this.LogTabPage);
             this.OverlayControlTabPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OverlayControlTabPage.Font = new System.Drawing.Font("Microsoft NeoGothic", 9F);
+            this.OverlayControlTabPage.Font = new System.Drawing.Font(Loader.DefaultFont, 9F);
             this.OverlayControlTabPage.ItemSize = new System.Drawing.Size(10, 32);
             this.OverlayControlTabPage.Location = new System.Drawing.Point(0, 0);
             this.OverlayControlTabPage.Multiline = true;
@@ -696,7 +696,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
+            this.label1.Font = new System.Drawing.Font(Loader.DefaultFont, 12F);
             this.label1.Location = new System.Drawing.Point(15, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 21);
@@ -745,7 +745,7 @@
             // 
             this.LeaveIssueLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.LeaveIssueLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LeaveIssueLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 12F);
+            this.LeaveIssueLabel.Font = new System.Drawing.Font(Loader.DefaultFont, 12F);
             this.LeaveIssueLabel.ForeColor = System.Drawing.Color.White;
             this.LeaveIssueLabel.Location = new System.Drawing.Point(0, 0);
             this.LeaveIssueLabel.Name = "LeaveIssueLabel";
@@ -793,7 +793,7 @@
             // AliapohOverlayLabel
             // 
             this.AliapohOverlayLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.AliapohOverlayLabel.Font = new System.Drawing.Font("Microsoft NeoGothic", 14F);
+            this.AliapohOverlayLabel.Font = new System.Drawing.Font(Loader.DefaultFont, 14F);
             this.AliapohOverlayLabel.ForeColor = System.Drawing.Color.White;
             this.AliapohOverlayLabel.Location = new System.Drawing.Point(10, 190);
             this.AliapohOverlayLabel.Name = "AliapohOverlayLabel";

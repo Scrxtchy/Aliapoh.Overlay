@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Aliapoh.Overlay.OverlayManager;
+using System.Globalization;
 
 namespace Aliapoh.Overlay
 {
@@ -22,9 +23,9 @@ namespace Aliapoh.Overlay
                 LineAlignment = StringAlignment.Center
             };
 
-            TabFont = new Font("Microsoft Neogothic", 11f, FontStyle.Regular);
-            TabSelectedFont = new Font("Microsoft Neogothic", 11f, FontStyle.Bold);
-            
+            TabFont = new Font(Loader.DefaultFont, 11f, FontStyle.Regular);
+            TabSelectedFont = new Font(Loader.DefaultFont, 11f, FontStyle.Bold);
+
             InitializeComponent();
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ContainerControl, true);
             DoubleBuffered = true;
@@ -68,7 +69,7 @@ namespace Aliapoh.Overlay
                     Alignment = StringAlignment.Center,
                     LineAlignment = StringAlignment.Center
                 };
-                var EmptyFont = new Font("Microsoft Neogothic", 18f, FontStyle.Bold);
+                var EmptyFont = new Font(Loader.DefaultFont, 18f, FontStyle.Bold);
 
                 e.Graphics.DrawString(OverlayController.OverlayEmpty, EmptyFont, Brushes.Black, rrect, RSB);
             }

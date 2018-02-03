@@ -7,6 +7,8 @@ using System.Threading;
 using System.Reflection;
 using Aliapoh.Overlay.Initializer;
 using Aliapoh.Overlay.Logger;
+using System.Globalization;
+using Microsoft.Win32;
 
 namespace Aliapoh.Overlay
 {
@@ -32,9 +34,28 @@ namespace Aliapoh.Overlay
         public static AssemblyResolver asmResolver;
         public static string TargetCEFVER = "3.3239.1716";
         public static string TargetCEFTAG = "63.0.0-pre01";
+        public static string DefaultFont = "맑은 고딕";
 
         public static bool InitializeMinimum()
         {
+            string PDN = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "").ToString();
+            if (CultureInfo.CurrentCulture.Name.StartsWith("ko"))
+            {
+                DefaultFont = "맑은 고딕";
+                if(PDN.StartsWith("Windows 10"))
+                {
+                    DefaultFont = "맑은 고딕 Semilight";
+                }
+            }
+            else if (CultureInfo.CurrentCulture.Name.StartsWith("ja"))
+            {
+                DefaultFont = "Meiryo";
+            }
+            else
+            {
+                DefaultFont = "Microsoft Sans Serif";
+            }
+
             LOG.Initialize();
             LOG.Logger.Log(LogLevel.Warning, "Aliapoh Overlay on " + (Environment.Is64BitProcess ? "x64" : "x86") + " Process");
 
