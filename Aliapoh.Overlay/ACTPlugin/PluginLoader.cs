@@ -29,6 +29,7 @@ namespace Aliapoh
         public OverlayController OC;
         public TabPage PluginTabPage;
         public Label PluginStatusLabel;
+        public bool ZoneActive = false;
 
         public void Dispose()
         {
@@ -53,6 +54,7 @@ namespace Aliapoh
             ActGlobals.oFormActMain.OnCombatEnd += OFormActMain_OnCombatEnd;
             ActGlobals.oFormActMain.OnCombatStart += OFormActMain_OnCombatStart;
             InitializeComponent();
+            AddVariables();
         }
 
         private void OC_OverlayTabAdd(object sender, OverlayTabAddEventArgs e)
@@ -155,6 +157,7 @@ namespace Aliapoh
             try
             {
                 if (!ActReady()) return "{}";
+                
                 var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
                 var encounter = new Dictionary<string, string>();
                 var combatant = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();

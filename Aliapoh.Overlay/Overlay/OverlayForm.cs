@@ -428,7 +428,12 @@ namespace Aliapoh.Overlay
 
             try
             {
-                hgdiBitmap = bitmap.GetHbitmap(Color.FromArgb(0));
+                try
+                {
+                    hgdiBitmap = bitmap.GetHbitmap(Color.FromArgb(0));
+                }
+                catch
+                { return; }
                 // select a bitmap object into the memory device context created above
                 hgdiOldBitmap = NativeMethods.SelectObject(compatibleMemoryDc, hgdiBitmap);
 

@@ -18,28 +18,21 @@ namespace Aliapoh
             AddCombatantData("overHeal", Overheal);
             AddCombatantData("damageShield", DamageShield);
             AddCombatantData("absorbHeal", AbsorbHeal);
-
             ActGlobals.oFormActMain.ValidateLists();
         }
 
         private void AddCombatantData(string key, CombatantData.ExportStringDataCallback act)
         {
             var formatter = new CombatantData.TextExportFormatter(key, key, key, act);
-            if (CombatantData.ExportVariables.ContainsKey(key))
-            {
-                CombatantData.ExportVariables.Remove(key);
-            }
-            CombatantData.ExportVariables.Add(key, formatter);
+            if (!CombatantData.ExportVariables.ContainsKey(key))
+                CombatantData.ExportVariables.Add(key, formatter);
         }
 
         private void AddEncounterData(string key, EncounterData.ExportStringDataCallback act)
         {
             var formatter = new EncounterData.TextExportFormatter(key, key, key, act);
-            if (EncounterData.ExportVariables.ContainsKey(key))
-            {
-                EncounterData.ExportVariables.Remove(key);
-            }
-            EncounterData.ExportVariables.Add(key, formatter);
+            if (!EncounterData.ExportVariables.ContainsKey(key))
+                EncounterData.ExportVariables.Add(key, formatter);
         }
 
         private string Overheal(CombatantData data, string format)
