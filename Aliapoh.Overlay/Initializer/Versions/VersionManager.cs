@@ -10,7 +10,7 @@ namespace Aliapoh.Overlay.Initializer
         public static void Initialize()
         {
             WebClient wc = new WebClient();
-            var jsonstr = wc.DownloadString("https://github.com/laiglinne-ff/Aliapoh.Overlay/raw/aliapoh-versions/version.json");
+            var jsonstr = wc.DownloadString("https://github.com/lalafellsleep/Aliapoh.Overlay/raw/aliapoh-versions/version.json");
             var json = JObject.Parse(jsonstr);
             var cur = new VersionStruct(Application.ProductVersion);
             var git = new VersionStruct(json["Stable"].Value<string>());

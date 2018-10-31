@@ -76,11 +76,6 @@ namespace Aliapoh.Overlay.CefManager
             }
         }
 
-        private void DownloadFile(HttpWebResponse URL, string Path)
-        {
-            DownloadFile(URL, Path, 524288);
-        }
-
         private void DownloadFile(HttpWebResponse URL, string Path, int BufferSize = 524288)
         {
             LB_START:
@@ -249,7 +244,8 @@ namespace Aliapoh.Overlay.CefManager
                 return (b / 1024d / 1024d / 1024d / 1024d).ToString("0.00 TB");
             }
         }
-#endregion
+        #endregion
+
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|       EVENTHANDLER       |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public event EventHandler StartDownloading;
         protected virtual void OnStartDownloading(EventArgs e)

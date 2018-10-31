@@ -8,6 +8,11 @@ using CefSharp.OffScreen;
 using System.Threading;
 using System.Diagnostics;
 using Aliapoh.Overlay.Logger;
+using System.Runtime.InteropServices;
+using System.Windows.Media;
+using System.IO.MemoryMappedFiles;
+using System.Windows.Interop;
+using System.IO;
 
 namespace Aliapoh.Overlay
 {
@@ -78,6 +83,8 @@ namespace Aliapoh.Overlay
         {
             try
             {
+                CefSharpSettings.LegacyJavascriptBindingEnabled = true;
+
                 Url = URL;
                 LOG.Logger.Log(LogLevel.Info, "Browser Initializing...");
                 IsBrowserInitialized = false;
@@ -89,24 +96,23 @@ namespace Aliapoh.Overlay
                 var browser = new BrowserSettings()
                 {
                     WindowlessFrameRate = fr,
-                    OffScreenTransparentBackground = false,
+                    // OffScreenTransparentBackground = false,
                     BackgroundColor = 0x00FFFFFF,
                 };
 
                 CefMenu = new CefMenuHandler();
                 Browser = new ChromiumWebBrowser(URL, browser)
                 {
-                    MenuHandler = CefMenu,
-                    DisplayHandler = new DisplayHandler(),
+                    MenuHandler = CefMenu
                 };
 
                 OverlayAPI = new ACTPlugin.OverlayPluginApi(this);
                 Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
 
                 Browser.BrowserInitialized += Overlay_BrowserInitialized;
-                Browser.NewScreenshot += Overlay_NewScreenshot;
+                // Browser.NewScreenshot += Overlay_NewScreenshot;
                 Browser.ConsoleMessage += Overlay_ConsoleMessage;
-                // Browser.CreateBrowser();
+                Browser.Paint += Browser_Paint;
 
                 InitializeComponent();
 
@@ -120,6 +126,66 @@ namespace Aliapoh.Overlay
             {
                 Debug.WriteLine(ex);
             }
+        }
+
+        [DllImport("kernel32.dll", EntryPoint = "CopyMemory", SetLastError = false)]
+        private static extern void CopyMemory(IntPtr dest, IntPtr src, uint count);
+
+        private static readonly PixelFormat PixelFormat = PixelFormats.Bgra32;
+        private static int BytesPerPixel = PixelFormat.BitsPerPixel / 8;
+
+        private Size viewSize;
+        private Size popupSize;
+
+        private object lockObject = new object();
+
+        private MemoryMappedFile viewMemoryMappedFile;
+        private MemoryMappedViewAccessor viewMemoryMappedViewAccessor;
+
+        private void ReleaseMemoryMappedView(ref MemoryMappedFile mappedFile, ref MemoryMappedViewAccessor stream)
+        {
+            if (stream != null)
+            {
+                stream.Dispose();
+                stream = null;
+            }
+
+            if (mappedFile != null)
+            {
+                mappedFile.Dispose();
+                mappedFile = null;
+            }
+        }
+
+        private void Browser_Paint(object sender, OnPaintEventArgs e)
+        {
+            var newbitmap = false;
+            int pixels = e.Width * e.Height, numberOfBytes = pixels * BytesPerPixel;
+            newbitmap = viewMemoryMappedFile == null || Height != e.Height || Width != e.Width;
+            
+            try
+            {
+                ReleaseMemoryMappedView(ref viewMemoryMappedFile, ref viewMemoryMappedViewAccessor);
+                viewMemoryMappedFile = MemoryMappedFile.CreateNew(null, numberOfBytes, MemoryMappedFileAccess.ReadWrite);
+                viewMemoryMappedViewAccessor = viewMemoryMappedFile.CreateViewAccessor();
+
+                CopyMemory(viewMemoryMappedViewAccessor.SafeMemoryMappedViewHandle.DangerousGetHandle(), e.BufferHandle, (uint)numberOfBytes);
+
+                var backBufferHandle = viewMemoryMappedFile.SafeMemoryMappedFileHandle;
+                if (backBufferHandle.IsClosed || backBufferHandle.IsInvalid)
+                    return;
+
+                var stride = e.Width * BytesPerPixel;
+
+                var bs = Imaging.CreateBitmapSourceFromMemorySection(backBufferHandle.DangerousGetHandle(), e.Width, e.Height, PixelFormat, stride, 0);
+                Screenshot = new Bitmap(e.Width, e.Height, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+                System.Drawing.Imaging.BitmapData data = Screenshot.LockBits(new Rectangle(Point.Empty, Screenshot.Size), System.Drawing.Imaging.ImageLockMode.WriteOnly, System.Drawing.Imaging.PixelFormat.Format32bppPArgb);
+
+                bs.CopyPixels(System.Windows.Int32Rect.Empty, data.Scan0, data.Height * data.Stride, data.Stride);
+                SetBitmap(Screenshot, this);
+                GC.Collect(1);
+            }
+            catch { }
         }
 
         private void OverlayTicTimer_Tick(object sender, EventArgs e)
@@ -145,8 +211,8 @@ namespace Aliapoh.Overlay
         private void Overlay_NewScreenshot(object sender, EventArgs e)
         {
             // Screenshot = Browser.ScreenshotOrNull(PopupBlending.Main);
-            Screenshot = (Bitmap)Browser.Bitmap.Clone();
-            if (Screenshot != null) SetBitmap(Screenshot, this);
+            // Screenshot = (Bitmap)Browser.Bitmap.Clone();
+            // if (Screenshot != null) SetBitmap(Screenshot, this);
             GC.Collect(1);
         }
 
@@ -409,7 +475,7 @@ namespace Aliapoh.Overlay
                 style.ClassStyle |= 200; // NoCloseBtn
                 style.ExStyle |= 0x8; // TopMost
                 style.ExStyle |= 0x80000; // Layered
-                style.ExStyle |= 0x8000000; // NoActive
+                // style.ExStyle |= 0x8000000; // NoActive
                 return style;
             }
         }
@@ -430,7 +496,7 @@ namespace Aliapoh.Overlay
             {
                 try
                 {
-                    hgdiBitmap = bitmap.GetHbitmap(Color.FromArgb(0));
+                    hgdiBitmap = bitmap.GetHbitmap(System.Drawing.Color.FromArgb(0));
                 }
                 catch
                 { return; }

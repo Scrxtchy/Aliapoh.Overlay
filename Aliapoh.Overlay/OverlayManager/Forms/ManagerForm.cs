@@ -16,6 +16,8 @@ namespace Aliapoh.Overlay.OverlayManager
         {
             InitializeComponent();
             NativeMethods.SetForegroundWindow(Handle);
+
+            TopMost = true;
         }
 
         protected override void OnLoad(EventArgs e)

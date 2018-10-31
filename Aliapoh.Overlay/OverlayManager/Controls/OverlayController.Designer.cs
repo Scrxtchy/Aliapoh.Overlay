@@ -36,6 +36,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.ScreenShotButton = new System.Windows.Forms.Button();
             this.MarginLabel2 = new System.Windows.Forms.Label();
+            this.OpenDevToolButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -91,8 +93,6 @@
             this.CopyAllLogsButton = new System.Windows.Forms.Button();
             this.OpenBackgroundDialog = new System.Windows.Forms.OpenFileDialog();
             this.ScreenshotSavePathSelectDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.OpenDevToolButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.OverlayControlTabPage.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -123,7 +123,7 @@
             this.OverlayControlTabPage.Controls.Add(this.InformationTabPage);
             this.OverlayControlTabPage.Controls.Add(this.LogTabPage);
             this.OverlayControlTabPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OverlayControlTabPage.Font = new System.Drawing.Font(Loader.DefaultFont, 9F);
+            this.OverlayControlTabPage.Font = new System.Drawing.Font("맑은 고딕", 9F);
             this.OverlayControlTabPage.ItemSize = new System.Drawing.Size(10, 32);
             this.OverlayControlTabPage.Location = new System.Drawing.Point(0, 0);
             this.OverlayControlTabPage.Multiline = true;
@@ -210,6 +210,29 @@
             this.MarginLabel2.Name = "MarginLabel2";
             this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
             this.MarginLabel2.TabIndex = 6;
+            // 
+            // OpenDevToolButton
+            // 
+            this.OpenDevToolButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpenDevToolButton.BackgroundImage")));
+            this.OpenDevToolButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.OpenDevToolButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.OpenDevToolButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.OpenDevToolButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenDevToolButton.Location = new System.Drawing.Point(478, 0);
+            this.OpenDevToolButton.Margin = new System.Windows.Forms.Padding(0);
+            this.OpenDevToolButton.Name = "OpenDevToolButton";
+            this.OpenDevToolButton.Size = new System.Drawing.Size(30, 30);
+            this.OpenDevToolButton.TabIndex = 9;
+            this.OpenDevToolButton.UseVisualStyleBackColor = true;
+            this.OpenDevToolButton.Click += new System.EventHandler(this.OpenDevToolButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Location = new System.Drawing.Point(508, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(2, 30);
+            this.label3.TabIndex = 8;
             // 
             // button4
             // 
@@ -503,7 +526,7 @@
             this.ScreenshotBackgroundFillModeComboBox.Location = new System.Drawing.Point(180, 48);
             this.ScreenshotBackgroundFillModeComboBox.Margin = new System.Windows.Forms.Padding(0);
             this.ScreenshotBackgroundFillModeComboBox.Name = "ScreenshotBackgroundFillModeComboBox";
-            this.ScreenshotBackgroundFillModeComboBox.Size = new System.Drawing.Size(583, 24);
+            this.ScreenshotBackgroundFillModeComboBox.Size = new System.Drawing.Size(583, 23);
             this.ScreenshotBackgroundFillModeComboBox.TabIndex = 11;
             this.ScreenshotBackgroundFillModeComboBox.SelectedIndexChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
@@ -696,10 +719,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font(Loader.DefaultFont, 12F);
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.label1.Location = new System.Drawing.Point(15, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.Size = new System.Drawing.Size(123, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Comming soon";
             // 
@@ -745,7 +768,7 @@
             // 
             this.LeaveIssueLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.LeaveIssueLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LeaveIssueLabel.Font = new System.Drawing.Font(Loader.DefaultFont, 12F);
+            this.LeaveIssueLabel.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.LeaveIssueLabel.ForeColor = System.Drawing.Color.White;
             this.LeaveIssueLabel.Location = new System.Drawing.Point(0, 0);
             this.LeaveIssueLabel.Name = "LeaveIssueLabel";
@@ -769,7 +792,7 @@
             this.DeveloperLabel.Name = "DeveloperLabel";
             this.DeveloperLabel.Size = new System.Drawing.Size(180, 48);
             this.DeveloperLabel.TabIndex = 3;
-            this.DeveloperLabel.Text = "- Developer -\r\nLaighlinne";
+            this.DeveloperLabel.Text = "- Developer -\r\nLalafellsleep\r\n";
             this.DeveloperLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // OverlayDescLabel
@@ -793,7 +816,7 @@
             // AliapohOverlayLabel
             // 
             this.AliapohOverlayLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.AliapohOverlayLabel.Font = new System.Drawing.Font(Loader.DefaultFont, 14F);
+            this.AliapohOverlayLabel.Font = new System.Drawing.Font("맑은 고딕", 14F);
             this.AliapohOverlayLabel.ForeColor = System.Drawing.Color.White;
             this.AliapohOverlayLabel.Location = new System.Drawing.Point(10, 190);
             this.AliapohOverlayLabel.Name = "AliapohOverlayLabel";
@@ -888,29 +911,6 @@
             // OpenBackgroundDialog
             // 
             this.OpenBackgroundDialog.FileName = "openFileDialog1";
-            // 
-            // OpenDevToolButton
-            // 
-            this.OpenDevToolButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpenDevToolButton.BackgroundImage")));
-            this.OpenDevToolButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.OpenDevToolButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.OpenDevToolButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.OpenDevToolButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OpenDevToolButton.Location = new System.Drawing.Point(478, 0);
-            this.OpenDevToolButton.Margin = new System.Windows.Forms.Padding(0);
-            this.OpenDevToolButton.Name = "OpenDevToolButton";
-            this.OpenDevToolButton.Size = new System.Drawing.Size(30, 30);
-            this.OpenDevToolButton.TabIndex = 9;
-            this.OpenDevToolButton.UseVisualStyleBackColor = true;
-            this.OpenDevToolButton.Click += new System.EventHandler(this.OpenDevToolButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Location = new System.Drawing.Point(508, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(2, 30);
-            this.label3.TabIndex = 8;
             // 
             // OverlayController
             // 

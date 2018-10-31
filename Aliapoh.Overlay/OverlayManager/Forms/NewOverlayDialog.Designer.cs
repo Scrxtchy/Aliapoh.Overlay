@@ -59,14 +59,14 @@
             this.OkButton.UseVisualStyleBackColor = true;
             this.OkButton.Click += new System.EventHandler(this.CheckValidateOverlayName);
             // 
-            // CancelButton
+            // NewOverlayCancelButton
             // 
             this.NewOverlayCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NewOverlayCancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.NewOverlayCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewOverlayCancelButton.Location = new System.Drawing.Point(397, 90);
             this.NewOverlayCancelButton.Margin = new System.Windows.Forms.Padding(0);
-            this.NewOverlayCancelButton.Name = "CancelButton";
+            this.NewOverlayCancelButton.Name = "NewOverlayCancelButton";
             this.NewOverlayCancelButton.Size = new System.Drawing.Size(109, 24);
             this.NewOverlayCancelButton.TabIndex = 5;
             this.NewOverlayCancelButton.Text = "Cancel";
@@ -211,7 +211,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.NewOverlayCancelButton);
             this.Controls.Add(this.OkButton);
-            this.Font = new System.Drawing.Font(Loader.DefaultFont, 9F);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -219,6 +219,7 @@
             this.Name = "NewOverlayDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create New Overlay";
+            this.TopMost = true;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

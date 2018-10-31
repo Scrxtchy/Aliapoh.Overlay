@@ -80,32 +80,36 @@
       <HintPath>..\Thirdparty\ACT\Advanced Combat Tracker.exe</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="CefSharp, Version=63.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+    <Reference Include="CefSharp, Version=67.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Thirdparty\CefSharp64\CefSharp.dll</HintPath>
+      <HintPath>..\..\cef\CefSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="CefSharp.Core, Version=63.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+    <Reference Include="CefSharp.Core, Version=67.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Thirdparty\CefSharp64\CefSharp.Core.dll</HintPath>
+      <HintPath>..\..\cef\CefSharp.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="CefSharp.OffScreen, Version=63.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+    <Reference Include="CefSharp.OffScreen, Version=67.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Thirdparty\CefSharp64\CefSharp.OffScreen.dll</HintPath>
+      <HintPath>..\..\cef\CefSharp.OffScreen.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="CefSharp.WinForms, Version=63.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
+    <Reference Include="CefSharp.WinForms, Version=67.0.0.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Thirdparty\CefSharp64\CefSharp.WinForms.dll</HintPath>
+      <HintPath>..\..\cef\CefSharp.WinForms.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Thirdparty\Newtonsoft\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -115,6 +119,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ACTPlugin\Enums\ChattingType.cs" />
@@ -147,6 +152,7 @@
     <Compile Include="Logger\LogLevel.cs" />
     <Compile Include="OverlayManager\Controls\Args\OverlayTabAddEventArgs.cs" />
     <Compile Include="OverlayManager\Settings\DefaultSetting.cs" />
+    <Compile Include="Overlay\Handlers\RenderHandlerEx.cs" />
     <Compile Include="Overlay\OTimer.cs">
       <SubType>Component</SubType>
     </Compile>

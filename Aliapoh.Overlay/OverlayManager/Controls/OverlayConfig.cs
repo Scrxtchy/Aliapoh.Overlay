@@ -109,8 +109,12 @@ namespace Aliapoh.Overlay
             OverlayGlobalHotkeyInput.Text = GetHotkeyString((Keys)setting.GlobalHotkeyModifiers, (Keys)setting.GlobalHotkey, "");
 
             OverlayFramerate.Value = setting.Framerate;
-            OverlayUpdaterate.Value = setting.Updaterate;
-            Overlay.OverlayTicTimer.Interval = setting.Updaterate;
+            try
+            {
+                OverlayUpdaterate.Value = setting.Updaterate;
+                Overlay.OverlayTicTimer.Interval = setting.Updaterate;
+            }
+            catch { }
             Overlay.Browser.BrowserInitialized += Browser_BrowserInitialized;
             IsInitialized = true;
         }

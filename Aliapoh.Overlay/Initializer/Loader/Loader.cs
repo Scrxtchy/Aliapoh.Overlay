@@ -32,8 +32,8 @@ namespace Aliapoh.Overlay
         };
 
         public static AssemblyResolver asmResolver;
-        public static string TargetCEFVER = "3.3239.1716";
-        public static string TargetCEFTAG = "63.0.0-pre01";
+        public static string TargetCEFVER = "3.3396.1786";
+        public static string TargetCEFTAG = "67.0.0";
         public static string DefaultFont = "맑은 고딕";
 
         public static bool InitializeMinimum()
@@ -62,7 +62,7 @@ namespace Aliapoh.Overlay
             if (Environment.Is64BitProcess)
                 CEFDIR = DIRDICT["CEFX64"];
             else
-                APPDIR = DIRDICT["CEFX86"];
+                CEFDIR = DIRDICT["CEFX86"];
 
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
