@@ -108,8 +108,8 @@ namespace Aliapoh.Overlay
 
                 OverlayAPI = new ACTPlugin.OverlayPluginApi(this);
                 Browser.RegisterAsyncJsObject("OverlayPluginApi", OverlayAPI, new BindingOptions { CamelCaseJavascriptNames = false });
-
                 Browser.BrowserInitialized += Overlay_BrowserInitialized;
+
                 // Browser.NewScreenshot += Overlay_NewScreenshot;
                 Browser.ConsoleMessage += Overlay_ConsoleMessage;
                 Browser.Paint += Browser_Paint;
@@ -233,9 +233,9 @@ namespace Aliapoh.Overlay
         {
             new Thread((ThreadStart)delegate
             {
-                ExecuteJavascript("if(beforeTakeScreenshot != undefined) beforeTakeScreenshot()");
+                ExecuteJavascript("if(beforeTakeScreenshot != undefined) beforeTakeScreenshot();");
                 Thread.Sleep(34);
-                var bmp = Browser.ScreenshotOrNull();
+                var bmp = (Bitmap)Screenshot.Clone();
                 if (bmp != null)
                 {
                     ScreenshotRenderer.SaveScreenshot(bmp);
@@ -475,7 +475,7 @@ namespace Aliapoh.Overlay
                 style.ClassStyle |= 200; // NoCloseBtn
                 style.ExStyle |= 0x8; // TopMost
                 style.ExStyle |= 0x80000; // Layered
-                // style.ExStyle |= 0x8000000; // NoActive
+                style.ExStyle |= 0x8000000; // NoActive
                 return style;
             }
         }

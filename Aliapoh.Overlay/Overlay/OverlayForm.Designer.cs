@@ -47,11 +47,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.OverlayForm_Load);
             this.ResumeLayout(false);
-
+            this.ShowInTaskbar = false;
         }
 
         #endregion
-
         public OTimer OverlayTicTimer;
     }
 }

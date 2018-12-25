@@ -127,19 +127,24 @@ namespace Aliapoh.Overlay
 
         private void SaveSetting(object sender, EventArgs e)
         {
-            if (!IsInitialized) return;
-            OverlayController.OverlayConfigs[SettingObject.Name].Config = this;
-            if (SettingManager.OverlaySettings == null)
-                SettingManager.OverlaySettings = new List<SettingObject>();
-
-            SettingManager.OverlaySettings.Clear();
-
-            foreach (var i in OverlayController.OverlayConfigs)
+            try
             {
-                SettingManager.OverlaySettings.Add(i.Value.Config.SettingExport());
-            }
+                if (!IsInitialized) return;
+                OverlayController.OverlayConfigs[SettingObject.Name].Config = this;
+                if (SettingManager.OverlaySettings == null)
+                    SettingManager.OverlaySettings = new List<SettingObject>();
+                SettingManager.OverlaySettings.Clear();
+                foreach (var i in OverlayController.OverlayConfigs)
+                {
+                    SettingManager.OverlaySettings.Add(i.Value.Config.SettingExport());
+                }
 
-            SettingManager.GenerateSettingJSON();
+                SettingManager.GenerateSettingJSON();
+            }
+            catch
+            {
+
+            }
         }
 
         private void Overlay_SizeChanged(object sender, EventArgs e)

@@ -86,7 +86,7 @@
             this.AliapohOverlayLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LogTabPage = new System.Windows.Forms.TabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.LogTextBox = new System.Windows.Forms.RichTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ClearLogsButton = new System.Windows.Forms.Button();
             this.MarginLabel1 = new System.Windows.Forms.Label();
@@ -840,7 +840,7 @@
             // 
             // LogTabPage
             // 
-            this.LogTabPage.Controls.Add(this.richTextBox1);
+            this.LogTabPage.Controls.Add(this.LogTextBox);
             this.LogTabPage.Controls.Add(this.panel5);
             this.LogTabPage.Location = new System.Drawing.Point(2, 34);
             this.LogTabPage.Margin = new System.Windows.Forms.Padding(0);
@@ -850,19 +850,19 @@
             this.LogTabPage.Text = "LogEntry";
             this.LogTabPage.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // LogTextBox
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 32);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(796, 412);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.LogTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
+            this.LogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogTextBox.ForeColor = System.Drawing.Color.White;
+            this.LogTextBox.Location = new System.Drawing.Point(0, 32);
+            this.LogTextBox.Name = "LogTextBox";
+            this.LogTextBox.ReadOnly = true;
+            this.LogTextBox.Size = new System.Drawing.Size(796, 412);
+            this.LogTextBox.TabIndex = 1;
+            this.LogTextBox.Text = "";
             // 
             // panel5
             // 
@@ -887,6 +887,7 @@
             this.ClearLogsButton.TabIndex = 2;
             this.ClearLogsButton.Text = "Clear Logs";
             this.ClearLogsButton.UseVisualStyleBackColor = true;
+            this.ClearLogsButton.Click += new System.EventHandler(this.ClearLogsButton_Click);
             // 
             // MarginLabel1
             // 
@@ -1000,7 +1001,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.OpenFileDialog OpenBackgroundDialog;
         private System.Windows.Forms.FolderBrowserDialog ScreenshotSavePathSelectDialog;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox LogTextBox;
         private System.Windows.Forms.GroupBox ProgramOptionGroupBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label LatestVersionLabel;

@@ -54,7 +54,7 @@ namespace Aliapoh
             ActGlobals.oFormActMain.OnCombatEnd += OFormActMain_OnCombatEnd;
             ActGlobals.oFormActMain.OnCombatStart += OFormActMain_OnCombatStart;
             InitializeComponent();
-            AddVariables();
+            // AddVariables();
         }
 
         private void OC_OverlayTabAdd(object sender, OverlayTabAddEventArgs e)
