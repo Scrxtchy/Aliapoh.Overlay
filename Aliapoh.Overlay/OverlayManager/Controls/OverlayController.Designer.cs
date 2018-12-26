@@ -953,7 +953,8 @@
 
         #endregion
 
-        private OverlayTabControl OverlayControlTabPage;
+        public OverlayTabControl OverlayControlTabPage;
+        public OverlayManageTabControl overlayManageTabControl1;
         private System.Windows.Forms.TabPage OverlaysTabPage;
         private System.Windows.Forms.TabPage LogTabPage;
         private System.Windows.Forms.TabPage SettingsTabPage;
@@ -984,7 +985,6 @@
         private System.Windows.Forms.Button ScreenshotBackgroundSelectButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button overlayAddButton;
-        private OverlayManageTabControl overlayManageTabControl1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button3;

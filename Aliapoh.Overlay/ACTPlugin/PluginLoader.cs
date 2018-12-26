@@ -33,10 +33,14 @@ namespace Aliapoh
 
         public void Dispose()
         {
-            // shutdown CEF
-            Cef.Shutdown();
+            foreach(OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
+            {
+                i.Overlay.Close();
+            }
             // dispose OverlayController
             OC.Dispose();
+            // shutdown CEF
+            Cef.Shutdown();
             // unregister handlers
             ActGlobals.oFormActMain.BeforeLogLineRead -= OFormActMain_BeforeLogLineRead;
             ActGlobals.oFormActMain.OnLogLineRead -= OFormActMain_OnLogLineRead;
@@ -54,7 +58,6 @@ namespace Aliapoh
             ActGlobals.oFormActMain.OnCombatEnd += OFormActMain_OnCombatEnd;
             ActGlobals.oFormActMain.OnCombatStart += OFormActMain_OnCombatStart;
             InitializeComponent();
-            // AddVariables();
         }
 
         private void OC_OverlayTabAdd(object sender, OverlayTabAddEventArgs e)
@@ -144,7 +147,12 @@ namespace Aliapoh
                 if (!ActReady()) return;
                 var timer = ((OTimer)sender);
                 var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));";
-                timer.Overlay.ExecuteJavascript(text);
+                // timer.Overlay.ExecuteJavascript(text);
+                foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
+                {
+                    if (i.Overlay.Handle != null)
+                        i.Overlay.ExecuteJavascript(text);
+                }
             }
             catch(Exception ex)
             {
