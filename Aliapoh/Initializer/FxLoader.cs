@@ -27,15 +27,15 @@ namespace Aliapoh
         };
 
         public static AssemblyResolver asmResolver;
-        public static string TargetCEFVER = "3.3396.1786";
-        public static string TargetCEFTAG = "67.0.0";
+        public static string TargetCEFVER = "3.3497.1841";
+        public static string TargetCEFTAG = "69.0.0";
 
         public static bool Initialize()
         {
             var loadfrm = new LoaderForm();
             loadfrm.Show();
             loadfrm.Refresh();
-            
+
             foreach (var i in DIRDICT)
             {
                 loadfrm.Render("Directory Check...\n" + i);

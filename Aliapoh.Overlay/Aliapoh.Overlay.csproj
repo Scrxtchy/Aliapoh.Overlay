@@ -130,7 +130,6 @@
     <Compile Include="Initializer\Args\ExceptionOccuredEventArgs.cs" />
     <Compile Include="Initializer\Loader\Loader.cs" />
     <Compile Include="Initializer\Loader\CefLoader.cs" />
-    <Compile Include="Initializer\Loader\Downloader.cs" />
     <Compile Include="Initializer\Forms\LoaderForm.cs">
       <SubType>Form</SubType>
     </Compile>

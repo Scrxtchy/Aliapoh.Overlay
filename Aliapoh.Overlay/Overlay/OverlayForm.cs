@@ -133,10 +133,7 @@ namespace Aliapoh.Overlay
 
         private static readonly PixelFormat PixelFormat = PixelFormats.Bgra32;
         private static int BytesPerPixel = PixelFormat.BitsPerPixel / 8;
-
-        private Size viewSize;
-        private Size popupSize;
-
+        
         private object lockObject = new object();
 
         private MemoryMappedFile viewMemoryMappedFile;
@@ -250,7 +247,7 @@ namespace Aliapoh.Overlay
         {
             base.OnResize(e);
             if (IsBrowserInitialized)
-                Browser.Size = new Size(Width, Height);
+                Browser.Size = Size;
         }
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|          WndProc         |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/

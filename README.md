@@ -2,10 +2,10 @@
 General CEF Overlay
 
 ###### Current CEF Version
-> Latest: 67
+> Latest: 69
 
 ###### Target Advanced Combat Tracker Version
-> 3.3.1.257
+> 3.3.1.258
 
 ###### Current Build Status
 [![Build status](https://ci.appveyor.com/api/projects/status/qn91n5icar6b4w9k?svg=true)](https://ci.appveyor.com/project/laiglinne-ff/aliapoh-overlay)
