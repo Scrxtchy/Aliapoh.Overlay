@@ -119,8 +119,6 @@ namespace Aliapoh.Overlay
                 LOG.Logger.Log(LogLevel.Info, Name + " Browser Initialized");
                 MainOverlay = Browser.GetBrowser();
                 Browser.Size = new Size(Width, Height);
-                OverlayTicTimer.Enabled = true;
-                OverlayTicTimer.Tick += OverlayTicTimer_Tick;
             }
             catch(Exception ex)
             {
@@ -549,7 +547,6 @@ namespace Aliapoh.Overlay
         private void OverlayForm_Load(object sender, EventArgs e)
         {
             NativeMethods.SetForegroundWindow(Handle);
-            OverlayTicTimer.Enabled = true;
         }
     }
 }

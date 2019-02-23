@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -81,6 +82,9 @@ namespace Aliapoh.Overlay
             SiteURL.TextChanged += SaveSetting;
             overlayGlobalHotkeyType.SelectedIndexChanged += SaveSetting;
 
+            OverlayEnableBeforeLogLineRead.CheckedChanged += SaveSetting;
+            OverlayGlobalHotkey.CheckedChanged += SaveSetting;
+
             SiteURL.Text = setting.Url;
             
             Overlay = new OverlayForm(setting.Url)
@@ -104,6 +108,39 @@ namespace Aliapoh.Overlay
             OverlayLock.Checked = setting.Locked;
             OverlayEnableBeforeLogLineRead.Checked = setting.BeforeLogLineRead;
 
+            new Thread((ThreadStart)delegate
+            {
+                try
+                {
+                    do
+                    {
+                        if (SettingManager.GlobalSetting.AutoHide)
+                        {
+                            var l = SettingManager.GlobalSetting.DetectProcessName.Split(',');
+                            for (var i = 0; i < l.Length; i++) l[i] = l[i].ToLower().Trim();
+
+                            try
+                            {
+                                var hnd = NativeMethods.GetForegroundWindow();
+                                NativeMethods.GetWindowThreadProcessId(hnd, out uint pid);
+                                Overlay.Visible = l.Contains(System.IO.Path.GetFileName(Process.GetProcessById((int)pid).MainModule.FileName).ToLower());
+                            }
+                            catch
+                            {
+                                // caution: if you running STEAM GAME with VAC, comming here
+                            }
+                            Thread.Sleep(1000);
+                        }
+                        else
+                        {
+                            Overlay.Visible = true;
+                        }
+                    }
+                    while (!Process.GetCurrentProcess().HasExited) ;
+                }
+                catch { }
+            }).Start();
+
             GlobalHotkey = (Keys)setting.GlobalHotkey;
             GlobalHotkeyModifiers = (Keys)setting.GlobalHotkeyModifiers;
             OverlayGlobalHotkeyInput.Text = GetHotkeyString((Keys)setting.GlobalHotkeyModifiers, (Keys)setting.GlobalHotkey, "");
@@ -112,7 +149,6 @@ namespace Aliapoh.Overlay
             try
             {
                 OverlayUpdaterate.Value = setting.Updaterate;
-                Overlay.OverlayTicTimer.Interval = setting.Updaterate;
             }
             catch { }
             Overlay.Browser.BrowserInitialized += Browser_BrowserInitialized;
@@ -291,6 +327,16 @@ namespace Aliapoh.Overlay
                 }
             }
             return key;
+        }
+
+        private void OverlayEnableBeforeLogLineRead_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OverlayGlobalHotkey_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

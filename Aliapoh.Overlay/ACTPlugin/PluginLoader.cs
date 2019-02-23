@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -57,19 +58,38 @@ namespace Aliapoh
             ActGlobals.oFormActMain.OnLogLineRead += OFormActMain_OnLogLineRead;
             ActGlobals.oFormActMain.OnCombatEnd += OFormActMain_OnCombatEnd;
             ActGlobals.oFormActMain.OnCombatStart += OFormActMain_OnCombatStart;
-            InitializeComponent();
-        }
 
-        private void OC_OverlayTabAdd(object sender, OverlayTabAddEventArgs e)
-        {
-            try
+            InitializeComponent();
+            new Thread((ThreadStart)delegate
             {
-                e.Config.Overlay.OverlayTicTimer.Tick += TickEvent;
-            }
-            catch(Exception ex)
-            {
-                LOG.Logger.Log(LogLevel.Error, ex.Message);
-            }
+                while (!Process.GetCurrentProcess().HasExited)
+                {
+                    try
+                    {
+                        if (!ActReady()) continue;
+                        var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));";
+                        Thread.Sleep(50);
+                        LOG.Logger.Log(LogLevel.Info, text);
+                        OC.overlayManageTabControl1.Invoke((MethodInvoker)delegate
+                        {
+                            foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
+                            {
+                                try
+                                {
+                                    if (i.Overlay.Handle != null)
+                                        i.Overlay.ExecuteJavascript(text);
+                                }
+                                catch { }
+                            }
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        LOG.Logger.Log(LogLevel.Error, ex.Message);
+                    }
+                    Thread.Sleep(500);
+                }
+            }).Start();
         }
 
         private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
@@ -104,11 +124,7 @@ namespace Aliapoh
                 Dock = DockStyle.Fill,
             };
 
-            OC.OverlayTabAdd += OC_OverlayTabAdd;
             PluginTabPage.Controls.Add(OC);
-
-            foreach (var i in OverlayController.OverlayConfigs)
-                i.Value.Overlay.OverlayTicTimer.Tick += TickEvent;
         }
 
         private void OFormActMain_BeforeLogLineRead(bool isImport, LogLineEventArgs logInfo)
@@ -116,7 +132,7 @@ namespace Aliapoh
             var data = logInfo.logLine.Split('|');
             if(data.Length > 1)
             {
-                switch((MessageType)int.Parse(data[0]))
+                switch ((MessageType)int.Parse(data[0]))
                 {
                     case MessageType.ChangePrimaryPlayer:
                         if (data.Length < 4) return;
@@ -131,6 +147,7 @@ namespace Aliapoh
                         break;
                     default:
                         if (data.Length < 3) return;
+
                         var jdata = new JObject();
                         jdata["opcode"] = int.Parse(data[0]);
                         jdata["timestamp"] = data[1];
@@ -138,8 +155,8 @@ namespace Aliapoh
 
                         foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
                         {
-                            if (i.Overlay.Handle != null)
-                                i.Overlay.ExecuteJavascript("document.dispatchEvent(new CustomEvent('onLogLine'), {detail:"+jdata.ToString()+"});");
+                            if (i.Overlay.Handle != null && i.Config.OverlayEnableBeforeLogLineRead.Checked)
+                                i.Overlay.ExecuteJavascript("document.dispatchEvent(new CustomEvent('onLogLine'), {detail:" + jdata.ToString() + "});");
                         }
                         break;
                 }
@@ -156,46 +173,117 @@ namespace Aliapoh
 
         }
 
-        public void TickEvent(object sender, EventArgs e)
+        public List<KeyValuePair<CombatantData, Dictionary<string, string>>>
+            GetCombatantList(List<CombatantData> allies)
         {
-            try
+            var combatantList = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
+            Parallel.ForEach(allies, (ally) =>
             {
-                if (!ActReady()) return;
-                var timer = (OTimer)sender;
-                var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));";
-                // timer.Overlay.ExecuteJavascript(text);
-                foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
+                var valueDict = new Dictionary<string, string>();
+                bool FindOverheal = false;
+                foreach (var exportValuePair in CombatantData.ExportVariables)
                 {
-                    if (i.Overlay.Handle != null)
-                        i.Overlay.ExecuteJavascript(text);
+                    try
+                    {
+                        if (exportValuePair.Key.StartsWith("NAME"))
+                        {
+                            continue;
+                        }
+
+                        if ((exportValuePair.Key == "Last10DPS" ||
+                            exportValuePair.Key == "Last30DPS" ||
+                            exportValuePair.Key == "Last60DPS" ||
+                            exportValuePair.Key == "Last180DPS") && !ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All"))
+                        {
+                            valueDict.Add(exportValuePair.Key, "");
+                            continue;
+                        }
+
+                        var value = exportValuePair.Value.GetExportString(ally, "");
+                        valueDict.Add(exportValuePair.Key, value);
+                    }
+                    catch (Exception ex)
+                    {
+                        LOG.Logger.Log(LogLevel.Error, ex.GetBaseException().ToString());
+                        continue;
+                    }
+
+                    if (exportValuePair.Key == "overHeal") FindOverheal = true;
                 }
-            }
-            catch(Exception ex)
+
+                if (!FindOverheal)
+                {
+                    valueDict.Add("overHeal", "0");
+                }
+
+                lock (combatantList)
+                {
+                    combatantList.Add(new KeyValuePair<CombatantData, Dictionary<string, string>>(ally, valueDict));
+                }
+            });
+            return combatantList;
+        }
+
+        public Dictionary<string, string> GetEncounterDictionary(List<CombatantData> allies)
+        {
+            bool FindOverheal = false;
+            var encounterDict = new Dictionary<string, string>();
+            foreach (var exportValuePair in EncounterData.ExportVariables)
             {
-                LOG.Logger.Log(LogLevel.Error, ex.Message);
+                try
+                {
+                    if ((exportValuePair.Key == "Last10DPS" ||
+                        exportValuePair.Key == "Last30DPS" ||
+                        exportValuePair.Key == "Last60DPS" ||
+                        exportValuePair.Key == "Last180DPS") && !allies.All((ally) => ally.Items[CombatantData.DamageTypeDataOutgoingDamage].Items.ContainsKey("All")))
+                    {
+                        encounterDict.Add(exportValuePair.Key, "");
+                        continue;
+                    }
+
+                    var value = exportValuePair.Value.GetExportString(
+                        ActGlobals.oFormActMain.ActiveZone.ActiveEncounter,
+                        allies,
+                        "");
+                    encounterDict.Add(exportValuePair.Key, value);
+                }
+                catch (Exception ex)
+                {
+                    LOG.Logger.Log(LogLevel.Error, ex.GetBaseException().ToString());
+                }
+                if (exportValuePair.Key == "overHeal") FindOverheal = true;
             }
+
+            if (!FindOverheal)
+            {
+                encounterDict.Add("overHeal", "0");
+            }
+            return encounterDict;
         }
 
         internal string CreateJsonData()
         {
             try
             {
-                if (!ActReady()) return "{}";
-                
+                if (!ActReady())
+                {
+                    return new JObject().ToString();
+                }
+
                 var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
                 var encounter = new Dictionary<string, string>();
                 var combatant = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
 
                 var encounterTask = Task.Run(() =>
                 {
-                    encounter = Encounters(allies);
+                    encounter = GetEncounterDictionary(allies);
                 });
                 var combatantTask = Task.Run(() =>
                 {
-                    combatant = Combatants(allies);
+                    combatant = GetCombatantList(allies);
                 });
-                Task.WaitAll(encounterTask, combatantTask);
 
+                Task.WaitAll(encounterTask, combatantTask);
                 var Data = new JObject();
                 Data["Combatant"] = new JObject();
                 Data["Encounter"] = JObject.FromObject(encounter);
@@ -212,8 +300,6 @@ namespace Aliapoh
 
                 Data["isActive"] = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active ? "true" : "false";
                 var result = Data.ToString();
-                updateStringCache = result;
-                updateStringCacheLastUpdate = DateTime.Now;
                 return result;
             }
             catch(Exception ex)

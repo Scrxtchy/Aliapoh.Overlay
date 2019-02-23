@@ -6,6 +6,7 @@ using CefSharp.WinForms;
 using Aliapoh.Overlay.Logger;
 using System.Drawing;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Aliapoh.Overlay.OverlayManager
 {
@@ -19,6 +20,8 @@ namespace Aliapoh.Overlay.OverlayManager
         public static string BackgroundModeFill = "Fill";
         public static string BackgroundModeUniform = "Uniform";
         public static string BackgroundModeUniformToFill = "Uniform to fill";
+        public static bool AutoHide = false;
+        public static List<string> ProcessNameList = new List<string>();
 
         public event EventHandler<OverlayTabAddEventArgs> OverlayTabAdd;
         public static Dictionary<string, OverlayTabPage> OverlayConfigs = new Dictionary<string, OverlayTabPage>();
@@ -67,6 +70,9 @@ namespace Aliapoh.Overlay.OverlayManager
             OverlayControlTabPage.Location = new Point(-2, -2);
             OverlayControlTabPage.Size = new Size(Width + 4, Height + 4);
             OverlayControlTabPage.Anchor = (AnchorStyles)( 1 | 2 | 4 | 8 );
+
+            AutoHideCheckBox.Checked = SettingManager.GlobalSetting.AutoHide;
+            DetectProcessNameTextBox.Text = SettingManager.GlobalSetting.DetectProcessName;
         }
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|      OVERLAY LOGGER      |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
@@ -140,6 +146,7 @@ namespace Aliapoh.Overlay.OverlayManager
 
                         LogTextBox.SelectionColor = LogTextBox.ForeColor;
                         LogTextBox.AppendText("\n");
+                        LogTextBox.ScrollToCaret();
                     }
                 });
             }

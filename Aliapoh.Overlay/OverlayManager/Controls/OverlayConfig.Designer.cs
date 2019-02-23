@@ -516,6 +516,7 @@
             this.OverlayEnableBeforeLogLineRead.Size = new System.Drawing.Size(394, 18);
             this.OverlayEnableBeforeLogLineRead.TabIndex = 25;
             this.OverlayEnableBeforeLogLineRead.UseVisualStyleBackColor = true;
+            this.OverlayEnableBeforeLogLineRead.CheckedChanged += new System.EventHandler(this.OverlayEnableBeforeLogLineRead_CheckedChanged);
             // 
             // EnableBeforeLogLineReadLabel
             // 
@@ -617,6 +618,7 @@
             this.OverlayGlobalHotkey.Size = new System.Drawing.Size(394, 18);
             this.OverlayGlobalHotkey.TabIndex = 17;
             this.OverlayGlobalHotkey.UseVisualStyleBackColor = true;
+            this.OverlayGlobalHotkey.CheckedChanged += new System.EventHandler(this.OverlayGlobalHotkey_CheckedChanged);
             // 
             // SubTableLayoutPanel2
             // 
@@ -648,6 +650,7 @@
             // 
             // OverlayUpdaterate
             // 
+            this.OverlayUpdaterate.Enabled = false;
             this.OverlayUpdaterate.Increment = new decimal(new int[] {
             100,
             0,
@@ -669,7 +672,7 @@
             this.OverlayUpdaterate.Size = new System.Drawing.Size(80, 23);
             this.OverlayUpdaterate.TabIndex = 0;
             this.OverlayUpdaterate.Value = new decimal(new int[] {
-            1000,
+            500,
             0,
             0,
             0});
@@ -932,7 +935,6 @@
         private System.Windows.Forms.Button OverlayNameChangeButton;
         private System.Windows.Forms.TextBox OverlayName;
         private System.Windows.Forms.Label EnableBeforeLogLineReadLabel;
-        private System.Windows.Forms.CheckBox OverlayEnableBeforeLogLineRead;
         public System.Windows.Forms.TextBox SiteURL;
         private System.Windows.Forms.Label SizeLabel;
         private System.Windows.Forms.Label PositionLabel;
@@ -950,5 +952,6 @@
         private System.Windows.Forms.Label HeightLabel;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.NumericUpDown OverlayHeight;
+        public System.Windows.Forms.CheckBox OverlayEnableBeforeLogLineRead;
     }
 }

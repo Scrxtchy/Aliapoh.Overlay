@@ -152,13 +152,9 @@
     <Compile Include="OverlayManager\Controls\Args\OverlayTabAddEventArgs.cs" />
     <Compile Include="OverlayManager\Settings\DefaultSetting.cs" />
     <Compile Include="Overlay\Handlers\RenderHandlerEx.cs" />
-    <Compile Include="Overlay\OTimer.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Overlay\Screenshot\ScreenshotBackgroundMode.cs" />
     <Compile Include="OverlayManager\Settings\GlobalSettingObject.cs" />
     <Compile Include="OverlayManager\Settings\SettingObject.cs" />
-    <Compile Include="Overlay\AutoHide.cs" />
     <Compile Include="OverlayManager\Enums\GlobalHotkeyType.cs" />
     <Compile Include="OverlayManager\GlobalHook\Args\KeyPressedEventArgs.cs" />
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\KeyboardHook.cs" />
