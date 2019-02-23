@@ -69,7 +69,7 @@ namespace Aliapoh
                         if (!ActReady()) continue;
                         var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));";
                         Thread.Sleep(50);
-                        LOG.Logger.Log(LogLevel.Info, text);
+                        // LOG.Logger.Log(LogLevel.Info, text);
                         OC.overlayManageTabControl1.Invoke((MethodInvoker)delegate
                         {
                             foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)

@@ -147,7 +147,6 @@
     <Compile Include="Logger\LogLevel.cs" />
     <Compile Include="OverlayManager\Controls\Args\OverlayTabAddEventArgs.cs" />
     <Compile Include="OverlayManager\Settings\DefaultSetting.cs" />
-    <Compile Include="Overlay\Handlers\RenderHandlerEx.cs" />
     <Compile Include="Overlay\Screenshot\ScreenshotBackgroundMode.cs" />
     <Compile Include="OverlayManager\Settings\GlobalSettingObject.cs" />
     <Compile Include="OverlayManager\Settings\SettingObject.cs" />
@@ -158,7 +157,6 @@
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\Window.cs" />
     <Compile Include="OverlayManager\Plugins\IPlugin.cs" />
     <Compile Include="ACTPlugin\OverlayPluginApi.cs" />
-    <Compile Include="Overlay\Handlers\BrowserProcessHandler.cs" />
     <Compile Include="Overlay\FXs\NativeMethods.cs" />
     <Compile Include="Overlay\Handlers\CefMenuHandler.cs" />
     <Compile Include="Overlay\Handlers\DisplayHandler.cs" />
