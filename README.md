@@ -2,7 +2,7 @@
 General CEF Overlay
 
 ###### Current CEF Version
-> Latest: 69
+> Latest: 71.0.0
 
 ###### Target Advanced Combat Tracker Version
 > 3.3.1.258
