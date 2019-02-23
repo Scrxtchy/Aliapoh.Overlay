@@ -9,6 +9,7 @@ namespace Aliapoh.Overlay.Initializer
     {
         public static void Initialize()
         {
+            /*
             WebClient wc = new WebClient();
             var jsonstr = wc.DownloadString("https://github.com/lalafellsleep/Aliapoh.Overlay/raw/aliapoh-versions/version.json");
             var json = JObject.Parse(jsonstr);
@@ -20,6 +21,7 @@ namespace Aliapoh.Overlay.Initializer
 
             if (cur.Diff(git) == -1)
                 LOG.Logger.Log(LogLevel.Warning, "Patch required");
+            */
         }
     }
 }

@@ -10,7 +10,6 @@ namespace Aliapoh.Overlay.ACTPlugin
 {
     public class OverlayPluginApi
     {
-        private string version = Application.ProductVersion.ToString();
         private OverlayForm Form;
 
         public OverlayPluginApi(OverlayForm o)
@@ -18,13 +17,7 @@ namespace Aliapoh.Overlay.ACTPlugin
             Form = o;
         }
 
-        public string OverlayVersion
-        {
-            get
-            {
-                return version;
-            }
-        }
+        public string OverlayVersion { get; } = Application.ProductVersion.ToString();
 
         public string OverlayName
         {

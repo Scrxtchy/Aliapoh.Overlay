@@ -42,6 +42,12 @@ namespace Aliapoh
         public void InitPlugin(TabPage pluginScreenSpace, Label pluginStatusText)
         {
             pluginDirectory = GetPluginDirectory();
+            foreach (var i in Directory.GetFiles(pluginDirectory))
+            {
+                if (i.ToLower().Contains("cefsharp"))
+                    File.Delete(i);
+            }
+
             AssemblyResolver = new AssemblyResolver(new List<string>() { pluginDirectory });
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 

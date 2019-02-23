@@ -72,6 +72,11 @@ namespace Aliapoh
             }
         }
 
+        private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
+        {
+
+        }
+
         private void AttachBeforeLogLineRead()
         {
             try
@@ -121,13 +126,24 @@ namespace Aliapoh
                         if (data.Length < 3) return;
                         CurrentZoneCode = Convert.ToInt32(data[2], 16);
                         break;
+                    case MessageType.LogLine:
+
+                        break;
+                    default:
+                        if (data.Length < 3) return;
+                        var jdata = new JObject();
+                        jdata["opcode"] = int.Parse(data[0]);
+                        jdata["timestamp"] = data[1];
+                        jdata["payload"] = JArray.FromObject(data.Skip(2));
+
+                        foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
+                        {
+                            if (i.Overlay.Handle != null)
+                                i.Overlay.ExecuteJavascript("document.dispatchEvent(new CustomEvent('onLogLine'), {detail:"+jdata.ToString()+"});");
+                        }
+                        break;
                 }
             }
-        }
-
-        private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
-        {
-
         }
 
         private void OFormActMain_OnCombatStart(bool isImport, CombatToggleEventArgs encounterInfo)
@@ -145,7 +161,7 @@ namespace Aliapoh
             try
             {
                 if (!ActReady()) return;
-                var timer = ((OTimer)sender);
+                var timer = (OTimer)sender;
                 var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));";
                 // timer.Overlay.ExecuteJavascript(text);
                 foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)

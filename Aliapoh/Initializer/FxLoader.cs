@@ -12,23 +12,25 @@ namespace Aliapoh
 {
     public class FxLoader
     {
+        public static string CEFVERNAME = "CEF71";
+
         public static Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
         {
             { "LOCAL", Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) },
             { "RESDIR", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh") },
             { "BINDIR", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "Bin") },
-            { "CEFDIR", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF") },
-            { "CEFX86", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF", "x86") },
-            { "CEFX64", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF", "x64") },
-            { "CEFX86LOC", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF", "x86", "locales") },
-            { "CEFX64LOC", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF", "x64", "locales") },
-            { "CEFX86SHD", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF", "x86", "swiftshader") },
-            { "CEFX64SHD", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "CEF", "x64", "swiftshader") },
+            { "CEFDIR", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME) },
+            { "CEFX86", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x86") },
+            { "CEFX64", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x64") },
+            { "CEFX86LOC", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x86", "locales") },
+            { "CEFX64LOC", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x64", "locales") },
+            { "CEFX86SHD", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x86", "swiftshader") },
+            { "CEFX64SHD", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x64", "swiftshader") },
         };
 
         public static AssemblyResolver asmResolver;
-        public static string TargetCEFVER = "3.3497.1841";
-        public static string TargetCEFTAG = "69.0.0";
+        public static string TargetCEFVER = "3.3578.1863";
+        public static string TargetCEFTAG = "71.0.0";
 
         public static bool Initialize()
         {
@@ -120,6 +122,12 @@ namespace Aliapoh
                     var f = Path.Combine(dest, Path.GetFileName(file));
                     if (!File.Exists(f)) File.Copy(file, f);
                 }
+            }
+
+            foreach (var i in Directory.GetFiles(Environment.CurrentDirectory))
+            {
+                if (i.Contains("cefsharp"))
+                    File.Delete(i);
             }
 
             loadfrm.Render("Initializing...");

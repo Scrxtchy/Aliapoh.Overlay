@@ -16,6 +16,11 @@ namespace Aliapoh
             fromMain = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            foreach (var i in Directory.GetFiles(Environment.CurrentDirectory))
+            {
+                if (i.ToLower().Contains("cefsharp"))
+                    File.Delete(i);
+            }
             if (Environment.Is64BitProcess)
                 CEFDIR = FxLoader.DIRDICT["CEFX64"];
             else
