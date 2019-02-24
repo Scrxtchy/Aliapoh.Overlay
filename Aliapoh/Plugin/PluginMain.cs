@@ -60,6 +60,9 @@ namespace Aliapoh
             {
                 Initialize(pluginScreenSpace, pluginStatusText);
             }
+
+            pluginScreenSpace.Text = $"Aliapoh Overlay {(Environment.Is64BitProcess ? "x64" : "x86")}";
+            pluginStatusText.Text = "Aliapoh overlay successfully";
         }
 
         public void Initialize(TabPage tp, Label lbl)
@@ -72,7 +75,6 @@ namespace Aliapoh
 
         private Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
-            // Binary Loader
             var binfiles = new List<string>()
             {
                 "Aliapoh.Overlay"

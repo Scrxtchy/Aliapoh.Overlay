@@ -120,7 +120,6 @@
   <ItemGroup>
     <Compile Include="ACTPlugin\Enums\ChattingType.cs" />
     <Compile Include="ACTPlugin\Enums\MessageType.cs" />
-    <Compile Include="ACTPlugin\Network\BeforeLogLineRead.cs" />
     <Compile Include="ACTPlugin\Network\CefShutdown.cs" />
     <Compile Include="ACTPlugin\VariableAdder.cs" />
     <Compile Include="Initializer\GlobalVariables.cs" />

@@ -5,8 +5,6 @@ using CefSharp;
 using CefSharp.WinForms;
 using Aliapoh.Overlay.Logger;
 using System.Drawing;
-using System.Diagnostics;
-using System.Threading;
 
 namespace Aliapoh.Overlay.OverlayManager
 {
@@ -63,7 +61,6 @@ namespace Aliapoh.Overlay.OverlayManager
             };
 
             IssueBrowser.BrowserSettings.WebGl = CefState.Disabled;
-            issueBrowserPanel.Controls.Add(IssueBrowser);
 
             // main tab page setting
             OverlayControlTabPage.Dock = DockStyle.None;
@@ -146,7 +143,8 @@ namespace Aliapoh.Overlay.OverlayManager
 
                         LogTextBox.SelectionColor = LogTextBox.ForeColor;
                         LogTextBox.AppendText("\n");
-                        LogTextBox.ScrollToCaret();
+                        if (checkBox1.Checked)
+                            LogTextBox.ScrollToCaret();
                     }
                 });
             }

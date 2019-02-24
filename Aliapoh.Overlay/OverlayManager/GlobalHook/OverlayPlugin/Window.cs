@@ -5,9 +5,6 @@ namespace Aliapoh.Overlay.GlobalHook
 {
     public class Window : NativeWindow, IDisposable
     {
-        /**
-         * Code from OverlayPlugin Window.cs
-         */
         public event EventHandler<KeyPressedEventArgs> KeyPressed;
 
         public Window()

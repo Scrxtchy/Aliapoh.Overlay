@@ -2,7 +2,6 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Aliapoh.Overlay.OverlayManager;
-using System.Globalization;
 
 namespace Aliapoh.Overlay
 {
@@ -10,9 +9,9 @@ namespace Aliapoh.Overlay
     public class OverlayManageTabControl : TabControl
     {
         private System.ComponentModel.IContainer components = null;
-        private StringFormat SB;
-        private Font TabFont;
-        private Font TabSelectedFont;
+        private readonly StringFormat SB;
+        private readonly Font TabFont;
+        private readonly Font TabSelectedFont;
         public Panel TabHeaders;
 
         public OverlayManageTabControl()

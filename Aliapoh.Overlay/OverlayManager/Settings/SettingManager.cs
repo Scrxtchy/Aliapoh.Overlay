@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Xml;
 using System.Reflection;
 using System.IO;
 using Newtonsoft.Json.Linq;
-using System.Diagnostics;
 
 namespace Aliapoh.Overlay.OverlayManager
 {

@@ -4,9 +4,6 @@ using System.Windows.Forms;
 
 namespace Aliapoh.Overlay.GlobalHook
 {
-    /**
-     * Code from OverlayPlugin KeyboardHook.cs
-     */
     public sealed class KeyboardHook : IDisposable
     {
         public event EventHandler<KeyPressedEventArgs> KeyPressed;

@@ -8,9 +8,9 @@ namespace Aliapoh.Overlay
     public class OverlayTabControl : TabControl
     {
         private System.ComponentModel.IContainer components = null;
-        private StringFormat SB;
-        private Font TabFont;
-        private Font TabSelectedFont;
+        private readonly StringFormat SB;
+        private readonly Font TabFont;
+        private readonly Font TabSelectedFont;
         public Panel TabHeaders;
 
         public OverlayTabControl()

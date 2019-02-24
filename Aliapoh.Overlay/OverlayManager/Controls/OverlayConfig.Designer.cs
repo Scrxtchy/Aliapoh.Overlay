@@ -848,6 +848,7 @@
             // OverlayGlobalHotkeyInput
             // 
             this.OverlayGlobalHotkeyInput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayGlobalHotkeyInput.Enabled = false;
             this.OverlayGlobalHotkeyInput.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.OverlayGlobalHotkeyInput.Location = new System.Drawing.Point(200, 168);
             this.OverlayGlobalHotkeyInput.Margin = new System.Windows.Forms.Padding(0);
@@ -862,6 +863,7 @@
             // 
             this.overlayGlobalHotkeyType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.overlayGlobalHotkeyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.overlayGlobalHotkeyType.Enabled = false;
             this.overlayGlobalHotkeyType.FormattingEnabled = true;
             this.overlayGlobalHotkeyType.Location = new System.Drawing.Point(200, 192);
             this.overlayGlobalHotkeyType.Margin = new System.Windows.Forms.Padding(0);
