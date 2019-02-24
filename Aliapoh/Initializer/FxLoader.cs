@@ -20,28 +20,28 @@ namespace Aliapoh
             loadfrm.Show();
             loadfrm.Refresh();
 
-            foreach (var i in GlobalVariables.DIRDICT)
+            foreach (var i in GlobalVar.DIRDICT)
             {
                 loadfrm.Render("Directory Check...\n" + i);
                 MKDIR(i.Value);
             }
 
             WebClient wc = new WebClient();
-            if (!File.Exists(GlobalVariables.DIRDICT["BINDIR"] + "\\nuget.exe"))
-                wc.DownloadFile(GlobalVariables.NUGET, GlobalVariables.DIRDICT["BINDIR"] + "\\nuget.exe");
+            if (!File.Exists(GlobalVar.DIRDICT["BINDIR"] + "\\nuget.exe"))
+                wc.DownloadFile(GlobalVar.NUGET, GlobalVar.DIRDICT["BINDIR"] + "\\nuget.exe");
             else
             {
-                FileInfo fi = new FileInfo(GlobalVariables.DIRDICT["BINDIR"] + "\\nuget.exe");
+                FileInfo fi = new FileInfo(GlobalVar.DIRDICT["BINDIR"] + "\\nuget.exe");
                 if (fi.Length < 1024)
-                    wc.DownloadFile(GlobalVariables.NUGET, GlobalVariables.DIRDICT["BINDIR"] + "\\nuget.exe");
+                    wc.DownloadFile(GlobalVar.NUGET, GlobalVar.DIRDICT["BINDIR"] + "\\nuget.exe");
             }
 
             loadfrm.Render("Get Nuget Package...\n");
 
             var nupkgs = new List<string>()
             {
-                "install cefsharp.winforms -version " + GlobalVariables.TargetCEFTAG,
-                "install cefsharp.offscreen -version " + GlobalVariables.TargetCEFTAG,
+                "install cefsharp.winforms -version " + GlobalVar.TargetCEFTAG,
+                "install cefsharp.offscreen -version " + GlobalVar.TargetCEFTAG,
                 "install newtonsoft.json -version 10.0.3",
             };
 
@@ -52,11 +52,11 @@ namespace Aliapoh
                 {
                     StartInfo = new ProcessStartInfo()
                     {
-                        WorkingDirectory = GlobalVariables.DIRDICT["BINDIR"],
+                        WorkingDirectory = GlobalVar.DIRDICT["BINDIR"],
                         WindowStyle = ProcessWindowStyle.Hidden,
                         Arguments = bin,
                         CreateNoWindow = true,
-                        FileName = GlobalVariables.DIRDICT["BINDIR"] + "\\nuget.exe"
+                        FileName = GlobalVar.DIRDICT["BINDIR"] + "\\nuget.exe"
                     }
                 };
                 p.Start();
@@ -69,34 +69,34 @@ namespace Aliapoh
 
             var dirs = new List<string>()
             {
-                "cef.redist.x64." + GlobalVariables.TargetCEFVER + "\\CEF",
-                "cef.redist.x86." + GlobalVariables.TargetCEFVER + "\\CEF",
-                "cef.redist.x64." + GlobalVariables.TargetCEFVER + "\\CEF\\locales",
-                "cef.redist.x86." + GlobalVariables.TargetCEFVER + "\\CEF\\locales",
-                "cef.redist.x64." + GlobalVariables.TargetCEFVER + "\\CEF\\swiftshader",
-                "cef.redist.x86." + GlobalVariables.TargetCEFVER + "\\CEF\\swiftshader",
-                "CefSharp.Common." + GlobalVariables.TargetCEFTAG + "\\CefSharp\\x86",
-                "CefSharp.Common." + GlobalVariables.TargetCEFTAG + "\\CefSharp\\x64",
-                "CefSharp.OffScreen." + GlobalVariables.TargetCEFTAG + "\\CefSharp\\x86",
-                "CefSharp.OffScreen." + GlobalVariables.TargetCEFTAG + "\\CefSharp\\x64",
-                "CefSharp.WinForms." + GlobalVariables.TargetCEFTAG + "\\CefSharp\\x86",
-                "CefSharp.WinForms." + GlobalVariables.TargetCEFTAG + "\\CefSharp\\x64",
+                "cef.redist.x64." + GlobalVar.TargetCEFVER + "\\CEF",
+                "cef.redist.x86." + GlobalVar.TargetCEFVER + "\\CEF",
+                "cef.redist.x64." + GlobalVar.TargetCEFVER + "\\CEF\\locales",
+                "cef.redist.x86." + GlobalVar.TargetCEFVER + "\\CEF\\locales",
+                "cef.redist.x64." + GlobalVar.TargetCEFVER + "\\CEF\\swiftshader",
+                "cef.redist.x86." + GlobalVar.TargetCEFVER + "\\CEF\\swiftshader",
+                "CefSharp.Common." + GlobalVar.TargetCEFTAG + "\\CefSharp\\x86",
+                "CefSharp.Common." + GlobalVar.TargetCEFTAG + "\\CefSharp\\x64",
+                "CefSharp.OffScreen." + GlobalVar.TargetCEFTAG + "\\CefSharp\\x86",
+                "CefSharp.OffScreen." + GlobalVar.TargetCEFTAG + "\\CefSharp\\x64",
+                "CefSharp.WinForms." + GlobalVar.TargetCEFTAG + "\\CefSharp\\x86",
+                "CefSharp.WinForms." + GlobalVar.TargetCEFTAG + "\\CefSharp\\x64",
             };
 
             foreach (var d in dirs)
             {
-                var bin = Path.Combine(GlobalVariables.DIRDICT["BINDIR"], d);
+                var bin = Path.Combine(GlobalVar.DIRDICT["BINDIR"], d);
                 var x = "x86";
                 var dest = "";
                 if (d.Contains("x64")) x = "x64";
 
                 if (d.Contains("cef.redist"))
-                    dest = Path.Combine(GlobalVariables.DIRDICT["CEFDIR"], x, d // <- for once working ->
-                    .Replace("cef.redist.x86." + GlobalVariables.TargetCEFVER + "\\CEF", "")
-                    .Replace("cef.redist.x64." + GlobalVariables.TargetCEFVER + "\\CEF", "")
+                    dest = Path.Combine(GlobalVar.DIRDICT["CEFDIR"], x, d // <- for once working ->
+                    .Replace("cef.redist.x86." + GlobalVar.TargetCEFVER + "\\CEF", "")
+                    .Replace("cef.redist.x64." + GlobalVar.TargetCEFVER + "\\CEF", "")
                     .Replace("\\", ""));
                 else
-                    dest = Path.Combine(GlobalVariables.DIRDICT["CEFDIR"], x);
+                    dest = Path.Combine(GlobalVar.DIRDICT["CEFDIR"], x);
 
                 foreach (var file in Directory.GetFiles(bin))
                 {

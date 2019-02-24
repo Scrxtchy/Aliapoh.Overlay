@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Aliapoh
 {
-    public static class GlobalVariables
+    public static class GlobalVar
     {
         private static readonly string AppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         public static readonly string NUGET = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe";

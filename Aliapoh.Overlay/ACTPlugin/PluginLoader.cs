@@ -60,37 +60,33 @@ namespace Aliapoh
             InitializeComponent();
             new Thread((ThreadStart)delegate
             {
-                while (!Process.GetCurrentProcess().HasExited)
+                try
                 {
-                    try
+                    while (!Process.GetCurrentProcess().HasExited)
                     {
                         if (!ActReady()) continue;
-                        var jdata = new JObject()
-                        {
-                            ["detail"] = CreateJsonData()
-                        };
 
-                        var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', " + CreateJsonData() + "));";
+                        var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', {detail: " + CreateJsonData() + "}));";
 
                         OC.overlayManageTabControl1.Invoke((MethodInvoker)delegate
                         {
-                            foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
+                            try
                             {
-                                try
+                                foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
                                 {
                                     if (i.Overlay.Handle != null)
                                         i.Overlay.ExecuteJavascript(text);
                                 }
-                                catch { }
+                            }
+                            catch (Exception ex)
+                            {
+                                LOG.Logger.Log(LogLevel.Error, ex.Message);
                             }
                         });
+                        Thread.Sleep(500);
                     }
-                    catch (Exception ex)
-                    {
-                        LOG.Logger.Log(LogLevel.Error, ex.Message);
-                    }
-                    Thread.Sleep(500);
                 }
+                catch { }
             }).Start();
         }
 
@@ -140,7 +136,7 @@ namespace Aliapoh
                 {
                     details = new JObject
                     {
-                        ["details"] = new JObject()
+                        ["detail"] = new JObject()
                         {
                             ["opcode"] = int.Parse(data[0]),
                             ["timestamp"] = data[1],
@@ -162,8 +158,9 @@ namespace Aliapoh
                                     ["name"] = CurrentUserName
                                 }
                             };
-                            var text = $"document.dispatchEvent(new CustomEvent('onChangePrimaryPlayer', {val.ToString()});";
-                            var old = $"document.dispatchEvent(new CustomEvent('onLogLine'),{details.ToString()});";
+                            var text = $"document.dispatchEvent(new CustomEvent('onChangePrimaryPlayer', {val.ToString()}));";
+                            var old = $"document.dispatchEvent(new CustomEvent('onLogLine',{details.ToString()}));";
+                            LOG.Logger.Log(LogLevel.Warning, old);
                             foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
                             {
                                 try
@@ -189,7 +186,7 @@ namespace Aliapoh
                     default:
                         {
                             if (data.Length < 3) return;
-                            var text = $"document.dispatchEvent(new CustomEvent('onLogLine'),{details.ToString()});";
+                            var text = $"document.dispatchEvent(new CustomEvent('onLogLine',{details.ToString()}));";
                             LOG.Logger.Log(LogLevel.Info, text);
                             foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
                             {
@@ -237,8 +234,8 @@ namespace Aliapoh
                 Task.WaitAll(encounterTask, combatantTask);
                 var Data = new JObject
                 {
-                    ["Combatant"] = new JObject(),
-                    ["Encounter"] = JObject.FromObject(encounter)
+                    ["Encounter"] = JObject.FromObject(encounter),
+                    ["Combatant"] = new JObject()
                 };
 
                 foreach (var pair in combatant)

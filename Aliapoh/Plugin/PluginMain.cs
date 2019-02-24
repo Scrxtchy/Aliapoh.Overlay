@@ -52,9 +52,9 @@ namespace Aliapoh
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
             if (Environment.Is64BitProcess)
-                Program.CEFDIR = GlobalVariables.DIRDICT["CEFX64"];
+                Program.CEFDIR = GlobalVar.DIRDICT["CEFX64"];
             else
-                Program.CEFDIR = GlobalVariables.DIRDICT["CEFX86"];
+                Program.CEFDIR = GlobalVar.DIRDICT["CEFX86"];
 
             if(FxLoader.Initialize())
             {

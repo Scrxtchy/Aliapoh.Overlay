@@ -527,11 +527,15 @@ namespace Aliapoh.Overlay
                     SourceConstantAlpha = byte.MaxValue
                 };
 
-                frm.Invoke((MethodInvoker)delegate
+                try
                 {
-                    NativeMethods.UpdateLayeredWindow(frm.Handle, screenDc, ref topPoint, ref size, compatibleMemoryDc,
-                        ref sourcePoint, 0, ref blend, 2 /* ULW_ALPHA */);
-                });
+                    frm.Invoke((MethodInvoker)delegate
+                    {
+                        NativeMethods.UpdateLayeredWindow(frm.Handle, screenDc, ref topPoint, ref size, compatibleMemoryDc,
+                            ref sourcePoint, 0, ref blend, 2 /* ULW_ALPHA */);
+                    });
+                }
+                catch { }
             }
             finally
             {

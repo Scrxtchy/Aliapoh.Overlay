@@ -1,4 +1,5 @@
-﻿using Aliapoh.Overlay.OverlayManager;
+﻿using Advanced_Combat_Tracker;
+using Aliapoh.Overlay.OverlayManager;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -112,7 +113,7 @@ namespace Aliapoh.Overlay
             {
                 try
                 {
-                    do
+                    while (!Process.GetCurrentProcess().HasExited)
                     {
                         if (SettingManager.GlobalSetting.AutoHide)
                         {
@@ -129,14 +130,13 @@ namespace Aliapoh.Overlay
                             {
                                 // caution: if you running STEAM GAME with VAC, comming here
                             }
-                            Thread.Sleep(1000);
                         }
                         else
                         {
                             Overlay.Visible = true;
                         }
+                        Thread.Sleep(1000);
                     }
-                    while (!Process.GetCurrentProcess().HasExited) ;
                 }
                 catch { }
             }).Start();
