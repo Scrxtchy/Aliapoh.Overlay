@@ -18,8 +18,6 @@ namespace Aliapoh
 {
     public partial class PluginLoader : IDisposable
     {
-        private string updateStringCache;
-        private DateTime updateStringCacheLastUpdate;
         private static readonly TimeSpan updateStringCacheExpireInterval = new TimeSpan(0, 0, 0, 0, 250);
 
         public static string PluginDirectory;
@@ -67,9 +65,13 @@ namespace Aliapoh
                     try
                     {
                         if (!ActReady()) continue;
-                        var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', { detail: " + CreateJsonData() + " }));";
-                        Thread.Sleep(50);
-                        // LOG.Logger.Log(LogLevel.Info, text);
+                        var jdata = new JObject()
+                        {
+                            ["detail"] = CreateJsonData()
+                        };
+
+                        var text = "document.dispatchEvent(new CustomEvent('onOverlayDataUpdate', " + CreateJsonData() + "));";
+
                         OC.overlayManageTabControl1.Invoke((MethodInvoker)delegate
                         {
                             foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
@@ -132,11 +134,50 @@ namespace Aliapoh
             var data = logInfo.logLine.Split('|');
             if(data.Length > 1)
             {
+                JObject details = new JObject();
+
+                if (data.Length >= 3)
+                {
+                    details = new JObject
+                    {
+                        ["details"] = new JObject()
+                        {
+                            ["opcode"] = int.Parse(data[0]),
+                            ["timestamp"] = data[1],
+                            ["payload"] = JArray.FromObject(data.Skip(2)),
+                        }
+                    };
+                }
+
                 switch ((MessageType)int.Parse(data[0]))
                 {
                     case MessageType.ChangePrimaryPlayer:
-                        if (data.Length < 4) return;
-                        CurrentUserName = data[3];
+                        {
+                            if (data.Length < 4) return;
+                            CurrentUserName = data[3];
+                            var val = new JObject()
+                            {
+                                ["detail"] = new JObject
+                                {
+                                    ["name"] = CurrentUserName
+                                }
+                            };
+                            var text = $"document.dispatchEvent(new CustomEvent('onChangePrimaryPlayer', {val.ToString()});";
+                            var old = $"document.dispatchEvent(new CustomEvent('onLogLine'),{details.ToString()});";
+                            foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
+                            {
+                                try
+                                {
+                                    if (i.Overlay.Handle != null)
+                                    {
+                                        i.Overlay.ExecuteJavascript(text);
+                                        // OverlayPlugin LogLine Support
+                                        i.Overlay.ExecuteJavascript(old);
+                                    }
+                                }
+                                catch { }
+                            }
+                        }
                         break;
                     case MessageType.ChangeZone:
                         if (data.Length < 3) return;
@@ -146,17 +187,15 @@ namespace Aliapoh
 
                         break;
                     default:
-                        if (data.Length < 3) return;
-
-                        var jdata = new JObject();
-                        jdata["opcode"] = int.Parse(data[0]);
-                        jdata["timestamp"] = data[1];
-                        jdata["payload"] = JArray.FromObject(data.Skip(2));
-
-                        foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
                         {
-                            if (i.Overlay.Handle != null && i.Config.OverlayEnableBeforeLogLineRead.Checked)
-                                i.Overlay.ExecuteJavascript("document.dispatchEvent(new CustomEvent('onLogLine'), {detail:" + jdata.ToString() + "});");
+                            if (data.Length < 3) return;
+                            var text = $"document.dispatchEvent(new CustomEvent('onLogLine'),{details.ToString()});";
+                            LOG.Logger.Log(LogLevel.Info, text);
+                            foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
+                            {
+                                if (i.Overlay.Handle != null && i.Config.OverlayEnableBeforeLogLineRead.Checked)
+                                    i.Overlay.ExecuteJavascript(text);
+                            }
                         }
                         break;
                 }
@@ -171,6 +210,56 @@ namespace Aliapoh
         private void OFormActMain_OnCombatEnd(bool isImport, CombatToggleEventArgs encounterInfo)
         {
 
+        }
+
+        internal string CreateJsonData()
+        {
+            try
+            {
+                if (!ActReady())
+                {
+                    return new JObject().ToString();
+                }
+
+                var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
+                var encounter = new Dictionary<string, string>();
+                var combatant = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
+
+                var encounterTask = Task.Run(() =>
+                {
+                    encounter = GetEncounterDictionary(allies);
+                });
+                var combatantTask = Task.Run(() =>
+                {
+                    combatant = GetCombatantList(allies);
+                });
+
+                Task.WaitAll(encounterTask, combatantTask);
+                var Data = new JObject
+                {
+                    ["Combatant"] = new JObject(),
+                    ["Encounter"] = JObject.FromObject(encounter)
+                };
+
+                foreach (var pair in combatant)
+                {
+                    var value = new JObject();
+                    foreach (var pair2 in pair.Value)
+                    {
+                        value.Add(pair2.Key, pair2.Value.Replace(double.NaN.ToString(), "0"));
+                    }
+                    Data["Combatant"][pair.Key.Name] = value;
+                }
+
+                Data["isActive"] = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active ? "true" : "false";
+                var result = Data.ToString();
+                return result;
+            }
+            catch(Exception ex)
+            {
+                LOG.Logger.Log(LogLevel.Error, ex.GetBaseException().ToString());
+                return "{}";
+            }
         }
 
         public List<KeyValuePair<CombatantData, Dictionary<string, string>>>
@@ -224,7 +313,8 @@ namespace Aliapoh
             return combatantList;
         }
 
-        public Dictionary<string, string> GetEncounterDictionary(List<CombatantData> allies)
+        public Dictionary<string, string> 
+            GetEncounterDictionary(List<CombatantData> allies)
         {
             bool FindOverheal = false;
             var encounterDict = new Dictionary<string, string>();
@@ -261,55 +351,8 @@ namespace Aliapoh
             return encounterDict;
         }
 
-        internal string CreateJsonData()
-        {
-            try
-            {
-                if (!ActReady())
-                {
-                    return new JObject().ToString();
-                }
-
-                var allies = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.GetAllies();
-                var encounter = new Dictionary<string, string>();
-                var combatant = new List<KeyValuePair<CombatantData, Dictionary<string, string>>>();
-
-                var encounterTask = Task.Run(() =>
-                {
-                    encounter = GetEncounterDictionary(allies);
-                });
-                var combatantTask = Task.Run(() =>
-                {
-                    combatant = GetCombatantList(allies);
-                });
-
-                Task.WaitAll(encounterTask, combatantTask);
-                var Data = new JObject();
-                Data["Combatant"] = new JObject();
-                Data["Encounter"] = JObject.FromObject(encounter);
-
-                foreach (var pair in combatant)
-                {
-                    var value = new JObject();
-                    foreach (var pair2 in pair.Value)
-                    {
-                        value.Add(pair2.Key, pair2.Value.Replace(double.NaN.ToString(), "0"));
-                    }
-                    Data["Combatant"][pair.Key.Name] = value;
-                }
-
-                Data["isActive"] = ActGlobals.oFormActMain.ActiveZone.ActiveEncounter.Active ? "true" : "false";
-                var result = Data.ToString();
-                return result;
-            }
-            catch(Exception ex)
-            {
-                LOG.Logger.Log(LogLevel.Error, ex.GetBaseException().ToString());
-                return "{}";
-            }
-        }
-
-        private Dictionary<string, string> Encounters(List<CombatantData> allies)
+        private Dictionary<string, string> 
+            Encounters(List<CombatantData> allies)
         {
             try
             {
@@ -343,7 +386,8 @@ namespace Aliapoh
             }
         }
 
-        private List<KeyValuePair<CombatantData,Dictionary<string,string>>> Combatants(List<CombatantData> allies)
+        private List<KeyValuePair<CombatantData,Dictionary<string,string>>> 
+            Combatants(List<CombatantData> allies)
         {
             try
             {

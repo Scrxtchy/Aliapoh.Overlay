@@ -10,7 +10,7 @@ namespace Aliapoh.Overlay
     {
         public static void Initialize()
         {            
-            var userAgent = "Mozilla/5.0 (Windows NT " + (Environment.Is64BitOperatingSystem ? "x64" : "x86") + ") AppleWebKit/537.36 (KHTML, like Gecko) Aliapoh.Overlay/" + Environment.Version.ToString() + " Chrome/" + Loader.TargetCEFTAG.Substring(0, 4) + "." + Loader.TargetCEFVER.Substring(2,4) + ".100 Safari/537.36";
+            var userAgent = "Mozilla/5.0 (Windows NT " + (Environment.Is64BitOperatingSystem ? "x64" : "x86") + ") AppleWebKit/537.36 (KHTML, like Gecko) Aliapoh.Overlay/" + Environment.Version.ToString() + " Chrome/" + GlobalVariables.TargetCEFTAG.Substring(0, 4) + "." + GlobalVariables.TargetCEFVER.Substring(2,4) + ".100 Safari/537.36";
 
             CefLibraryHandle libloader = new CefLibraryHandle(Path.Combine(Loader.CEFDIR, "libcef.dll"));
             Cef.EnableHighDPISupport();

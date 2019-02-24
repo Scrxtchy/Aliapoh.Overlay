@@ -118,7 +118,14 @@ namespace Aliapoh.Overlay
 
                 LOG.Logger.Log(LogLevel.Info, Name + " Browser Initialized");
                 MainOverlay = Browser.GetBrowser();
-                Browser.Size = new Size(Width, Height);
+                new Thread((ThreadStart)delegate
+                {
+                    Thread.Sleep(50);
+                    Invoke((MethodInvoker)delegate
+                    {
+                        Browser.Size = new Size(Width, Height);
+                    });
+                }).Start();
             }
             catch(Exception ex)
             {

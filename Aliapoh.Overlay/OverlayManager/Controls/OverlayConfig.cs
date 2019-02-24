@@ -163,6 +163,11 @@ namespace Aliapoh.Overlay
 
         private void SaveSetting(object sender, EventArgs e)
         {
+            SaveSetting();
+        }
+
+        private void SaveSetting()
+        {
             try
             {
                 if (!IsInitialized) return;
@@ -177,9 +182,9 @@ namespace Aliapoh.Overlay
 
                 SettingManager.GenerateSettingJSON();
             }
-            catch
+            catch(Exception ex)
             {
-
+                Logger.LOG.Logger.Log(Logger.LogLevel.Error, "Setting save error...\n" + ex.Message);
             }
         }
 
@@ -245,7 +250,7 @@ namespace Aliapoh.Overlay
 
         private void OverlayNameChange_Click(object sender, EventArgs e)
         {
-            //TODO
+            SaveSetting();
         }
         
         private void OverlayGlobalHotkeyInput_KeyDown(object sender, KeyEventArgs e)

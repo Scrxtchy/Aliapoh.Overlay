@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
-using System.Diagnostics;
 using System.Threading;
 using System.Reflection;
 using Aliapoh.Overlay.Initializer;
@@ -14,27 +12,11 @@ namespace Aliapoh.Overlay
 {
     public class Loader
     {
-        public static string CEFVERNAME = "CEF71";
         public static string APPDIR = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh");
         public static string CEFDIR = "";
 
-        public static Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
-        {
-            { "LOCAL", Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) },
-            { "RESDIR", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh") },
-            { "BINDIR", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", "Bin") },
-            { "CEFDIR", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME) },
-            { "CEFX86", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x86") },
-            { "CEFX64", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x64") },
-            { "CEFX86LOC", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x86", "locales") },
-            { "CEFX64LOC", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x64", "locales") },
-            { "CEFX86SHD", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x86", "swiftshader") },
-            { "CEFX64SHD", Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Aliapoh", CEFVERNAME, "x64", "swiftshader") },
-        };
-
         public static AssemblyResolver asmResolver;
-        public static string TargetCEFVER = "3.3578.1863";
-        public static string TargetCEFTAG = "71.0.0";
+
         public static string DefaultFont = "맑은 고딕";
 
         public static bool InitializeMinimum()
@@ -61,9 +43,9 @@ namespace Aliapoh.Overlay
             LOG.Logger.Log(LogLevel.Warning, "Aliapoh Overlay on " + (Environment.Is64BitProcess ? "x64" : "x86") + " Process");
 
             if (Environment.Is64BitProcess)
-                CEFDIR = DIRDICT["CEFX64"];
+                CEFDIR = GlobalVariables.DIRDICT["CEFX64"];
             else
-                CEFDIR = DIRDICT["CEFX86"];
+                CEFDIR = GlobalVariables.DIRDICT["CEFX86"];
 
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
 
@@ -71,7 +53,7 @@ namespace Aliapoh.Overlay
             {
                 APPDIR,
                 CEFDIR,
-                DIRDICT["BINDIR"]
+                GlobalVariables.DIRDICT["BINDIR"]
             };
 
             asmResolver = new AssemblyResolver(Directories);
@@ -79,15 +61,15 @@ namespace Aliapoh.Overlay
             asmResolver.AssemblyLoaded += (o, e) => LOG.Logger.Log(LogLevel.Debug, "AssemblyResolver: Loaded: {0}", e.LoadedAssembly.FullName);
             
             VersionManager.Initialize();
-            Thread.Sleep(50);
+            Thread.Sleep(20);
             LOG.Logger.Log(LogLevel.Info, "Initialize CEF");
 
             CefLoader.Initialize();
-            Thread.Sleep(50);
+            Thread.Sleep(20);
             LOG.Logger.Log(LogLevel.Info, "Initialize Localization");
 
             LanguageLoader.Initialize();
-            Thread.Sleep(50);
+            Thread.Sleep(20);
             LOG.Logger.Log(LogLevel.Info, "Successfully loaded Aliapoh");
 
             return true;

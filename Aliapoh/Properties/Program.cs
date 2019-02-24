@@ -22,9 +22,9 @@ namespace Aliapoh
                     File.Delete(i);
             }
             if (Environment.Is64BitProcess)
-                CEFDIR = FxLoader.DIRDICT["CEFX64"];
+                CEFDIR = GlobalVariables.DIRDICT["CEFX64"];
             else
-                CEFDIR = FxLoader.DIRDICT["CEFX86"];
+                CEFDIR = GlobalVariables.DIRDICT["CEFX86"];
             FxLoader.Initialize();
         }
     }

@@ -85,6 +85,7 @@
       <DependentUpon>LoaderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Initializer\FxLoader.cs" />
+    <Compile Include="Initializer\GlobalVariables.cs" />
     <Compile Include="Plugin\PluginMain.cs" />
     <Compile Include="Properties\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -123,6 +123,7 @@
     <Compile Include="ACTPlugin\Network\BeforeLogLineRead.cs" />
     <Compile Include="ACTPlugin\Network\CefShutdown.cs" />
     <Compile Include="ACTPlugin\VariableAdder.cs" />
+    <Compile Include="Initializer\GlobalVariables.cs" />
     <Compile Include="Initializer\Loader\AssemblyResolver.cs" />
     <Compile Include="Initializer\Args\ExceptionOccuredEventArgs.cs" />
     <Compile Include="Initializer\Loader\Loader.cs" />

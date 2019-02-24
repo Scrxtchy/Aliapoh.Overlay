@@ -22,16 +22,21 @@ namespace Aliapoh.Overlay.OverlayManager
         {
             var o = new JObject()
             {
-                { "PluginConfig", new JObject() }
+                ["PluginConfig"] = new JObject()
             };
+
             if (gso == null) return;
+
             foreach (FieldInfo fi in gso.GetType().GetFields())
             {
                 var val = fi.GetValue(gso);
                 ((JObject)o["PluginConfig"]).Add(fi.Name, val.ToString());
             }
+
             o["PluginConfig"]["Overlays"] = new JObject();
+
             if (OverlaySettings != null)
+            {
                 foreach (SettingObject so in OverlaySettings)
                 {
                     var obj = new JObject();
@@ -41,6 +46,8 @@ namespace Aliapoh.Overlay.OverlayManager
                     }
                     o["PluginConfig"]["Overlays"][so.Name] = obj;
                 }
+            }
+
             File.WriteAllText(Path.Combine(Loader.APPDIR, SettingFile), o.ToString());
         }
 
