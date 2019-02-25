@@ -160,7 +160,7 @@ namespace Aliapoh
                             };
                             var text = $"document.dispatchEvent(new CustomEvent('onChangePrimaryPlayer', {val.ToString()}));";
                             var old = $"document.dispatchEvent(new CustomEvent('onLogLine',{details.ToString()}));";
-                            LOG.Logger.Log(LogLevel.Warning, old);
+
                             foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
                             {
                                 try
@@ -187,7 +187,7 @@ namespace Aliapoh
                         {
                             if (data.Length < 3) return;
                             var text = $"document.dispatchEvent(new CustomEvent('onLogLine',{details.ToString()}));";
-                            LOG.Logger.Log(LogLevel.Info, text);
+
                             foreach (OverlayTabPage i in OC.overlayManageTabControl1.TabPages)
                             {
                                 if (i.Overlay.Handle != null && i.Config.OverlayEnableBeforeLogLineRead.Checked)
