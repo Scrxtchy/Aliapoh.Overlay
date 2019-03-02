@@ -10,6 +10,12 @@ General CEF Overlay
 ###### Usage
 > This program only provides browser overlays. If you need other software, find it and add it yourself.
 
+###### How to add ACT
+```
+Just simple. If you want master branch, build itself or want Stable version, go to Release page and download it.
+and add 'Aliapoh.exe' to ACT Plugin.
+```
+
 ###### Final Fantasy® XIV Copyright
 ```
 'Aliapoh' is included in the content within Square Enix's "Final Fantasy XIV"
