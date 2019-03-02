@@ -10,9 +10,13 @@ General CEF Overlay
 ###### Current Build Status
 [![Build status](https://ci.appveyor.com/api/projects/status/qn91n5icar6b4w9k?svg=true)](https://ci.appveyor.com/project/laiglinne-ff/aliapoh-overlay)
 
+###### Usage
+> This program only provides browser overlays. If you need other software, find it and add it yourself.
+
 ###### Final Fantasy® XIV Copyright
 ```
 'Aliapoh' is included in the content within Square Enix's "Final Fantasy XIV"
-© 2010 - 2018 SQUARE ENIX CO., LTD. All Rights Reserved.
+
+© 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.
 Published in Korea by ACTOZ soft CO., LTD. SQUARE ENIX
 ```
