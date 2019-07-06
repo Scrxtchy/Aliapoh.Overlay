@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliapoh.Overlay", "Aliapoh.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aliapoh", "Aliapoh\Aliapoh.csproj", "{3B7C27A8-6DE8-4E54-ABC9-033A7DD45864}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nuget", "Nuget\Nuget.csproj", "{2159AA2A-7888-43E6-881B-26FA6F0BF651}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,8 +39,23 @@ Global
 		{3B7C27A8-6DE8-4E54-ABC9-033A7DD45864}.Release|x64.Build.0 = Release|x64
 		{3B7C27A8-6DE8-4E54-ABC9-033A7DD45864}.Release|x86.ActiveCfg = Release|x86
 		{3B7C27A8-6DE8-4E54-ABC9-033A7DD45864}.Release|x86.Build.0 = Release|x86
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Debug|x64.ActiveCfg = Debug|x64
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Debug|x64.Build.0 = Debug|x64
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Debug|x86.Build.0 = Debug|Any CPU
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Release|x64.ActiveCfg = Release|x64
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Release|x64.Build.0 = Release|x64
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Release|x86.ActiveCfg = Release|Any CPU
+		{2159AA2A-7888-43E6-881B-26FA6F0BF651}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BD3EE40-4800-45A7-9BC8-1097D61D7034}
 	EndGlobalSection
 EndGlobal
