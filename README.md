@@ -20,7 +20,5 @@ and add 'Aliapoh.exe' to ACT Plugin.
 ###### Final Fantasy® XIV Copyright
 ```
 'Aliapoh' is included in the content within Square Enix's "Final Fantasy XIV"
-
 © 2010 - 2019 SQUARE ENIX CO., LTD. All Rights Reserved.
-Published in Korea by ACTOZ soft CO., LTD. SQUARE ENIX
 ```
