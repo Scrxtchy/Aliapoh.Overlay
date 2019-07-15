@@ -124,6 +124,11 @@ namespace Aliapoh.Overlay
                             {
                                 var hnd = NativeMethods.GetForegroundWindow();
                                 NativeMethods.GetWindowThreadProcessId(hnd, out uint pid);
+                                if (!OverlayShow.Checked)
+                                {
+                                    Overlay.Hide();
+                                    continue;
+                                }
                                 Overlay.Visible = l.Contains(System.IO.Path.GetFileName(Process.GetProcessById((int)pid).MainModule.FileName).ToLower());
                             }
                             catch

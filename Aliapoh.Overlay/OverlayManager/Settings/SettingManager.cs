@@ -46,7 +46,7 @@ namespace Aliapoh.Overlay.OverlayManager
                 }
             }
 
-            File.WriteAllText(Path.Combine(Loader.APPDIR, SettingFile), o.ToString());
+            try { File.WriteAllText(Path.Combine(Loader.APPDIR, SettingFile), o.ToString()); } catch { System.Windows.Forms.MessageBox.Show("Error: Can't write setting file. check other process"); }
         }
 
         public static void LoadSettingJSON()
