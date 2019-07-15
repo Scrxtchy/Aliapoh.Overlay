@@ -127,9 +127,11 @@ namespace Aliapoh.Overlay
                                 if (!OverlayShow.Checked)
                                 {
                                     Overlay.Hide();
-                                    continue;
                                 }
-                                Overlay.Visible = l.Contains(System.IO.Path.GetFileName(Process.GetProcessById((int)pid).MainModule.FileName).ToLower());
+                                else
+                                {
+                                    Overlay.Visible = l.Contains(System.IO.Path.GetFileName(Process.GetProcessById((int)pid).MainModule.FileName).ToLower());
+                                }
                             }
                             catch
                             {
@@ -138,7 +140,7 @@ namespace Aliapoh.Overlay
                         }
                         else
                         {
-                            Overlay.Visible = true;
+                            Overlay.Visible = OverlayShow.Checked;
                         }
                         Thread.Sleep(1000);
                     }
