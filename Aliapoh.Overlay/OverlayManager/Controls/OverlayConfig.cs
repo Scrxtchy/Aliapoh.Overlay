@@ -25,6 +25,7 @@ namespace Aliapoh.Overlay
         public GlobalHotkeyType GlobalHotkeyType;
         public OverlayForm Overlay;
         public Stopwatch SW;
+
         public SettingObject SettingObject
         {
             get
@@ -152,7 +153,7 @@ namespace Aliapoh.Overlay
             GlobalHotkeyModifiers = (Keys)setting.GlobalHotkeyModifiers;
             OverlayGlobalHotkeyInput.Text = GetHotkeyString((Keys)setting.GlobalHotkeyModifiers, (Keys)setting.GlobalHotkey, "");
 
-            OverlayFramerate.Value = setting.Framerate;
+            OverlayFramerate.Value = setting.Framerate < OverlayFramerate.Minimum ? OverlayFramerate.Minimum : setting.Framerate;
             try
             {
                 OverlayUpdaterate.Value = setting.Updaterate;
