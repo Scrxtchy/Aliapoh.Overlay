@@ -2,10 +2,10 @@
 General CEF Overlay
 
 ###### Current CEF Version
-> Latest: 71.0.0
+> Latest: 73.1.13
 
 ###### Target Advanced Combat Tracker Version
-> 3.3.1.258
+> 3.4.0.260
 
 ###### Usage
 > This program only provides browser overlays. If you need other software, find it and add it yourself.
