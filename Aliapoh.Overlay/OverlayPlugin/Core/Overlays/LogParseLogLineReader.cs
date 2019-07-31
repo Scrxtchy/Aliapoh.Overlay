@@ -61,10 +61,12 @@ namespace Aliapoh.OverlayPlugin.Core.Overlays
                 Overlay != null &&
                 Overlay.Browser != null)
                 {
-                    JObject message = new JObject();
-                    message["opcode"] = Convert.ToInt32(chunk[0]);
-                    message["timestamp"] = chunk[1];
-                    message["payload"] = JArray.FromObject(chunk.Skip(2));
+                    JObject message = new JObject
+                    {
+                        ["opcode"] = Convert.ToInt32(chunk[0]),
+                        ["timestamp"] = chunk[1],
+                        ["payload"] = JArray.FromObject(chunk.Skip(2))
+                    };
                     Overlay.ExecuteScript(
                         "document.dispatchEvent(new CustomEvent('onLogLine', { detail: " + message.ToString() + " } ));"
                     );

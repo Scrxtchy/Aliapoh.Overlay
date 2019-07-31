@@ -215,7 +215,11 @@
     <Compile Include="OverlayPlugin\Core\Overlays\LogParseOverlay.cs" />
     <Compile Include="OverlayPlugin\Core\Overlays\LogParseOverlayAddon.cs" />
     <Compile Include="OverlayPlugin\Core\Overlays\LogParseOverlayConfig.cs" />
+    <Compile Include="OverlayPlugin\Localization.cs" />
+    <Compile Include="OverlayPlugin\LocalizationDict.cs" />
+    <Compile Include="OverlayPlugin\MiniParseSortType.cs" />
     <Compile Include="OverlayPlugin\OverlayBase.cs" />
+    <Compile Include="OverlayPlugin\TextItem.cs" />
     <Compile Include="OverlayPlugin\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Initializer\Forms\LoaderForm.resx">

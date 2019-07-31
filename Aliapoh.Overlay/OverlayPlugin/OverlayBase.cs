@@ -4,12 +4,8 @@ using Aliapoh.Overlays.Common;
 using Aliapoh.Overlays.GlobalHook;
 using Aliapoh.Overlays.Logger;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Aliapoh.OverlayPlugin

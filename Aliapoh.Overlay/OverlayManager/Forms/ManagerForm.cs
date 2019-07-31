@@ -9,8 +9,7 @@ namespace Aliapoh.Overlays.OverlayManager
         {
             InitializeComponent();
             NativeMethods.SetForegroundWindow(Handle);
-
-            TopMost = true;
+            // TopMost = true; // don't do that. so if you using on test, can unblocking this comment line.
         }
 
         protected override void OnLoad(EventArgs e)
