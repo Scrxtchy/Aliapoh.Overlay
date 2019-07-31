@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.OverlayManager
+﻿namespace Aliapoh.Overlays.OverlayManager
 {
     partial class NewOverlayDialog
     {
@@ -32,17 +32,19 @@
             this.OkButton = new System.Windows.Forms.Button();
             this.NewOverlayCancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.OverlayURL = new System.Windows.Forms.TextBox();
             this.FramerateLabel = new System.Windows.Forms.Label();
             this.URLLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.OverlayName = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.FramePerSecondLabel = new System.Windows.Forms.Label();
             this.OverlayFramerate = new System.Windows.Forms.NumericUpDown();
+            this.FramePerSecondLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.OverlayName = new System.Windows.Forms.TextBox();
+            this.OverlayURL = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OverlayFramerate)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // OkButton
@@ -50,7 +52,7 @@
             this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.OkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OkButton.Location = new System.Drawing.Point(278, 90);
+            this.OkButton.Location = new System.Drawing.Point(287, 435);
             this.OkButton.Margin = new System.Windows.Forms.Padding(0);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(109, 24);
@@ -64,7 +66,7 @@
             this.NewOverlayCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.NewOverlayCancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.NewOverlayCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NewOverlayCancelButton.Location = new System.Drawing.Point(397, 90);
+            this.NewOverlayCancelButton.Location = new System.Drawing.Point(406, 435);
             this.NewOverlayCancelButton.Margin = new System.Windows.Forms.Padding(0);
             this.NewOverlayCancelButton.Name = "NewOverlayCancelButton";
             this.NewOverlayCancelButton.Size = new System.Drawing.Size(109, 24);
@@ -75,9 +77,6 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -90,23 +89,13 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 9);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(497, 73);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(506, 80);
             this.tableLayoutPanel1.TabIndex = 6;
-            // 
-            // OverlayURL
-            // 
-            this.OverlayURL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OverlayURL.Location = new System.Drawing.Point(120, 24);
-            this.OverlayURL.Margin = new System.Windows.Forms.Padding(0);
-            this.OverlayURL.Name = "OverlayURL";
-            this.OverlayURL.Size = new System.Drawing.Size(377, 23);
-            this.OverlayURL.TabIndex = 6;
             // 
             // FramerateLabel
             // 
@@ -144,43 +133,6 @@
             this.NameLabel.Text = "Name";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // OverlayName
-            // 
-            this.OverlayName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OverlayName.Location = new System.Drawing.Point(120, 0);
-            this.OverlayName.Margin = new System.Windows.Forms.Padding(0);
-            this.OverlayName.Name = "OverlayName";
-            this.OverlayName.Size = new System.Drawing.Size(377, 23);
-            this.OverlayName.TabIndex = 5;
-            this.OverlayName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OverlayName_KeyPress);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.FramePerSecondLabel, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.OverlayFramerate, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(120, 48);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(377, 24);
-            this.tableLayoutPanel2.TabIndex = 7;
-            // 
-            // FramePerSecondLabel
-            // 
-            this.FramePerSecondLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FramePerSecondLabel.Location = new System.Drawing.Point(100, 0);
-            this.FramePerSecondLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.FramePerSecondLabel.Name = "FramePerSecondLabel";
-            this.FramePerSecondLabel.Size = new System.Drawing.Size(277, 24);
-            this.FramePerSecondLabel.TabIndex = 5;
-            this.FramePerSecondLabel.Text = "fps";
-            this.FramePerSecondLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // OverlayFramerate
             // 
             this.OverlayFramerate.Location = new System.Drawing.Point(0, 0);
@@ -204,10 +156,75 @@
             0,
             0});
             // 
+            // FramePerSecondLabel
+            // 
+            this.FramePerSecondLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FramePerSecondLabel.Location = new System.Drawing.Point(100, 0);
+            this.FramePerSecondLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.FramePerSecondLabel.Name = "FramePerSecondLabel";
+            this.FramePerSecondLabel.Size = new System.Drawing.Size(286, 24);
+            this.FramePerSecondLabel.TabIndex = 5;
+            this.FramePerSecondLabel.Text = "fps";
+            this.FramePerSecondLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.FramePerSecondLabel, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.OverlayFramerate, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(120, 48);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(386, 24);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // OverlayName
+            // 
+            this.OverlayName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayName.Location = new System.Drawing.Point(120, 0);
+            this.OverlayName.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayName.Name = "OverlayName";
+            this.OverlayName.Size = new System.Drawing.Size(386, 23);
+            this.OverlayName.TabIndex = 5;
+            this.OverlayName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OverlayName_KeyPress);
+            // 
+            // OverlayURL
+            // 
+            this.OverlayURL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayURL.Location = new System.Drawing.Point(120, 24);
+            this.OverlayURL.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlayURL.Name = "OverlayURL";
+            this.OverlayURL.Size = new System.Drawing.Size(386, 23);
+            this.OverlayURL.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Select Plugin";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(9, 116);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(506, 310);
+            this.checkedListBox1.TabIndex = 8;
+            // 
             // NewOverlayDialog
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(515, 123);
+            this.ClientSize = new System.Drawing.Size(524, 468);
+            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.NewOverlayCancelButton);
             this.Controls.Add(this.OkButton);
@@ -215,16 +232,19 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(540, 507);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(540, 507);
             this.Name = "NewOverlayDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create New Overlay";
             this.TopMost = true;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.OverlayFramerate)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -235,10 +255,12 @@
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label FramerateLabel;
         private System.Windows.Forms.Label URLLabel;
-        private System.Windows.Forms.TextBox OverlayName;
         private System.Windows.Forms.TextBox OverlayURL;
+        private System.Windows.Forms.TextBox OverlayName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label FramePerSecondLabel;
         private System.Windows.Forms.NumericUpDown OverlayFramerate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

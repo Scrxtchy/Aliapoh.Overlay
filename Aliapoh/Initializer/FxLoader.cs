@@ -119,8 +119,8 @@ namespace Aliapoh
 
             if (Program.fromMain) // run to exe
             {
-                Overlay.Loader.InitializeMinimum();
-                Application.Run(new Overlay.OverlayManager.ManagerForm());
+                Overlays.Loader.InitializeMinimum();
+                Application.Run(new Overlays.OverlayManager.ManagerForm());
             }
             else
             {

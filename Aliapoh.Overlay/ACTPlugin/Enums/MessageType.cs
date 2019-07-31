@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.ACTPlugin
+﻿namespace Aliapoh.Overlays.ACTPlugin
 {
     public enum MessageType
     {

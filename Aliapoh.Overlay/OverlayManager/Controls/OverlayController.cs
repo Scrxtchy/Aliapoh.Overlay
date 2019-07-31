@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
-using Aliapoh.Overlay.Logger;
+using Aliapoh.Overlays.Logger;
 using System.Drawing;
 
-namespace Aliapoh.Overlay.OverlayManager
+namespace Aliapoh.Overlays.OverlayManager
 {
     public partial class OverlayController : UserControl
     {
@@ -172,7 +172,7 @@ namespace Aliapoh.Overlay.OverlayManager
             }
         }
 
-        private void OnOverlayCreate(OverlayConfig c)
+        private void OnOverlayCreate(AliapohDefaultConfig c)
         {
             OverlayTabAdd?.Invoke(this, new OverlayTabAddEventArgs(c));
         }
@@ -212,8 +212,8 @@ namespace Aliapoh.Overlay.OverlayManager
             var tp = overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
             foreach (var c in overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex].Controls)
             {
-                if (c.GetType() == typeof(OverlayConfig))
-                    ((OverlayConfig)c).Overlay.Close();
+                if (c.GetType() == typeof(AliapohDefaultConfig))
+                    ((AliapohDefaultConfig)c).Overlay.Close();
                 ((Control)c).Dispose();
             }
             OverlayConfigs.Remove(tp.Name);

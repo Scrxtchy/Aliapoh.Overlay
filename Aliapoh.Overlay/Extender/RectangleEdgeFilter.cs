@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.Extender
+﻿namespace Aliapoh.Overlays.Extender
 {
     public enum RectangleEdgeFilter
     {

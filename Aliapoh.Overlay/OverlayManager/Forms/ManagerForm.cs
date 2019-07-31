@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay.OverlayManager
+namespace Aliapoh.Overlays.OverlayManager
 {
     public partial class ManagerForm : Form
     {
@@ -9,8 +9,7 @@ namespace Aliapoh.Overlay.OverlayManager
         {
             InitializeComponent();
             NativeMethods.SetForegroundWindow(Handle);
-
-            TopMost = true;
+            // TopMost = true; // don't do that. so if you using on test, can unblocking this comment line.
         }
 
         protected override void OnLoad(EventArgs e)

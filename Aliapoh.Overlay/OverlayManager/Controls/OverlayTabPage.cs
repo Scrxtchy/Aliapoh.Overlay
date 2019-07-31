@@ -1,12 +1,12 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayTabPage : TabPage
     {
-        public OverlayConfig Config;
+        public AliapohDefaultConfig Config;
         public OverlayForm Overlay
         {
             get
@@ -15,7 +15,7 @@ namespace Aliapoh.Overlay
             }
         }
 
-        public void Initializer(OverlayConfig oc)
+        public void Initializer(AliapohDefaultConfig oc)
         {
             Config = oc;
             oc.Dock = DockStyle.Fill;
@@ -29,7 +29,7 @@ namespace Aliapoh.Overlay
 
         public void Initializer(string name, string url)
         {
-            Config = new OverlayConfig(name, url)
+            Config = new AliapohDefaultConfig(name, url)
             {
                 Dock = DockStyle.Fill
             };
@@ -41,7 +41,7 @@ namespace Aliapoh.Overlay
             Controls.Add(Config);
         }
 
-        public OverlayTabPage(OverlayConfig oc)
+        public OverlayTabPage(AliapohDefaultConfig oc)
         {
             Initializer(oc);
         }

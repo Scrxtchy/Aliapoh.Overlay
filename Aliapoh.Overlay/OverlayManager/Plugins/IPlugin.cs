@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.IPlugin
+﻿namespace Aliapoh.Overlays.IPlugin
 {
     public interface IPlugin
     {

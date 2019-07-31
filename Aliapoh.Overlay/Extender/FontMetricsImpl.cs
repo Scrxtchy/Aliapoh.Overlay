@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace Aliapoh.Overlay.Extender
+namespace Aliapoh.Overlays.Extender
 {
     internal class FontMetricsImpl : FontMetrics
     {

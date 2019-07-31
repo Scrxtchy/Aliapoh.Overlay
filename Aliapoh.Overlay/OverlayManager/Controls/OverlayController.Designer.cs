@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.OverlayManager
+﻿namespace Aliapoh.Overlays.OverlayManager
 {
     partial class OverlayController
     {
@@ -69,7 +69,7 @@
             this.VersionAutoCheckCheckBox = new System.Windows.Forms.CheckBox();
             this.DetectProcessNameTextBox = new System.Windows.Forms.TextBox();
             this.OverlaysTabPage = new System.Windows.Forms.TabPage();
-            this.overlayManageTabControl1 = new Aliapoh.Overlay.OverlayManageTabControl();
+            this.overlayManageTabControl1 = new Aliapoh.Overlays.OverlayManageTabControl();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.ScreenShotButton = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@
             this.OverlayTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.overlayAddButton = new System.Windows.Forms.Button();
-            this.OverlayControlTabPage = new Aliapoh.Overlay.OverlayTabControl();
+            this.OverlayControlTabPage = new Aliapoh.Overlays.OverlayTabControl();
             this.LogTabPage.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay.Initializer
+namespace Aliapoh.Overlays.Initializer
 {
     public partial class LoaderForm : Form
     {

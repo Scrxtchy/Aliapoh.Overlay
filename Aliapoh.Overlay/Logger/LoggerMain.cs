@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aliapoh.Overlay.Logger
+namespace Aliapoh.Overlays.Logger
 {
     public class LoggerMain
     {

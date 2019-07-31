@@ -7,19 +7,18 @@ using CefSharp;
 using CefSharp.OffScreen;
 using System.Threading;
 using System.Diagnostics;
-using Aliapoh.Overlay.Logger;
+using Aliapoh.Overlays.Logger;
 using System.Runtime.InteropServices;
 using System.Windows.Media;
 using System.IO.MemoryMappedFiles;
 using System.Windows.Interop;
-using System.IO;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public partial class OverlayForm : Form
     {
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/|        Variables         |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
-        public bool IsBrowserLocked;
+        public bool Locked;
         public bool IsBrowserInitialized;
         public string OverlayName;
         public string Url;
@@ -33,6 +32,7 @@ namespace Aliapoh.Overlay
         private bool D_ALT;
         private bool D_CTRL;
         private bool D_SHIFT;
+        private bool CurrentClickThruStatus;
         private CefMenuHandler CefMenu;
 
         private ACTPlugin.OverlayPluginApi OverlayAPI;
@@ -47,10 +47,38 @@ namespace Aliapoh.Overlay
             Initalizer(Url);
         }
 
+        public OverlayForm(Version version, string name, string url, int maxframe)
+        {
+
+        }
+
+        public OverlayForm(string version, string name, string url, int maxframe)
+        {
+
+        }
+
+        public bool IsClickThru
+        {
+            get
+            {
+                return CurrentClickThruStatus;
+            }
+            internal set
+            {
+                ClickthruChange(value);
+            }
+        }
+
         public void ClickthruChange(bool enabled)
         {
+            CurrentClickThruStatus = enabled;
             if (enabled) EnableMouseClickThru();
             else DisableMouseClickThru();
+        }
+
+        public void ExecuteScript(string script)
+        {
+            ExecuteJavascript(script);
         }
 
         public void ExecuteJavascript(string script)
@@ -96,7 +124,6 @@ namespace Aliapoh.Overlay
                 var browser = new BrowserSettings()
                 {
                     WindowlessFrameRate = fr,
-                    // OffScreenTransparentBackground = false,
                     BackgroundColor = 0x00FFFFFF,
                 };
 
@@ -272,7 +299,7 @@ namespace Aliapoh.Overlay
                 case 0x0084/*NCHITTEST*/ :
                     {
                         base.WndProc(ref m);
-                        if ((int)m.Result == 0x01 && !IsBrowserLocked)
+                        if ((int)m.Result == 0x01 && !Locked)
                         {
                             var clientPoint = PointToClient(new Point(m.LParam.ToInt32()));
                             Rectangle ResizeHand = new Rectangle(Width - 24, Height - 24, 24, 24);
@@ -432,7 +459,7 @@ namespace Aliapoh.Overlay
 
             MainOverlay.GetHost().SendMouseClickEvent(e.X, e.Y, btn, false, 1, Modifier());
 
-            if (!IsBrowserLocked)
+            if (!Locked)
             {
                 IsDragging = true;
                 Offset = e.Location;
@@ -481,6 +508,7 @@ namespace Aliapoh.Overlay
                 return style;
             }
         }
+
         #endregion
         #region /_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/| Set Layered Window Image |/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
         public static void SetBitmap(Bitmap bitmap, Form frm)

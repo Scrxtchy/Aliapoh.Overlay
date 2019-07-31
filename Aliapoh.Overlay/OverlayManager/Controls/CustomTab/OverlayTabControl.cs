@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayTabControl : TabControl

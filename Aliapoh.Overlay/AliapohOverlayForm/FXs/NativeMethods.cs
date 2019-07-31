@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     internal class NativeMethods
     {
+        public const int GWL_EXSTYLE = -20;
+        public const int WS_EX_TRANSPARENT = 0x00000020;
+        public const int WS_EX_TOOLWINDOW = 0x00000080;
+
         [DllImport("user32.dll")]
         public static extern bool SetForegroundWindow(IntPtr hWnd);
 
@@ -51,6 +55,44 @@ namespace Aliapoh.Overlay
 
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hwnd, int message, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr", SetLastError = true)]
+        public static extern IntPtr SetWindowLongPtr(IntPtr hWnd, int nIndex, IntPtr dwNewLong);
+
+        [DllImport("kernel32.dll", EntryPoint = "SetLastError")]
+        public static extern void SetLastError(int dwErrorCode);
+
+        private static int ToIntPtr32(IntPtr intPtr)
+        {
+            return unchecked((int)intPtr.ToInt64());
+        }
+
+        public static IntPtr SetWindowLongA(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
+        {
+            int error = 0;
+            IntPtr result = IntPtr.Zero;
+
+            SetLastError(0);
+
+            if (IntPtr.Size == 4)
+            {
+                IntPtr result32 = SetWindowLong(hWnd, (IntPtr)nIndex, dwNewLong);
+                error = Marshal.GetLastWin32Error();
+                result = result32;
+            }
+            else
+            {
+                result = SetWindowLongPtr(hWnd, nIndex, dwNewLong);
+                error = Marshal.GetLastWin32Error();
+            }
+
+            if ((result == IntPtr.Zero) && (error != 0))
+            {
+                throw new System.ComponentModel.Win32Exception(error);
+            }
+
+            return result;
+        }
 
         public struct PointStruct
         {

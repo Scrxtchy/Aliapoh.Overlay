@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Advanced_Combat_Tracker;
 
-namespace Aliapoh.Overlay.ACTPlugin
+namespace Aliapoh.Overlays.ACTPlugin
 {
     public class OverlayPluginApi
     {
@@ -29,7 +30,7 @@ namespace Aliapoh.Overlay.ACTPlugin
 
         public void EndEncounter()
         {
-
+            ActGlobals.oFormActMain.EndCombat(false);
         }
 
         public void TakeScreenshot()
