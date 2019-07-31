@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Aliapoh.Overlays.Common
 {
-    class IPluginConfig
+    public interface IPluginConfig
     {
+        OverlayConfigList Overlays { get; set; }
+        bool FollowLatestLog { get; set; }
+        bool HideOverlaysWhenNotActive { get; set; }
+        Version Version { get; set; }
+        bool IsFirstLaunch { get; set; }
     }
 }

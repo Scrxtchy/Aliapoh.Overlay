@@ -31,9 +31,9 @@ namespace Aliapoh.Overlays
             // Do Somthing
         }
 
-        public OverlayConfig CreateOverlayConfig()
+        public AliapohDefaultConfig CreateOverlayConfig()
         {
-            var o = new OverlayConfig(this);
+            var o = new AliapohDefaultConfig(this);
             return o;
         }
     }

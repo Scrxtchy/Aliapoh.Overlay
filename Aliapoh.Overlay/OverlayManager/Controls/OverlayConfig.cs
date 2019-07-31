@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Aliapoh.Overlays
 {
-    public partial class OverlayConfig : UserControl
+    public partial class AliapohDefaultConfig : UserControl
     {
         public string ShortcutModeNone = "None";
         public string ShortcutModeHide = "Hide";
@@ -34,14 +34,14 @@ namespace Aliapoh.Overlays
             }
         }
 
-        public OverlayConfig(string name)
+        public AliapohDefaultConfig(string name)
         {
             var s = DefaultSetting.SettingObject;
             s.Name = name;
             Initializer(s);
         }
 
-        public OverlayConfig(string name, string url)
+        public AliapohDefaultConfig(string name, string url)
         {
             var s = DefaultSetting.SettingObject;
             s.Name = name;
@@ -49,7 +49,7 @@ namespace Aliapoh.Overlays
             Initializer(s);
         }
 
-        public OverlayConfig(SettingObject s)
+        public AliapohDefaultConfig(SettingObject s)
         {
             Initializer(s);
         }
@@ -228,7 +228,7 @@ namespace Aliapoh.Overlays
 
         private void OverlayLock_CheckedChanged(object sender, EventArgs e)
         {
-            Overlay.IsBrowserLocked = ((CheckBox)sender).Checked;
+            Overlay.Locked = ((CheckBox)sender).Checked;
         }
 
         private void OverlayFramerate_ValueChanged(object sender, EventArgs e)

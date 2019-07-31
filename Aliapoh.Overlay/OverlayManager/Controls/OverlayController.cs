@@ -172,7 +172,7 @@ namespace Aliapoh.Overlays.OverlayManager
             }
         }
 
-        private void OnOverlayCreate(OverlayConfig c)
+        private void OnOverlayCreate(AliapohDefaultConfig c)
         {
             OverlayTabAdd?.Invoke(this, new OverlayTabAddEventArgs(c));
         }
@@ -212,8 +212,8 @@ namespace Aliapoh.Overlays.OverlayManager
             var tp = overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex];
             foreach (var c in overlayManageTabControl1.TabPages[overlayManageTabControl1.SelectedIndex].Controls)
             {
-                if (c.GetType() == typeof(OverlayConfig))
-                    ((OverlayConfig)c).Overlay.Close();
+                if (c.GetType() == typeof(AliapohDefaultConfig))
+                    ((AliapohDefaultConfig)c).Overlay.Close();
                 ((Control)c).Dispose();
             }
             OverlayConfigs.Remove(tp.Name);

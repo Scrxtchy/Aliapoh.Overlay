@@ -1,12 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Aliapoh.Overlays.Common
 {
-    class IOverlayAddon
+    public interface IOverlayAddon
     {
+        string Name { get; }
+        string Description { get; }
+        Type OverlayType { get; }
+        Type OverlayConfigType { get; }
+        Type OverlayConfigControlType { get; }
+        IOverlay CreateOverlayInstance(IOverlayConfig config);
+        IOverlayConfig CreateOverlayConfigInstance(string name);
+        Control CreateOverlayConfigControlInstance(IOverlay overlay);
     }
 }

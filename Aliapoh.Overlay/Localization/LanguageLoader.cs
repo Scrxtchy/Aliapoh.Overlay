@@ -39,7 +39,7 @@ namespace Aliapoh.Overlays
             var bind = BindingFlags.Public | BindingFlags.Static | BindingFlags.NonPublic;
             var flag = "";
             
-            if (typeof(OverlayConfig) == ctrl.GetType())
+            if (typeof(AliapohDefaultConfig) == ctrl.GetType())
                 flag = "OverlayConfig";
             else if (typeof(OverlayController) == ctrl.GetType())
                 flag = "OverlayController";

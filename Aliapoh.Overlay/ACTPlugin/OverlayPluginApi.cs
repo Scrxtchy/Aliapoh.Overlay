@@ -30,7 +30,7 @@ namespace Aliapoh.Overlays.ACTPlugin
 
         public void EndEncounter()
         {
-            ActGlobals.
+            ActGlobals.oFormActMain.EndCombat(false);
         }
 
         public void TakeScreenshot()

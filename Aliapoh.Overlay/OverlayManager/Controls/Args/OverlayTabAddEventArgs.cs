@@ -4,8 +4,8 @@ namespace Aliapoh.Overlays.OverlayManager
 {
     public class OverlayTabAddEventArgs : EventArgs
     {
-        public OverlayConfig Config { get; private set; }
-        public OverlayTabAddEventArgs(OverlayConfig c)
+        public AliapohDefaultConfig Config { get; private set; }
+        public OverlayTabAddEventArgs(AliapohDefaultConfig c)
         {
             Config = c;
         }
