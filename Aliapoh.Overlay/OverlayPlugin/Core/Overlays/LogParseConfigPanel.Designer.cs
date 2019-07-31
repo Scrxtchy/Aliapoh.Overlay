@@ -110,14 +110,14 @@
             resources.ApplyResources(this.checkMiniParseVisible, "checkLogParseVisible");
             this.checkMiniParseVisible.Name = "checkLogParseVisible";
             this.checkMiniParseVisible.UseVisualStyleBackColor = true;
-            this.checkMiniParseVisible.CheckedChanged += new System.EventHandler(this.checkWindowVisible_CheckedChanged);
+            this.checkMiniParseVisible.CheckedChanged += new System.EventHandler(this.CheckWindowVisibleChanged);
             // 
             // checkMiniParseClickthru
             // 
             resources.ApplyResources(this.checkMiniParseClickthru, "checkMiniParseClickthru");
             this.checkMiniParseClickthru.Name = "checkMiniParseClickthru";
             this.checkMiniParseClickthru.UseVisualStyleBackColor = true;
-            this.checkMiniParseClickthru.CheckedChanged += new System.EventHandler(this.checkMouseClickthru_CheckedChanged);
+            this.checkMiniParseClickthru.CheckedChanged += new System.EventHandler(this.CheckMouseClickthruChanged);
             // 
             // panel1
             // 
@@ -139,22 +139,22 @@
             resources.ApplyResources(this.buttonLogParseCopyActXiv, "buttonLogParseCopyActXiv");
             this.buttonLogParseCopyActXiv.Name = "buttonLogParseCopyActXiv";
             this.buttonLogParseCopyActXiv.UseVisualStyleBackColor = true;
-            this.buttonLogParseCopyActXiv.Click += new System.EventHandler(this.buttonCopyActXiv_Click);
+            this.buttonLogParseCopyActXiv.Click += new System.EventHandler(this.CopyACTXIVClick);
             // 
             // buttonLogParseOpenDevTools
             // 
             resources.ApplyResources(this.buttonLogParseOpenDevTools, "buttonLogParseOpenDevTools");
             this.buttonLogParseOpenDevTools.Name = "buttonLogParseOpenDevTools";
             this.buttonLogParseOpenDevTools.UseVisualStyleBackColor = true;
-            this.buttonLogParseOpenDevTools.Click += new System.EventHandler(this.buttonLogParseOpenDevTools_Click);
-            this.buttonLogParseOpenDevTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonLogParseOpenDevTools_RClick);
+            this.buttonLogParseOpenDevTools.Click += new System.EventHandler(this.OpenDevToolsClick);
+            this.buttonLogParseOpenDevTools.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OpenDevToolsRClick);
             // 
             // buttonLogParseReloadBrowser
             // 
             resources.ApplyResources(this.buttonLogParseReloadBrowser, "buttonLogParseReloadBrowser");
             this.buttonLogParseReloadBrowser.Name = "buttonLogParseReloadBrowser";
             this.buttonLogParseReloadBrowser.UseVisualStyleBackColor = true;
-            this.buttonLogParseReloadBrowser.Click += new System.EventHandler(this.buttonReloadBrowser_Click);
+            this.buttonLogParseReloadBrowser.Click += new System.EventHandler(this.ReloadButtonClick);
             // 
             // tableLayoutPanel2
             // 
@@ -167,15 +167,15 @@
             // 
             resources.ApplyResources(this.textLogParseUrl, "textLogParseUrl");
             this.textLogParseUrl.Name = "textLogParseUrl";
-            this.textLogParseUrl.TextChanged += new System.EventHandler(this.textUrl_TextChanged);
-            this.textLogParseUrl.Leave += new System.EventHandler(this.textLogParseUrl_Leave);
+            this.textLogParseUrl.TextChanged += new System.EventHandler(this.URLChanged);
+            this.textLogParseUrl.Leave += new System.EventHandler(this.URLInputLeave);
             // 
             // buttonLogParseSelectFile
             // 
             resources.ApplyResources(this.buttonLogParseSelectFile, "buttonLogParseSelectFile");
             this.buttonLogParseSelectFile.Name = "buttonLogParseSelectFile";
             this.buttonLogParseSelectFile.UseVisualStyleBackColor = true;
-            this.buttonLogParseSelectFile.Click += new System.EventHandler(this.buttonSelectFile_Click);
+            this.buttonLogParseSelectFile.Click += new System.EventHandler(this.SelectFileButtonClick);
             // 
             // nudMaxFrameRate
             // 
@@ -196,7 +196,7 @@
             0,
             0,
             0});
-            this.nudMaxFrameRate.ValueChanged += new System.EventHandler(this.nudMaxFrameRate_ValueChanged);
+            this.nudMaxFrameRate.ValueChanged += new System.EventHandler(this.MaxFramerateChanged);
             // 
             // label13
             // 
@@ -218,13 +218,13 @@
             resources.ApplyResources(this.checkEnableGlobalHotkey, "checkEnableGlobalHotkey");
             this.checkEnableGlobalHotkey.Name = "checkEnableGlobalHotkey";
             this.checkEnableGlobalHotkey.UseVisualStyleBackColor = true;
-            this.checkEnableGlobalHotkey.CheckedChanged += new System.EventHandler(this.checkBoxEnableGlobalHotkey_CheckedChanged);
+            this.checkEnableGlobalHotkey.CheckedChanged += new System.EventHandler(this.GlobalHotKeyEnableChange);
             // 
             // textGlobalHotkey
             // 
             resources.ApplyResources(this.textGlobalHotkey, "textGlobalHotkey");
             this.textGlobalHotkey.Name = "textGlobalHotkey";
-            this.textGlobalHotkey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxGlobalHotkey_KeyDown);
+            this.textGlobalHotkey.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HotkeyInputKeyDown);
             // 
             // label9
             // 
@@ -236,7 +236,7 @@
             resources.ApplyResources(this.checkLock, "checkLock");
             this.checkLock.Name = "checkLock";
             this.checkLock.UseVisualStyleBackColor = true;
-            this.checkLock.CheckedChanged += new System.EventHandler(this.checkLock_CheckedChanged);
+            this.checkLock.CheckedChanged += new System.EventHandler(this.LockedChange);
             // 
             // label10
             // 

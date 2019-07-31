@@ -131,22 +131,22 @@ namespace Aliapoh.OverlayPlugin.Core.Overlays
             }
         }
 
-        private void checkWindowVisible_CheckedChanged(object sender, EventArgs e)
+        private void CheckWindowVisibleChanged(object sender, EventArgs e)
         {
             config.IsVisible = checkMiniParseVisible.Checked;
         }
 
-        private void checkMouseClickthru_CheckedChanged(object sender, EventArgs e)
+        private void CheckMouseClickthruChanged(object sender, EventArgs e)
         {
             config.IsClickThru = checkMiniParseClickthru.Checked;
         }
 
-        private void textUrl_TextChanged(object sender, EventArgs e)
+        private void URLChanged(object sender, EventArgs e)
         {
             //config.Url = textLogParseUrl.Text;
         }
 
-        private void textLogParseUrl_Leave(object sender, EventArgs e)
+        private void URLInputLeave(object sender, EventArgs e)
         {
             config.Url = textLogParseUrl.Text;
         }
@@ -157,17 +157,17 @@ namespace Aliapoh.OverlayPlugin.Core.Overlays
             config.GlobalHotkeyType = value;
         }
 
-        private void nudMaxFrameRate_ValueChanged(object sender, EventArgs e)
+        private void MaxFramerateChanged(object sender, EventArgs e)
         {
             config.MaxFrameRate = (int)nudMaxFrameRate.Value;
         }
 
-        private void buttonReloadBrowser_Click(object sender, EventArgs e)
+        private void ReloadButtonClick(object sender, EventArgs e)
         {
             Overlay.Navigate(config.Url);
         }
 
-        private void buttonSelectFile_Click(object sender, EventArgs e)
+        private void SelectFileButtonClick(object sender, EventArgs e)
         {
             var ofd = new OpenFileDialog();
 
@@ -177,18 +177,18 @@ namespace Aliapoh.OverlayPlugin.Core.Overlays
             }
         }
 
-        private void buttonLogParseOpenDevTools_Click(object sender, EventArgs e)
+        private void OpenDevToolsClick(object sender, EventArgs e)
         {
             Overlay.Overlay.ShowDevTools();
         }
 
-        private void buttonLogParseOpenDevTools_RClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        private void OpenDevToolsRClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
                 Overlay.Overlay.ShowDevTools();
         }
 
-        private void buttonCopyActXiv_Click(object sender, EventArgs e)
+        private void CopyACTXIVClick(object sender, EventArgs e)
         {
             var json = Overlay.CreateJsonData();
             if (!string.IsNullOrWhiteSpace(json))
@@ -197,13 +197,13 @@ namespace Aliapoh.OverlayPlugin.Core.Overlays
             }
         }
 
-        private void checkBoxEnableGlobalHotkey_CheckedChanged(object sender, EventArgs e)
+        private void GlobalHotKeyEnableChange(object sender, EventArgs e)
         {
             config.GlobalHotkeyEnabled = checkEnableGlobalHotkey.Checked;
             textGlobalHotkey.Enabled = config.GlobalHotkeyEnabled;
         }
 
-        private void textBoxGlobalHotkey_KeyDown(object sender, KeyEventArgs e)
+        private void HotkeyInputKeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
             var key = Util.RemoveModifiers(e.KeyCode, e.Modifiers);
@@ -211,7 +211,7 @@ namespace Aliapoh.OverlayPlugin.Core.Overlays
             config.GlobalHotkeyModifiers = e.Modifiers;
         }
 
-        private void checkLock_CheckedChanged(object sender, EventArgs e)
+        private void LockedChange(object sender, EventArgs e)
         {
             config.IsLocked = checkLock.Checked;
         }
