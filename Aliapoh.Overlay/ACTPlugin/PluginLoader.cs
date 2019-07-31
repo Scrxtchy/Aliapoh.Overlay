@@ -1,8 +1,8 @@
 ﻿using Advanced_Combat_Tracker;
-using Aliapoh.Overlay;
-using Aliapoh.Overlay.ACTPlugin;
-using Aliapoh.Overlay.Logger;
-using Aliapoh.Overlay.OverlayManager;
+using Aliapoh.Overlays;
+using Aliapoh.Overlays.ACTPlugin;
+using Aliapoh.Overlays.Logger;
+using Aliapoh.Overlays.OverlayManager;
 using CefSharp;
 using Newtonsoft.Json.Linq;
 using System;

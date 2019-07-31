@@ -3,7 +3,7 @@ using System.Reflection;
 using System.IO;
 using Newtonsoft.Json.Linq;
 
-namespace Aliapoh.Overlay.OverlayManager
+namespace Aliapoh.Overlays.OverlayManager
 {
     public static class SettingManager
     {

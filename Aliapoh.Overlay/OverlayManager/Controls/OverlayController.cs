@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using CefSharp;
 using CefSharp.WinForms;
-using Aliapoh.Overlay.Logger;
+using Aliapoh.Overlays.Logger;
 using System.Drawing;
 
-namespace Aliapoh.Overlay.OverlayManager
+namespace Aliapoh.Overlays.OverlayManager
 {
     public partial class OverlayController : UserControl
     {

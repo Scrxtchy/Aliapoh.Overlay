@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay.OverlayManager
+namespace Aliapoh.Overlays.OverlayManager
 {
     public partial class ManagerForm : Form
     {

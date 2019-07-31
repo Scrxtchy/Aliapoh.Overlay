@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     internal class NativeMethods
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aliapoh.Overlay.OverlayManager
+namespace Aliapoh.Overlays.OverlayManager
 {
     public class OverlayTabAddEventArgs : EventArgs
     {

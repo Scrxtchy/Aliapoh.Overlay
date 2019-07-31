@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayTabPage : TabPage

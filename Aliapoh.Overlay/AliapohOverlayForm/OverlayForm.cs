@@ -7,14 +7,14 @@ using CefSharp;
 using CefSharp.OffScreen;
 using System.Threading;
 using System.Diagnostics;
-using Aliapoh.Overlay.Logger;
+using Aliapoh.Overlays.Logger;
 using System.Runtime.InteropServices;
 using System.Windows.Media;
 using System.IO.MemoryMappedFiles;
 using System.Windows.Interop;
 using System.IO;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public partial class OverlayForm : Form
     {

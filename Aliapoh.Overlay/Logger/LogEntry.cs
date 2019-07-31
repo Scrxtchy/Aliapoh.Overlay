@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aliapoh.Overlay.Logger
+namespace Aliapoh.Overlays.Logger
 {
     public class LogEntry
     {

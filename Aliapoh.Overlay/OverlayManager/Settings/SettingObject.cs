@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public class SettingObject
     {

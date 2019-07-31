@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
-using Aliapoh.Overlay.Logger;
+using Aliapoh.Overlays.Logger;
 
-namespace Aliapoh.Overlay.Initializer
+namespace Aliapoh.Overlays.Initializer
 {
     public static class VersionManager
     {

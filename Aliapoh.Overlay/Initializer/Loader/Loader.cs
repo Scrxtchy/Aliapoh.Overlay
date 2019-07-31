@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Reflection;
-using Aliapoh.Overlay.Initializer;
-using Aliapoh.Overlay.Logger;
+using Aliapoh.Overlays.Initializer;
+using Aliapoh.Overlays.Logger;
 using System.Globalization;
 using Microsoft.Win32;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public class Loader
     {

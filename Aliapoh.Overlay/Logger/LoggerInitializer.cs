@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.Logger
+﻿namespace Aliapoh.Overlays.Logger
 {
     public static class LOG
     {

@@ -2,11 +2,11 @@
 using System.Text;
 using Newtonsoft.Json.Linq;
 using System.Windows.Forms;
-using Aliapoh.Overlay.OverlayManager;
+using Aliapoh.Overlays.OverlayManager;
 using System.Globalization;
 using System.Reflection;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public static class LanguageLoader
     {

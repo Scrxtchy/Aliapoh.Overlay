@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public static class DefaultSetting
     {

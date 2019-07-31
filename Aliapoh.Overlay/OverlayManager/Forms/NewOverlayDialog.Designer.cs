@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.OverlayManager
+﻿namespace Aliapoh.Overlays.OverlayManager
 {
     partial class NewOverlayDialog
     {

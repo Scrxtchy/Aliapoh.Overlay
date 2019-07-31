@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Diagnostics;
 using CefSharp.Structs;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public class DisplayHandler : IDisplayHandler
     {

@@ -1,5 +1,5 @@
 ﻿using Advanced_Combat_Tracker;
-using Aliapoh.Overlay.OverlayManager;
+using Aliapoh.Overlays.OverlayManager;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public partial class OverlayConfig : UserControl
     {

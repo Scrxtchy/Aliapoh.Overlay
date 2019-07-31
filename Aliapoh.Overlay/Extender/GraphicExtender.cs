@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace Aliapoh.Overlay.Extender
+namespace Aliapoh.Overlays.Extender
 {
     static class GraphicExtender
     {

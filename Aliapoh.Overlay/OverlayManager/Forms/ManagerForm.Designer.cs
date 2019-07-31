@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.OverlayManager
+﻿namespace Aliapoh.Overlays.OverlayManager
 {
     partial class ManagerForm
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
-            this.overlayController1 = new Aliapoh.Overlay.OverlayManager.OverlayController();
+            this.overlayController1 = new Aliapoh.Overlays.OverlayManager.OverlayController();
             this.SuspendLayout();
             // 
             // overlayController1

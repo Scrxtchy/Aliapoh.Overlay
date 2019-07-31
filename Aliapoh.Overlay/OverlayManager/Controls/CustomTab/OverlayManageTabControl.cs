@@ -1,9 +1,9 @@
 ﻿using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Aliapoh.Overlay.OverlayManager;
+using Aliapoh.Overlays.OverlayManager;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     [System.ComponentModel.DesignerCategory("CODE")]
     public class OverlayManageTabControl : TabControl

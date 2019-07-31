@@ -1,5 +1,5 @@
-﻿using Aliapoh.Overlay.Logger;
-using Aliapoh.Overlay.OverlayManager;
+﻿using Aliapoh.Overlays.Logger;
+using Aliapoh.Overlays.OverlayManager;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -7,7 +7,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     internal class ScreenshotRenderer
     {

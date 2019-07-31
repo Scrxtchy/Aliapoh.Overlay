@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay.GlobalHook
+namespace Aliapoh.Overlays.GlobalHook
 {
     public sealed class KeyboardHook : IDisposable
     {

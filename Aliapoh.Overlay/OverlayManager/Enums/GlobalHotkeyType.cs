@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay
+﻿namespace Aliapoh.Overlays
 {
     public enum GlobalHotkeyType : int
     {
