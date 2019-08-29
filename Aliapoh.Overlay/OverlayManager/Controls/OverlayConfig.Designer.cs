@@ -871,7 +871,7 @@
             this.overlayGlobalHotkeyType.Size = new System.Drawing.Size(400, 23);
             this.overlayGlobalHotkeyType.TabIndex = 21;
             // 
-            // OverlayConfig
+            // AliapohDefaultConfig
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
@@ -880,7 +880,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "OverlayConfig";
+            this.Name = "AliapohDefaultConfig";
             this.Size = new System.Drawing.Size(600, 400);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -50,7 +50,7 @@
             this.MinimumSize = new System.Drawing.Size(900, 540);
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Name = "OverlayManager";
-            this.Text = "O v e r l a y   M a n a g e r";
+            this.Text = ":: Aliapoh Overlay Manager ::";
             this.ResumeLayout(false);
         }
 

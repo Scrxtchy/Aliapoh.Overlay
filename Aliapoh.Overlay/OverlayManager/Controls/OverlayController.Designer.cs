@@ -31,14 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OverlayController));
             this.OpenBackgroundDialog = new System.Windows.Forms.OpenFileDialog();
             this.ScreenshotSavePathSelectDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.LogTabPage = new System.Windows.Forms.TabPage();
-            this.LogTextBox = new System.Windows.Forms.RichTextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.ClearLogsButton = new System.Windows.Forms.Button();
-            this.MarginLabel1 = new System.Windows.Forms.Label();
-            this.CopyAllLogsButton = new System.Windows.Forms.Button();
-            this.PluginsTabPage = new System.Windows.Forms.TabPage();
+            this.OverlayControlTabPage = new Aliapoh.Overlays.OverlayTabControl();
+            this.OverlaysTabPage = new System.Windows.Forms.TabPage();
+            this.overlayManageTabControl1 = new Aliapoh.Overlays.OverlayManageTabControl();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ScreenShotButton = new System.Windows.Forms.Button();
+            this.MarginLabel2 = new System.Windows.Forms.Label();
+            this.OpenDevToolButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.OverlayTitle = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.overlayAddButton = new System.Windows.Forms.Button();
             this.SettingsTabPage = new System.Windows.Forms.TabPage();
             this.ScreenShotSettingGroupbox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -68,23 +75,19 @@
             this.LatestVersionLabel = new System.Windows.Forms.Label();
             this.VersionAutoCheckCheckBox = new System.Windows.Forms.CheckBox();
             this.DetectProcessNameTextBox = new System.Windows.Forms.TextBox();
-            this.OverlaysTabPage = new System.Windows.Forms.TabPage();
-            this.overlayManageTabControl1 = new Aliapoh.Overlays.OverlayManageTabControl();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.ScreenShotButton = new System.Windows.Forms.Button();
-            this.MarginLabel2 = new System.Windows.Forms.Label();
-            this.OpenDevToolButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.OverlayTitle = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.overlayAddButton = new System.Windows.Forms.Button();
-            this.OverlayControlTabPage = new Aliapoh.Overlays.OverlayTabControl();
-            this.LogTabPage.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.PluginsTabPage = new System.Windows.Forms.TabPage();
+            this.LogTabPage = new System.Windows.Forms.TabPage();
+            this.LogTextBox = new System.Windows.Forms.RichTextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ClearLogsButton = new System.Windows.Forms.Button();
+            this.MarginLabel1 = new System.Windows.Forms.Label();
+            this.CopyAllLogsButton = new System.Windows.Forms.Button();
+            this.OverlayControlTabPage.SuspendLayout();
+            this.OverlaysTabPage.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();
             this.ScreenShotSettingGroupbox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -94,107 +97,205 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.ProgramOptionGroupBox.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.OverlaysTabPage.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.OverlayControlTabPage.SuspendLayout();
+            this.LogTabPage.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // OpenBackgroundDialog
             // 
             this.OpenBackgroundDialog.FileName = "openFileDialog1";
             // 
-            // LogTabPage
+            // OverlayControlTabPage
             // 
-            this.LogTabPage.Controls.Add(this.LogTextBox);
-            this.LogTabPage.Controls.Add(this.panel5);
-            this.LogTabPage.Location = new System.Drawing.Point(2, 34);
-            this.LogTabPage.Margin = new System.Windows.Forms.Padding(0);
-            this.LogTabPage.Name = "LogTabPage";
-            this.LogTabPage.Size = new System.Drawing.Size(796, 444);
-            this.LogTabPage.TabIndex = 1;
-            this.LogTabPage.Text = "LogEntry";
-            this.LogTabPage.UseVisualStyleBackColor = true;
+            this.OverlayControlTabPage.Controls.Add(this.OverlaysTabPage);
+            this.OverlayControlTabPage.Controls.Add(this.SettingsTabPage);
+            this.OverlayControlTabPage.Controls.Add(this.PluginsTabPage);
+            this.OverlayControlTabPage.Controls.Add(this.LogTabPage);
+            this.OverlayControlTabPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayControlTabPage.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.OverlayControlTabPage.ItemSize = new System.Drawing.Size(10, 32);
+            this.OverlayControlTabPage.Location = new System.Drawing.Point(0, 0);
+            this.OverlayControlTabPage.Multiline = true;
+            this.OverlayControlTabPage.Name = "OverlayControlTabPage";
+            this.OverlayControlTabPage.Padding = new System.Drawing.Point(18, 0);
+            this.OverlayControlTabPage.SelectedIndex = 0;
+            this.OverlayControlTabPage.Size = new System.Drawing.Size(800, 480);
+            this.OverlayControlTabPage.TabIndex = 0;
             // 
-            // LogTextBox
+            // OverlaysTabPage
             // 
-            this.LogTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
-            this.LogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LogTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LogTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogTextBox.ForeColor = System.Drawing.Color.White;
-            this.LogTextBox.Location = new System.Drawing.Point(0, 32);
-            this.LogTextBox.Name = "LogTextBox";
-            this.LogTextBox.ReadOnly = true;
-            this.LogTextBox.Size = new System.Drawing.Size(796, 412);
-            this.LogTextBox.TabIndex = 1;
-            this.LogTextBox.Text = "";
+            this.OverlaysTabPage.Controls.Add(this.overlayManageTabControl1);
+            this.OverlaysTabPage.Controls.Add(this.panel2);
+            this.OverlaysTabPage.Location = new System.Drawing.Point(2, 34);
+            this.OverlaysTabPage.Margin = new System.Windows.Forms.Padding(0);
+            this.OverlaysTabPage.Name = "OverlaysTabPage";
+            this.OverlaysTabPage.Size = new System.Drawing.Size(796, 444);
+            this.OverlaysTabPage.TabIndex = 0;
+            this.OverlaysTabPage.Text = "Overlays";
+            this.OverlaysTabPage.UseVisualStyleBackColor = true;
             // 
-            // panel5
+            // overlayManageTabControl1
             // 
-            this.panel5.Controls.Add(this.checkBox1);
-            this.panel5.Controls.Add(this.ClearLogsButton);
-            this.panel5.Controls.Add(this.MarginLabel1);
-            this.panel5.Controls.Add(this.CopyAllLogsButton);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(2);
-            this.panel5.Size = new System.Drawing.Size(796, 32);
-            this.panel5.TabIndex = 2;
+            this.overlayManageTabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.overlayManageTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overlayManageTabControl1.ItemSize = new System.Drawing.Size(48, 220);
+            this.overlayManageTabControl1.Location = new System.Drawing.Point(0, 32);
+            this.overlayManageTabControl1.Multiline = true;
+            this.overlayManageTabControl1.Name = "overlayManageTabControl1";
+            this.overlayManageTabControl1.Padding = new System.Drawing.Point(32, 32);
+            this.overlayManageTabControl1.SelectedIndex = 0;
+            this.overlayManageTabControl1.Size = new System.Drawing.Size(796, 412);
+            this.overlayManageTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.overlayManageTabControl1.TabIndex = 1;
+            this.overlayManageTabControl1.SelectedIndexChanged += new System.EventHandler(this.OverlayManageTabControl1_SelectedIndexChanged);
             // 
-            // checkBox1
+            // panel2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(211, 7);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 19);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Auto scroll";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 0);
+            this.panel2.Size = new System.Drawing.Size(796, 32);
+            this.panel2.TabIndex = 0;
             // 
-            // ClearLogsButton
+            // panel4
             // 
-            this.ClearLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ClearLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.ClearLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClearLogsButton.Location = new System.Drawing.Point(104, 2);
-            this.ClearLogsButton.Name = "ClearLogsButton";
-            this.ClearLogsButton.Size = new System.Drawing.Size(100, 28);
-            this.ClearLogsButton.TabIndex = 2;
-            this.ClearLogsButton.Text = "Clear Logs";
-            this.ClearLogsButton.UseVisualStyleBackColor = true;
-            this.ClearLogsButton.Click += new System.EventHandler(this.ClearLogsButton_Click);
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.ScreenShotButton);
+            this.panel4.Controls.Add(this.MarginLabel2);
+            this.panel4.Controls.Add(this.OpenDevToolButton);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.OverlayTitle);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(222, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(572, 30);
+            this.panel4.TabIndex = 3;
             // 
-            // MarginLabel1
+            // ScreenShotButton
             // 
-            this.MarginLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MarginLabel1.Location = new System.Drawing.Point(102, 2);
-            this.MarginLabel1.Name = "MarginLabel1";
-            this.MarginLabel1.Size = new System.Drawing.Size(2, 28);
-            this.MarginLabel1.TabIndex = 1;
+            this.ScreenShotButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScreenShotButton.BackgroundImage")));
+            this.ScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ScreenShotButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ScreenShotButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScreenShotButton.Location = new System.Drawing.Point(446, 0);
+            this.ScreenShotButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ScreenShotButton.Name = "ScreenShotButton";
+            this.ScreenShotButton.Size = new System.Drawing.Size(30, 30);
+            this.ScreenShotButton.TabIndex = 7;
+            this.ScreenShotButton.UseVisualStyleBackColor = true;
             // 
-            // CopyAllLogsButton
+            // MarginLabel2
             // 
-            this.CopyAllLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CopyAllLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.CopyAllLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CopyAllLogsButton.Location = new System.Drawing.Point(2, 2);
-            this.CopyAllLogsButton.Name = "CopyAllLogsButton";
-            this.CopyAllLogsButton.Size = new System.Drawing.Size(100, 28);
-            this.CopyAllLogsButton.TabIndex = 0;
-            this.CopyAllLogsButton.Text = "Copy All Logs";
-            this.CopyAllLogsButton.UseVisualStyleBackColor = true;
+            this.MarginLabel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MarginLabel2.Location = new System.Drawing.Point(476, 0);
+            this.MarginLabel2.Name = "MarginLabel2";
+            this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
+            this.MarginLabel2.TabIndex = 6;
             // 
-            // PluginsTabPage
+            // OpenDevToolButton
             // 
-            this.PluginsTabPage.Location = new System.Drawing.Point(2, 34);
-            this.PluginsTabPage.Name = "PluginsTabPage";
-            this.PluginsTabPage.Size = new System.Drawing.Size(796, 444);
-            this.PluginsTabPage.TabIndex = 4;
-            this.PluginsTabPage.Text = "Plugins";
-            this.PluginsTabPage.UseVisualStyleBackColor = true;
+            this.OpenDevToolButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpenDevToolButton.BackgroundImage")));
+            this.OpenDevToolButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.OpenDevToolButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.OpenDevToolButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.OpenDevToolButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenDevToolButton.Location = new System.Drawing.Point(478, 0);
+            this.OpenDevToolButton.Margin = new System.Windows.Forms.Padding(0);
+            this.OpenDevToolButton.Name = "OpenDevToolButton";
+            this.OpenDevToolButton.Size = new System.Drawing.Size(30, 30);
+            this.OpenDevToolButton.TabIndex = 9;
+            this.OpenDevToolButton.UseVisualStyleBackColor = true;
+            this.OpenDevToolButton.Click += new System.EventHandler(this.OpenDevToolButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Location = new System.Drawing.Point(508, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(2, 30);
+            this.label3.TabIndex = 8;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(510, 0);
+            this.button4.Margin = new System.Windows.Forms.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 30);
+            this.button4.TabIndex = 2;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.ReloadSelectedOverlayButtonClicked);
+            // 
+            // label13
+            // 
+            this.label13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label13.Location = new System.Drawing.Point(540, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(2, 30);
+            this.label13.TabIndex = 1;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(542, 0);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 30);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.CloseSelectedOverlayButtonClicked);
+            // 
+            // OverlayTitle
+            // 
+            this.OverlayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayTitle.Location = new System.Drawing.Point(0, 0);
+            this.OverlayTitle.Name = "OverlayTitle";
+            this.OverlayTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.OverlayTitle.Size = new System.Drawing.Size(572, 30);
+            this.OverlayTitle.TabIndex = 3;
+            this.OverlayTitle.Text = "Please Select Overlay";
+            this.OverlayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.overlayAddButton);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(2, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(2);
+            this.panel3.Size = new System.Drawing.Size(220, 30);
+            this.panel3.TabIndex = 2;
+            // 
+            // overlayAddButton
+            // 
+            this.overlayAddButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("overlayAddButton.BackgroundImage")));
+            this.overlayAddButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.overlayAddButton.FlatAppearance.BorderSize = 0;
+            this.overlayAddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.overlayAddButton.Location = new System.Drawing.Point(2, 2);
+            this.overlayAddButton.Margin = new System.Windows.Forms.Padding(0);
+            this.overlayAddButton.Name = "overlayAddButton";
+            this.overlayAddButton.Size = new System.Drawing.Size(26, 26);
+            this.overlayAddButton.TabIndex = 0;
+            this.overlayAddButton.UseVisualStyleBackColor = true;
+            this.overlayAddButton.Click += new System.EventHandler(this.OverlayAddButton_Click);
             // 
             // SettingsTabPage
             // 
@@ -594,211 +695,111 @@
             this.DetectProcessNameTextBox.Text = "ffxiv.exe, ffxiv_dx11.exe";
             this.DetectProcessNameTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
-            // OverlaysTabPage
+            // PluginsTabPage
             // 
-            this.OverlaysTabPage.Controls.Add(this.overlayManageTabControl1);
-            this.OverlaysTabPage.Controls.Add(this.panel2);
-            this.OverlaysTabPage.Location = new System.Drawing.Point(2, 34);
-            this.OverlaysTabPage.Margin = new System.Windows.Forms.Padding(0);
-            this.OverlaysTabPage.Name = "OverlaysTabPage";
-            this.OverlaysTabPage.Size = new System.Drawing.Size(796, 444);
-            this.OverlaysTabPage.TabIndex = 0;
-            this.OverlaysTabPage.Text = "Overlays";
-            this.OverlaysTabPage.UseVisualStyleBackColor = true;
+            this.PluginsTabPage.Location = new System.Drawing.Point(2, 34);
+            this.PluginsTabPage.Name = "PluginsTabPage";
+            this.PluginsTabPage.Size = new System.Drawing.Size(796, 444);
+            this.PluginsTabPage.TabIndex = 4;
+            this.PluginsTabPage.Text = "Plugins";
+            this.PluginsTabPage.UseVisualStyleBackColor = true;
             // 
-            // overlayManageTabControl1
+            // LogTabPage
             // 
-            this.overlayManageTabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.overlayManageTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayManageTabControl1.ItemSize = new System.Drawing.Size(48, 220);
-            this.overlayManageTabControl1.Location = new System.Drawing.Point(0, 32);
-            this.overlayManageTabControl1.Multiline = true;
-            this.overlayManageTabControl1.Name = "overlayManageTabControl1";
-            this.overlayManageTabControl1.Padding = new System.Drawing.Point(32, 32);
-            this.overlayManageTabControl1.SelectedIndex = 0;
-            this.overlayManageTabControl1.Size = new System.Drawing.Size(796, 412);
-            this.overlayManageTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.overlayManageTabControl1.TabIndex = 1;
-            this.overlayManageTabControl1.SelectedIndexChanged += new System.EventHandler(this.OverlayManageTabControl1_SelectedIndexChanged);
+            this.LogTabPage.Controls.Add(this.LogTextBox);
+            this.LogTabPage.Controls.Add(this.panel5);
+            this.LogTabPage.Location = new System.Drawing.Point(2, 34);
+            this.LogTabPage.Margin = new System.Windows.Forms.Padding(0);
+            this.LogTabPage.Name = "LogTabPage";
+            this.LogTabPage.Size = new System.Drawing.Size(796, 444);
+            this.LogTabPage.TabIndex = 1;
+            this.LogTabPage.Text = "LogEntry";
+            this.LogTabPage.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // LogTextBox
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 0);
-            this.panel2.Size = new System.Drawing.Size(796, 32);
-            this.panel2.TabIndex = 0;
+            this.LogTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
+            this.LogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogTextBox.ForeColor = System.Drawing.Color.White;
+            this.LogTextBox.Location = new System.Drawing.Point(0, 32);
+            this.LogTextBox.Name = "LogTextBox";
+            this.LogTextBox.ReadOnly = true;
+            this.LogTextBox.Size = new System.Drawing.Size(796, 412);
+            this.LogTextBox.TabIndex = 1;
+            this.LogTextBox.Text = "";
             // 
-            // panel4
+            // panel5
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.ScreenShotButton);
-            this.panel4.Controls.Add(this.MarginLabel2);
-            this.panel4.Controls.Add(this.OpenDevToolButton);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.OverlayTitle);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(222, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(572, 30);
-            this.panel4.TabIndex = 3;
+            this.panel5.Controls.Add(this.checkBox1);
+            this.panel5.Controls.Add(this.ClearLogsButton);
+            this.panel5.Controls.Add(this.MarginLabel1);
+            this.panel5.Controls.Add(this.CopyAllLogsButton);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Padding = new System.Windows.Forms.Padding(2);
+            this.panel5.Size = new System.Drawing.Size(796, 32);
+            this.panel5.TabIndex = 2;
             // 
-            // ScreenShotButton
+            // checkBox1
             // 
-            this.ScreenShotButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScreenShotButton.BackgroundImage")));
-            this.ScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ScreenShotButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ScreenShotButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ScreenShotButton.Location = new System.Drawing.Point(446, 0);
-            this.ScreenShotButton.Margin = new System.Windows.Forms.Padding(0);
-            this.ScreenShotButton.Name = "ScreenShotButton";
-            this.ScreenShotButton.Size = new System.Drawing.Size(30, 30);
-            this.ScreenShotButton.TabIndex = 7;
-            this.ScreenShotButton.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(211, 7);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(84, 19);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Auto scroll";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // MarginLabel2
+            // ClearLogsButton
             // 
-            this.MarginLabel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MarginLabel2.Location = new System.Drawing.Point(476, 0);
-            this.MarginLabel2.Name = "MarginLabel2";
-            this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
-            this.MarginLabel2.TabIndex = 6;
+            this.ClearLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ClearLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.ClearLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearLogsButton.Location = new System.Drawing.Point(104, 2);
+            this.ClearLogsButton.Name = "ClearLogsButton";
+            this.ClearLogsButton.Size = new System.Drawing.Size(100, 28);
+            this.ClearLogsButton.TabIndex = 2;
+            this.ClearLogsButton.Text = "Clear Logs";
+            this.ClearLogsButton.UseVisualStyleBackColor = true;
+            this.ClearLogsButton.Click += new System.EventHandler(this.ClearLogsButton_Click);
             // 
-            // OpenDevToolButton
+            // MarginLabel1
             // 
-            this.OpenDevToolButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpenDevToolButton.BackgroundImage")));
-            this.OpenDevToolButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.OpenDevToolButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.OpenDevToolButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.OpenDevToolButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OpenDevToolButton.Location = new System.Drawing.Point(478, 0);
-            this.OpenDevToolButton.Margin = new System.Windows.Forms.Padding(0);
-            this.OpenDevToolButton.Name = "OpenDevToolButton";
-            this.OpenDevToolButton.Size = new System.Drawing.Size(30, 30);
-            this.OpenDevToolButton.TabIndex = 9;
-            this.OpenDevToolButton.UseVisualStyleBackColor = true;
-            this.OpenDevToolButton.Click += new System.EventHandler(this.OpenDevToolButton_Click);
+            this.MarginLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MarginLabel1.Location = new System.Drawing.Point(102, 2);
+            this.MarginLabel1.Name = "MarginLabel1";
+            this.MarginLabel1.Size = new System.Drawing.Size(2, 28);
+            this.MarginLabel1.TabIndex = 1;
             // 
-            // label3
+            // CopyAllLogsButton
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Location = new System.Drawing.Point(508, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(2, 30);
-            this.label3.TabIndex = 8;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(510, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 30);
-            this.button4.TabIndex = 2;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.ReloadSelectedOverlayButtonClicked);
-            // 
-            // label13
-            // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label13.Location = new System.Drawing.Point(540, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(2, 30);
-            this.label13.TabIndex = 1;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(542, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 30);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.CloseSelectedOverlayButtonClicked);
-            // 
-            // OverlayTitle
-            // 
-            this.OverlayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OverlayTitle.Location = new System.Drawing.Point(0, 0);
-            this.OverlayTitle.Name = "OverlayTitle";
-            this.OverlayTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.OverlayTitle.Size = new System.Drawing.Size(572, 30);
-            this.OverlayTitle.TabIndex = 3;
-            this.OverlayTitle.Text = "Please Select Overlay";
-            this.OverlayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel3.Controls.Add(this.overlayAddButton);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(2, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(2);
-            this.panel3.Size = new System.Drawing.Size(220, 30);
-            this.panel3.TabIndex = 2;
-            // 
-            // overlayAddButton
-            // 
-            this.overlayAddButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("overlayAddButton.BackgroundImage")));
-            this.overlayAddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.overlayAddButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.overlayAddButton.FlatAppearance.BorderSize = 0;
-            this.overlayAddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.overlayAddButton.Location = new System.Drawing.Point(2, 2);
-            this.overlayAddButton.Margin = new System.Windows.Forms.Padding(0);
-            this.overlayAddButton.Name = "overlayAddButton";
-            this.overlayAddButton.Size = new System.Drawing.Size(26, 26);
-            this.overlayAddButton.TabIndex = 0;
-            this.overlayAddButton.UseVisualStyleBackColor = true;
-            this.overlayAddButton.Click += new System.EventHandler(this.OverlayAddButton_Click);
-            // 
-            // OverlayControlTabPage
-            // 
-            this.OverlayControlTabPage.Controls.Add(this.OverlaysTabPage);
-            this.OverlayControlTabPage.Controls.Add(this.SettingsTabPage);
-            this.OverlayControlTabPage.Controls.Add(this.PluginsTabPage);
-            this.OverlayControlTabPage.Controls.Add(this.LogTabPage);
-            this.OverlayControlTabPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OverlayControlTabPage.Font = new System.Drawing.Font("맑은 고딕", 9F);
-            this.OverlayControlTabPage.ItemSize = new System.Drawing.Size(10, 32);
-            this.OverlayControlTabPage.Location = new System.Drawing.Point(0, 0);
-            this.OverlayControlTabPage.Multiline = true;
-            this.OverlayControlTabPage.Name = "OverlayControlTabPage";
-            this.OverlayControlTabPage.Padding = new System.Drawing.Point(18, 0);
-            this.OverlayControlTabPage.SelectedIndex = 0;
-            this.OverlayControlTabPage.Size = new System.Drawing.Size(800, 480);
-            this.OverlayControlTabPage.TabIndex = 0;
+            this.CopyAllLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CopyAllLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.CopyAllLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CopyAllLogsButton.Location = new System.Drawing.Point(2, 2);
+            this.CopyAllLogsButton.Name = "CopyAllLogsButton";
+            this.CopyAllLogsButton.Size = new System.Drawing.Size(100, 28);
+            this.CopyAllLogsButton.TabIndex = 0;
+            this.CopyAllLogsButton.Text = "Copy All Logs";
+            this.CopyAllLogsButton.UseVisualStyleBackColor = true;
             // 
             // OverlayController
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.Controls.Add(this.OverlayControlTabPage);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.MinimumSize = new System.Drawing.Size(800, 480);
             this.Name = "OverlayController";
             this.Size = new System.Drawing.Size(800, 480);
             this.Load += new System.EventHandler(this.OverlayController_Load);
-            this.LogTabPage.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.OverlayControlTabPage.ResumeLayout(false);
+            this.OverlaysTabPage.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.SettingsTabPage.ResumeLayout(false);
             this.ScreenShotSettingGroupbox.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -812,11 +813,9 @@
             this.ProgramOptionGroupBox.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.OverlaysTabPage.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.OverlayControlTabPage.ResumeLayout(false);
+            this.LogTabPage.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
