@@ -286,6 +286,7 @@
             // overlayAddButton
             // 
             this.overlayAddButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("overlayAddButton.BackgroundImage")));
+            this.overlayAddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.overlayAddButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.overlayAddButton.FlatAppearance.BorderSize = 0;
             this.overlayAddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
