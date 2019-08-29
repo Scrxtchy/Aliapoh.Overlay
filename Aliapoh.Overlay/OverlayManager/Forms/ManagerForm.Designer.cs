@@ -43,7 +43,7 @@
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(884, 501);
             this.Controls.Add(this.overlayController1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
