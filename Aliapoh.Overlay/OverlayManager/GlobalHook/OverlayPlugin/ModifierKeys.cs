@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aliapoh.Overlay.GlobalHook
+namespace Aliapoh.Overlays.GlobalHook
 {
     [Flags]
     public enum ModifierKeys : uint

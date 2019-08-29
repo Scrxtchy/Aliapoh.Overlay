@@ -1,10 +1,10 @@
-﻿using Aliapoh.Overlay.Logger;
+﻿using Aliapoh.Overlays.Logger;
 using CefSharp;
 using CefSharp.OffScreen;
 using System;
 using System.IO;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public class CefLoader
     {

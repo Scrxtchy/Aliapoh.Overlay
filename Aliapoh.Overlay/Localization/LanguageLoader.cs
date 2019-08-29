@@ -2,11 +2,11 @@
 using System.Text;
 using Newtonsoft.Json.Linq;
 using System.Windows.Forms;
-using Aliapoh.Overlay.OverlayManager;
+using Aliapoh.Overlays.OverlayManager;
 using System.Globalization;
 using System.Reflection;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public static class LanguageLoader
     {
@@ -39,7 +39,7 @@ namespace Aliapoh.Overlay
             var bind = BindingFlags.Public | BindingFlags.Static | BindingFlags.NonPublic;
             var flag = "";
             
-            if (typeof(OverlayConfig) == ctrl.GetType())
+            if (typeof(AliapohDefaultConfig) == ctrl.GetType())
                 flag = "OverlayConfig";
             else if (typeof(OverlayController) == ctrl.GetType())
                 flag = "OverlayController";

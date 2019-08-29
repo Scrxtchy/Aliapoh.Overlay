@@ -1,4 +1,4 @@
-﻿namespace Aliapoh.Overlay.OverlayManager
+﻿namespace Aliapoh.Overlays.OverlayManager
 {
     partial class OverlayController
     {
@@ -32,72 +32,72 @@
             this.OpenBackgroundDialog = new System.Windows.Forms.OpenFileDialog();
             this.ScreenshotSavePathSelectDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.LogTabPage = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.CopyAllLogsButton = new System.Windows.Forms.Button();
-            this.MarginLabel1 = new System.Windows.Forms.Label();
-            this.ClearLogsButton = new System.Windows.Forms.Button();
             this.LogTextBox = new System.Windows.Forms.RichTextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ClearLogsButton = new System.Windows.Forms.Button();
+            this.MarginLabel1 = new System.Windows.Forms.Label();
+            this.CopyAllLogsButton = new System.Windows.Forms.Button();
             this.PluginsTabPage = new System.Windows.Forms.TabPage();
             this.SettingsTabPage = new System.Windows.Forms.TabPage();
-            this.ProgramOptionGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.DetectProcessNameTextBox = new System.Windows.Forms.TextBox();
-            this.VersionAutoCheckCheckBox = new System.Windows.Forms.CheckBox();
-            this.LatestVersionLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.VersionAutoCheckLabel = new System.Windows.Forms.Label();
-            this.DetectProcessLabel = new System.Windows.Forms.Label();
-            this.AutoHideByProcLabel = new System.Windows.Forms.Label();
-            this.AutoHideCheckBox = new System.Windows.Forms.CheckBox();
             this.ScreenShotSettingGroupbox = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.ScreenshotBackgroundImagePathTextBox = new System.Windows.Forms.TextBox();
-            this.ScreenshotBackgroundSelectButton = new System.Windows.Forms.Button();
-            this.ScreenshotBackgroundFillModeComboBox = new System.Windows.Forms.ComboBox();
-            this.AutoClippingCheckBox = new System.Windows.Forms.CheckBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ScreenshotMargin = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.SavePathLabel = new System.Windows.Forms.Label();
-            this.BackgroundImageLabel = new System.Windows.Forms.Label();
-            this.FillModeLabel = new System.Windows.Forms.Label();
-            this.AutoClippingLabel = new System.Windows.Forms.Label();
-            this.MarginLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.ScreenshotSavePathSelectButton = new System.Windows.Forms.Button();
             this.ScreenshotSavePathTextBox = new System.Windows.Forms.TextBox();
+            this.ScreenshotSavePathSelectButton = new System.Windows.Forms.Button();
+            this.MarginLabel = new System.Windows.Forms.Label();
+            this.AutoClippingLabel = new System.Windows.Forms.Label();
+            this.FillModeLabel = new System.Windows.Forms.Label();
+            this.BackgroundImageLabel = new System.Windows.Forms.Label();
+            this.SavePathLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ScreenshotMargin = new System.Windows.Forms.NumericUpDown();
+            this.AutoClippingCheckBox = new System.Windows.Forms.CheckBox();
+            this.ScreenshotBackgroundFillModeComboBox = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.ScreenshotBackgroundSelectButton = new System.Windows.Forms.Button();
+            this.ScreenshotBackgroundImagePathTextBox = new System.Windows.Forms.TextBox();
+            this.ProgramOptionGroupBox = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.AutoHideCheckBox = new System.Windows.Forms.CheckBox();
+            this.AutoHideByProcLabel = new System.Windows.Forms.Label();
+            this.DetectProcessLabel = new System.Windows.Forms.Label();
+            this.VersionAutoCheckLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LatestVersionLabel = new System.Windows.Forms.Label();
+            this.VersionAutoCheckCheckBox = new System.Windows.Forms.CheckBox();
+            this.DetectProcessNameTextBox = new System.Windows.Forms.TextBox();
             this.OverlaysTabPage = new System.Windows.Forms.TabPage();
+            this.overlayManageTabControl1 = new Aliapoh.Overlays.OverlayManageTabControl();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ScreenShotButton = new System.Windows.Forms.Button();
+            this.MarginLabel2 = new System.Windows.Forms.Label();
+            this.OpenDevToolButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.OverlayTitle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.overlayAddButton = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.OverlayTitle = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.OpenDevToolButton = new System.Windows.Forms.Button();
-            this.MarginLabel2 = new System.Windows.Forms.Label();
-            this.ScreenShotButton = new System.Windows.Forms.Button();
-            this.overlayManageTabControl1 = new Aliapoh.Overlay.OverlayManageTabControl();
-            this.OverlayControlTabPage = new Aliapoh.Overlay.OverlayTabControl();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.OverlayControlTabPage = new Aliapoh.Overlays.OverlayTabControl();
             this.LogTabPage.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SettingsTabPage.SuspendLayout();
-            this.ProgramOptionGroupBox.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.ScreenShotSettingGroupbox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScreenshotMargin)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.ProgramOptionGroupBox.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.OverlaysTabPage.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.OverlayControlTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,6 +117,20 @@
             this.LogTabPage.Text = "LogEntry";
             this.LogTabPage.UseVisualStyleBackColor = true;
             // 
+            // LogTextBox
+            // 
+            this.LogTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
+            this.LogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogTextBox.ForeColor = System.Drawing.Color.White;
+            this.LogTextBox.Location = new System.Drawing.Point(0, 32);
+            this.LogTextBox.Name = "LogTextBox";
+            this.LogTextBox.ReadOnly = true;
+            this.LogTextBox.Size = new System.Drawing.Size(796, 412);
+            this.LogTextBox.TabIndex = 1;
+            this.LogTextBox.Text = "";
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.checkBox1);
@@ -130,25 +144,15 @@
             this.panel5.Size = new System.Drawing.Size(796, 32);
             this.panel5.TabIndex = 2;
             // 
-            // CopyAllLogsButton
+            // checkBox1
             // 
-            this.CopyAllLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CopyAllLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.CopyAllLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CopyAllLogsButton.Location = new System.Drawing.Point(2, 2);
-            this.CopyAllLogsButton.Name = "CopyAllLogsButton";
-            this.CopyAllLogsButton.Size = new System.Drawing.Size(100, 28);
-            this.CopyAllLogsButton.TabIndex = 0;
-            this.CopyAllLogsButton.Text = "Copy All Logs";
-            this.CopyAllLogsButton.UseVisualStyleBackColor = true;
-            // 
-            // MarginLabel1
-            // 
-            this.MarginLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MarginLabel1.Location = new System.Drawing.Point(102, 2);
-            this.MarginLabel1.Name = "MarginLabel1";
-            this.MarginLabel1.Size = new System.Drawing.Size(2, 28);
-            this.MarginLabel1.TabIndex = 1;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(211, 7);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(84, 19);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "Auto scroll";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // ClearLogsButton
             // 
@@ -163,19 +167,25 @@
             this.ClearLogsButton.UseVisualStyleBackColor = true;
             this.ClearLogsButton.Click += new System.EventHandler(this.ClearLogsButton_Click);
             // 
-            // LogTextBox
+            // MarginLabel1
             // 
-            this.LogTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(32)))), ((int)(((byte)(64)))));
-            this.LogTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LogTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LogTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogTextBox.ForeColor = System.Drawing.Color.White;
-            this.LogTextBox.Location = new System.Drawing.Point(0, 32);
-            this.LogTextBox.Name = "LogTextBox";
-            this.LogTextBox.ReadOnly = true;
-            this.LogTextBox.Size = new System.Drawing.Size(796, 412);
-            this.LogTextBox.TabIndex = 1;
-            this.LogTextBox.Text = "";
+            this.MarginLabel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.MarginLabel1.Location = new System.Drawing.Point(102, 2);
+            this.MarginLabel1.Name = "MarginLabel1";
+            this.MarginLabel1.Size = new System.Drawing.Size(2, 28);
+            this.MarginLabel1.TabIndex = 1;
+            // 
+            // CopyAllLogsButton
+            // 
+            this.CopyAllLogsButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CopyAllLogsButton.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.CopyAllLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CopyAllLogsButton.Location = new System.Drawing.Point(2, 2);
+            this.CopyAllLogsButton.Name = "CopyAllLogsButton";
+            this.CopyAllLogsButton.Size = new System.Drawing.Size(100, 28);
+            this.CopyAllLogsButton.TabIndex = 0;
+            this.CopyAllLogsButton.Text = "Copy All Logs";
+            this.CopyAllLogsButton.UseVisualStyleBackColor = true;
             // 
             // PluginsTabPage
             // 
@@ -197,140 +207,6 @@
             this.SettingsTabPage.TabIndex = 2;
             this.SettingsTabPage.Text = "Settings";
             this.SettingsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // ProgramOptionGroupBox
-            // 
-            this.ProgramOptionGroupBox.Controls.Add(this.tableLayoutPanel5);
-            this.ProgramOptionGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ProgramOptionGroupBox.Location = new System.Drawing.Point(10, 2);
-            this.ProgramOptionGroupBox.Name = "ProgramOptionGroupBox";
-            this.ProgramOptionGroupBox.Padding = new System.Windows.Forms.Padding(3, 3, 10, 10);
-            this.ProgramOptionGroupBox.Size = new System.Drawing.Size(776, 126);
-            this.ProgramOptionGroupBox.TabIndex = 1;
-            this.ProgramOptionGroupBox.TabStop = false;
-            this.ProgramOptionGroupBox.Text = "Program Options";
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.AutoHideCheckBox, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.AutoHideByProcLabel, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(this.DetectProcessLabel, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.VersionAutoCheckLabel, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.LatestVersionLabel, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.VersionAutoCheckCheckBox, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.DetectProcessNameTextBox, 1, 2);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 19);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 5;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(763, 97);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // DetectProcessNameTextBox
-            // 
-            this.DetectProcessNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DetectProcessNameTextBox.Location = new System.Drawing.Point(180, 48);
-            this.DetectProcessNameTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.DetectProcessNameTextBox.Name = "DetectProcessNameTextBox";
-            this.DetectProcessNameTextBox.Size = new System.Drawing.Size(583, 23);
-            this.DetectProcessNameTextBox.TabIndex = 6;
-            this.DetectProcessNameTextBox.Text = "ffxiv.exe, ffxiv_dx11.exe";
-            this.DetectProcessNameTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
-            // 
-            // VersionAutoCheckCheckBox
-            // 
-            this.VersionAutoCheckCheckBox.AutoSize = true;
-            this.VersionAutoCheckCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.VersionAutoCheckCheckBox.Location = new System.Drawing.Point(184, 28);
-            this.VersionAutoCheckCheckBox.Margin = new System.Windows.Forms.Padding(4);
-            this.VersionAutoCheckCheckBox.Name = "VersionAutoCheckCheckBox";
-            this.VersionAutoCheckCheckBox.Size = new System.Drawing.Size(575, 16);
-            this.VersionAutoCheckCheckBox.TabIndex = 4;
-            this.VersionAutoCheckCheckBox.UseVisualStyleBackColor = true;
-            this.VersionAutoCheckCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
-            // 
-            // LatestVersionLabel
-            // 
-            this.LatestVersionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LatestVersionLabel.Location = new System.Drawing.Point(0, 0);
-            this.LatestVersionLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.LatestVersionLabel.Name = "LatestVersionLabel";
-            this.LatestVersionLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.LatestVersionLabel.Size = new System.Drawing.Size(180, 24);
-            this.LatestVersionLabel.TabIndex = 1;
-            this.LatestVersionLabel.Text = "Latest Version";
-            this.LatestVersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(180, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label4.Size = new System.Drawing.Size(583, 24);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "1.0.0.0";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // VersionAutoCheckLabel
-            // 
-            this.VersionAutoCheckLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.VersionAutoCheckLabel.Location = new System.Drawing.Point(0, 24);
-            this.VersionAutoCheckLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.VersionAutoCheckLabel.Name = "VersionAutoCheckLabel";
-            this.VersionAutoCheckLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.VersionAutoCheckLabel.Size = new System.Drawing.Size(180, 24);
-            this.VersionAutoCheckLabel.TabIndex = 3;
-            this.VersionAutoCheckLabel.Text = "Version Auto Check";
-            this.VersionAutoCheckLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // DetectProcessLabel
-            // 
-            this.DetectProcessLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DetectProcessLabel.Location = new System.Drawing.Point(0, 48);
-            this.DetectProcessLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.DetectProcessLabel.Name = "DetectProcessLabel";
-            this.DetectProcessLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.DetectProcessLabel.Size = new System.Drawing.Size(180, 24);
-            this.DetectProcessLabel.TabIndex = 5;
-            this.DetectProcessLabel.Text = "Detect Process";
-            this.DetectProcessLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // AutoHideByProcLabel
-            // 
-            this.AutoHideByProcLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AutoHideByProcLabel.Location = new System.Drawing.Point(0, 72);
-            this.AutoHideByProcLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.AutoHideByProcLabel.Name = "AutoHideByProcLabel";
-            this.AutoHideByProcLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.AutoHideByProcLabel.Size = new System.Drawing.Size(180, 24);
-            this.AutoHideByProcLabel.TabIndex = 7;
-            this.AutoHideByProcLabel.Text = "Autohide (by Process)";
-            this.AutoHideByProcLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // AutoHideCheckBox
-            // 
-            this.AutoHideCheckBox.AutoSize = true;
-            this.AutoHideCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AutoHideCheckBox.Location = new System.Drawing.Point(184, 76);
-            this.AutoHideCheckBox.Margin = new System.Windows.Forms.Padding(4);
-            this.AutoHideCheckBox.Name = "AutoHideCheckBox";
-            this.AutoHideCheckBox.Size = new System.Drawing.Size(575, 16);
-            this.AutoHideCheckBox.TabIndex = 8;
-            this.AutoHideCheckBox.UseVisualStyleBackColor = true;
-            this.AutoHideCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // ScreenShotSettingGroupbox
             // 
@@ -373,71 +249,107 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(763, 123);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // tableLayoutPanel3
+            // tableLayoutPanel4
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel3.Controls.Add(this.ScreenshotBackgroundSelectButton, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.ScreenshotBackgroundImagePathTextBox, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(180, 24);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(583, 24);
-            this.tableLayoutPanel3.TabIndex = 12;
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel4.Controls.Add(this.ScreenshotSavePathTextBox, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.ScreenshotSavePathSelectButton, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(180, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(583, 24);
+            this.tableLayoutPanel4.TabIndex = 13;
             // 
-            // ScreenshotBackgroundImagePathTextBox
+            // ScreenshotSavePathTextBox
             // 
-            this.ScreenshotBackgroundImagePathTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ScreenshotBackgroundImagePathTextBox.Location = new System.Drawing.Point(0, 0);
-            this.ScreenshotBackgroundImagePathTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.ScreenshotBackgroundImagePathTextBox.Name = "ScreenshotBackgroundImagePathTextBox";
-            this.ScreenshotBackgroundImagePathTextBox.Size = new System.Drawing.Size(543, 23);
-            this.ScreenshotBackgroundImagePathTextBox.TabIndex = 1;
-            this.ScreenshotBackgroundImagePathTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
+            this.ScreenshotSavePathTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScreenshotSavePathTextBox.Location = new System.Drawing.Point(0, 0);
+            this.ScreenshotSavePathTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.ScreenshotSavePathTextBox.Name = "ScreenshotSavePathTextBox";
+            this.ScreenshotSavePathTextBox.Size = new System.Drawing.Size(543, 23);
+            this.ScreenshotSavePathTextBox.TabIndex = 0;
+            this.ScreenshotSavePathTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
-            // ScreenshotBackgroundSelectButton
+            // ScreenshotSavePathSelectButton
             // 
-            this.ScreenshotBackgroundSelectButton.BackColor = System.Drawing.Color.Gainsboro;
-            this.ScreenshotBackgroundSelectButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ScreenshotBackgroundSelectButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.ScreenshotBackgroundSelectButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ScreenshotBackgroundSelectButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ScreenshotBackgroundSelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ScreenshotBackgroundSelectButton.Location = new System.Drawing.Point(544, 0);
-            this.ScreenshotBackgroundSelectButton.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
-            this.ScreenshotBackgroundSelectButton.Name = "ScreenshotBackgroundSelectButton";
-            this.ScreenshotBackgroundSelectButton.Size = new System.Drawing.Size(39, 23);
-            this.ScreenshotBackgroundSelectButton.TabIndex = 2;
-            this.ScreenshotBackgroundSelectButton.Text = "…";
-            this.ScreenshotBackgroundSelectButton.UseVisualStyleBackColor = false;
+            this.ScreenshotSavePathSelectButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.ScreenshotSavePathSelectButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScreenshotSavePathSelectButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.ScreenshotSavePathSelectButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ScreenshotSavePathSelectButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScreenshotSavePathSelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScreenshotSavePathSelectButton.Location = new System.Drawing.Point(544, 0);
+            this.ScreenshotSavePathSelectButton.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
+            this.ScreenshotSavePathSelectButton.Name = "ScreenshotSavePathSelectButton";
+            this.ScreenshotSavePathSelectButton.Size = new System.Drawing.Size(39, 23);
+            this.ScreenshotSavePathSelectButton.TabIndex = 1;
+            this.ScreenshotSavePathSelectButton.Text = "…";
+            this.ScreenshotSavePathSelectButton.UseVisualStyleBackColor = false;
             // 
-            // ScreenshotBackgroundFillModeComboBox
+            // MarginLabel
             // 
-            this.ScreenshotBackgroundFillModeComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ScreenshotBackgroundFillModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ScreenshotBackgroundFillModeComboBox.FormattingEnabled = true;
-            this.ScreenshotBackgroundFillModeComboBox.Location = new System.Drawing.Point(180, 48);
-            this.ScreenshotBackgroundFillModeComboBox.Margin = new System.Windows.Forms.Padding(0);
-            this.ScreenshotBackgroundFillModeComboBox.Name = "ScreenshotBackgroundFillModeComboBox";
-            this.ScreenshotBackgroundFillModeComboBox.Size = new System.Drawing.Size(583, 23);
-            this.ScreenshotBackgroundFillModeComboBox.TabIndex = 11;
-            this.ScreenshotBackgroundFillModeComboBox.SelectedIndexChanged += new System.EventHandler(this.SettingChangeSaver);
+            this.MarginLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MarginLabel.Location = new System.Drawing.Point(0, 96);
+            this.MarginLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.MarginLabel.Name = "MarginLabel";
+            this.MarginLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.MarginLabel.Size = new System.Drawing.Size(180, 27);
+            this.MarginLabel.TabIndex = 8;
+            this.MarginLabel.Text = "Margin";
+            this.MarginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // AutoClippingCheckBox
+            // AutoClippingLabel
             // 
-            this.AutoClippingCheckBox.AutoSize = true;
-            this.AutoClippingCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AutoClippingCheckBox.Location = new System.Drawing.Point(184, 76);
-            this.AutoClippingCheckBox.Margin = new System.Windows.Forms.Padding(4);
-            this.AutoClippingCheckBox.Name = "AutoClippingCheckBox";
-            this.AutoClippingCheckBox.Size = new System.Drawing.Size(575, 16);
-            this.AutoClippingCheckBox.TabIndex = 10;
-            this.AutoClippingCheckBox.UseVisualStyleBackColor = true;
-            this.AutoClippingCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
+            this.AutoClippingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AutoClippingLabel.Location = new System.Drawing.Point(0, 72);
+            this.AutoClippingLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.AutoClippingLabel.Name = "AutoClippingLabel";
+            this.AutoClippingLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.AutoClippingLabel.Size = new System.Drawing.Size(180, 24);
+            this.AutoClippingLabel.TabIndex = 6;
+            this.AutoClippingLabel.Text = "Auto Clipping";
+            this.AutoClippingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // FillModeLabel
+            // 
+            this.FillModeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FillModeLabel.Location = new System.Drawing.Point(0, 48);
+            this.FillModeLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.FillModeLabel.Name = "FillModeLabel";
+            this.FillModeLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.FillModeLabel.Size = new System.Drawing.Size(180, 24);
+            this.FillModeLabel.TabIndex = 4;
+            this.FillModeLabel.Text = "Fill Mode";
+            this.FillModeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // BackgroundImageLabel
+            // 
+            this.BackgroundImageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BackgroundImageLabel.Location = new System.Drawing.Point(0, 24);
+            this.BackgroundImageLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.BackgroundImageLabel.Name = "BackgroundImageLabel";
+            this.BackgroundImageLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.BackgroundImageLabel.Size = new System.Drawing.Size(180, 24);
+            this.BackgroundImageLabel.TabIndex = 2;
+            this.BackgroundImageLabel.Text = "Background";
+            this.BackgroundImageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // SavePathLabel
+            // 
+            this.SavePathLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SavePathLabel.Location = new System.Drawing.Point(0, 0);
+            this.SavePathLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.SavePathLabel.Name = "SavePathLabel";
+            this.SavePathLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.SavePathLabel.Size = new System.Drawing.Size(180, 24);
+            this.SavePathLabel.TabIndex = 0;
+            this.SavePathLabel.Text = "Save Path";
+            this.SavePathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel2
             // 
@@ -456,6 +368,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(583, 27);
             this.tableLayoutPanel2.TabIndex = 9;
             // 
+            // label2
+            // 
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(79, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(504, 27);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "px";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // ScreenshotMargin
             // 
             this.ScreenshotMargin.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -471,118 +394,205 @@
             this.ScreenshotMargin.TabIndex = 0;
             this.ScreenshotMargin.ValueChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
-            // label2
+            // AutoClippingCheckBox
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(79, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(504, 27);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "px";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AutoClippingCheckBox.AutoSize = true;
+            this.AutoClippingCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AutoClippingCheckBox.Location = new System.Drawing.Point(184, 76);
+            this.AutoClippingCheckBox.Margin = new System.Windows.Forms.Padding(4);
+            this.AutoClippingCheckBox.Name = "AutoClippingCheckBox";
+            this.AutoClippingCheckBox.Size = new System.Drawing.Size(575, 16);
+            this.AutoClippingCheckBox.TabIndex = 10;
+            this.AutoClippingCheckBox.UseVisualStyleBackColor = true;
+            this.AutoClippingCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
-            // SavePathLabel
+            // ScreenshotBackgroundFillModeComboBox
             // 
-            this.SavePathLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SavePathLabel.Location = new System.Drawing.Point(0, 0);
-            this.SavePathLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.SavePathLabel.Name = "SavePathLabel";
-            this.SavePathLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.SavePathLabel.Size = new System.Drawing.Size(180, 24);
-            this.SavePathLabel.TabIndex = 0;
-            this.SavePathLabel.Text = "Save Path";
-            this.SavePathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ScreenshotBackgroundFillModeComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScreenshotBackgroundFillModeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ScreenshotBackgroundFillModeComboBox.FormattingEnabled = true;
+            this.ScreenshotBackgroundFillModeComboBox.Location = new System.Drawing.Point(180, 48);
+            this.ScreenshotBackgroundFillModeComboBox.Margin = new System.Windows.Forms.Padding(0);
+            this.ScreenshotBackgroundFillModeComboBox.Name = "ScreenshotBackgroundFillModeComboBox";
+            this.ScreenshotBackgroundFillModeComboBox.Size = new System.Drawing.Size(583, 23);
+            this.ScreenshotBackgroundFillModeComboBox.TabIndex = 11;
+            this.ScreenshotBackgroundFillModeComboBox.SelectedIndexChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
-            // BackgroundImageLabel
+            // tableLayoutPanel3
             // 
-            this.BackgroundImageLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackgroundImageLabel.Location = new System.Drawing.Point(0, 24);
-            this.BackgroundImageLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.BackgroundImageLabel.Name = "BackgroundImageLabel";
-            this.BackgroundImageLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.BackgroundImageLabel.Size = new System.Drawing.Size(180, 24);
-            this.BackgroundImageLabel.TabIndex = 2;
-            this.BackgroundImageLabel.Text = "Background";
-            this.BackgroundImageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.Controls.Add(this.ScreenshotBackgroundSelectButton, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ScreenshotBackgroundImagePathTextBox, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(180, 24);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(583, 24);
+            this.tableLayoutPanel3.TabIndex = 12;
             // 
-            // FillModeLabel
+            // ScreenshotBackgroundSelectButton
             // 
-            this.FillModeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FillModeLabel.Location = new System.Drawing.Point(0, 48);
-            this.FillModeLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.FillModeLabel.Name = "FillModeLabel";
-            this.FillModeLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.FillModeLabel.Size = new System.Drawing.Size(180, 24);
-            this.FillModeLabel.TabIndex = 4;
-            this.FillModeLabel.Text = "Fill Mode";
-            this.FillModeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ScreenshotBackgroundSelectButton.BackColor = System.Drawing.Color.Gainsboro;
+            this.ScreenshotBackgroundSelectButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScreenshotBackgroundSelectButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.ScreenshotBackgroundSelectButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ScreenshotBackgroundSelectButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScreenshotBackgroundSelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScreenshotBackgroundSelectButton.Location = new System.Drawing.Point(544, 0);
+            this.ScreenshotBackgroundSelectButton.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
+            this.ScreenshotBackgroundSelectButton.Name = "ScreenshotBackgroundSelectButton";
+            this.ScreenshotBackgroundSelectButton.Size = new System.Drawing.Size(39, 23);
+            this.ScreenshotBackgroundSelectButton.TabIndex = 2;
+            this.ScreenshotBackgroundSelectButton.Text = "…";
+            this.ScreenshotBackgroundSelectButton.UseVisualStyleBackColor = false;
             // 
-            // AutoClippingLabel
+            // ScreenshotBackgroundImagePathTextBox
             // 
-            this.AutoClippingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AutoClippingLabel.Location = new System.Drawing.Point(0, 72);
-            this.AutoClippingLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.AutoClippingLabel.Name = "AutoClippingLabel";
-            this.AutoClippingLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.AutoClippingLabel.Size = new System.Drawing.Size(180, 24);
-            this.AutoClippingLabel.TabIndex = 6;
-            this.AutoClippingLabel.Text = "Auto Clipping";
-            this.AutoClippingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ScreenshotBackgroundImagePathTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScreenshotBackgroundImagePathTextBox.Location = new System.Drawing.Point(0, 0);
+            this.ScreenshotBackgroundImagePathTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.ScreenshotBackgroundImagePathTextBox.Name = "ScreenshotBackgroundImagePathTextBox";
+            this.ScreenshotBackgroundImagePathTextBox.Size = new System.Drawing.Size(543, 23);
+            this.ScreenshotBackgroundImagePathTextBox.TabIndex = 1;
+            this.ScreenshotBackgroundImagePathTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
-            // MarginLabel
+            // ProgramOptionGroupBox
             // 
-            this.MarginLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MarginLabel.Location = new System.Drawing.Point(0, 96);
-            this.MarginLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.MarginLabel.Name = "MarginLabel";
-            this.MarginLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.MarginLabel.Size = new System.Drawing.Size(180, 27);
-            this.MarginLabel.TabIndex = 8;
-            this.MarginLabel.Text = "Margin";
-            this.MarginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ProgramOptionGroupBox.Controls.Add(this.tableLayoutPanel5);
+            this.ProgramOptionGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ProgramOptionGroupBox.Location = new System.Drawing.Point(10, 2);
+            this.ProgramOptionGroupBox.Name = "ProgramOptionGroupBox";
+            this.ProgramOptionGroupBox.Padding = new System.Windows.Forms.Padding(3, 3, 10, 10);
+            this.ProgramOptionGroupBox.Size = new System.Drawing.Size(776, 126);
+            this.ProgramOptionGroupBox.TabIndex = 1;
+            this.ProgramOptionGroupBox.TabStop = false;
+            this.ProgramOptionGroupBox.Text = "Program Options";
             // 
-            // tableLayoutPanel4
+            // tableLayoutPanel5
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel4.Controls.Add(this.ScreenshotSavePathTextBox, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.ScreenshotSavePathSelectButton, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(180, 0);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(583, 24);
-            this.tableLayoutPanel4.TabIndex = 13;
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.AutoHideCheckBox, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.AutoHideByProcLabel, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.DetectProcessLabel, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.VersionAutoCheckLabel, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.LatestVersionLabel, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.VersionAutoCheckCheckBox, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.DetectProcessNameTextBox, 1, 2);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 19);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 5;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(763, 97);
+            this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // ScreenshotSavePathSelectButton
+            // AutoHideCheckBox
             // 
-            this.ScreenshotSavePathSelectButton.BackColor = System.Drawing.Color.Gainsboro;
-            this.ScreenshotSavePathSelectButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ScreenshotSavePathSelectButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.ScreenshotSavePathSelectButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ScreenshotSavePathSelectButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ScreenshotSavePathSelectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ScreenshotSavePathSelectButton.Location = new System.Drawing.Point(544, 0);
-            this.ScreenshotSavePathSelectButton.Margin = new System.Windows.Forms.Padding(1, 0, 0, 1);
-            this.ScreenshotSavePathSelectButton.Name = "ScreenshotSavePathSelectButton";
-            this.ScreenshotSavePathSelectButton.Size = new System.Drawing.Size(39, 23);
-            this.ScreenshotSavePathSelectButton.TabIndex = 1;
-            this.ScreenshotSavePathSelectButton.Text = "…";
-            this.ScreenshotSavePathSelectButton.UseVisualStyleBackColor = false;
+            this.AutoHideCheckBox.AutoSize = true;
+            this.AutoHideCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AutoHideCheckBox.Location = new System.Drawing.Point(184, 76);
+            this.AutoHideCheckBox.Margin = new System.Windows.Forms.Padding(4);
+            this.AutoHideCheckBox.Name = "AutoHideCheckBox";
+            this.AutoHideCheckBox.Size = new System.Drawing.Size(575, 16);
+            this.AutoHideCheckBox.TabIndex = 8;
+            this.AutoHideCheckBox.UseVisualStyleBackColor = true;
+            this.AutoHideCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
-            // ScreenshotSavePathTextBox
+            // AutoHideByProcLabel
             // 
-            this.ScreenshotSavePathTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ScreenshotSavePathTextBox.Location = new System.Drawing.Point(0, 0);
-            this.ScreenshotSavePathTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.ScreenshotSavePathTextBox.Name = "ScreenshotSavePathTextBox";
-            this.ScreenshotSavePathTextBox.Size = new System.Drawing.Size(543, 23);
-            this.ScreenshotSavePathTextBox.TabIndex = 0;
-            this.ScreenshotSavePathTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
+            this.AutoHideByProcLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AutoHideByProcLabel.Location = new System.Drawing.Point(0, 72);
+            this.AutoHideByProcLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.AutoHideByProcLabel.Name = "AutoHideByProcLabel";
+            this.AutoHideByProcLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.AutoHideByProcLabel.Size = new System.Drawing.Size(180, 24);
+            this.AutoHideByProcLabel.TabIndex = 7;
+            this.AutoHideByProcLabel.Text = "Autohide (by Process)";
+            this.AutoHideByProcLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // DetectProcessLabel
+            // 
+            this.DetectProcessLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DetectProcessLabel.Location = new System.Drawing.Point(0, 48);
+            this.DetectProcessLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.DetectProcessLabel.Name = "DetectProcessLabel";
+            this.DetectProcessLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.DetectProcessLabel.Size = new System.Drawing.Size(180, 24);
+            this.DetectProcessLabel.TabIndex = 5;
+            this.DetectProcessLabel.Text = "Detect Process";
+            this.DetectProcessLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // VersionAutoCheckLabel
+            // 
+            this.VersionAutoCheckLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.VersionAutoCheckLabel.Location = new System.Drawing.Point(0, 24);
+            this.VersionAutoCheckLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.VersionAutoCheckLabel.Name = "VersionAutoCheckLabel";
+            this.VersionAutoCheckLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.VersionAutoCheckLabel.Size = new System.Drawing.Size(180, 24);
+            this.VersionAutoCheckLabel.TabIndex = 3;
+            this.VersionAutoCheckLabel.Text = "Version Auto Check";
+            this.VersionAutoCheckLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(180, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label4.Size = new System.Drawing.Size(583, 24);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "1.0.0.0";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // LatestVersionLabel
+            // 
+            this.LatestVersionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LatestVersionLabel.Location = new System.Drawing.Point(0, 0);
+            this.LatestVersionLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.LatestVersionLabel.Name = "LatestVersionLabel";
+            this.LatestVersionLabel.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.LatestVersionLabel.Size = new System.Drawing.Size(180, 24);
+            this.LatestVersionLabel.TabIndex = 1;
+            this.LatestVersionLabel.Text = "Latest Version";
+            this.LatestVersionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // VersionAutoCheckCheckBox
+            // 
+            this.VersionAutoCheckCheckBox.AutoSize = true;
+            this.VersionAutoCheckCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.VersionAutoCheckCheckBox.Location = new System.Drawing.Point(184, 28);
+            this.VersionAutoCheckCheckBox.Margin = new System.Windows.Forms.Padding(4);
+            this.VersionAutoCheckCheckBox.Name = "VersionAutoCheckCheckBox";
+            this.VersionAutoCheckCheckBox.Size = new System.Drawing.Size(575, 16);
+            this.VersionAutoCheckCheckBox.TabIndex = 4;
+            this.VersionAutoCheckCheckBox.UseVisualStyleBackColor = true;
+            this.VersionAutoCheckCheckBox.CheckedChanged += new System.EventHandler(this.SettingChangeSaver);
+            // 
+            // DetectProcessNameTextBox
+            // 
+            this.DetectProcessNameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DetectProcessNameTextBox.Location = new System.Drawing.Point(180, 48);
+            this.DetectProcessNameTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.DetectProcessNameTextBox.Name = "DetectProcessNameTextBox";
+            this.DetectProcessNameTextBox.Size = new System.Drawing.Size(583, 23);
+            this.DetectProcessNameTextBox.TabIndex = 6;
+            this.DetectProcessNameTextBox.Text = "ffxiv.exe, ffxiv_dx11.exe";
+            this.DetectProcessNameTextBox.TextChanged += new System.EventHandler(this.SettingChangeSaver);
             // 
             // OverlaysTabPage
             // 
@@ -596,6 +606,21 @@
             this.OverlaysTabPage.Text = "Overlays";
             this.OverlaysTabPage.UseVisualStyleBackColor = true;
             // 
+            // overlayManageTabControl1
+            // 
+            this.overlayManageTabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.overlayManageTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.overlayManageTabControl1.ItemSize = new System.Drawing.Size(48, 220);
+            this.overlayManageTabControl1.Location = new System.Drawing.Point(0, 32);
+            this.overlayManageTabControl1.Multiline = true;
+            this.overlayManageTabControl1.Name = "overlayManageTabControl1";
+            this.overlayManageTabControl1.Padding = new System.Drawing.Point(32, 32);
+            this.overlayManageTabControl1.SelectedIndex = 0;
+            this.overlayManageTabControl1.Size = new System.Drawing.Size(796, 412);
+            this.overlayManageTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.overlayManageTabControl1.TabIndex = 1;
+            this.overlayManageTabControl1.SelectedIndexChanged += new System.EventHandler(this.OverlayManageTabControl1_SelectedIndexChanged);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -607,6 +632,117 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 0);
             this.panel2.Size = new System.Drawing.Size(796, 32);
             this.panel2.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.ScreenShotButton);
+            this.panel4.Controls.Add(this.MarginLabel2);
+            this.panel4.Controls.Add(this.OpenDevToolButton);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.OverlayTitle);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(222, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(572, 30);
+            this.panel4.TabIndex = 3;
+            // 
+            // ScreenShotButton
+            // 
+            this.ScreenShotButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScreenShotButton.BackgroundImage")));
+            this.ScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ScreenShotButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ScreenShotButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ScreenShotButton.Location = new System.Drawing.Point(446, 0);
+            this.ScreenShotButton.Margin = new System.Windows.Forms.Padding(0);
+            this.ScreenShotButton.Name = "ScreenShotButton";
+            this.ScreenShotButton.Size = new System.Drawing.Size(30, 30);
+            this.ScreenShotButton.TabIndex = 7;
+            this.ScreenShotButton.UseVisualStyleBackColor = true;
+            // 
+            // MarginLabel2
+            // 
+            this.MarginLabel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MarginLabel2.Location = new System.Drawing.Point(476, 0);
+            this.MarginLabel2.Name = "MarginLabel2";
+            this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
+            this.MarginLabel2.TabIndex = 6;
+            // 
+            // OpenDevToolButton
+            // 
+            this.OpenDevToolButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpenDevToolButton.BackgroundImage")));
+            this.OpenDevToolButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.OpenDevToolButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.OpenDevToolButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.OpenDevToolButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenDevToolButton.Location = new System.Drawing.Point(478, 0);
+            this.OpenDevToolButton.Margin = new System.Windows.Forms.Padding(0);
+            this.OpenDevToolButton.Name = "OpenDevToolButton";
+            this.OpenDevToolButton.Size = new System.Drawing.Size(30, 30);
+            this.OpenDevToolButton.TabIndex = 9;
+            this.OpenDevToolButton.UseVisualStyleBackColor = true;
+            this.OpenDevToolButton.Click += new System.EventHandler(this.OpenDevToolButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Location = new System.Drawing.Point(508, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(2, 30);
+            this.label3.TabIndex = 8;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(510, 0);
+            this.button4.Margin = new System.Windows.Forms.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 30);
+            this.button4.TabIndex = 2;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.ReloadSelectedOverlayButtonClicked);
+            // 
+            // label13
+            // 
+            this.label13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label13.Location = new System.Drawing.Point(540, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(2, 30);
+            this.label13.TabIndex = 1;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(542, 0);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(30, 30);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.CloseSelectedOverlayButtonClicked);
+            // 
+            // OverlayTitle
+            // 
+            this.OverlayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.OverlayTitle.Location = new System.Drawing.Point(0, 0);
+            this.OverlayTitle.Name = "OverlayTitle";
+            this.OverlayTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.OverlayTitle.Size = new System.Drawing.Size(572, 30);
+            this.OverlayTitle.TabIndex = 3;
+            this.OverlayTitle.Text = "Please Select Overlay";
+            this.OverlayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -634,132 +770,6 @@
             this.overlayAddButton.UseVisualStyleBackColor = true;
             this.overlayAddButton.Click += new System.EventHandler(this.OverlayAddButton_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.ScreenShotButton);
-            this.panel4.Controls.Add(this.MarginLabel2);
-            this.panel4.Controls.Add(this.OpenDevToolButton);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.OverlayTitle);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(222, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(572, 30);
-            this.panel4.TabIndex = 3;
-            // 
-            // OverlayTitle
-            // 
-            this.OverlayTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OverlayTitle.Location = new System.Drawing.Point(0, 0);
-            this.OverlayTitle.Name = "OverlayTitle";
-            this.OverlayTitle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.OverlayTitle.Size = new System.Drawing.Size(572, 30);
-            this.OverlayTitle.TabIndex = 3;
-            this.OverlayTitle.Text = "Please Select Overlay";
-            this.OverlayTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(542, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 30);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.CloseSelectedOverlayButtonClicked);
-            // 
-            // label13
-            // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label13.Location = new System.Drawing.Point(540, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(2, 30);
-            this.label13.TabIndex = 1;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(510, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 30);
-            this.button4.TabIndex = 2;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.ReloadSelectedOverlayButtonClicked);
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Location = new System.Drawing.Point(508, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(2, 30);
-            this.label3.TabIndex = 8;
-            // 
-            // OpenDevToolButton
-            // 
-            this.OpenDevToolButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("OpenDevToolButton.BackgroundImage")));
-            this.OpenDevToolButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.OpenDevToolButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.OpenDevToolButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.OpenDevToolButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OpenDevToolButton.Location = new System.Drawing.Point(478, 0);
-            this.OpenDevToolButton.Margin = new System.Windows.Forms.Padding(0);
-            this.OpenDevToolButton.Name = "OpenDevToolButton";
-            this.OpenDevToolButton.Size = new System.Drawing.Size(30, 30);
-            this.OpenDevToolButton.TabIndex = 9;
-            this.OpenDevToolButton.UseVisualStyleBackColor = true;
-            this.OpenDevToolButton.Click += new System.EventHandler(this.OpenDevToolButton_Click);
-            // 
-            // MarginLabel2
-            // 
-            this.MarginLabel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MarginLabel2.Location = new System.Drawing.Point(476, 0);
-            this.MarginLabel2.Name = "MarginLabel2";
-            this.MarginLabel2.Size = new System.Drawing.Size(2, 30);
-            this.MarginLabel2.TabIndex = 6;
-            // 
-            // ScreenShotButton
-            // 
-            this.ScreenShotButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ScreenShotButton.BackgroundImage")));
-            this.ScreenShotButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ScreenShotButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ScreenShotButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ScreenShotButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ScreenShotButton.Location = new System.Drawing.Point(446, 0);
-            this.ScreenShotButton.Margin = new System.Windows.Forms.Padding(0);
-            this.ScreenShotButton.Name = "ScreenShotButton";
-            this.ScreenShotButton.Size = new System.Drawing.Size(30, 30);
-            this.ScreenShotButton.TabIndex = 7;
-            this.ScreenShotButton.UseVisualStyleBackColor = true;
-            // 
-            // overlayManageTabControl1
-            // 
-            this.overlayManageTabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.overlayManageTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.overlayManageTabControl1.ItemSize = new System.Drawing.Size(48, 220);
-            this.overlayManageTabControl1.Location = new System.Drawing.Point(0, 32);
-            this.overlayManageTabControl1.Multiline = true;
-            this.overlayManageTabControl1.Name = "overlayManageTabControl1";
-            this.overlayManageTabControl1.Padding = new System.Drawing.Point(32, 32);
-            this.overlayManageTabControl1.SelectedIndex = 0;
-            this.overlayManageTabControl1.Size = new System.Drawing.Size(796, 412);
-            this.overlayManageTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.overlayManageTabControl1.TabIndex = 1;
-            this.overlayManageTabControl1.SelectedIndexChanged += new System.EventHandler(this.OverlayManageTabControl1_SelectedIndexChanged);
-            // 
             // OverlayControlTabPage
             // 
             this.OverlayControlTabPage.Controls.Add(this.OverlaysTabPage);
@@ -777,16 +787,6 @@
             this.OverlayControlTabPage.Size = new System.Drawing.Size(800, 480);
             this.OverlayControlTabPage.TabIndex = 0;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(211, 7);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 19);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "Auto scroll";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // OverlayController
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -800,22 +800,22 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.SettingsTabPage.ResumeLayout(false);
-            this.ProgramOptionGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ScreenShotSettingGroupbox.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ScreenshotMargin)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ScreenshotMargin)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            this.ProgramOptionGroupBox.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.OverlaysTabPage.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.OverlayControlTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 

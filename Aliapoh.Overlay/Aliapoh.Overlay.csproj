@@ -147,7 +147,12 @@
     <Compile Include="Logger\LogLevel.cs" />
     <Compile Include="OverlayManager\Controls\Args\OverlayTabAddEventArgs.cs" />
     <Compile Include="OverlayManager\Settings\DefaultSetting.cs" />
-    <Compile Include="Overlay\Screenshot\ScreenshotBackgroundMode.cs" />
+    <Compile Include="OverlayPlugin\Common\IOverlay.cs" />
+    <Compile Include="OverlayPlugin\Common\IOverlayAddon.cs" />
+    <Compile Include="OverlayPlugin\Common\IOverlayConfig.cs" />
+    <Compile Include="OverlayPlugin\Common\IPluginConfig.cs" />
+    <Compile Include="OverlayPlugin\Common\OverlayConfigList.cs" />
+    <Compile Include="AliapohOverlayForm\Screenshot\ScreenshotBackgroundMode.cs" />
     <Compile Include="OverlayManager\Settings\GlobalSettingObject.cs" />
     <Compile Include="OverlayManager\Settings\SettingObject.cs" />
     <Compile Include="OverlayManager\Enums\GlobalHotkeyType.cs" />
@@ -157,16 +162,16 @@
     <Compile Include="OverlayManager\GlobalHook\OverlayPlugin\Window.cs" />
     <Compile Include="OverlayManager\Plugins\IPlugin.cs" />
     <Compile Include="ACTPlugin\OverlayPluginApi.cs" />
-    <Compile Include="Overlay\FXs\NativeMethods.cs" />
-    <Compile Include="Overlay\Handlers\CefMenuHandler.cs" />
-    <Compile Include="Overlay\Handlers\DisplayHandler.cs" />
-    <Compile Include="Overlay\OverlayForm.cs">
+    <Compile Include="AliapohOverlayForm\FXs\NativeMethods.cs" />
+    <Compile Include="AliapohOverlayForm\Handlers\CefMenuHandler.cs" />
+    <Compile Include="AliapohOverlayForm\Handlers\DisplayHandler.cs" />
+    <Compile Include="AliapohOverlayForm\OverlayForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Overlay\OverlayForm.Designer.cs">
+    <Compile Include="AliapohOverlayForm\OverlayForm.Designer.cs">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Overlay\Enums\WM.cs" />
+    <Compile Include="AliapohOverlayForm\Enums\WM.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\OverlayManageTabControl.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\OverlayTabControl.cs" />
     <Compile Include="OverlayManager\Controls\CustomTab\RECT.cs" />
@@ -197,12 +202,30 @@
     </Compile>
     <Compile Include="Localization\LanguageLoader.cs" />
     <Compile Include="OverlayManager\Settings\SettingManager.cs" />
-    <Compile Include="Overlay\Screenshot\ScreenshotRenderer.cs" />
+    <Compile Include="AliapohOverlayForm\Screenshot\ScreenshotRenderer.cs" />
+    <Compile Include="OverlayPlugin\ConfigEventArgs.cs" />
+    <Compile Include="OverlayPlugin\Core\OverlayConfigBase.cs" />
+    <Compile Include="OverlayPlugin\Core\Overlays\LogParseConfigPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OverlayPlugin\Core\Overlays\LogParseConfigPanel.Designer.cs">
+      <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverlayPlugin\Core\Overlays\LogParseLogLineReader.cs" />
+    <Compile Include="OverlayPlugin\Core\Overlays\LogParseOverlay.cs" />
+    <Compile Include="OverlayPlugin\Core\Overlays\LogParseOverlayAddon.cs" />
+    <Compile Include="OverlayPlugin\Core\Overlays\LogParseOverlayConfig.cs" />
+    <Compile Include="OverlayPlugin\Localization.cs" />
+    <Compile Include="OverlayPlugin\LocalizationDict.cs" />
+    <Compile Include="OverlayPlugin\MiniParseSortType.cs" />
+    <Compile Include="OverlayPlugin\OverlayBase.cs" />
+    <Compile Include="OverlayPlugin\TextItem.cs" />
+    <Compile Include="OverlayPlugin\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Initializer\Forms\LoaderForm.resx">
       <DependentUpon>LoaderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Overlay\OverlayForm.resx">
+    <EmbeddedResource Include="AliapohOverlayForm\OverlayForm.resx">
       <DependentUpon>OverlayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OverlayManager\Controls\OverlayConfig.resx">
@@ -216,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OverlayManager\Forms\NewOverlayDialog.resx">
       <DependentUpon>NewOverlayDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayPlugin\Core\Overlays\LogParseConfigPanel.resx">
+      <DependentUpon>LogParseConfigPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

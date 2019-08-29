@@ -5,8 +5,9 @@ using System.Net;
 using System.IO;
 using System.Drawing;
 using System.Diagnostics;
+using CefSharp.Structs;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public class DisplayHandler : IDisplayHandler
     {
@@ -78,6 +79,51 @@ namespace Aliapoh.Overlay
         public bool OnTooltipChanged(IWebBrowser browserControl, ref string text)
         {
             return false;
+        }
+
+        void IDisplayHandler.OnAddressChanged(IWebBrowser chromiumWebBrowser, AddressChangedEventArgs addressChangedArgs)
+        {
+
+        }
+
+        bool IDisplayHandler.OnAutoResize(IWebBrowser chromiumWebBrowser, IBrowser browser, CefSharp.Structs.Size newSize)
+        {
+            return true;
+        }
+
+        bool IDisplayHandler.OnConsoleMessage(IWebBrowser chromiumWebBrowser, ConsoleMessageEventArgs consoleMessageArgs)
+        {
+            return true;
+        }
+
+        void IDisplayHandler.OnFaviconUrlChange(IWebBrowser chromiumWebBrowser, IBrowser browser, IList<string> urls)
+        {
+
+        }
+
+        void IDisplayHandler.OnFullscreenModeChange(IWebBrowser chromiumWebBrowser, IBrowser browser, bool fullscreen)
+        {
+
+        }
+
+        void IDisplayHandler.OnLoadingProgressChange(IWebBrowser chromiumWebBrowser, IBrowser browser, double progress)
+        {
+
+        }
+
+        void IDisplayHandler.OnStatusMessage(IWebBrowser chromiumWebBrowser, StatusMessageEventArgs statusMessageArgs)
+        {
+
+        }
+
+        void IDisplayHandler.OnTitleChanged(IWebBrowser chromiumWebBrowser, TitleChangedEventArgs titleChangedArgs)
+        {
+
+        }
+
+        bool IDisplayHandler.OnTooltipChanged(IWebBrowser chromiumWebBrowser, ref string text)
+        {
+            return true;
         }
     }
 }

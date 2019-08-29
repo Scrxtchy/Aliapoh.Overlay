@@ -1,5 +1,5 @@
 ﻿using Advanced_Combat_Tracker;
-using Aliapoh.Overlay.OverlayManager;
+using Aliapoh.Overlays.OverlayManager;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
-    public partial class OverlayConfig : UserControl
+    public partial class AliapohDefaultConfig : UserControl
     {
         public string ShortcutModeNone = "None";
         public string ShortcutModeHide = "Hide";
@@ -25,6 +25,7 @@ namespace Aliapoh.Overlay
         public GlobalHotkeyType GlobalHotkeyType;
         public OverlayForm Overlay;
         public Stopwatch SW;
+
         public SettingObject SettingObject
         {
             get
@@ -33,14 +34,14 @@ namespace Aliapoh.Overlay
             }
         }
 
-        public OverlayConfig(string name)
+        public AliapohDefaultConfig(string name)
         {
             var s = DefaultSetting.SettingObject;
             s.Name = name;
             Initializer(s);
         }
 
-        public OverlayConfig(string name, string url)
+        public AliapohDefaultConfig(string name, string url)
         {
             var s = DefaultSetting.SettingObject;
             s.Name = name;
@@ -48,7 +49,7 @@ namespace Aliapoh.Overlay
             Initializer(s);
         }
 
-        public OverlayConfig(SettingObject s)
+        public AliapohDefaultConfig(SettingObject s)
         {
             Initializer(s);
         }
@@ -124,7 +125,14 @@ namespace Aliapoh.Overlay
                             {
                                 var hnd = NativeMethods.GetForegroundWindow();
                                 NativeMethods.GetWindowThreadProcessId(hnd, out uint pid);
-                                Overlay.Visible = l.Contains(System.IO.Path.GetFileName(Process.GetProcessById((int)pid).MainModule.FileName).ToLower());
+                                if (!OverlayShow.Checked)
+                                {
+                                    Overlay.Hide();
+                                }
+                                else
+                                {
+                                    Overlay.Visible = l.Contains(System.IO.Path.GetFileName(Process.GetProcessById((int)pid).MainModule.FileName).ToLower());
+                                }
                             }
                             catch
                             {
@@ -133,7 +141,7 @@ namespace Aliapoh.Overlay
                         }
                         else
                         {
-                            Overlay.Visible = true;
+                            Overlay.Visible = OverlayShow.Checked;
                         }
                         Thread.Sleep(1000);
                     }
@@ -145,7 +153,7 @@ namespace Aliapoh.Overlay
             GlobalHotkeyModifiers = (Keys)setting.GlobalHotkeyModifiers;
             OverlayGlobalHotkeyInput.Text = GetHotkeyString((Keys)setting.GlobalHotkeyModifiers, (Keys)setting.GlobalHotkey, "");
 
-            OverlayFramerate.Value = setting.Framerate;
+            OverlayFramerate.Value = setting.Framerate < OverlayFramerate.Minimum ? OverlayFramerate.Minimum : setting.Framerate;
             try
             {
                 OverlayUpdaterate.Value = setting.Updaterate;
@@ -220,7 +228,7 @@ namespace Aliapoh.Overlay
 
         private void OverlayLock_CheckedChanged(object sender, EventArgs e)
         {
-            Overlay.IsBrowserLocked = ((CheckBox)sender).Checked;
+            Overlay.Locked = ((CheckBox)sender).Checked;
         }
 
         private void OverlayFramerate_ValueChanged(object sender, EventArgs e)

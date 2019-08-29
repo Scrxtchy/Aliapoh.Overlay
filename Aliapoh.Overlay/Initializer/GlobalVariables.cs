@@ -8,9 +8,9 @@ namespace Aliapoh
     {
         private static readonly string AppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         public static readonly string NUGET = "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe";
-        public static readonly string CEFVERNAME = "CEF71";
-        public static readonly string TargetCEFVER = "3.3578.1863";
-        public static readonly string TargetCEFTAG = "71.0.0";
+        public static readonly string CEFVERNAME = "CEF73";
+        public static readonly string TargetCEFVER = "73.1.13";
+        public static readonly string TargetCEFTAG = "73.1.130";
         public static readonly Dictionary<string, string> DIRDICT = new Dictionary<string, string>()
         {
             { "LOCAL", Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) },

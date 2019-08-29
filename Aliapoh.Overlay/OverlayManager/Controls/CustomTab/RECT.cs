@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT

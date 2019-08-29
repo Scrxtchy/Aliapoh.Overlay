@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay.GlobalHook
+namespace Aliapoh.Overlays.GlobalHook
 {
     public class Window : NativeWindow, IDisposable
     {

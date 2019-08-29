@@ -1,6 +1,6 @@
-﻿namespace Aliapoh.Overlay
+﻿namespace Aliapoh.Overlays
 {
-    partial class OverlayConfig
+    partial class AliapohDefaultConfig
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OverlayConfig));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AliapohDefaultConfig));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.SiteURL = new System.Windows.Forms.TextBox();

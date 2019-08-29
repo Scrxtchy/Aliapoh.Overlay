@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Aliapoh.Overlay
+namespace Aliapoh.Overlays
 {
     public class SettingObject
     {
@@ -31,9 +31,9 @@ namespace Aliapoh.Overlay
             // Do Somthing
         }
 
-        public OverlayConfig CreateOverlayConfig()
+        public AliapohDefaultConfig CreateOverlayConfig()
         {
-            var o = new OverlayConfig(this);
+            var o = new AliapohDefaultConfig(this);
             return o;
         }
     }

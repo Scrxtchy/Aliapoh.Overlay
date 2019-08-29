@@ -124,23 +124,24 @@
     <value>202, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="overlayAddButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ScreenShotButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAABwSURBVEhL7c0x
-        CsBACERR71/nvmYbYVk+YQxk0lg8i1+MkZm/wOiA0QGjA0YHjA4YHTAq4lpn2VsHRsU87sKomMddGEuN
-        v7VvnTAWGuvYt04YFcr4E4yKedyFUTGPuzA6YHTA6IDRAaMDRgeM38u4AeMAaPdHa/VIAAAAAElFTkSu
-        QmCC
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAAB0SURBVDhPxdJR
+        CoAwDAPQHcID7z5+esDagJ1l5GO1xQ0elBCCHzYRKUXDDBpm0DCDhkZfVzi8zrqGhmYaGuae9x78a1aN
+        r/aDvhC2dfBSxwM364QGMWQPN+vsHTwVhgA364QGl/wyWPtjV6FhBg0zaPidtBumiUVIsNaKtwAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
-  <data name="button3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="OpenDevToolButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAACuSURBVEhL7ZRR
-        CsIwEAWDHqA/ev9j6BUs6JV0B30QQlbysQuCO/CgtK8dtglpRVH8DQfL9r78Ch26IfChi+VmOXHDgWd0
-        6IbImWK3PC2eXFI6dFf+zhJniycfpXRDmcnTpaKX3z9JlwoEDwtCwnW6FPi9mlST92ueQr+mTKrJxw0X
-        ymwj9WueIp9JRZqcw8CTilEecoAcLVeLJxWS0+WdEPjQyhR0wqRFUfwyrb0Aa505gzMqUYUAAAAASUVO
-        RK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAADxSURBVEhL7ZSx
+        DcJADEVTMAJFCoagpGQERqCEjhHSM0SGoKCmYgRKSgoGoILjH7JRYv/kIDo6LD0l9+77rERRihDCT6Ey
+        J1TmhMqccFkUFYg3n1KxcyJefH+4Qod4IQ3W99HX48V/gN1zIjEAtQQj4zp7vEgPOIMTWDRcZ48X6QE7
+        zYAjmLOc4kV6wFYzDQ7g/UStvBPSZL2CWmnGcAOlyzshDdYrqJlmGtxBDSYu74Q0Wa+gxpoBD7nWLBvx
+        IvEvksxV1msQX83LM7jsGUKyG9m7gLHbt2IIqD2IT+K+pNZiKKgSTOkekzmhMidU5iMUT6P3pIp5ieGr
+        AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="button4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -155,24 +156,23 @@
         jXzcUVQd16yvYQkrmIcXq1Wi6BtCwmcbGARWhwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="OpenDevToolButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="button3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAADxSURBVEhL7ZSx
-        DcJADEVTMAJFCoagpGQERqCEjhHSM0SGoKCmYgRKSgoGoILjH7JRYv/kIDo6LD0l9+77rERRihDCT6Ey
-        J1TmhMqccFkUFYg3n1KxcyJefH+4Qod4IQ3W99HX48V/gN1zIjEAtQQj4zp7vEgPOIMTWDRcZ48X6QE7
-        zYAjmLOc4kV6wFYzDQ7g/UStvBPSZL2CWmnGcAOlyzshDdYrqJlmGtxBDSYu74Q0Wa+gxpoBD7nWLBvx
-        IvEvksxV1msQX83LM7jsGUKyG9m7gLHbt2IIqD2IT+K+pNZiKKgSTOkekzmhMidU5iMUT6P3pIp5ieGr
-        AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAACuSURBVEhL7ZRR
+        CsIwEAWDHqA/ev9j6BUs6JV0B30QQlbysQuCO/CgtK8dtglpRVH8DQfL9r78Ch26IfChi+VmOXHDgWd0
+        6IbImWK3PC2eXFI6dFf+zhJniycfpXRDmcnTpaKX3z9JlwoEDwtCwnW6FPi9mlST92ueQr+mTKrJxw0X
+        ymwj9WueIp9JRZqcw8CTilEecoAcLVeLJxWS0+WdEPjQyhR0wqRFUfwyrb0Aa505gzMqUYUAAAAASUVO
+        RK5CYII=
 </value>
   </data>
-  <data name="ScreenShotButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="overlayAddButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAAB0SURBVDhPxdJR
-        CoAwDAPQHcID7z5+esDagJ1l5GO1xQ0elBCCHzYRKUXDDBpm0DCDhkZfVzi8zrqGhmYaGuae9x78a1aN
-        r/aDvhC2dfBSxwM364QGMWQPN+vsHTwVhgA364QGl/wyWPtjV6FhBg0zaPidtBumiUVIsNaKtwAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC4xOdTWsmQAAABwSURBVEhL7c0x
+        CsBACERR71/nvmYbYVk+YQxk0lg8i1+MkZm/wOiA0QGjA0YHjA4YHTAq4lpn2VsHRsU87sKomMddGEuN
+        v7VvnTAWGuvYt04YFcr4E4yKedyFUTGPuzA6YHTA6IDRAaMDRgeM38u4AeMAaPdHa/VIAAAAAElFTkSu
+        QmCC
 </value>
   </data>
 </root>
